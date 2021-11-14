@@ -42,15 +42,26 @@
                                     {{ $propietario->lastname }}
                                 </td>
                                 <td>
-                                    <b> {{ $propietario->doc_number }}</b><br />
-                                    {{ $propietario->tipo_doc }}
+                                    
+                                    @foreach ($todos_documentos as $documento)
+                                    @if ($documento->id == $propietario->tipo_doc)
+                                    {{ $documento->desc_nombres_corto }}          
+                                    @endif
+                                    @endforeach
+                                    <br />
+                                    <b> {{ $propietario->doc_number }}</b>
+                                    
                                 </td>
                                 <td>
                                     {{ $propietario->asesor }}
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-epc rounded-circle"><i
-                                            class="fas fa-pencil-alt"></i></button>
+                                    {{ Form::open(['method' => 'post']) }}
+                                    <input type="text" class="d-none" name="irForm" value="{{ $propietario->id}}" >    
+                                    <button type="submit" class="btn btn-epc rounded-circle"><i
+                                                class="fas fa-pencil-alt"></i></button>
+                                                                                        
+                                    {{ Form::close() }}
                                 </td>
                             </tr>
                         @endforeach
@@ -58,7 +69,6 @@
                 </table>
             </div>
         </div>
-
     </div>
 @endsection
 
