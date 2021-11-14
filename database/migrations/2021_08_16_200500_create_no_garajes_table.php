@@ -13,9 +13,9 @@ class CreateNoGarajesTable extends Migration
      */
     public function up()
     {
-        Schema::create('no_garajes', function (Blueprint $table) {
+        Schema::create('tipo_garajes', function (Blueprint $table) {
             $table->id();
-            $table->string('desc_no_garajes');
+            $table->string('tipo_garajes');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateNoGarajesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('no_garajes');
+        Schema::dropIfExists('tipo_garajes');
     }
 }

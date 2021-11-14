@@ -9,6 +9,7 @@ $(document).ready(function() {
     if ($('#propietario').length) {
         $(".usuario i").css("color", "#01303c");
         $(".usuario .progress-bar").css("background-color", "#01303c");
+        $('.toast').toast("show");
 
     } else if ($('#negocio_tarjeta').length) {
 
@@ -177,12 +178,10 @@ $(document).ready(function() {
     } else if ($('#fotos').length) {
 
         $(".usuario i, .negocio i, .detalles i, .conjunto i,.camara i").css("color", "#01303c");
-        $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
 
     } else if ($('#planes_tarjeta').length) {
 
-        $(".usuario i, .negocio i, .detalles i, .conjunto i,.camara i, .planes i").css("color", "#01303c");
+        $(".usuario i, .negocio i, .detalles i, .conjunto i, .planes i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
-
     }
 });

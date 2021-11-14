@@ -38,7 +38,7 @@ class CreatePropiedadesTable extends Migration
             $table->string('direccion')->nullable();
             $table->string('direccion_comp')->nullable();
             $table->integer('tiempo_inm')->nullable();
-
+            $table->string('coordenada')->nullable();
             $table->unsignedBigInteger('estado')->nullable();
             $table->foreign('estado')
                 ->references('id')->on('estados_inmuebles')
@@ -50,11 +50,12 @@ class CreatePropiedadesTable extends Migration
                 ->onDelete('set null');
 
             $table->string('tuberia')->nullable();
-            $table->string('piso')->nullable();
+            $table->integer('piso')->nullable();
             $table->string('ascensor')->nullable();
             $table->float('a_construida')->nullable();
             $table->float('a_privada')->nullable();
             $table->float('a_terreno')->nullable();
+            $table->integer('a_balcon')->nullable();
 
             $table->unsignedBigInteger('mat_habitacion')->nullable();
             $table->foreign('mat_habitacion')
@@ -81,20 +82,14 @@ class CreatePropiedadesTable extends Migration
                 ->references('id')->on('niveles')
                 ->onDelete('set null');
 
-            $table->unsignedBigInteger('n_hab')->nullable();
-            $table->foreign('n_hab')
-                ->references('id')->on('num_habitaciones')
-                ->onDelete('set null');
+            $table->integer('n_hab')->nullable();            
 
             $table->unsignedBigInteger('n_banos')->nullable();
-            $table->foreign('n_banos')
-            ->references('id')->on('num_banos')
-            ->onDelete('set null');
+            $table->integer('no_garajes')->nullable();
 
-
-            $table->unsignedBigInteger('no_garajes')->nullable();
-            $table->foreign('no_garajes')
-                ->references('id')->on('no_garajes')
+            $table->unsignedBigInteger('tipo_garajes')->nullable();
+            $table->foreign('tipo_garajes')
+                ->references('id')->on('tipo_garajes')
                 ->onDelete('set null');
 
             $table->unsignedBigInteger('mb_cocina')->nullable();
@@ -198,6 +193,7 @@ class CreatePropiedadesTable extends Migration
             $table->string('certificado')->nullable();
             $table->string('habitado')->nullable();
             $table->string('piscina')->nullable();
+            $table->integer('n_ascensores')->nullable();
             $table->string('jardin_interior')->nullable();
             $table->string('chip')->nullable();
             $table->string('matricula')->nullable();

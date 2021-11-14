@@ -189,11 +189,7 @@ input {
 }
 
 #map {
-    height: 300px;
-}
-
-.my-leaflet-map-container img {
-    max-height: none;
+    height: 200px;
 }
 
 .tj3 a {
@@ -246,6 +242,10 @@ input {
 
 form span {
     color: #6c757d;
+}
+
+thead tr th {
+    border-style: unset !important;
 }
 
 table .fa-check {

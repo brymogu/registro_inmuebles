@@ -39,8 +39,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RemodeladoSeed::class);
         $this->call(EstratoSeeder::class);
         $this->call(NivelesSeeder::class);
-        $this->call(NumhabSeeder::class);
-        $this->call(NumbanosSeeder::class);
         $this->call(UsuarioSeeder::class);
     }
 }

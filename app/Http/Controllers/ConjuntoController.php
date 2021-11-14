@@ -28,7 +28,7 @@ class ConjuntoController extends Controller
 
             return view('conjunto.conjunto', compact('vigilancia', 'seguridad', 'cuota'), ['tipo' => $propiedad->horizontal, 'propiedad' => $id]);
         } else {
-            return redirect()->route('fotos.show', $id);
+            return redirect()->route('planes.show', $id);
         }
     }
 
@@ -172,7 +172,7 @@ class ConjuntoController extends Controller
 
             return view('conjunto.edit', compact('vigilancia', 'seguridad', 'cuota'), ['tipo' => $propiedad->horizontal, 'propiedad' => $propiedad]);
         } else {
-            return redirect()->route('fotos.show', $propiedad);
+            return redirect()->route('planes.show', $propiedad);
         }
     }
 
@@ -297,6 +297,6 @@ class ConjuntoController extends Controller
 
         $propiedad->save();
 
-        return redirect()->route('fotos.show', $propiedad);
+        return redirect()->route('planes.show', $propiedad);
     }
 }

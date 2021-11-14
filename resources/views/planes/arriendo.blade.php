@@ -41,10 +41,10 @@
                     <input type="number" name="valor" class="d-none" value="{!! $valor !!}" id="valor">
                 </div>
                 <div class="table-responsive table-hover border-0">
-                    <table id="table" class="table ">
+                    <table id="table" class="table text-center">
                         <thead>
-                            <tr>
-                                <th class="cara">Selecciona el plan que prefieras </th>
+                            <tr class=" shadow rounded py-5">
+                                <th class="cara">Selecciona el plan que prefieras: </th>
                                 <div class="form-check">
                                     <th>
                                         <input class="form-check-input" name="plan" type="radio" id="basico" value="1" >
@@ -62,24 +62,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="precios my-3">
-
+                            <tr class="precios">
                                 <td></td>
                                 <td>
-
-                                    <p id="estsem" class="font-weight-bold">$ 0</p>
+                                    <p id="estsem" class="font-weight-bold pt-3">$ 0</p>
                                 </td>
                                 <td>
-                                    <p id="plus" class="font-weight-bold">$ 0</p>
+                                    <p id="plus" class="font-weight-bold pt-3">$ 0</p>
                                 </td>
                                 <td>
-                                    <p id="premes" class="font-weight-bold ">$ 0</p>
+                                    <p id="premes" class="font-weight-bold pt-3">$ 0</p>
                                 </td>
-
                             </tr>
                             <tr>
-                                <td class="cara">Respaldo en arredamientos dejados de pagar por los
-                                    arrendatarios</td>
+                                <td class="cara">Respaldo en arrendamientos dejados de pagar por los arrendatarios</td>
                                 <td><i class="fa fa-check"></i></td>
                                 <td><i class="fa fa-check"></i></td>
                                 <td><i class="fa fa-check"></i></td>
@@ -108,18 +104,17 @@
                                 <td>2 Portales + Web</td>
                                 <td>3 Portales + RRSS + Web</td>
                             </tr>
-
-                            <tr>
-                                <td class="cara">Máximo de contactos calificados por mes</td>
-                                <td>10</td>
-                                <td>30</td>
-                                <td>Sin límite</td>
-                            </tr>
                             <tr>
                                 <td class="cara">Atención de visitas presenciales a interesados</td>
                                 <td>Lunes a Viernes</td>
                                 <td>Lunes a Sábado</td>
                                 <td>Toda la semana</td>
+                            </tr>
+                            <tr>
+                                <td class="cara">Máximo de visitas presenciales a interesados</td>
+                                <td>10</td>
+                                <td>30</td>
+                                <td>Sin límite</td>
                             </tr>
                             <tr>
                                 <td class="cara">Informes de gestión comercial</td>
@@ -140,8 +135,7 @@
                                 <td><i class="fa fa-check"></i></td>
                             </tr>
                             <tr>
-                                <td class="cara">Inspección y recibimiento con inventario al terminar el
-                                    arrendamiento
+                                <td class="cara">Inspección y recibimiento con inventario al terminar el arrendamiento
                                 </td>
                                 <td><i class="fa fa-minus"></i></td>
                                 <td><i class="fa fa-check"></i></td>
@@ -160,9 +154,7 @@
                                 <td><i class="fa fa-check"></i></td>
                             </tr>
                             <tr>
-                                <td class="cara">Marketing en redes sociales y bases de datos aliados
-                                    inmobiliarios
-                                </td>
+                                <td class="cara">Marketing en redes sociales y bases de datos aliados inmobiliarios</td>
                                 <td><i class="fa fa-minus"></i></td>
                                 <td><i class="fa fa-minus"></i></td>
                                 <td><i class="fa fa-check"></i></td>
@@ -199,108 +191,94 @@
         </div>
     </div>
     </div>
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Plan Básico</h5> <button type="button"
-                        class="btn-close" data-bs-dismiss="modal" onclick="limpiar_tabla()"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="accordion" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne"> <button class="accordion-button collapsed"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                    aria-expanded="true" aria-controls="flush-collapseOne"> Precios servicios en
-                                    arrendamiento </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse show"
-                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <div class="row">
-                                        <div class="col-12 text-center">
-                                            <p>Para tu inmueble con canon de <span id="valormodal">$</span><br />
-                                                <strong>(incluida cuota de administración de aplicar)</strong>
-                                            </p>
-                                        </div>
-                                        <div class="col-12 text-start">
-                                            <p>El costo del <strong id="plan"></strong> está compuesto por: </p>
-                                            <ul>
-                                                <li>Un valor mensual de <span id="val-mes"></span></li>
-                                                <li>Se hará efectivo <strong id="efectivo"></strong>, una vez sea arrendado
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-12 mate">
-                                            <div class="row my-3">
-                                                <div class="col-2"></div>
-                                                <div class="col-8 text-end">
-                                                    <div class="row">
-                                                        <div class="col">Servicios Inmobiliarios</div>
-                                                        <div class="col"><span id="serv"></span></div>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Plan Básico</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="limpiar_tabla()" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="accordion" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne"> Precios servicios en arrendamiento </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <p>Para tu inmueble con canon de <span id="valormodal">$</span><br />
+                                                    <strong>(incluida cuota de administración de aplicar)</strong>
+                                                </p>
+                                            </div>
+                                            <div class="col-12 text-start">
+                                                <p>El costo del <strong id="plan"></strong> está compuesto por: </p>
+                                                <ul>
+                                                    <li>Un valor mensual de <span id="val-mes"></span>, equivale al <strong id="porcentaje"></strong> sin incluir IVA</li>
+                                                    <li>Póliza incluida </li>
+                                                    <li>Se hará efectivo <span id="efectivo"></span>, <strong>al ser arrendado</strong> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 mate">
+                                                <div class="row my-3">
+                                                    <div class="col-2"></div>
+                                                    <div class="col-8 text-end">
+                                                        <div class="row">
+                                                            <div class="col">Servicios Inmobiliarios</div>
+                                                            <div class="col"><span id="serv"></span></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"><strong>+ </strong>Poliza</div>
+                                                            <div class="col"><span id="poliza"></span></div>
+                                                        </div>
+                                                        <hr />
+                                                        <div class="row">
+                                                            <div class="col bold"> Subtotal<sup>*</sup> </div>
+                                                            <div class="col bold"> <span id="subtotal"></span> </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"> <strong>+</strong> IVA </div>
+                                                            <div class="col"> <span id="iva"></span> </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col"> <strong>+</strong> 4 x mil </div>
+                                                            <div class="col"> <span id="cpm"></span> </div>
+                                                        </div>
+                                                        <hr />
+                                                        <div class="row">
+                                                            <div class="col bold"> Total </div>
+                                                            <div class="col bold"> <span id="total"></span> </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col"><strong>+ </strong>Poliza</div>
-                                                        <div class="col"><span id="poliza"></span></div>
-                                                    </div>
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col"> Subtotal<sup>*</sup> </div>
-                                                        <div class="col"> <span id="subtotal"></span> </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col"> <strong>+</strong> IVA </div>
-                                                        <div class="col"> <span id="iva"></span> </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col"> <strong>+</strong> 4 x mil </div>
-                                                        <div class="col"> <span id="cpm"></span> </div>
-                                                    </div>
-                                                    <hr />
-                                                    <div class="row">
-                                                        <div class="col bold"> Total </div>
-                                                        <div class="col"> <span id="total"></span> </div>
-                                                    </div>
+                                                    <div class="col-2"></div>
                                                 </div>
-                                                <div class="col-2"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingTwo"> <button class="accordion-button collapsed"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                    aria-expanded="false" aria-controls="flush-collapseTwo"> Estructura de pagos mes a mes
-                                    durante un año
-                                    de arrendamiento </button> </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="cara">Mes</th>
-                                                <th>Te cobramos</th>
-                                                <th>Tu recibes</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="basico_tabla"> </tbody>
-                                    </table>
-                                    <div class="alert alert-warning mate" role="alert"> <strong>*</strong>
-                                        <ul>
-                                            <li>De los valores mensuales que recibes se debe descontar la cuota de
-                                                administración de propiedad horizontal, si este aplicara.</li>
-                                            <li>Recuerda que este valor lo cobran edificios o conjuntos a los inmuebles en
-                                                que se encuentran con el fin de garantizar el mantenimiento y adecuado
-                                                funcionamiento de zonas comunes, este no es un valor que
-                                                le corresponda a Épica por sus servicios.</li>
-                                            <li>El valor de cuota de administración de P.H. puede cambiar de acuerdo con las
-                                                asambleas de copropiedad.</li>
-                                        </ul>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"> Estructura de pagos mes a mes durante un año
+                                        de arrendamiento </button> </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="cara">Mes</th>
+                                                    <th>Te cobramos</th>
+                                                    <th>Tu recibes</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="basico_tabla"> </tbody>
+                                        </table>
+                                        <div class="alert alert-warning mate" role="alert"> <strong>*</strong>
+                                            <ul>
+                                                <li>De los valores mensuales que recibes se debe descontar la cuota de administración de propiedad horizontal, si este aplicara.</li>
+                                                <li>Recuerda que este valor lo cobran edificios o conjuntos a los inmuebles en que se encuentran con el fin de garantizar el mantenimiento y adecuado funcionamiento de zonas comunes, este no es un valor que
+                                                    le corresponda a Épica por sus servicios.</li>
+                                                <li>El valor de cuota de administración de P.H. puede cambiar de acuerdo con las asambleas de copropiedad.</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -309,7 +287,6 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection
 
 @section('scripts_footer')
