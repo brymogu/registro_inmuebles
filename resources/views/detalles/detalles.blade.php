@@ -65,7 +65,7 @@
                             <span>(Sin incluir servicio)<span>
                         </label>
                         <div class="col-6">
-                            {!! Form::select('n_hab', $num_hab, null, ['class' => 'form-select', 'id' => 'n_hab', 'required' => 'required']) !!}
+                            <input type="number" min="1" max="100" id="n_hab" required class="form-group">
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                             <span>(Sin incluir servicio o social)<span>
                         </label>
                         <div class="col-6">
-                            {!! Form::select('no_banos', $num_banos, null, ['class' => 'form-select', 'id' => 'no_banos', 'required' => 'required']) !!}
+                            <input type="number" min="1" max="100" id="n_banos" required class="form-group">
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <div class="form-group row">
                         <label for="no_garajes" class="col-6 col-form-label">Garaje(s)</label>
                         <div class="col-6">
-                            {!! Form::select('no_garajes', $garajes, null, ['class' => 'form-select', 'id' => 'no_garajes', 'required' => 'required']) !!}
+                            <input type="number" min="0" max="100" id="no_garajes" required class="form-group">
                         </div>
                     </div>
                 </div>

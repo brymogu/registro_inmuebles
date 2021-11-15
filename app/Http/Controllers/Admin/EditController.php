@@ -24,11 +24,12 @@ class EditController extends Controller
         $codigo_pptario = $request->irForm;
         $propietario = Propietarios::find($codigo_pptario);
         $negocio = Negocios::where('propietario', $codigo_pptario)->first();
+        $negocio_unico = Negocios::where('propiedad', $request->id)->first();
         $codigo_ppdad = $negocio->propiedad;
         $propiedad = Propiedades::find($codigo_ppdad);
         $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
 
-        return view('admin.edit_form', compact('propiedad', 'propietario','tipos_documento','negocio'));
+        return view('admin.edit_form', compact('propiedad', 'propietario','tipos_documento','negocio','negocio_unico'));
 
     }
 }

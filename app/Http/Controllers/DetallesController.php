@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\No_garajes;
 use App\Models\Mats_piso_habitacion;
 use App\Models\Mats_piso_cocina;
 use App\Models\Mats_piso_bano;
@@ -18,8 +17,6 @@ use App\Models\Zonas_sociales;
 use App\Models\Materiales_fachada;
 use App\Models\Negocios;
 use App\Models\Niveles;
-use App\Models\Num_banos;
-use App\Models\Num_habitaciones;
 use App\Models\Propietarios;
 use App\Models\Propiedades as Inmueble;
 
@@ -31,9 +28,6 @@ class DetallesController extends Controller
     {
 
         $niveles = Niveles::pluck('des_nivel', 'id');
-        $num_hab = Num_habitaciones::pluck('num_habitaciones', 'id');
-        $num_banos = Num_banos::pluck('num_banos', 'id');
-        $garajes = No_garajes::pluck('desc_no_garajes', 'id');
         $mat_habitaciones = Mats_piso_habitacion::pluck('desc_mats_piso_habitaciones', 'id');
         $mat_cocina = Mats_piso_cocina::pluck('desc_mats_piso_cocina', 'id');
         $mat_bano = Mats_piso_bano::pluck('desc_mats_piso_bano', 'id');
@@ -52,10 +46,7 @@ class DetallesController extends Controller
         return view(
             'detalles.detalles',
             compact(
-                'niveles',
-                'num_hab',
-                'num_banos',
-                'garajes',
+                'niveles',              
                 'mat_habitaciones',
                 'mat_cocina',
                 'mat_bano',
@@ -229,10 +220,7 @@ class DetallesController extends Controller
     }
     public function edit(Inmueble $propiedad)
     {
-        $niveles = Niveles::pluck('des_nivel', 'id');
-        $num_hab = Num_habitaciones::pluck('num_habitaciones', 'id');
-        $num_banos = Num_banos::pluck('num_banos', 'id');
-        $garajes = No_garajes::pluck('desc_no_garajes', 'id');
+        $niveles = Niveles::pluck('des_nivel', 'id');        
         $mat_habitaciones = Mats_piso_habitacion::pluck('desc_mats_piso_habitaciones', 'id');
         $mat_cocina = Mats_piso_cocina::pluck('desc_mats_piso_cocina', 'id');
         $mat_bano = Mats_piso_bano::pluck('desc_mats_piso_bano', 'id');
@@ -250,9 +238,6 @@ class DetallesController extends Controller
             'detalles.edit',
             compact(
                 'niveles',
-                'num_hab',
-                'num_banos',
-                'garajes',
                 'mat_habitaciones',
                 'mat_cocina',
                 'mat_bano',
