@@ -40,5 +40,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EstratoSeeder::class);
         $this->call(NivelesSeeder::class);
         $this->call(UsuarioSeeder::class);
+        $this->call(CuidadesyDepartamentos::class);
     }
 }

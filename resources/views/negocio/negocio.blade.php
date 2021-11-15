@@ -14,7 +14,7 @@
         <div class="grupo">
             <div class="row">
                 <div class="col-12">
-                    <h4>Negocio</h4>
+                    <h5>Negocio</h5>
                 </div>
             </div>
             <div class="row ">
@@ -89,14 +89,13 @@
             <div class="row">
                 <div class="col-12 col-md-6 border-right">
                     <div class="form-group row">
-                        <label for="conjunto" class="col-5">El inmueble se encuentra en
-                            conjunto cerrado o edificio </label>
+                        <label for="habitado" class="col-5 col-form-label">Inmueble habitado</label>
                         <div class="col-2">
                             <a>No</a>
                         </div>
                         <div class="col-3 bool text-center">
-                            <input type="checkbox" name="conjunto" value="1" id="conjunto" />
-                            <label class="slider-v1" for="conjunto"></label>
+                            <input type="checkbox" value="1" name="habitado" id="habitado" />
+                            <label class="slider-v1" for="habitado"></label>
                         </div>
                         <div class="col-2">
                             <a>Si</a>
@@ -167,7 +166,7 @@
         <div class="grupo">
             <div class="row seccion">
                 <div class="col-12">
-                    <h4>Datos del inmueble</h4>
+                    <h5>Datos del inmueble</h5>
                 </div>
             </div>
             <div class="row">
@@ -191,62 +190,6 @@
             <div class="row">
                 <div class="col-12 col-md-6 border-right">
                     <div class="form-group row">
-                        <label for="departamento" class="col-5 col-form-label">Departamento</label>
-                        <div class="col-7">
-                            <input id="departamento" readonly name="departamento" type="text" class="form-control" value="Bogotá D.C." required="required">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
-                        <div class="col-7">
-                            <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá D.C." required="required" class="form-control">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6 border-right">
-                    <div class="form-group row">
-                        <div class="col-5">
-                            <label for="direccion" class="col-form-label">Dirección inmueble</label>
-                        </div>
-                        <div class="col-7">
-                            <input id="direccion" name="direccion" type="text" class="form-control" required="required" placeholder="Calle 25A #52B-06">
-                            <div class="text-end mt-3">
-                                <a type="button" class="btn botones" onclick="localizar()"><i class="fas fa-map-marker-alt"></i> Localizar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group row" id="detalles">
-                        <div class="col-5">
-                            <label for="direccion_comp" class="col-form-label">Detalles</label>
-                        </div>
-                        <div class="col-7">
-                            <input id="direccion_comp" name="direccion_comp" type="text" class="form-control" placeholder="Torre 7 Apto. 302">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapse" id="collapsarmapa">
-                <div class="row my-5 ">
-                    <div class=" col-1"></div>
-                    <div class="col-10 rounded-lg p-0 shadow-lg">
-                        <div class="alert alert-warning m-0 text-center" id="nolocation" style="display: none;" role="alert">
-                            <i class="far fa-grin-beam-sweat"></i> lo sentimos, no logramos ubicar tu dirección, por favor ayudanos a localizarlo
-                        </div>
-                        <div id="map"></div>
-                    </div>
-                    <div class="d-none d-md-block col-1"></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-md-6 border-right">
-                    <div class="form-group row">
                         <label for="tiempo_inm" class="col-5 col-form-label">Años de
                             contruido</label>
                         <div class="col-7">
@@ -266,13 +209,14 @@
             <div class="row">
                 <div class="col-12 col-md-6 border-right">
                     <div class="form-group row">
-                        <label for="habitado" class="col-5 col-form-label">Inmueble habitado</label>
+                        <label for="conjunto" class="col-5">El inmueble se encuentra en
+                            conjunto cerrado o edificio </label>
                         <div class="col-2">
                             <a>No</a>
                         </div>
                         <div class="col-3 bool text-center">
-                            <input type="checkbox" value="1" name="habitado" id="habitado" />
-                            <label class="slider-v1" for="habitado"></label>
+                            <input type="checkbox" name="conjunto" value="1" id="conjunto" />
+                            <label class="slider-v1" for="conjunto"></label>
                         </div>
                         <div class="col-2">
                             <a>Si</a>
@@ -347,6 +291,63 @@
                             <a>Si</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="grupo mb-3">
+            <div class="row seccion">
+                <div class="col-12">
+                    <h5>Ubicación</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
+                        <div class="col-7">
+                            {!! Form::select('ciudad', $ciudad, null, ['class' => 'form-select', 'id' => 'ciudad']) !!}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 border-right">
+                    <div class="form-group row">
+                        <div class="col-5">
+                            <label for="direccion" class="col-form-label">Dirección inmueble</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="direccion" name="direccion" type="text" class="form-control" required="required" placeholder="Calle 25A #52B-06">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row" id="detalles">
+                        <div class="col-5">
+                            <label for="direccion_comp" class="col-form-label">Detalles</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="direccion_comp" name="direccion_comp" type="text" class="form-control" placeholder="Torre 7 Apto. 302">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="text-center mt-3">
+                        <a type="button" class="btn botones" onclick="mostrarmapa()"><i class="fas fa-map-marker-alt"></i> Localizar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse" id="collapsarmapa">
+                <div class="row my-5 ">
+                    <div class=" col-1"></div>
+                    <div class="col-10 rounded-lg p-0 shadow-lg">
+                        <div class="alert alert-alert m-0 text-center" id="nolocation" role="alert">
+                            <i class="far fa-grin-beam-sweat"></i> Por favor ayudanos a localizarlo
+                        </div>
+                        <div id="map"></div>
+                    </div>
+                    <div class="d-none d-md-block col-1"></div>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Ciudades;
 use Illuminate\Http\Request;
 use App\Models\Estados_inmueble;
 use App\Models\Estratos;
@@ -29,7 +29,8 @@ class NegocioController extends Controller
         $estratos = Estratos::pluck('estrato', 'id');
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
         $remodelado = Remodelados::pluck('desc_remodelado', 'id');
-        return view('negocio.negocio', compact('tipos_documento', 'negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => 'No', 'propietario' => $propietario]);
+        $ciudad = Ciudades::pluck('desc_ciudades','id');
+        return view('negocio.negocio', compact('tipos_documento','ciudad', 'negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => 'No', 'propietario' => $propietario]);
     }
 
 
@@ -47,6 +48,7 @@ class NegocioController extends Controller
         $propiedad->pqsolicita = $request->pqsolicita;
         $propiedad->tipo_inmueble = $request->tipo_inm;
         $propiedad->estrato = $request->estrato_inm;
+        $propiedad->ciudad = $request->ciudad;
         $propiedad->direccion = $request->direccion;
         $propiedad->direccion_comp = $request->direccion_comp;
         $propiedad->tiempo_inm = $request->tiempo_inm;

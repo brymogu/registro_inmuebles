@@ -16,7 +16,7 @@ class CreateCiudadesTable extends Migration
         Schema::create('ciudades', function (Blueprint $table) {
             $table->id();
             $table->string('desc_ciudades');
-
+            $table->string('code');
             $table ->unsignedBigInteger('departamento_id')->nullable();
             $table ->foreign('departamento_id')
                 ->references('id')->on('departamentos')

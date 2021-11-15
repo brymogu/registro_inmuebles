@@ -2,18 +2,29 @@
 
 namespace Database\Seeders;
 
+use App\Models\Ciudades;
 use Illuminate\Database\Seeder;
 
 class CuidadesyDepartamentos extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        /*
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
+		$ciudad1 = new Ciudades();
+		$ciudad1->desc_ciudades = "Bogotá";
+		$ciudad1->code = "Bogota";
+		$ciudad1->save();
+
+		$ciudad1 = new Ciudades();
+		$ciudad1->desc_ciudades = "Pererira";
+		$ciudad1->code = "Pererira";
+		$ciudad1->save();
+
+		/*
 
 INSERT INTO `departamentos` (`id`, `desc_departamento`)
 VALUES
@@ -1159,5 +1170,5 @@ VALUES
 	(1100,'Útica',25);
         
         */
-    }
+	}
 }
