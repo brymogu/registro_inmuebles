@@ -18,6 +18,13 @@ $(document).ready(function() {
 
         $('#reglas').hide();
         $('#sec_tuberia').hide();
+        $('#anoconstruido').hide();
+        $('#botonmapa').hide();
+        $('#enviarnegocio').hide();
+
+
+
+
         if ($('#tipo_inm').val() == 2) {
             $('#aptos2').show();
             $('#piso').attr("required", "true");
@@ -31,10 +38,6 @@ $(document).ready(function() {
             $('#detalles').show();
         } else {
             $('#detalles').hide();
-        }
-
-        if ($('#tiempo_inm').val() == "") {
-            $('#SecRemodelado').hide();
         }
 
         $('#espropietario').change(function() {
@@ -133,7 +136,15 @@ $(document).ready(function() {
             $('#valorpesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));
         });
 
-
+        $('#estado_inb').change(function() {
+            if ($('#estado_inb').val() >= 4) {
+                $('#anoconstruido').show();
+                $('#tiempo_inm').attr("required", "true");
+            } else {
+                $('#anoconstruido').hide();
+                $('#tiempo_inm').removeAttr('required');
+            }
+        });
 
         $('#tiempo_inm').change(function() {
             if ($('#tiempo_inm').val() >= 5 && $('#tiempo_inm').val() > 0 && $('#tiempo_inm').val() != "") {
@@ -146,6 +157,10 @@ $(document).ready(function() {
             }
         });
 
+        if ($('#tiempo_inm').val() == "") {
+            $('#SecRemodelado').hide();
+        }
+
         $('#remodelado').change(function() {
             if ($('#remodelado').val() == 1) {
                 $('#sec_tuberia').show();
@@ -155,6 +170,21 @@ $(document).ready(function() {
             }
         });
 
+        $('#ciudad').change(function() {
+            if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
+                $('#botonmapa').show();
+            } else {
+                $('#botonmapa').hide();
+            }
+        });
+
+        $('#direccion').change(function() {
+            if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
+                $('#botonmapa').show();
+            } else {
+                $('#botonmapa').hide();
+            }
+        });
     } else if ($('#detalles').length) {
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");

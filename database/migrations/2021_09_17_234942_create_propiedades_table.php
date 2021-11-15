@@ -38,7 +38,8 @@ class CreatePropiedadesTable extends Migration
             $table->string('direccion')->nullable();
             $table->string('direccion_comp')->nullable();
             $table->integer('tiempo_inm')->nullable();
-            $table->string('coordenada')->nullable();
+            $table->string('longitud')->nullable();
+            $table->string('latitud')->nullable();
             $table->unsignedBigInteger('estado')->nullable();
             $table->foreign('estado')
                 ->references('id')->on('estados_inmuebles')
@@ -75,11 +76,6 @@ class CreatePropiedadesTable extends Migration
             $table->unsignedBigInteger('mat_piso_zsocial')->nullable();
             $table->foreign('mat_piso_zsocial')
                 ->references('id')->on('mats_piso_zsocials')
-                ->onDelete('set null');
-
-            $table->unsignedBigInteger('nivel')->nullable();
-            $table->foreign('nivel')
-                ->references('id')->on('niveles')
                 ->onDelete('set null');
 
             $table->integer('n_hab')->nullable();            

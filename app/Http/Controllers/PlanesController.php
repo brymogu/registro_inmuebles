@@ -26,16 +26,12 @@ class PlanesController extends Controller
         }
     }
 
-    public function store(Request $request,Propiedades $id)
+    public function store(Request $request, Propiedades $id)
     {
         $negocio = Negocios::where('propiedad', $id->id)->first();
         $negocio->plan = $request->plan;
 
-        if ($request->cpvj) {
-            $negocio->cpvj = "Si";
-        } else {
-            $negocio->cpvj = "No";
-        }
+
         $negocio->save();
 
         $codigo_pptrio = $negocio->propietario;
@@ -43,6 +39,6 @@ class PlanesController extends Controller
         $propietario->paso = "Planes";
         $propietario->save();
 
-        return view('gracias', ['cpvj' => $request->cpvj], ['tipo' => $id->horizontal]);
+        return view('gracias', ['tipo' => $id->horizontal]);
     }
 }

@@ -50,9 +50,9 @@
             </div>
             <div class="col-12 col-md-4 ">
                 <div class="form-group row">
-                    <label for="niveles" class="col-6 col-form-label">Nivel(es)</label>
+                    <label for="piso" class="col-6 col-form-label">Nivel(es)</label>
                     <div class="col-6">
-                        {!! Form::select('niveles', $niveles, null, ['class' => 'form-select', 'id' => 'niveles', 'required' => 'required']) !!}
+                        <input class="form-control" type="number" min="1" max="100" name="piso" id="piso" required>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 <div class="form-group row mb-3">
                     <label for="n_hab" class="col-6 col-form-label">Habitación(es)</label>
                     <div class="col-6">
-                        <input class="form-control" type="number" min="1" max="100" id="n_hab" required>
+                        <input class="form-control" name="n_hab" type="number" min="1" max="100" id="n_hab" required>
                     </div>
                 </div>
                 <span>(Sin incluir servicio)<span>
@@ -69,7 +69,7 @@
                 <div class="form-group row mb-3">
                     <label for="no_banos" class="col-6 col-form-label">Baño(s)</label>
                     <div class="col-6">
-                        <input class="form-control" type="number" min="1" max="100" id="n_banos" required>
+                        <input class="form-control" type="number" name="n_banos" min="1" max="100" id="n_banos" required>
                     </div>
                 </div>
                 <span>(Sin incluir servicio o social)<span>
@@ -509,50 +509,45 @@
                 </div>
             </div>
         </div>
-
-        <div class="row seccion grupo" id="sec_garajes">
-            <div class="col-12">
-                <p>Garaje(s):</p>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="form-group row">
-                    <label for="no_garajes" class="col-6 col-form-label">Cantidad de Garajes</label>
-                    <div class="col-6">
-                        <input class="form-control" type="number" min="1" max="100" id="no_garajes" required >
+        <div class="row grupo seccion" id="sec_garajes">
+            <div class="row  ">
+                <div class="col-12">
+                    <p>Garaje(s):</p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="no_garajes" class="col-6 col-form-label">Cantidad de Garajes</label>
+                        <div class="col-6">
+                            <input class="form-control" type="number" min="1" max="100" id="no_garajes" required>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="form-group row">
-                    <label for="garaje_i" class="col-5 col-form-label">Independiente(s)</label>
-                    <div class="col-2">
-                        <a>No</a>
-                    </div>
-                    <div class="col-3 bool text-center">
-                        <input type="checkbox" value="1" id="garaje_i" name="garaje_i" />
-                        <label class="slider-v1" for="garaje_i"></label>
-                    </div>
-                    <div class="col-2">
-                        <a>Si</a>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="tipo_garaje" class="col-4 col-form-label">Tipo</label>
+                        <div class="col-8">
+                            {!! Form::select('tipo_garaje', $tipo_garaje, null, ['class' => 'form-select', 'required' => 'required']) !!}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="form-group row">
-                    <label for="garaje_c" class="col-5 col-form-label">Cubierto(s)</label>
-                    <div class="col-2">
-                        <a>No</a>
-                    </div>
-                    <div class="col-3 bool text-center">
-                        <input type="checkbox" value="1" name="garaje_c" id="garaje_c" />
-                        <label class="slider-v1" for="garaje_c"></label>
-                    </div>
-                    <div class="col-2">
-                        <a>Si</a>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="garaje_c" class="col-5 col-form-label">Cubierto(s)</label>
+                        <div class="col-2">
+                            <a>No</a>
+                        </div>
+                        <div class="col-3 bool text-center">
+                            <input type="checkbox" value="1" name="garaje_c" id="garaje_c" />
+                            <label class="slider-v1" for="garaje_c"></label>
+                        </div>
+                        <div class="col-2">
+                            <a>Si</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="row tb-3">
             <div class="col-6 col-md-2 text-left">
                 <a href="{{ route('negocio.edit', $propiedad) }}" class="btn botones">Atrás</a>

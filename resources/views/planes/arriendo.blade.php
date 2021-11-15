@@ -15,26 +15,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 border-right">
-                    <div class="form-group row">
-                        <label for="cpvj" class="col-5">¿Deseas realizar el concepto de precio y viabilidad juridica
-                            por $29.900?
-                            <i class="far fa-question-circle" aria-hidden="true" data-toggle="tooltip"
-                                data-placement="right"
-                                title="Con esto podrás aumentar hasta en un 94% la probabilidad de venta o arriendo"></i>
-                        </label>
-                        <div class="col-2">
-                            <a>No</a>
-                        </div>
-                        <div class="col-3 bool text-center">
-                            <input type="checkbox" name="cpvj" value="1" id="cpvj" />
-                            <label class="slider-v1" for="cpvj"></label>
-                        </div>
-                        <div class="col-2">
-                            <a>Si</a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="row my-3">
                 <div class="col-12 ">

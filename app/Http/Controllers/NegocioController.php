@@ -29,12 +29,9 @@ class NegocioController extends Controller
         $estratos = Estratos::pluck('estrato', 'id');
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
         $remodelado = Remodelados::pluck('desc_remodelado', 'id');
-        $ciudad = Ciudades::pluck('desc_ciudades','id');
+        $ciudad = Ciudades::pluck('desc_ciudades','code');
         return view('negocio.negocio', compact('tipos_documento','ciudad', 'negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => 'No', 'propietario' => $propietario]);
     }
-
-
-
     public function store(Request $request, Propietarios $propietario)
     {
         //Actualización Propietario        
@@ -54,8 +51,9 @@ class NegocioController extends Controller
         $propiedad->tiempo_inm = $request->tiempo_inm;
         $propiedad->estado = $request->estado_inb;
         $propiedad->remodelado = $request->remodelado;
-        $propiedad->piso = $request->piso;
-
+        $propiedad->piso = $request->piso;        
+        $propiedad->longitud = $request->longitud;
+        $propiedad->latitud = $request->latitud;
         // checks
         if ($request->espropietario) {
             $propiedad->espropietario = "Si";
@@ -106,14 +104,12 @@ class NegocioController extends Controller
         $negocio_unico = Negocios::where('propiedad', $propiedad->id)->first();
         $codigo_pptrio = $negocio_unico->propietario;
         $propietario = Propietarios::find($codigo_pptrio);
-
         $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
         $negocio = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
         $inmueble = Tipos_inmueble::pluck('desc_tipo_inmueble', 'id');
         $estratos = Estratos::pluck('estrato', 'id');
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
         $remodelado = Remodelados::pluck('desc_remodelado', 'id');
-
 
         return view('negocio.edit', compact('propietario', 'propiedad', 'negocio_unico', 'tipos_documento', 'negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => $propiedad->horizontal]);
     }

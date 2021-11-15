@@ -23,8 +23,6 @@ $(document).ready(function() {
             $('#pqgrupo').show();
         }
 
-
-
         if ($('#conjunto').prop('checked')) {
             $('#detalles').show();
             $('#direccion_comp').attr("required", "true");
@@ -34,7 +32,6 @@ $(document).ready(function() {
             $('#detalles').hide();
         }
 
-
         if ($('#tipo_inm').val() == 2) {
             $('#aptos2').show();
             $('#piso').attr("required", "true");
@@ -43,8 +40,6 @@ $(document).ready(function() {
             $('#piso').removeAttr('required');
             $('#aptos2').hide();
         }
-
-
 
         if ($('#negocio').val() == 2) {
             $('#cortina').show();
@@ -64,8 +59,17 @@ $(document).ready(function() {
         var valor = $('#valor').val();
         $('#valorpesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));
 
-        if ($('#tiempo_inm').val() >= 5 && $('#tiempo_inm').val() > 0) {
 
+        if ($('#estado_inb').val() >= 4) {
+            $('#anoconstruido').show();
+            $('#tiempo_inm').attr("required", "true");
+        } else {
+            $('#anoconstruido').hide();
+            $('#tiempo_inm').removeAttr('required');
+        }
+
+
+        if ($('#tiempo_inm').val() >= 5 && $('#tiempo_inm').val() > 0) {
             $('#SecRemodelado').show();
             $('#remodelado').attr("required", "true");
         } else {

@@ -20,8 +20,8 @@ class CuidadesyDepartamentos extends Seeder
 		$ciudad1->save();
 
 		$ciudad1 = new Ciudades();
-		$ciudad1->desc_ciudades = "Pererira";
-		$ciudad1->code = "Pererira";
+		$ciudad1->desc_ciudades = "Pereira";
+		$ciudad1->code = "Pereira";
 		$ciudad1->save();
 
 		/*

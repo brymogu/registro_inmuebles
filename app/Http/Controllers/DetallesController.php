@@ -16,10 +16,9 @@ use App\Models\Vista;
 use App\Models\Zonas_sociales;
 use App\Models\Materiales_fachada;
 use App\Models\Negocios;
-use App\Models\Niveles;
 use App\Models\Propietarios;
 use App\Models\Propiedades as Inmueble;
-
+use App\Models\tipo_garajes;
 use Propiedades;
 
 class DetallesController extends Controller
@@ -27,7 +26,7 @@ class DetallesController extends Controller
     public function show($id)
     {
 
-        $niveles = Niveles::pluck('des_nivel', 'id');
+        
         $mat_habitaciones = Mats_piso_habitacion::pluck('desc_mats_piso_habitaciones', 'id');
         $mat_cocina = Mats_piso_cocina::pluck('desc_mats_piso_cocina', 'id');
         $mat_bano = Mats_piso_bano::pluck('desc_mats_piso_bano', 'id');
@@ -40,13 +39,13 @@ class DetallesController extends Controller
         $vista = Vista::pluck('desc_vista', 'id');
         $zonas = Zonas_sociales::pluck('desc_zona_social', 'id');
         $mat_fachada = Materiales_fachada::pluck('desc_mats_fachada', 'id');
+        $tipo_garaje = tipo_garajes::pluck('tipo_garajes', 'id');
 
         $Propiedad = Inmueble::find($id);
 
         return view(
             'detalles.detalles',
-            compact(
-                'niveles',              
+            compact(                
                 'mat_habitaciones',
                 'mat_cocina',
                 'mat_bano',
@@ -58,7 +57,8 @@ class DetallesController extends Controller
                 'calentador',
                 'vista',
                 'zonas',
-                'mat_fachada'
+                'mat_fachada',
+                'tipo_garaje'
             ),
             ['tipo' => $Propiedad->horizontal, 'tipo_inm' => $Propiedad->tipo_inmueble, 'propiedad' => $id]
         );
@@ -69,10 +69,8 @@ class DetallesController extends Controller
         $Propiedad->a_construida = $request->a_construida;
         $Propiedad->a_privada = $request->a_privada;
         $Propiedad->a_terreno = $request->a_terreno;
-        $Propiedad->nivel = $request->niveles;
         $Propiedad->n_hab = $request->n_hab;
         $Propiedad->n_banos = $request->no_banos;
-        $Propiedad->no_garajes = $request->no_garajes;
         $Propiedad->mat_habitacion = $request->material_hab;
         $Propiedad->mat_piso_cocina = $request->mp_cocina;
         $Propiedad->mat_piso_bano = $request->mat_piso_bano;
@@ -85,6 +83,21 @@ class DetallesController extends Controller
         $Propiedad->tipo_vista = $request->vista;
         $Propiedad->zona_social = $request->zona_social;
         $Propiedad->material_fachada = $request->material_fachada;
+        $Propiedad->piso = $request->piso;
+
+
+        if ($request->garaje) {
+            $Propiedad->tiene_garaje = "Si";
+        } else {
+            $Propiedad->tiene_garaje = "No";
+        }
+        if ($request->garaje_c) {
+            $Propiedad->garaje_c = "Si";
+        } else {
+            $Propiedad->garaje_c = "No";
+        }
+        $Propiedad->tipo_garajes = $request->tipo_garaje;
+        $Propiedad->no_garajes = $request->no_garajes;
 
         // checks
         if ($request->terraza) {
@@ -194,24 +207,10 @@ class DetallesController extends Controller
         } else {
             $Propiedad->aire_privado = "No";
         }
-
-        
         if ($request->calefaccion_p) {
             $Propiedad->calefaccion_privada = "Si";
         } else {
             $Propiedad->calefaccion_privada = "No";
-        }
-
-        if ($request->garaje_c) {
-            $Propiedad->garaje_c = "Si";
-        } else {
-            $Propiedad->garaje_c = "No";
-        }
-
-        if ($request->garaje) {
-            $Propiedad->tiene_garaje = "Si";
-        } else {
-            $Propiedad->tiene_garaje = "No";
         }
 
         $Propiedad->save();
@@ -226,7 +225,7 @@ class DetallesController extends Controller
     }
     public function edit(Inmueble $propiedad)
     {
-        $niveles = Niveles::pluck('des_nivel', 'id');        
+        
         $mat_habitaciones = Mats_piso_habitacion::pluck('desc_mats_piso_habitaciones', 'id');
         $mat_cocina = Mats_piso_cocina::pluck('desc_mats_piso_cocina', 'id');
         $mat_bano = Mats_piso_bano::pluck('desc_mats_piso_bano', 'id');
@@ -243,7 +242,6 @@ class DetallesController extends Controller
         return view(
             'detalles.edit',
             compact(
-                'niveles',
                 'mat_habitaciones',
                 'mat_cocina',
                 'mat_bano',
@@ -266,7 +264,6 @@ class DetallesController extends Controller
         $propiedad->a_construida = $request->a_construida;
         $propiedad->a_privada = $request->a_privada;
         $propiedad->a_terreno = $request->a_terreno;
-        $propiedad->nivel = $request->niveles;
         $propiedad->n_hab = $request->n_hab;
         $propiedad->n_banos = $request->no_banos;
         $propiedad->no_garajes = $request->no_garajes;
