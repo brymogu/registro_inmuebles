@@ -478,7 +478,7 @@
                     <div id="botonmapa">
                         <a type="button" class="btn botones" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i
-                                class="fas fa-map-marker-alt"></i> Localizar </a>
+                                class="fas fa-map-marker-alt"></i> Ubicar inmueble </a>
                     </div>
                     <button type="submit" class="btn botones" id="enviarnegocio">Siguiente</button>
                 </div>

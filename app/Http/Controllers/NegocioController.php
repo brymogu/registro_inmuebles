@@ -29,7 +29,7 @@ class NegocioController extends Controller
         $estratos = Estratos::pluck('estrato', 'id');
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
         $remodelado = Remodelados::pluck('desc_remodelado', 'id');
-        $ciudad = Ciudades::pluck('desc_ciudades','code');
+        $ciudad = Ciudades::pluck('desc_ciudades','id');
         return view('negocio.negocio', compact('tipos_documento','ciudad', 'negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => 'No', 'propietario' => $propietario]);
     }
     public function store(Request $request, Propietarios $propietario)

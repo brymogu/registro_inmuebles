@@ -5,9 +5,12 @@ function mostrarmapa() {
 
     function localizar() {
         direccion = $('#direccion').val();
-        ciudad = $('#ciudad').val();
+
         direccion = direccion.replace(/ /g, '+');
         direccion = direccion.replace('#', '%23');
+
+        ciudad = $('#ciudad').text();
+        ciudad = ciudad.normalize();
         var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccion + "|locality:" + ciudad + "|country:CO,+CO&key=AIzaSyDoeTIRXgizNo-4sAMEORiO5Jtblf_0t0k";
         console.log(url);
 
@@ -38,10 +41,16 @@ function mostrarmapa() {
             document.getElementById('longitud').value = long;
         });
     }
+
+    function matarmapa() {
+        mymap.off();
+        mymap.remove();
+    }
 }
 
 var myOffcanvas = document.getElementById('offcanvasBottom')
 myOffcanvas.addEventListener('hidden.bs.offcanvas', function() {
     $('#botonmapa').hide();
     $('#enviarnegocio').show();
+    matarmapa();
 })
