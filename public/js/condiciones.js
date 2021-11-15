@@ -61,16 +61,41 @@ $(document).ready(function() {
             }
         });
 
-
         $('#reglamento').change(function() {
-            $('#motivo').html("el reglamento de propiedad horizontal");
+            $('#motivo').html("si no cuenta con el reglamento de propiedad horizontal");
             myModal.show()
         });
 
         $('#serv_independ').change(function() {
-            $('#motivo').html("servicios públicos independientes");
+            $('#motivo').html("si no cuenta con servicios públicos independientes");
             myModal.show()
         });
+
+        $('#vacacional').change(function() {
+            $('#motivo').html("con fines vacacionales");
+            myModal.show()
+        });
+
+        $('#amoblado').change(function() {
+            $('#motivo').html("si está amoblado");
+            myModal.show()
+        });
+
+        $('#menosano').change(function() {
+            $('#motivo').html("por periodos inferiores a un año");
+            myModal.show()
+        });
+
+        $('#urbano').change(function() {
+            $('#motivo').html("si pertenece a una zona rural");
+            myModal.show()
+        });
+
+        $('#embargo').change(function() {
+            $('#motivo').html("si se encuentra embargado");
+            myModal.show()
+        });
+
 
         $('#tipo_inm').change(function() {
             if ($('#tipo_inm').val() == 2) {

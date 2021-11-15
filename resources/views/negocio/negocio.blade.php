@@ -118,36 +118,121 @@
                     </div>
                 </div>
             </div>
-            <div class="row" id="reglas">
-                <div class="col-12 col-md-6 border-right">
-                    <div class="form-group row">
-                        <label for="reglamento" class="col-5">¿Tiene reglamento de propiedad
-                            horizontal?</label>
-                        <div class="col-2">
-                            <a>No</a>
+            <div id="reglasgral">
+                <div class="row">
+                    <div class="col-12 col-md-6 border-right">
+                        <div class="form-group row">
+                            <label for="urbano" class="col-5">Inmueble urbano</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="urbano" value="1" id="urbano" checked/>
+                                <label class="slider-v1" for="urbano"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
                         </div>
-                        <div class="col-3 bool text-center">
-                            <input type="checkbox" name="reglamento" value="1" id="reglamento" checked />
-                            <label class="slider-v1" for="reglamento"></label>
-                        </div>
-                        <div class="col-2">
-                            <a>Si</a>
+                    </div>
+                    <div class="col-12 col-md-6 border-right">
+                        <div class="form-group row">
+                            <label for="embargo" class="col-5">Inmueble con embargo</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="embargo" value="1" id="embargo" />
+                                <label class="slider-v1" for="embargo"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <label for="serv_independ" class="col-5 col-form-label">¿Tiene servicios públicos
-                            independientes?</label>
-                        <div class="col-2">
-                            <a>No</a>
+            </div>
+            <div id="reglas">
+                <div class="row">
+                    <div class="col-12 col-md-6 border-right">
+                        <div class="form-group row">
+                            <label for="reglamento" class="col-5">¿Tiene reglamento de propiedad
+                                horizontal?</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="reglamento" value="1" id="reglamento" checked />
+                                <label class="slider-v1" for="reglamento"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
                         </div>
-                        <div class="col-3 bool text-center">
-                            <input type="checkbox" name="serv_independ" value="1" id="serv_independ" checked />
-                            <label class="slider-v1" for="serv_independ"></label>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row">
+                            <label for="serv_independ" class="col-5 col-form-label">¿Tiene servicios públicos
+                                independientes?</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="serv_independ" value="1" id="serv_independ" checked />
+                                <label class="slider-v1" for="serv_independ"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
                         </div>
-                        <div class="col-2">
-                            <a>Si</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 border-right">
+                        <div class="form-group row">
+                            <label for="vacacional" class="col-5">Inmueble vacacional</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="vacacional" value="1" id="vacacional" />
+                                <label class="slider-v1" for="vacacional"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 border-right">
+                        <div class="form-group row">
+                            <label for="amoblado" class="col-5">Inmueble amoblado</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="amoblado" value="1" id="amoblado" />
+                                <label class="slider-v1" for="amoblado"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 border-right">
+                        <div class="form-group row">
+                            <label for="menosano" class="col-5">Arriendo por menos de 1 año</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="menosano" value="1" id="menosano" />
+                                <label class="slider-v1" for="menosano"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -342,8 +427,8 @@
                 <div class="row my-5 ">
                     <div class=" col-1"></div>
                     <div class="col-10 rounded-lg p-0 shadow-lg">
-                        <div class="alert alert-alert m-0 text-center" id="nolocation" role="alert">
-                            <i class="far fa-grin-beam-sweat"></i> Por favor ayudanos a localizarlo
+                        <div class="alert alert-success m-0 text-center" id="nolocation" role="alert">
+                            <i class="far fa-smile-wink"></i> Por favor ayudanos a localizar tu inmueble
                         </div>
                         <div id="map"></div>
                     </div>
@@ -371,7 +456,7 @@
                 <div class="sentimos text-center py-3">
                     <img src="{!! asset('img/wesorry.png') !!}" class="img-fluid" alt="Lo sentimos">
                 </div>
-                Lo sentimos, no nos es posible comercializar y administrar el inmueble si no cuenta con <span id="motivo"><span>
+                Lo sentimos, no nos es posible comercializar y administrar el inmueble <span id="motivo"><span>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn botones" onclick="noposibles()" data-bs-dismiss="modal">Volver</button>

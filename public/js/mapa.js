@@ -13,7 +13,7 @@ function mostrarmapa() {
         direccion = $('#direccion').val();
         direccion = direccion.replace(/ /g, '+');
         direccion = direccion.replace('#', '%23');
-        var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccion + "|locality:bog|country:CO,+CO&key=AIzaSyDoeTIRXgizNo-4sAMEORiO5Jtblf_0t0k";
+        var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccion + "|locality:bogota|country:CO,+CO&key=AIzaSyDoeTIRXgizNo-4sAMEORiO5Jtblf_0t0k";
         console.log(url);
 
         $.getJSON(url, function(data) {
