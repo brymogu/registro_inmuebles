@@ -48,8 +48,7 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group row" id="valorgrupo">
                             <label for="valor" id="valorlabel" class="col-5 col-form-label">¿Valor tentativo que le vas a
-                                asignar
-                                al inmueble?</label>
+                                asignar al inmueble?</label>
                             <div class="col-7">
                                 <input id="valor" name="valor" type="number" value="{{ $negocio_unico->valor }}"
                                     class="form-control" min="99000" required="required">
