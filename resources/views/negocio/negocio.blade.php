@@ -426,7 +426,7 @@
             <div class="collapse" id="collapsarmapa">
                 <div class="row my-5 ">
                     <div class=" col-1"></div>
-                    <div class="col-10 rounded-lg p-0 shadow-lg">
+                    <div class="col-10 rounded-lg p-0 shadow">
                         <div class="alert alert-success m-0 text-center" id="nolocation" role="alert">
                             <i class="far fa-smile-wink"></i> Por favor ayudanos a localizar tu inmueble
                         </div>

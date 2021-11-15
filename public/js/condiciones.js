@@ -160,9 +160,9 @@ $(document).ready(function() {
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
         $('#sec_garajes').hide();
 
-        $('#no_garajes').change(function() {
+        $('#garaje').change(function() {
             console.log("cambió");
-            if ($('#no_garajes').val() > 2) {
+            if ($('#garaje').prop('checked')) {
                 $('#sec_garajes').show();
             } else {
                 $('#sec_garajes').hide();

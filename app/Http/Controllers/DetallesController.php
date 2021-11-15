@@ -208,6 +208,12 @@ class DetallesController extends Controller
             $Propiedad->garaje_c = "No";
         }
 
+        if ($request->garaje) {
+            $Propiedad->tiene_garaje = "Si";
+        } else {
+            $Propiedad->tiene_garaje = "No";
+        }
+
         $Propiedad->save();
 
         $negocio_unico = Negocios::where('propiedad', $Propiedad->id)->first();
