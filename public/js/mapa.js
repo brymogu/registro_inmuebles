@@ -24,12 +24,10 @@ function mostrarmapa() {
 }
 
 function pintarmapa(coordenadas, zoom) {
-
     var marker = new L.marker(coordenadas, {
         draggable: true,
         autoPan: true,
     }).addTo(mymap);
-
     mymap.flyTo(coordenadas, zoom);
     document.getElementById('latitud').value = marker.getLatLng().lat;
     document.getElementById('longitud').value = marker.getLatLng().lng;
@@ -40,12 +38,12 @@ function pintarmapa(coordenadas, zoom) {
         document.getElementById('latitud').value = lat;
         document.getElementById('longitud').value = long;
     });
+
+    var myOffcanvas = document.getElementById('offcanvasBottom')
+    myOffcanvas.addEventListener('hidden.bs.offcanvas', function() {
+        $('#botonmapa').hide();
+        $('#enviarnegocio').show();
+        mymap.removeLayer(marker);
+    })
+
 }
-
-
-var myOffcanvas = document.getElementById('offcanvasBottom')
-myOffcanvas.addEventListener('hidden.bs.offcanvas', function() {
-    $('#botonmapa').hide();
-    $('#enviarnegocio').show();
-
-})

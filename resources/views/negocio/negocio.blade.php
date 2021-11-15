@@ -401,7 +401,7 @@
                         <div class="form-group row">
                             <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
                             <div class="col-7">
-                                {!! Form::select('ciudad', $ciudad, null, ['class' => 'form-select', 'id' => 'ciudad']) !!}
+                                {!! Form::select('ciudad', $ciudad, 1, ['class' => 'form-select', 'id' => 'ciudad']) !!}
                             </div>
                         </div>
                     </div>
@@ -412,7 +412,7 @@
                             </div>
                             <div class="col-7">
                                 <input id="direccion" name="direccion" type="text" class="form-control"
-                                    required="required" placeholder="Calle 25A #52B-06">
+                                    required="required" placeholder="Ejemplo: Calle 25A #52B-06">
 
                             </div>
                         </div>
@@ -434,19 +434,7 @@
 
                     </div>
                 </div>
-                <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
-                    aria-labelledby="offcanvasBottomLabel">
-                    <div class="offcanvas-header">
-                        <p class="offcanvas-title text-center" id="offcanvasBottomLabel"><i class="far fa-smile-wink"></i> Por favor
-                            ayudanos a localizar tu inmueble</p>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <div id="map"></div>
-                    </div>
-                </div>
-                <div class="row">
+                <div class="row d-none">
                     <div class="col-12 col-md-6">
                         <div class="form-group row" id="detalles">
                             <div class="col-5">
@@ -504,6 +492,17 @@
                     <a href="https://epicainmobiliaria.com" type="button" class="btn btn-secondary">Finalizar</a>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-bottom rounded" tabindex="-1" id="offcanvasBottom"
+        aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+            <p class="offcanvas-title text-center" id="offcanvasBottomLabel"><i class="far fa-smile-wink"></i> Por favor
+                ayudanos a localizar tu inmueble</p>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body grupo">
+            <div id="map"></div>
         </div>
     </div>
 @endsection

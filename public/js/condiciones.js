@@ -22,9 +22,6 @@ $(document).ready(function() {
         $('#botonmapa').hide();
         $('#enviarnegocio').hide();
 
-
-
-
         if ($('#tipo_inm').val() == 2) {
             $('#aptos2').show();
             $('#piso').attr("required", "true");
@@ -173,6 +170,7 @@ $(document).ready(function() {
         $('#ciudad').change(function() {
             if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
                 $('#botonmapa').show();
+                $('#enviarnegocio').hide();
             } else {
                 $('#botonmapa').hide();
             }
@@ -181,6 +179,7 @@ $(document).ready(function() {
         $('#direccion').change(function() {
             if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
                 $('#botonmapa').show();
+                $('#enviarnegocio').hide();
             } else {
                 $('#botonmapa').hide();
             }
