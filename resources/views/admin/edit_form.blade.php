@@ -154,6 +154,78 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="form-group row">
+                        <label for="habitado" class="col-5 col-form-label">Inmueble habitado</label>
+                        <div class="col-7">
+                            <select id="habitado" class="form-select" name="habitado" required="required">
+                                @if ($propiedad->habitado == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="arrendado" class="col-5">¿Arrendado actualmente?</label>
+                        <div class="col-7">
+                            <select id="arrendado" class="form-select" name="arrendado" required="required">
+                                @if ($propiedad->arrendado == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="urbano" class="col-5 col-form-label">Inmueble urbano</label>
+                        <div class="col-7">
+                            <select id="urbano" class="form-select" name="urbano" required="required">
+                                @if ($propiedad->urbano == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+               </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="embargo" class="col-5">Inmueble con embargo</label>
+                        <div class="col-7">
+                            <select id="embargo" class="form-select" name="embargo" required="required">
+                                @if ($propiedad->embargo == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
                         <label for="conjunto" class="col-5">El inmueble se encuentra en
                             conjunto cerrado o edificio </label>
                         <div class="col-7">
