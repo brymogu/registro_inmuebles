@@ -8,6 +8,7 @@ use App\Models\Estratos;
 use App\Models\Negocios;
 use App\Models\Propiedades;
 use App\Models\Propietarios;
+use App\Models\Remodelados;
 use App\Models\Tipos_documento;
 use App\Models\Tipos_inmueble;
 use App\Models\Tipos_negocios;
@@ -35,8 +36,9 @@ class EditController extends Controller
         $inmueble = Tipos_inmueble::pluck('desc_tipo_inmueble', 'id');
         $estratos = Estratos::pluck('estrato', 'id');
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
+        $remodelado = Remodelados::pluck('desc_remodelado', 'id');
         
-        return view('admin.edit_form', compact('propiedad', 'propietario','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado'));
+        return view('admin.edit_form', compact('propiedad', 'propietario','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado'));
 
     }
 }

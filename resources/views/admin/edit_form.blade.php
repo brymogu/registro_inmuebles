@@ -203,7 +203,7 @@
                             </select>
                         </div>
                     </div>
-               </div>
+                </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group row">
                         <label for="embargo" class="col-5">Inmueble con embargo</label>
@@ -226,6 +226,71 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="form-group row">
+                        <label for="asesor" class="col-5 col-form-label">Nombre del Asesor</label>
+                        <div class="col-7">
+                            <input id="asesor" name="asesor" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--        <div class="card p-3 mt-3 shadow-sm border-0">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
+                        <div class="col-7">
+                            <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá D.C." required="required"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+                            <div class="col-12 col-md-6 border-right">
+                    <div class="form-group row">
+                        <label for="departamento" class="col-5 col-form-label">Departamento</label>
+                        <div class="col-7">
+                            <input id="departamento" readonly name="departamento" type="text" class="form-control"
+                                value="Bogotá D.C." required="required">
+                        </div>
+                    </div>
+                </div>
+                            
+                
+                        </div>
+                    </div> -->
+        <p class="fw-bold my-3">Datos del inmueble</p>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="tipo_inm" class="col-5 col-form-label">Tipo de inmueble</label>
+                        <div class="col-7">
+                            {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="estado_inb" class="col-5 col-form-label">Estado del inmueble</label>
+                        <div class="col-7">
+                            {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'required' => 'required']) !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
+                        <div class="col-7">
+                            {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
                         <label for="conjunto" class="col-5">El inmueble se encuentra en
                             conjunto cerrado o edificio </label>
                         <div class="col-7">
@@ -241,12 +306,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-6 border-right">
                     <div class="form-group row">
-                        <label for="arrendado" class="col-5">¿Se encuentra arrendado actualmente?</label>
+                        <label for="tiempo_inm" class="col-5 col-form-label">Años de
+                            contruido</label>
                         <div class="col-7">
-                            <select id="arrendado" class="form-select" name="arrendado" required="required">
-                                @if ($propiedad->arrendado == 'Si')
+                            <input id="tiempo_inm" name="tiempo_inm" type="number" value="{{ $propiedad->tiempo_inm }}"
+                                min="0" class="form-control" max="80" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 border-right">
+                    <div class="form-group row" id="SecRemodelado">
+                        <label for="remodelado" class="col-5 col-form-label">Remodelado hace menos de 5
+                            años</label>
+                        <div class="col-7">
+                            {!! Form::select('remodelado', $remodelado, null, ['class' => 'form-select', 'id' => 'remodelado']) !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row" id="sec_tuberia">
+                        <label for="tuberia" class="col-5 col-form-label">Incluyó cambio de toda la
+                            tubería</label>
+                        <div class="col-7">
+                            <select id="tuberia" class="form-select" name="tuberia" required="required">
+                                @if ($propiedad->tuberia == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else
@@ -254,49 +347,6 @@
                                     <option selected value="No">No</option>
                                 @endif
                             </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p class="fw-bold my-3">Datos del inmueble</p>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <label for="tipo_inm" class="col-5 col-form-label">Tipo de inmueble</label>
-                        <div class="col-7">
-                            {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
-                        <div class="col-7">
-                            {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-6 border-right">
-                    <div class="form-group row">
-                        <label for="departamento" class="col-5 col-form-label">Departamento</label>
-                        <div class="col-7">
-                            <input id="departamento" readonly name="departamento" type="text" class="form-control"
-                                value="Bogotá D.C." required="required">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
-                        <div class="col-7">
-                            <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá D.C." required="required"
-                                class="form-control">
                         </div>
                     </div>
                 </div>
@@ -328,28 +378,7 @@
                 </div>
             </div>
         </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-6 border-right">
-                    <div class="form-group row">
-                        <label for="tiempo_inm" class="col-5 col-form-label">Años de
-                            contruido</label>
-                        <div class="col-7">
-                            <input id="tiempo_inm" name="tiempo_inm" type="number" value="{{ $propiedad->tiempo_inm }}"
-                                min="0" class="form-control" max="80" required="required">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <label for="estado_inb" class="col-5 col-form-label">Estado del inmueble</label>
-                        <div class="col-7">
-                            {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'required' => 'required']) !!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
                 <div class="col-12 col-md-6 border-right">
