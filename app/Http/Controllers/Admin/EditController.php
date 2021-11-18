@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ciudades;
 use App\Models\Estados_inmueble;
 use App\Models\Estratos;
 use App\Models\Negocios;
@@ -37,8 +38,9 @@ class EditController extends Controller
         $estratos = Estratos::pluck('estrato', 'id');
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
         $remodelado = Remodelados::pluck('desc_remodelado', 'id');
+        $ciudad = Ciudades::pluck('desc_ciudades','id');
         
-        return view('admin.edit_form', compact('propiedad', 'propietario','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado'));
+        return view('admin.edit_form', compact('propiedad', 'propietario','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado','ciudad'));
 
     }
 }

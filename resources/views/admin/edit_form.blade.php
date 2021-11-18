@@ -234,30 +234,6 @@
                 </div>
             </div>
         </div>
-        <!--        <div class="card p-3 mt-3 shadow-sm border-0">
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
-                        <div class="col-7">
-                            <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá D.C." required="required"
-                                class="form-control">
-                        </div>
-                    </div>
-                </div>
-                            <div class="col-12 col-md-6 border-right">
-                    <div class="form-group row">
-                        <label for="departamento" class="col-5 col-form-label">Departamento</label>
-                        <div class="col-7">
-                            <input id="departamento" readonly name="departamento" type="text" class="form-control"
-                                value="Bogotá D.C." required="required">
-                        </div>
-                    </div>
-                </div>
-                            
-                
-                        </div>
-                    </div> -->
         <p class="fw-bold my-3">Datos del inmueble</p>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
@@ -353,7 +329,45 @@
             </div>
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row" id="aptos2">
+                <div class="col-12 col-md-6 border-right">
+                    <div class="form-group row">
+                        <label for="piso" class="col-5 col-form-label">Piso en el que está el
+                            inmueble</label>
+                        <div class="col-7">
+                            <input id="piso" name="piso" type="number" min="1" max="30" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="ascensor" class="col-5 col-form-label">Ascensor</label>
+                        <div class="col-7">
+                            <select id="ascensor" class="form-select" name="ascensor" required="required">
+                                @if ($propiedad->ascensor == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="fw-bold my-3">Ubicación</p>
+        <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row">
+                        <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
+                        <div class="col-7">
+                            {!! Form::select('ciudad', $ciudad, 1, ['class' => 'form-select', 'id' => 'ciudad']) !!}
+                        </div>
+                    </div>
+                </div>
                 <div class="col-12 col-md-6 border-right">
                     <div class="form-group row">
                         <div class="col-5">
@@ -365,43 +379,111 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="form-group row" id="detalles">
                         <div class="col-5">
                             <label for="direccion_comp" class="col-form-label">Detalles</label>
                         </div>
                         <div class="col-7">
-                            <input id="direccion_comp" name="direccion_comp" value="{{ $propiedad->direccion_comp }}"
-                                type="text" class="form-control" placeholder="Torre 7 Apto. 302">
+                            <input id="direccion_comp" name="direccion_comp" type="text" class="form-control"
+                                value="{{ $propiedad->direccion_comp }}" placeholder="Torre 7 Apto. 302">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
-                <div class="col-12 col-md-6 border-right">
-                    <div class="form-group row">
-                        <label for="habitado" class="col-5 col-form-label">Inmueble habitado</label>
+                <div class="col-12 col-md-6">
+                    <div class="form-group row" id="detalles">
+                        <div class="col-5">
+                            <label for="longitud" class="col-form-label">Longitud</label>
+                        </div>
                         <div class="col-7">
-                            <select id="habitado" class="form-select" name="habitado" required="required">
-                                @if ($propiedad->habitado == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+                            <input id="longitud" name="longitud" type="text" class="form-control"
+                                value="{{ $propiedad->longitud }}">
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <label for="estado_inb" class="col-5 col-form-label">Estado del inmueble</label>
+                    <div class="form-group row" id="detalles">
+                        <div class="col-5">
+                            <label for="latitud" class="col-form-label">Latitud</label>
+                        </div>
                         <div class="col-7">
-                            {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'required' => 'required']) !!}
+                            <input id="latitud" name="latitud" type="text" class="form-control"
+                                value="{{ $propiedad->latitud }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h5 class="fw-bold my-3">Más detalles del inmueble</h5>
+        <p class="fw-bold my-3">Área (m<sup>2</sup>)</p>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="a_construida" class="col-5 col-form-label">Construida</label>
+                        <div class="col-7">
+                            <input id="a_construida" name="a_construida" type="number" step="0.1" min="11"
+                                class="form-control" value="{{ $propiedad->a_construida }}" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="a_privada" class="col-5 col-form-label">Privada</label>
+                        <div class="col-7">
+                            <input id="a_privada" name="a_privada" type="number" min="11" step="0.1"
+                                value="{{ $propiedad->a_privada }}" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    @if ($propiedad->tipo_inmueble == 1)
+                        <div class="form-group row" id="s3_terreno">
+                            <label for="a_terreno" class="col-5 col-form-label">De terreno</label>
+                            <div class="col-7">
+                                <input id="a_terreno" name="a_terreno" type="number" min="11" step="0.1"
+                                  value="{{$propiedad->a_terreno}}"  class="form-control" required>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+        <p class="fw-bold my-3">Cantidad de:</p>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="piso" class="col-6 col-form-label">Nivel(es)</label>
+                        <div class="col-6">
+                            <input class="form-control" type="number" min="1" max="100" name="piso" id="piso"
+                            value="{{$propiedad->piso}}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <div class="form-group row mb-3">
+                        <label for="n_hab" class="col-6 col-form-label">Habitación(es)</label>
+                        <div class="col-6">
+                            <input class="form-control" name="n_hab" type="number" min="1" max="100" id="n_hab"
+                            value="{{$propiedad->n_hab}}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <div class="form-group row mb-3">
+                        <label for="no_banos" class="col-6 col-form-label">Baño(s)</label>
+                        <div class="col-6">
+                            <input class="form-control" type="number" name="n_banos" min="1" max="100" id="n_banos" 
+                            value="{{$propiedad->n_banos}}" required>
                         </div>
                     </div>
                 </div>
