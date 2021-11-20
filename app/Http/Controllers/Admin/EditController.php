@@ -20,11 +20,14 @@ use App\Models\Propietarios;
 use App\Models\Remodelados;
 use App\Models\tipo_garajes;
 use App\Models\Tipos_cocina;
+use App\Models\Tipos_cuotas;
 use App\Models\Tipos_documento;
 use App\Models\Tipos_estufa;
 use App\Models\Tipos_horno;
 use App\Models\Tipos_inmueble;
 use App\Models\Tipos_negocios;
+use App\Models\Tipos_seguridad;
+use App\Models\Tipos_vigilancia;
 use App\Models\Vista;
 use App\Models\Zonas_sociales;
 use Illuminate\Http\Request;
@@ -35,7 +38,7 @@ class EditController extends Controller
     public function edit_table()
     {
         
-        $propietarios = Propietarios::all();
+        $propietarios = Propietarios::where('paso' , 'Planes')->get();
         $todos_documentos = Tipos_documento::all();
         //return view('admin.edit')->with('propietarios',$propietarios)->with('tipo_doc',Tipos_documento::all());
         return view('admin.edit', compact('propietarios','todos_documentos'));
@@ -68,9 +71,13 @@ class EditController extends Controller
         $mat_fachada = Materiales_fachada::pluck('desc_mats_fachada', 'id');
         $tipo_garaje = tipo_garajes::pluck('tipo_garajes', 'id');
         $niveles = Niveles::pluck('des_nivel', 'id');
+        $vigilancia = Tipos_vigilancia::pluck('desc_tipo_vigilancia', 'id');
+        $seguridad = Tipos_seguridad::pluck('desc_tipo_seguridad', 'id');
+        $cuota = Tipos_cuotas::pluck('desc_tipo_cuota', 'id');
         
         return view('admin.edit_form', compact('propiedad', 'propietario','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado',
-        'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'));
+        'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'
+        ,'vigilancia','seguridad','cuota'));
 
     }
 }
