@@ -73,7 +73,7 @@ class DetallesController extends Controller
         $Propiedad->a_terreno = $request->a_terreno;
         $Propiedad->nivel = $request->niveles;
         $Propiedad->n_hab = $request->n_hab;
-        $Propiedad->n_banos = $request->no_banos;
+        $Propiedad->n_banos = $request->n_banos;
         $Propiedad->mat_habitacion = $request->material_hab;
         $Propiedad->mat_piso_cocina = $request->mp_cocina;
         $Propiedad->mat_piso_bano = $request->mat_piso_bano;
@@ -241,6 +241,7 @@ class DetallesController extends Controller
         $vista = Vista::pluck('desc_vista', 'id');
         $zonas = Zonas_sociales::pluck('desc_zona_social', 'id');
         $mat_fachada = Materiales_fachada::pluck('desc_mats_fachada', 'id');
+        $tipo_garaje = tipo_garajes::pluck('tipo_garajes', 'id');
 
         return view(
             'detalles.edit',
@@ -257,7 +258,8 @@ class DetallesController extends Controller
                 'calentador',
                 'vista',
                 'zonas',
-                'mat_fachada'
+                'mat_fachada',
+                'tipo_garaje'
             ),
             ['tipo' => $propiedad->horizontal, 'tipo_inm' => $propiedad->tipo_inmueble, 'propiedad' => $propiedad]
         );
@@ -270,8 +272,7 @@ class DetallesController extends Controller
         $propiedad->a_terreno = $request->a_terreno;
         $propiedad->nivel = $request->niveles;
         $propiedad->n_hab = $request->n_hab;
-        $propiedad->n_banos = $request->no_banos;
-        $propiedad->no_garajes = $request->no_garajes;
+        $propiedad->n_banos = $request->n_banos;
         $propiedad->mat_habitacion = $request->material_hab;
         $propiedad->mat_piso_cocina = $request->mp_cocina;
         $propiedad->mat_piso_bano = $request->mat_piso_bano;
@@ -284,8 +285,17 @@ class DetallesController extends Controller
         $propiedad->tipo_vista = $request->vista;
         $propiedad->zona_social = $request->zona_social;
         $propiedad->material_fachada = $request->material_fachada;
+        $propiedad->tipo_garajes = $request->tipo_garaje;
 
         // checks
+
+        if ($request->garaje) {
+            $propiedad->tiene_garaje = "Si";
+        } else {
+            $propiedad->tiene_garaje = "No";
+        }
+
+
         if ($request->terraza) {
             $propiedad->terraza = "Si";
         } else {
@@ -422,7 +432,9 @@ class DetallesController extends Controller
             $propiedad->garaje_c = "Si";
         } else {
             $propiedad->garaje_c = "No";
-        }
+        }        
+        
+        $propiedad->no_garajes = $request->n_garajes;
 
         $propiedad->save();
         return redirect()->route('conjunto.show', $propiedad);

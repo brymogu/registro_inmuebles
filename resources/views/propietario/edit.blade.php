@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6 border-end">
                         <div class="form-group row">
                             <label for="text" class="col-5 col-form-label">Apellidos</label>
                             <div class="col-7">
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6 border-end">
                         <div class="form-group row">
                             <label for="email" class="col-5 col-form-label">E-mail</label>
                             <div class="col-7">

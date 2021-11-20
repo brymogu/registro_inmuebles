@@ -85,14 +85,26 @@ $(document).ready(function() {
             $('#tuberia').prop("checked", false);
         }
 
+        if ($('#remodelado').val() == 1) {
+            $('#sec_tuberia').show();
+        } else {
+            $('#sec_tuberia').hide();
+            $('#tuberia').prop("checked", false);
+        }
 
     } else if ($('#detalles').length) {
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
-        if ($('#no_garajes').val() > 2) {
+
+
+        if ($('#garaje').prop('checked')) {
             $('#sec_garajes').show();
+            $('#n_garajes').attr("required", "true");
+            $('#tipo_garaje').attr("required", "true");
         } else {
             $('#sec_garajes').hide();
+            $('#n_garajes').removeAttr('required');
+            $('#tipo_garaje').removeAttr('required');
         }
 
     } else if ($('#conjunto_tarjeta').length) {

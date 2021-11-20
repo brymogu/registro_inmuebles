@@ -22,8 +22,8 @@
                     </div>
                 </div>
                 <div class="row ">
-                    <div class="col-12 col-md-6 border-right">
-                        <div class="form-group row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row border-end">
                             <label for="id" class="col-5 col-form-label">Tipo DI</label>
                             <div class="col-7">
                                 {!! Form::select('id', $tipos_documento, null, ['class' => 'form-select', 'required' => 'required']) !!}
@@ -42,7 +42,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-group row">
+                        <div class="form-group row border-end">
                             <label for="tipo" class="col-5">Escoge el negocio a realizar con este
                                 inmueble</label>
                             <div class="col-7">
@@ -66,8 +66,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 border-right">
-                        <div class="form-group row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row border-end">
                             <label for="espropietario" class="col-5">Soy el propietario del
                                 inmueble</label>
                             <div class="col-2">
@@ -94,8 +94,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 border-right">
-                        <div class="form-group row">
+                    <div class="col-12 col-md-6 ">
+                        <div class="form-group row border-end">
                             <label for="habitado" class="col-5 col-form-label">Inmueble habitado</label>
                             <div class="col-2">
                                 <a>No</a>
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6 ">
                         <div class="form-group row">
                             <label for="arrendado" class="col-5">¿Se encuentra arrendado actualmente?</label>
                             <div class="col-2">
@@ -127,8 +127,8 @@
                 </div>
                 <div id="reglasgral">
                     <div class="row">
-                        <div class="col-12 col-md-6 border-right">
-                            <div class="form-group row">
+                        <div class="col-12 col-md-6 ">
+                            <div class="form-group row border-end">
                                 <label for="urbano" class="col-5">Inmueble urbano</label>
                                 <div class="col-2">
                                     <a>No</a>
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 border-right">
+                        <div class="col-12 col-md-6">
                             <div class="form-group row">
                                 <label for="embargo" class="col-5">Inmueble con embargo</label>
                                 <div class="col-2">
@@ -161,8 +161,8 @@
                 </div>
                 <div id="reglas">
                     <div class="row">
-                        <div class="col-12 col-md-6 border-right">
-                            <div class="form-group row">
+                        <div class="col-12 col-md-6 ">
+                            <div class="form-group row border-end">
                                 <label for="reglamento" class="col-5">¿Tiene reglamento de propiedad
                                     horizontal?</label>
                                 <div class="col-2">
@@ -195,7 +195,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6 border-right">
+                        <div class="col-12 col-md-6 border-end">
                             <div class="form-group row">
                                 <label for="vacacional" class="col-5">Inmueble vacacional</label>
                                 <div class="col-2">
@@ -210,7 +210,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 border-right">
+                        <div class="col-12 col-md-6">
                             <div class="form-group row">
                                 <label for="amoblado" class="col-5">Inmueble amoblado</label>
                                 <div class="col-2">
@@ -227,8 +227,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6 border-right">
-                            <div class="form-group row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group row border-end">
                                 <label for="menosano" class="col-5">Arriendo por menos de 1 año</label>
                                 <div class="col-2">
                                     <a>No</a>
@@ -246,7 +246,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-group row">
+                        <div class="form-group row border-end">
                             <label for="asesor" class="col-5 col-form-label">Nombre del Asesor</label>
                             <div class="col-7">
                                 <input id="asesor" name="asesor" type="text" class="form-control">
@@ -278,7 +278,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6 border-end">
                         <div class="form-group row">
                             <label for="tipo_inm" class="col-5 col-form-label">Tipo de inmueble</label>
                             <div class="col-7">
@@ -297,14 +297,14 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-group row">
+                        <div class="form-group row border-end">
                             <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
                             <div class="col-7">
                                 {!! Form::select('estrato_inm', $estratos, null, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6">
                         <div class="form-group row">
                             <label for="conjunto" class="col-5">El inmueble se encuentra en
                                 conjunto cerrado o edificio </label>
@@ -322,7 +322,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6 border-end">
                         <div class="form-group row" id="anoconstruido">
                             <label for="tiempo_inm" class="col-5 col-form-label">Años de
                                 contruido</label>
@@ -332,7 +332,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6">
                         <div class="form-group row" id="SecRemodelado">
                             <label for="remodelado" class="col-5 col-form-label">Remodelado hace menos de 5
                                 años</label>
@@ -361,8 +361,8 @@
                     </div>
                 </div>
                 <div class="row" id="aptos2">
-                    <div class="col-12 col-md-6 border-right">
-                        <div class="form-group row">
+                    <div class="col-12 col-md-6 ">
+                        <div class="form-group row border-end">
                             <label for="piso" class="col-5 col-form-label">Piso en el que está el
                                 inmueble</label>
                             <div class="col-7">
@@ -398,14 +398,14 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-group row">
+                        <div class="form-group row border-end">
                             <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
                             <div class="col-7">
-                                {!! Form::select('ciudad', $ciudad, 1, ['class' => 'form-select', 'id' => 'ciudad']) !!}
+                                <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá" required="required" class="form-control">                                
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6">
                         <div class="form-group row">
                             <div class="col-5">
                                 <label for="direccion" class="col-form-label">Dirección inmueble</label>
@@ -420,7 +420,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-group row" id="detalles">
+                        <div class="form-group row border-end" id="detalles">
                             <div class="col-5">
                                 <label for="direccion_comp" class="col-form-label">Detalles</label>
                             </div>

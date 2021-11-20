@@ -55,7 +55,7 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0 ">
             <div class="row">
-                <div class="col-12 col-md-6 border-right">
+                <div class="col-12 col-md-6 border-end">
                     <div class="form-group row">
                         <label for="id" class="col-5 col-form-label">Tipo DI</label>
                         <div class="col-7">
@@ -286,7 +286,7 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
-                <div class="col-12 col-md-6 border-right">
+                <div class="col-12 col-md-6 border-end">
                     <div class="form-group row">
                         <label for="tiempo_inm" class="col-5 col-form-label">Años de
                             contruido</label>
@@ -296,7 +296,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 border-right">
+                <div class="col-12 col-md-6 border-end">
                     <div class="form-group row" id="SecRemodelado">
                         <label for="remodelado" class="col-5 col-form-label">Remodelado hace menos de 5
                             años</label>
@@ -330,7 +330,7 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row" id="aptos2">
-                <div class="col-12 col-md-6 border-right">
+                <div class="col-12 col-md-6 border-end">
                     <div class="form-group row">
                         <label for="piso" class="col-5 col-form-label">Piso en el que está el
                             inmueble</label>
@@ -369,7 +369,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 border-right">
+                <div class="col-12 col-md-6 border-end">
                     <div class="form-group row">
                         <div class="col-5">
                             <label for="direccion" class="col-form-label">Dirección inmueble</label>
