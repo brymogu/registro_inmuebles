@@ -14,6 +14,7 @@ use App\Models\Mats_piso_habitacion;
 use App\Models\Mats_piso_zsocial;
 use App\Models\Mb_cocina;
 use App\Models\Negocios;
+use App\Models\Niveles;
 use App\Models\Propiedades;
 use App\Models\Propietarios;
 use App\Models\Remodelados;
@@ -66,9 +67,10 @@ class EditController extends Controller
         $zonas = Zonas_sociales::pluck('desc_zona_social', 'id');
         $mat_fachada = Materiales_fachada::pluck('desc_mats_fachada', 'id');
         $tipo_garaje = tipo_garajes::pluck('tipo_garajes', 'id');
+        $niveles = Niveles::pluck('des_nivel', 'id');
         
         return view('admin.edit_form', compact('propiedad', 'propietario','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado',
-        'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje'));
+        'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'));
 
     }
 }
