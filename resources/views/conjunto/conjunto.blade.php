@@ -14,7 +14,7 @@
             </div>
             {{ Form::open(['method' => 'post']) }}
             <div class="row seccion">
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="vigilancia" class="col-6 col-form-label">Vigilancia</label>
                         <div class="col-6">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="seguridad" class="col-6 col-form-label">Seguridad</label>
                         <div class="col-6">
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="nombre_c_e" class="col-6 col-form-label">Nombre del conjunto o
                             edificio</label>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="adm_cp" class="col-6 col-form-label">Valor Administración
                             <span class="sub">Cuota plena<span>
@@ -81,7 +81,7 @@
             <div class="row seccion">
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label for="pq_visitantes" class="border-right col-5 col-form-label">
+                        <label for="pq_visitantes" class="border-end col-5 col-form-label">
                             Parqueadero de visitantes</label>
                         <div class="col-2">
                             <a>No</a>
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="bicicletero" class="col-5 col-form-label">
                             Bicicletero</label>
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="bbq" class="col-5 col-form-label">
                             BBQ</label>
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="s_juntas" class="col-5 col-form-label">
                             Sala de juntas</label>
@@ -179,7 +179,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="gimnasio" class="col-5 col-form-label">
                             Gimnasio</label>
@@ -195,7 +195,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="turco" class="col-5 col-form-label">
                             Turco</label>
@@ -229,7 +229,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="c_squash" class="col-5 col-form-label">
                             Cancha de squash</label>
@@ -245,7 +245,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="c_tenis" class="col-5 col-form-label">
                             Cancha de tenis</label>
@@ -279,7 +279,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="s_juegos" class="col-5 col-form-label">
                             Salón de juegos
@@ -296,7 +296,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="s_estudio" class="col-5 col-form-label">
                             Salón de estudio
@@ -332,7 +332,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="planta_e" class="col-5 col-form-label">
                             Planta eléctrica </label>
@@ -348,7 +348,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="piscina" class="col-5 col-form-label">
                             Piscina</label>
@@ -364,7 +364,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
+                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="jardin_interior" class="col-5 col-form-label">
                             Jardín Interior</label>

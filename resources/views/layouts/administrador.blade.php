@@ -28,7 +28,6 @@
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{!! asset('css/admin.css') !!}">
-
     @yield('more_head')
     <title>@yield('title')</title>
 </head>

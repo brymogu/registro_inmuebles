@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6 border-end">
                         <div class="form-group row">
                             <label for="text" class="col-5 col-form-label">Apellidos</label>
                             <div class="col-7">
@@ -36,14 +36,14 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-group row">
+                        <div class="form-group row border-end">
                             <label for="email" class="col-5 col-form-label">E-mail</label>
                             <div class="col-7">
                                 <input id="email" name="email" type="email" class="form-control" required>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 border-right">
+                    <div class="col-12 col-md-6">
                         <div class="form-group row">
                             <label for="phone" class="col-5 col-form-label">Teléfono celular</label>
                             <div class="col-7">

@@ -6,9 +6,10 @@ function mostrarmapa() {
     direccion = $('#direccion').val();
     direccion = direccion.replace(/ /g, '+');
     direccion = direccion.replace('#', '%23');
-    ciudad = $('#ciudad option:selected').text();
-    ciudad = ciudad.normalize();
-    var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccion + "|locality:" + ciudad + "|country:CO,+CO&key=AIzaSyDoeTIRXgizNo-4sAMEORiO5Jtblf_0t0k";
+    // ciudad = $('#ciudad option:selected').text();
+    //ciudad = ciudad.normalize();
+    ciudad = $('#ciudad').val();
+    var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccion + "|locality:" + ciudad + "|country:CO&key=AIzaSyDoeTIRXgizNo-4sAMEORiO5Jtblf_0t0k";
     console.log(url);
 
     $.getJSON(url, function(data) {

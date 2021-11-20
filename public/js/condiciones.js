@@ -12,7 +12,6 @@ $(document).ready(function() {
         $('.toast').toast("show");
 
     } else if ($('#negocio_tarjeta').length) {
-
         $(".usuario i, .negocio i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar").css("background-color", "#01303c");
 
@@ -29,7 +28,6 @@ $(document).ready(function() {
             $('#aptos2').hide();
             $('#piso').removeAttr('required');
         }
-
 
         if ($('#conjunto').prop('checked')) {
             $('#detalles').show();
@@ -193,8 +191,13 @@ $(document).ready(function() {
             console.log("cambió");
             if ($('#garaje').prop('checked')) {
                 $('#sec_garajes').show();
+                $('#no_garajes').attr("required", "true");
+                $('#tipo_garaje').attr("required", "true");
+
             } else {
                 $('#sec_garajes').hide();
+                $('#no_garajes').removeAttr('required');
+                $('#tipo_garaje').removeAttr('required');
             }
         });
 

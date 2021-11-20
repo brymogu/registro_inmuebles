@@ -518,7 +518,7 @@
                     <div class="form-group row">
                         <label for="no_garajes" class="col-6 col-form-label">Cantidad de Garajes</label>
                         <div class="col-6">
-                            <input class="form-control" type="number" min="1" max="100" id="no_garajes" required>
+                            <input class="form-control" type="number" min="1" max="100" name="n_garajes" id="no_garajes">
                         </div>
                     </div>
                 </div>
@@ -526,7 +526,7 @@
                     <div class="form-group row">
                         <label for="tipo_garaje" class="col-4 col-form-label">Tipo</label>
                         <div class="col-8">
-                            {!! Form::select('tipo_garaje', $tipo_garaje, null, ['class' => 'form-select', 'required' => 'required']) !!}
+                            {!! Form::select('tipo_garaje', $tipo_garaje, null, ['class' => 'form-select']) !!}
                         </div>
                     </div>
                 </div>

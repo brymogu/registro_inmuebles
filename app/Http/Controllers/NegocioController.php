@@ -30,6 +30,8 @@ class NegocioController extends Controller
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
         $remodelado = Remodelados::pluck('desc_remodelado', 'id');
         $ciudad = Ciudades::pluck('desc_ciudades','id');
+        
+
         return view('negocio.negocio', compact('tipos_documento','ciudad', 'negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => 'No', 'propietario' => $propietario]);
     }
     public function store(Request $request, Propietarios $propietario)
@@ -45,7 +47,7 @@ class NegocioController extends Controller
         $propiedad->pqsolicita = $request->pqsolicita;
         $propiedad->tipo_inmueble = $request->tipo_inm;
         $propiedad->estrato = $request->estrato_inm;
-        $propiedad->ciudad = $request->ciudad;
+        $propiedad->ciudad = 1;
         $propiedad->direccion = $request->direccion;
         $propiedad->direccion_comp = $request->direccion_comp;
         $propiedad->tiempo_inm = $request->tiempo_inm;
