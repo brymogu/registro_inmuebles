@@ -115,7 +115,7 @@
         </div>
         <div class="row grupo seccion">
             <div class="col-12">
-                <p>Carcteristicas internas inmueble:</p>
+                <p>Características internas inmueble:</p>
             </div>
             <div class="row">
                 <div class="col-12 col-md-4 ">

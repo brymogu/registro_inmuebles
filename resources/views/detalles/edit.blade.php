@@ -53,9 +53,10 @@
                 </div>
                 <div class="col-12 col-md-3 border-right">
                     <div class="form-group row">
-                        <label for="niveles" class="col-6 col-form-label">Nivel(es)</label>
+                        <label for="piso" class="col-6 col-form-label">Nivel(es)</label>
                         <div class="col-6">
-                            {!! Form::select('niveles', $niveles, $propiedad->nivel, ['class' => 'form-select', 'id' => 'niveles', 'required' => 'required']) !!}
+                            <input class="form-control" type="number" min="1" max="100" name="piso" id="piso"
+                            value="{{$propiedad->piso}}" required>
                         </div>
                     </div>
                 </div>
@@ -65,7 +66,8 @@
                             <span>(Sin incluir servicio)<span>
                         </label>
                         <div class="col-6">
-                            {!! Form::select('n_hab', $num_hab, $propiedad->n_hab, ['class' => 'form-select', 'id' => 'n_hab', 'required' => 'required']) !!}
+                            <input class="form-control" name="n_hab" type="number" min="1" max="100" id="n_hab"
+                            value="{{$propiedad->n_hab}}" required>
                         </div>
                     </div>
                 </div>
@@ -75,7 +77,8 @@
                             <span>(Sin incluir servicio o social)<span>
                         </label>
                         <div class="col-6">
-                            {!! Form::select('no_banos', $num_banos, $propiedad->n_banos, ['class' => 'form-select', 'id' => 'no_banos', 'required' => 'required']) !!}
+                            <input class="form-control" type="number" name="n_banos" min="1" max="100" id="n_banos" 
+                            value="{{$propiedad->n_banos}}" required>
                         </div>
                     </div>
                 </div>
@@ -83,7 +86,8 @@
                     <div class="form-group row">
                         <label for="no_garajes" class="col-6 col-form-label">Garaje(s)</label>
                         <div class="col-6">
-                            {!! Form::select('no_garajes', $garajes, $propiedad->no_garajes, ['class' => 'form-select', 'id' => 'no_garajes', 'required' => 'required']) !!}
+                            <input class="form-control" type="number" min="1" max="100" id="no_garajes" 
+                            value="{{ $propiedad->no_garajes }}" required>
                         </div>
                     </div>
                 </div>
