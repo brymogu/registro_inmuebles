@@ -53,10 +53,9 @@
                 </div>
                 <div class="col-12 col-md-3 border-right">
                     <div class="form-group row">
-                        <label for="piso" class="col-6 col-form-label">Nivel(es)</label>
+                        <label for="niveles" class="col-6 col-form-label">Nivel(es)</label>
                         <div class="col-6">
-                            <input class="form-control" type="number" min="1" max="100" name="piso" id="piso"
-                            value="{{$propiedad->piso}}" required>
+                            {!! Form::select('niveles', $niveles, $propiedad->nivel, ['class' => 'form-select', 'id' => 'niveles', 'required' => 'required']) !!}
                         </div>
                     </div>
                 </div>

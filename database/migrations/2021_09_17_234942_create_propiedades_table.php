@@ -78,6 +78,11 @@ class CreatePropiedadesTable extends Migration
                 ->references('id')->on('mats_piso_zsocials')
                 ->onDelete('set null');
 
+            $table->unsignedBigInteger('nivel')->nullable();
+            $table->foreign('nivel')
+                ->references('id')->on('niveles')
+                ->onDelete('set null');
+
             $table->integer('n_hab')->nullable();            
 
             $table->unsignedBigInteger('n_banos')->nullable();
