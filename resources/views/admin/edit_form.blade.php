@@ -143,7 +143,7 @@
                         <label for="pqsolicita" class="col-5 col-form-label">¿Por qué desea publicar el
                             inmueble?</label>
                         <div class="col-7">
-                            <input id="pqsolicita" name="pqsolicita" type="text" class="form-control" required="required"
+                            <input id="pqsolicita" name="pqsolicita" type="text" class="form-control"
                                 value="{{ $propiedad->pqsolicita }}">
                         </div>
                     </div>
@@ -1255,12 +1255,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4" id="descuento">
+                <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label for="sauna" class="col-5 col-form-label">Sauna</label>
+                        <label for="c_multiple" class="col-5 col-form-label">Cancha múltiple</label>
                         <div class="col-7">
-                            <select id="sauna" class="form-select" name="sauna" required="required">
-                                @if ($propiedad->sauna == 'Si')
+                            <select id="c_multiple" class="form-select" name="c_multiple" required="required">
+                                @if ($propiedad->c_multiple == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else
@@ -1271,6 +1271,172 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-4 border-right">
+                    <div class="form-group row">
+                        <label for="s_juegos" class="col-5 col-form-label">Salón de juegos</label>
+                        <div class="col-7">
+                            <select id="s_juegos" class="form-select" name="s_juegos" required="required">
+                                @if ($propiedad->s_juegos == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 border-right">
+                    <div class="form-group row">
+                        <label for="s_estudio" class="col-5 col-form-label">Salón de estudio</label>
+                        <div class="col-7">
+                            <select id="s_estudio" class="form-select" name="s_estudio" required="required">
+                                @if ($propiedad->s_estudio == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="lavanderia_c" class="col-5 col-form-label">Lavandería comunal</label>
+                        <div class="col-7">
+                            <select id="lavanderia_c" class="form-select" name="lavanderia_c" required="required">
+                                @if ($propiedad->lavanderia_c == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-4 border-right">
+                    <div class="form-group row">
+                        <label for="planta_e" class="col-5 col-form-label">Planta eléctrica</label>
+                        <div class="col-7">
+                            <select id="planta_e" class="form-select" name="planta_e" required="required">
+                                @if ($propiedad->planta_e == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 border-right">
+                    <div class="form-group row">
+                        <label for="piscina" class="col-5 col-form-label">Piscina</label>
+                        <div class="col-7">
+                            <select id="piscina" class="form-select" name="piscina" required="required">
+                                @if ($propiedad->piscina == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="jardin_interior" class="col-5 col-form-label">Jardín Interior</label>
+                        <div class="col-7">
+                            <select id="jardin_interior" class="form-select" name="jardin_interior" required="required">
+                                @if ($propiedad->jardin_interior == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-4 border-right">
+                    <div class="form-group row">
+                        <label for="planta_e" class="col-5 col-form-label">Planta eléctrica</label>
+                        <div class="col-7">
+                            <select id="planta_e" class="form-select" name="planta_e" required="required">
+                                @if ($propiedad->planta_e == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 border-right">
+                    <div class="form-group row">
+                        <label for="piscina" class="col-5 col-form-label">Piscina</label>
+                        <div class="col-7">
+                            <select id="piscina" class="form-select" name="piscina" required="required">
+                                @if ($propiedad->piscina == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="jardin_interior" class="col-5 col-form-label">Jardín Interior</label>
+                        <div class="col-7">
+                            <select id="jardin_interior" class="form-select" name="jardin_interior" required="required">
+                                @if ($propiedad->jardin_interior == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row  my-3">
+            <div class="col-6 col-md-2 text-left">
+                <a href="{{ route('administrador.edit') }}" class="btn botones">Atrás</a>
+            </div>
+            <div class="d-none d-md-block col-md-8">
+            </div>
+            <div class="col-6 col-md-2 text-end">
+                <button type="submit" class="btn botones">Enviar</button>
             </div>
         </div>
         {{ Form::close() }}

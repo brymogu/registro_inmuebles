@@ -122,3 +122,14 @@ table.dataTable.no-footer {
 .btn-epc:hover {
     background-color: #f6c015 !important;
 }
+
+.botones {
+    background-color: #288c83 !important;
+    border-color: #288c83;
+    color: white !important;
+}
+
+.botones:hover {
+    background-color: #01303c !important;
+    text-decoration: none !important;
+}
