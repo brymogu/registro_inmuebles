@@ -21,7 +21,7 @@
                         <h5>Negocio</h5>
                     </div>
                 </div>
-                <div class="row ">
+                <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="form-group row border-end">
                             <label for="id" class="col-5 col-form-label">Tipo DI</label>
@@ -63,6 +63,13 @@
                                 <span id="valorpesos" class="form-text text-muted"></span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Aspectos para el negocio</h5>
                     </div>
                 </div>
                 <div class="row">
@@ -401,7 +408,8 @@
                         <div class="form-group row border-end">
                             <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
                             <div class="col-7">
-                                <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá" required="required" class="form-control">                                
+                                <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá" required="required"
+                                    class="form-control">
                             </div>
                         </div>
                     </div>
@@ -497,7 +505,8 @@
     <div class="offcanvas offcanvas-bottom rounded" tabindex="-1" id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel">
         <div class="offcanvas-header">
-            <p class="offcanvas-title text-center" id="offcanvasBottomLabel"><i class="far fa-smile-wink"></i> Por favor
+            <p class="offcanvas-title text-center" id="offcanvasBottomLabel"><i class="far fa-smile-wink"></i> Por
+                favor
                 ayudanos a localizar tu inmueble</p>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
