@@ -219,7 +219,7 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group row">
-                                <label for="amoblado" class="col-5">Inmueble amoblado</label>
+                                <label for="amoblado" class="col-5">¿Deseas arrendarlo amoblado?</label>
                                 <div class="col-2">
                                     <a>No</a>
                                 </div>
@@ -236,7 +236,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="form-group row border-end">
-                                <label for="menosano" class="col-5">Arriendo por menos de 1 año</label>
+                                <label for="menosano" class="col-5">¿Deseas arrendarlo por menos de 1 año?</label>
                                 <div class="col-2">
                                     <a>No</a>
                                 </div>
@@ -258,6 +258,7 @@
                             <div class="col-7">
                                 <input id="asesor" name="asesor" type="text" class="form-control">
                             </div>
+                            <span class="form-text text-muted">No obligatorio</span>
                         </div>
                     </div>
                     <div class="col-12  col-md-6">
