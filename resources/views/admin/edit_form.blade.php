@@ -237,7 +237,7 @@
                     <div class="form-group row">
                         <label for="asesor" class="col-5 col-form-label">Nombre del Asesor</label>
                         <div class="col-7">
-                            <input id="asesor" name="asesor" type="text" class="form-control">
+                            <input id="asesor" name="asesor" type="text" class="form-control " value="{{ $negocio_unico->conc_precio }}">
                         </div>
                     </div>
                 </div>
