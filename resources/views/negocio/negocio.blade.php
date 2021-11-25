@@ -65,6 +65,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row">
+                            <label for="conjunto" class="col-5">El inmueble se encuentra en
+                                conjunto cerrado o edificio </label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="conjunto" value="1" id="conjunto" />
+                                <label class="slider-v1" for="conjunto"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="grupo">
                 <div class="row">
@@ -100,56 +118,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-6 ">
-                        <div class="form-group row border-end">
-                            <label for="habitado" class="col-5 col-form-label">Inmueble habitado</label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool text-center">
-                                <input type="checkbox" value="1" name="habitado" id="habitado" />
-                                <label class="slider-v1" for="habitado"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 ">
-                        <div class="form-group row">
-                            <label for="arrendado" class="col-5">¿Se encuentra arrendado actualmente?</label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool text-center">
-                                <input type="checkbox" name="arrendado" value="1" id="arrendado" />
-                                <label class="slider-v1" for="arrendado"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div id="reglasgral">
                     <div class="row">
                         <div class="col-12 col-md-6 ">
-                            <div class="form-group row border-end">
-                                <label for="urbano" class="col-5">Inmueble urbano</label>
-                                <div class="col-2">
-                                    <a>No</a>
-                                </div>
-                                <div class="col-3 bool text-center">
-                                    <input type="checkbox" name="urbano" value="1" id="urbano" checked />
-                                    <label class="slider-v1" for="urbano"></label>
-                                </div>
-                                <div class="col-2">
-                                    <a>Si</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
                             <div class="form-group row">
                                 <label for="embargo" class="col-5">Inmueble con embargo</label>
                                 <div class="col-2">
@@ -164,25 +135,41 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group row border-end">
+                                <label for="urbano" class="col-5">Inmueble urbano</label>
+                                <div class="col-2">
+                                    <a>No</a>
+                                </div>
+                                <div class="col-3 bool text-center">
+                                    <input type="checkbox" name="urbano" value="1" id="urbano" checked />
+                                    <label class="slider-v1" for="urbano"></label>
+                                </div>
+                                <div class="col-2">
+                                    <a>Si</a>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
                 <div id="reglas">
                     <div class="row">
                         <div class="col-12 col-md-6 ">
                             <div class="form-group row border-end">
-                                <label for="reglamento" class="col-5">¿Tiene reglamento de propiedad
-                                    horizontal?</label>
+                                <label for="menosano" class="col-5">¿Deseas arrendarlo por menos de 1 año?</label>
                                 <div class="col-2">
                                     <a>No</a>
                                 </div>
                                 <div class="col-3 bool text-center">
-                                    <input type="checkbox" name="reglamento" value="1" id="reglamento" checked />
-                                    <label class="slider-v1" for="reglamento"></label>
+                                    <input type="checkbox" name="menosano" value="1" id="menosano" />
+                                    <label class="slider-v1" for="menosano"></label>
                                 </div>
                                 <div class="col-2">
                                     <a>Si</a>
                                 </div>
                             </div>
+
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group row">
@@ -235,18 +222,52 @@
                     </div>
                     <div class="row">
                         <div class="col-12 col-md-6">
-                            <div class="form-group row border-end">
-                                <label for="menosano" class="col-5">¿Deseas arrendarlo por menos de 1 año?</label>
+                            <div class="form-group row border-end" id="horizontal">
+                                <label for="reglamento" class="col-5">¿Tiene reglamento de propiedad
+                                    horizontal?</label>
                                 <div class="col-2">
                                     <a>No</a>
                                 </div>
                                 <div class="col-3 bool text-center">
-                                    <input type="checkbox" name="menosano" value="1" id="menosano" />
-                                    <label class="slider-v1" for="menosano"></label>
+                                    <input type="checkbox" name="reglamento" value="1" id="reglamento" checked />
+                                    <label class="slider-v1" for="reglamento"></label>
                                 </div>
                                 <div class="col-2">
                                     <a>Si</a>
                                 </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 ">
+                        <div class="form-group row border-end">
+                            <label for="habitado" class="col-5 col-form-label">Inmueble habitado</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" value="1" name="habitado" id="habitado" />
+                                <label class="slider-v1" for="habitado"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 ">
+                        <div class="form-group row" id="arrendado">
+                            <label for="arr_check" class="col-5">¿Se encuentra arrendado actualmente?</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="arr_check" id="arr_check" value="1" />
+                                <label class="slider-v1" for="arr_check"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
                             </div>
                         </div>
                     </div>
@@ -278,6 +299,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="grupo">
                 <div class="row seccion">
@@ -313,20 +335,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="form-group row">
-                            <label for="conjunto" class="col-5">El inmueble se encuentra en
-                                conjunto cerrado o edificio </label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool text-center">
-                                <input type="checkbox" name="conjunto" value="1" id="conjunto" />
-                                <label class="slider-v1" for="conjunto"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="row">
@@ -440,7 +449,6 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-
                     </div>
                 </div>
                 <div class="row d-none">

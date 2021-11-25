@@ -83,15 +83,22 @@ class CreatePropiedadesTable extends Migration
                 ->references('id')->on('niveles')
                 ->onDelete('set null');
 
-            $table->integer('n_hab')->nullable();            
+            $table->integer('n_hab')->nullable();
 
             $table->unsignedBigInteger('n_banos')->nullable();
-            
+
 
             $table->unsignedBigInteger('tipo_garajes')->nullable();
             $table->foreign('tipo_garajes')
                 ->references('id')->on('tipo_garajes')
                 ->onDelete('set null');
+
+            $table->string('tiene_garaje')->nullable();
+            $table->string('gje_independiente')->nullable();
+            $table->string('gje_cubierto')->nullable();
+            $table->integer('no_garajes')->nullable();
+
+            
 
             $table->unsignedBigInteger('mb_cocina')->nullable();
             $table->foreign('mb_cocina')
@@ -152,11 +159,8 @@ class CreatePropiedadesTable extends Migration
             $table->string('tina_privada')->nullable();
             $table->string('aire_privado')->nullable();
             $table->string('calefaccion_privada')->nullable();
-            
-            $table->string('tiene_garaje')->nullable();
-            $table->string('garaje_i')->nullable();
-            $table->string('garaje_c')->nullable();
-            $table->integer('no_garajes')->nullable();
+
+
 
             $table->unsignedBigInteger('tipo_vigilancia')->nullable();
             $table->foreign('tipo_vigilancia')

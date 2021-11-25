@@ -15,10 +15,7 @@ class NoGarajesSeeder extends Seeder
     public function run()
     {
         //
-        $garajes = new tipo_garajes();
-        $garajes->tipo_garajes =  "Privado";
-        $garajes->save();
-
+        
         $garajes1 = new tipo_garajes();
         $garajes1->tipo_garajes =  "Independiente";
         $garajes1->save();

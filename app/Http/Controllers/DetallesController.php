@@ -94,10 +94,17 @@ class DetallesController extends Controller
         } else {
             $Propiedad->tiene_garaje = "No";
         }
-        if ($request->garaje_c) {
-            $Propiedad->garaje_c = "Si";
+
+        if ($request->gje_independiente) {
+            $Propiedad->gje_independiente = "Si";
         } else {
-            $Propiedad->garaje_c = "No";
+            $Propiedad->gje_independiente = "No";
+        }
+
+        if ($request->gje_cubierto) {
+            $Propiedad->gje_cubierto = "Si";
+        } else {
+            $Propiedad->gje_cubierto = "No";
         }
         $Propiedad->tipo_garajes = $request->tipo_garaje;
         $Propiedad->no_garajes = $request->no_garajes;
@@ -284,10 +291,9 @@ class DetallesController extends Controller
         $propiedad->tipo_calentador = $request->calentador;
         $propiedad->tipo_vista = $request->vista;
         $propiedad->zona_social = $request->zona_social;
-        $propiedad->material_fachada = $request->material_fachada;
-        $propiedad->tipo_garajes = $request->tipo_garaje;
-
-        // checks
+        $propiedad->material_fachada = $request->material_fachada;       
+        
+        // garajes
 
         if ($request->garaje) {
             $propiedad->tiene_garaje = "Si";
@@ -295,6 +301,22 @@ class DetallesController extends Controller
             $propiedad->tiene_garaje = "No";
         }
 
+        if ($request->gje_independiente) {
+            $propiedad->gje_independiente = "Si";
+        } else {
+            $propiedad->gje_independiente = "No";
+        }
+
+        if ($request->gje_cubierto) {
+            $propiedad->gje_cubierto = "Si";
+        } else {
+            $propiedad->gje_cubierto = "No";
+        }        
+        
+        $propiedad->no_garajes = $request->n_garajes;
+        $propiedad->tipo_garajes = $request->tipo_garaje;
+
+        // checks
 
         if ($request->terraza) {
             $propiedad->terraza = "Si";
@@ -416,25 +438,9 @@ class DetallesController extends Controller
             $propiedad->calefaccion_privada = "No";
         }
 
-        if ($request->garaje_c) {
-            $propiedad->garaje_c = "Si";
-        } else {
-            $propiedad->garaje_c = "No";
-        }
-
-        if ($request->garaje_i) {
-            $propiedad->garaje_i = "Si";
-        } else {
-            $propiedad->garaje_i = "No";
-        }
-
-        if ($request->garaje_c) {
-            $propiedad->garaje_c = "Si";
-        } else {
-            $propiedad->garaje_c = "No";
-        }        
         
-        $propiedad->no_garajes = $request->n_garajes;
+
+        
 
         $propiedad->save();
         return redirect()->route('conjunto.show', $propiedad);

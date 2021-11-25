@@ -3,6 +3,12 @@
 @section('more_head')
     <script src="{!! asset('js/condiciones_edit.js') !!}"></script>
     <script src="{!! asset('js/condiciones.js') !!}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
 @endsection
 
 @section('content')
@@ -150,7 +156,7 @@
                             <div class="col-7">
                                 <div class="custom-file">
                                     <input type="file" class="form-control" name="certificado" id="certificado"
-                                        accept="image/*,.pdf" lang="es" required>
+                                        accept="image/*,.pdf" lang="es"  required>
                                     <label class="custom-file-label" for="certificado" id="labelcert"
                                         data-browse="Cargar"></label>
                                 </div>
@@ -331,21 +337,65 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
-                        
+                    </div>
+                </div>
+                <div class="row d-none">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row" id="detalles">
+                            <div class="col-5">
+                                <label for="longitud" class="col-form-label">Longitud</label>
+                            </div>
+                            <div class="col-7">
+                                <input id="longitud" name="longitud" type="text" class="form-control" value="{{ $propiedad->longitud }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row" id="detalles">
+                            <div class="col-5">
+                                <label for="latitud" class="col-form-label">Latitud</label>
+                            </div>
+                            <div class="col-7">
+                                <input id="latitud" name="latitud" type="text" class="form-control" value="{{ $propiedad->latitud }}">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-6 col-md-2 text-start">
+                <div class="col-4 col-md-2 text-start">
                     <a href="{{ route('propietario.edit', $propietario) }}" class="btn botones">Atrás</a>
                 </div>
-                <div class="d-none d-md-block col-md-8"></div>
-                <div class="col-6 col-md-2 text-end">
+                <div class="d-none d-md-block col-md-3"></div>
+
+                <div class="col-4 col-md-2 text-end">
+                    <div>
+                        <a type="button" class="btn botones" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i
+                                class="fas fa-map-marker-alt"></i> Ubicar</a>
+                    </div>
+                </div>
+                <div class="d-none d-md-block col-md-3"></div>
+                <div class="col-4 col-md-2 text-end">
                     <button type="submit" class="btn botones">Siguiente</button>
                 </div>
             </div>
             {{ Form::close() }}
         </div>
     </div>
-
+    <div class="offcanvas offcanvas-bottom rounded" tabindex="-1" id="offcanvasBottom"
+        aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+            <p class="offcanvas-title text-center" id="offcanvasBottomLabel"><i class="far fa-smile-wink"></i> Por
+                favor
+                ayudanos a localizar tu inmueble</p>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body grupo">
+            <div id="map"></div>
+        </div>
+    </div>
+@endsection
+@section('scripts_footer')
+    <script src="{!! asset('js/mapa.js') !!}"></script>
 @endsection

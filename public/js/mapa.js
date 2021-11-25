@@ -4,11 +4,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(myma
 
 function mostrarmapa() {
     direccion = $('#direccion').val();
+    ciudad = $('#ciudad').val();
     direccion = direccion.replace(/ /g, '+');
     direccion = direccion.replace('#', '%23');
     // ciudad = $('#ciudad option:selected').text();
-    //ciudad = ciudad.normalize();
-    ciudad = $('#ciudad').val();
+    ciudad = ciudad.normalize();
+    direccion = direccion + ',' + ciudad;
+
     var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + direccion + "|locality:" + ciudad + "|country:CO&key=AIzaSyDoeTIRXgizNo-4sAMEORiO5Jtblf_0t0k";
     console.log(url);
 

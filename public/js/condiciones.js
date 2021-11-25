@@ -20,6 +20,8 @@ $(document).ready(function() {
         $('#anoconstruido').hide();
         $('#botonmapa').hide();
         $('#enviarnegocio').hide();
+        $('#arrendado').hide();
+        $('#horizontal').hide();
 
         if ($('#tipo_inm').val() == 2) {
             $('#aptos2').show();
@@ -51,11 +53,23 @@ $(document).ready(function() {
                 $('#direccion_comp').attr("required", "true");
                 $('#iconjunto').show();
                 $('#conjunto_bar').show();
+                $('#horizontal').show();
+
             } else {
                 $('#direccion_comp').removeAttr('required');
                 $('#detalles').hide();
                 $('#iconjunto').hide();
                 $('#conjunto_bar').hide();
+                $('#horizontal').hide();
+            }
+        });
+
+        $('#habitado').change(function() {
+            if ($('#habitado').prop('checked')) {
+                $('#arrendado').show();
+
+            } else {
+                $('#arrendado').hide();
             }
         });
 
@@ -91,6 +105,11 @@ $(document).ready(function() {
 
         $('#embargo').change(function() {
             $('#motivo').html("si se encuentra embargado");
+            myModal.show()
+        });
+
+        $('#arr_check').change(function() {
+            $('#motivo').html("si se encuentra arrendado");
             myModal.show()
         });
 
@@ -186,10 +205,21 @@ $(document).ready(function() {
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
         $('#sec_garajes').hide();
+        $('#sec_independiente').hide();
+
 
         $('#garaje').change(function() {
-            console.log("cambió");
             if ($('#garaje').prop('checked')) {
+                $('#sec_independiente').show();
+
+            } else {
+                $('#sec_garajes').hide();
+                $('#sec_independiente').hide();
+            }
+        });
+
+        $('#gje_independiente').change(function() {
+            if ($('#gje_independiente').prop('checked')) {
                 $('#sec_garajes').show();
                 $('#no_garajes').attr("required", "true");
                 $('#tipo_garaje').attr("required", "true");

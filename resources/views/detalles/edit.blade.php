@@ -566,7 +566,7 @@
                                 <a>No</a>
                             </div>
                             <div class="col-3 bool text-center">
-                                @if ($propiedad->calefaccion_p == 'Si')
+                                @if ($propiedad->calefaccion_privada == 'Si')
                                     <input type="checkbox" value="1" id="calefaccion_p" name="calefaccion_p" checked />
                                 @else
                                     <input type="checkbox" value="1" id="calefaccion_p" name="calefaccion_p" />

@@ -6,4 +6,5 @@ function noposibles() {
     $('#vacacional').prop("checked", false);
     $('#amoblado').prop("checked", false);
     $('#menosano').prop("checked", false);
+    $('#arr_check').prop("checked", false);
 }
