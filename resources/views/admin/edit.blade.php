@@ -44,9 +44,9 @@
                                 <td>
                                     
                                     @foreach ($todos_documentos as $documento)
-                                    @if ($documento->id == $propietario->tipo_doc)
-                                    {{ $documento->desc_nombres_corto }}          
-                                    @endif
+                                        @if ($documento->id == $propietario->tipo_doc)
+                                        {{ $documento->desc_nombres_corto }}          
+                                        @endif
                                     @endforeach
                                     <br />
                                     <b> {{ $propietario->doc_number }}</b>
@@ -57,7 +57,7 @@
                                 </td>
                                 <td>
                                     {{ Form::open(['method' => 'post']) }}
-                                    <input type="text" class="d-none" name="irForm" value="{{ $propietario->id}}" >    
+                                    <input type="text" class="d-none" name="codiprop" value="{{ $propietario->id}}" >    
                                     <button type="submit" class="btn btn-epc rounded-circle"><i
                                                 class="fas fa-pencil-alt"></i></button>
                                                                                         

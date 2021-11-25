@@ -36,6 +36,7 @@ class CreateNegociosTable extends Migration
                 ->onDelete('set null');
 
             $table->biginteger('valor')->nullable();
+            $table->biginteger('conc_precio')->nullable();
             $table->string('cpvj')->nullable();
             $table->string('asesor')->nullable();         
             $table->timestamps();

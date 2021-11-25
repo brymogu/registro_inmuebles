@@ -16,7 +16,7 @@
                         <label class="col-5 col-form-label" for="name">Nombres</label>
                         <div class="col-7">
                             <input id="name" name="name" type="text" class="form-control"
-                                value="{{ $propietario->name }}" required>
+                                value="{{ $codiprop->name }}" required>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                         <label for="text" class="col-5 col-form-label">Apellidos</label>
                         <div class="col-7">
                             <input id="text" name="lastname" type="text" class="form-control"
-                                value="{{ $propietario->lastname }}" required>
+                                value="{{ $codiprop->lastname }}" required>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <div class="form-group row">
                         <label for="phone" class="col-5 col-form-label">Teléfono celular</label>
                         <div class="col-7">
-                            <input id="phone" name="phone" type="tel" value="{{ $propietario->phone }}"
+                            <input id="phone" name="phone" type="tel" value="{{ $codiprop->phone }}"
                                 class="form-control" required>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="form-group row">
                         <label for="email" class="col-5 col-form-label">E-mail</label>
                         <div class="col-7">
-                            <input id="email" name="email" type="email" value="{{ $propietario->email }}"
+                            <input id="email" name="email" type="email" value="{{ $codiprop->email }}"
                                 class="form-control" required>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                     <div class="form-group row">
                         <label for="id" class="col-5 col-form-label">Tipo DI</label>
                         <div class="col-7">
-                            {!! Form::select('id', $tipos_documento, $propietario->tipo_doc, ['class' => 'form-select', 'required' => 'required']) !!}
+                            {!! Form::select('id', $tipos_documento, $codiprop->tipo_doc, ['class' => 'form-select', 'required' => 'required']) !!}
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         <label for="idnumber" class="col-5 col-form-label">Número DI</label>
                         <div class="col-7">
                             <input id="idnumber" name="idnumber" type="number" class="form-control"
-                                value="{{ $propietario->doc_number }}" required="required" min="800">
+                                value="{{ $codiprop->doc_number }}" required="required" min="800">
                         </div>
                     </div>
                 </div>
@@ -77,20 +77,29 @@
         <p class="fw-bold my-3">Negocio</p>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="text" class="col-5 col-form-label">Concepto de precio</label>
+                        <div class="col-7">
+                            <input id="conc_precio" name="conc_precio" type="text" class="form-control"
+                                value="{{ $propiedad->conc_precio }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
                     <div class="form-group row">
                         <label class="col-5 col-form-label" for="name">CHIP</label>
                         <div class="col-7">
-                            <input id="name" name="name" type="text" class="form-control" value="{{ $propiedad->chip }}"
+                            <input id="chip" name="chip" type="text" class="form-control" value="{{ $propiedad->chip }}"
                                 required>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
                     <div class="form-group row">
                         <label for="text" class="col-5 col-form-label">Matricula</label>
                         <div class="col-7">
-                            <input id="text" name="lastname" type="text" class="form-control"
+                            <input id="text" name="matricula" type="text" class="form-control"
                                 value="{{ $propiedad->matricula }}" required>
                         </div>
                     </div>
@@ -109,10 +118,10 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group row" id="valorgrupo">
-                        <label for="valor" id="valorlabel" class="col-5 col-form-label">Valor tentativo</label>
+                        <label for="valor" id="valorlabel" class="col-5 col-form-label" >Valor tentativo</label>
                         <div class="col-7">
                             <input id="valor" name="valor" type="number" value="{{ $negocio_unico->valor }}"
-                                class="form-control" min="99000" required="required">
+                                class="form-control" min="99000" required="required" disabled>
                             <span id="valorpesos" class="form-text text-muted"></span>
                         </div>
                     </div>

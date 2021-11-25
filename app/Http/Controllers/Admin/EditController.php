@@ -31,11 +31,12 @@ use App\Models\Tipos_vigilancia;
 use App\Models\Vista;
 use App\Models\Zonas_sociales;
 use Illuminate\Http\Request;
+use PhpParser\Node\Scalar\MagicConst\Function_;
 
 class EditController extends Controller
 {
     //
-    public function edit_table()
+    public function showtable()
     {
         
         $propietarios = Propietarios::where('paso' , 'Planes')->get();
@@ -43,11 +44,16 @@ class EditController extends Controller
         //return view('admin.edit')->with('propietarios',$propietarios)->with('tipo_doc',Tipos_documento::all());
         return view('admin.edit', compact('propietarios','todos_documentos'));
     }
-    public function editform(Request $request){
+
+    public function convertir(Request $request) {
         
-        $codigo_pptario = $request->irForm;
-        $propietario = Propietarios::find($codigo_pptario);
-        $negocio_unico = Negocios::where('propietario', $codigo_pptario)->first();
+        return redirect()->route('administrador.editform',$request->codiprop);
+        
+    }
+
+    public function show(Propietarios $codiprop){
+        
+        $negocio_unico = Negocios::where('propietario', $codiprop->id)->first();
         $negocio_tipo = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
         $codigo_ppdad = $negocio_unico->propiedad;
         $propiedad = Propiedades::find($codigo_ppdad);
@@ -75,9 +81,49 @@ class EditController extends Controller
         $seguridad = Tipos_seguridad::pluck('desc_tipo_seguridad', 'id');
         $cuota = Tipos_cuotas::pluck('desc_tipo_cuota', 'id');
         
-        return view('admin.edit_form', compact('propiedad', 'propietario','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado',
+        return view('admin.edit_form', compact('propiedad', 'codiprop','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado',
         'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'
         ,'vigilancia','seguridad','cuota'));
 
     }
+
+    public function update(Request $request, Propietarios $codiprop) {
+        
+        $negocio_unico = Negocios::where('propietario', $codiprop->id)->first();
+        $codigo_ppdad = $negocio_unico->propiedad;
+        $propiedad = Propietarios::find($codigo_ppdad);
+        //propietario
+        $codiprop->name = $codiprop->name;
+        $codiprop->lastname = $codiprop->lastname;
+        $codiprop->phone = $codiprop->phone;
+        $codiprop->email = $codiprop->email;
+        $codiprop->tipo_doc = $codiprop->tipo_doc;
+        $codiprop->doc_number = $codiprop->doc_number;
+        $codiprop->save();
+        //Negocio
+        //$negocio_unico->conc_precio = $request->conc_precio;
+        $negocio_unico->tipo_negocio = $request->tipo;
+        $negocio_unico->valor = $request->valor;
+        $negocio_unico->asesor = $request->asesor;
+        $negocio_unico->save();
+        //propiedad
+        $propiedad->chip = $request->chip;
+        $propiedad->matricula = $request->matricula;
+        $propiedad->pqsolicita = $request->pqsolicita;
+        $propiedad->tipo_inmueble = $request->tipo_inm;
+        $propiedad->estrato = $request->estrato_inm;
+        $propiedad->direccion = $request->direccion;
+        $propiedad->direccion_comp = $request->direccion_comp;
+        $propiedad->tiempo_inm = $request->tiempo_inm;
+        $propiedad->estado = $request->estado_inb;
+        $propiedad->remodelado = $request->remodelado;
+        $propiedad->piso = $request->piso;
+        $propiedad->save();
+
+        
+
+        return redirect()->route('administrador.editform',$request->codiprop);
+        
+    }
+
 }
