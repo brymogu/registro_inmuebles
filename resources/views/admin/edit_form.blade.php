@@ -411,22 +411,22 @@
                 <div class="col-12 col-md-6">
                     <div class="form-group row" id="detalles">
                         <div class="col-5">
-                            <label for="longitud" class="col-form-label">Longitud</label>
+                            <label for="latitud" class="col-form-label">Latitud</label>
                         </div>
                         <div class="col-7">
-                            <input id="longitud" name="longitud" type="text" class="form-control"
-                                value="{{ $propiedad->longitud }}" disabled>
+                            <input id="latitud" name="latitud" type="text" class="form-control"
+                                value="{{ $propiedad->latitud }}">
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group row" id="detalles">
                         <div class="col-5">
-                            <label for="latitud" class="col-form-label">Latitud</label>
+                            <label for="longitud" class="col-form-label">Longitud</label>
                         </div>
                         <div class="col-7">
-                            <input id="latitud" name="latitud" type="text" class="form-control"
-                                value="{{ $propiedad->latitud }}" disabled>
+                            <input id="longitud" name="longitud" type="text" class="form-control"
+                                value="{{ $propiedad->longitud }}">
                         </div>
                     </div>
                 </div>
