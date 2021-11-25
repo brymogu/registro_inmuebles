@@ -91,14 +91,14 @@ class EditController extends Controller
         
         $negocio_unico = Negocios::where('propietario', $codiprop->id)->first();
         $codigo_ppdad = $negocio_unico->propiedad;
-        $propiedad = Propietarios::find($codigo_ppdad);
+        $propiedad = Propiedades::find($codigo_ppdad);
         //propietario
-        $codiprop->name = $codiprop->name;
-        $codiprop->lastname = $codiprop->lastname;
-        $codiprop->phone = $codiprop->phone;
-        $codiprop->email = $codiprop->email;
-        $codiprop->tipo_doc = $codiprop->tipo_doc;
-        $codiprop->doc_number = $codiprop->doc_number;
+        $codiprop->name = $request->name;
+        $codiprop->lastname = $request->lastname;
+        $codiprop->phone = $request->phone;
+        $codiprop->email = $request->email;
+        $codiprop->tipo_doc = $request->id;
+        $codiprop->doc_number = $request->idnumber;
         $codiprop->save();
         //Negocio
         //$negocio_unico->conc_precio = $request->conc_precio;

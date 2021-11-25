@@ -18,7 +18,7 @@
                     <div class="form-group row">
                         <label for="vigilancia" class="col-6 col-form-label">Vigilancia</label>
                         <div class="col-6">
-                            {!! Form::select('vigilancia', $vigilancia, null, ['class' => 'form-select', 'id' => 'no_garajes', 'required' => 'required']) !!}
+                            {!! Form::select('vigilancia', $vigilancia, null, ['class' => 'form-select', 'id' => 'vigilancia', 'required' => 'required']) !!}
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <div class="form-group row">
                         <label for="seguridad" class="col-6 col-form-label">Seguridad</label>
                         <div class="col-6">
-                            {!! Form::select('seguridad', $seguridad, null, ['class' => 'form-select', 'id' => 'no_garajes', 'required' => 'required']) !!}
+                            {!! Form::select('seguridad', $seguridad, null, ['class' => 'form-select', 'id' => 'seguridad', 'required' => 'required']) !!}
                         </div>
                     </div>
                 </div>

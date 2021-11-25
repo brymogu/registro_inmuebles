@@ -237,7 +237,7 @@
                     <div class="form-group row">
                         <label for="asesor" class="col-5 col-form-label">Nombre del Asesor</label>
                         <div class="col-7">
-                            <input id="asesor" name="asesor" type="text" class="form-control " value="{{ $negocio_unico->conc_precio }}">
+                            <input id="asesor" name="asesor" type="text" class="form-control " value="{{ $negocio_unico->asesor }}">
                         </div>
                     </div>
                 </div>
@@ -415,7 +415,7 @@
                         </div>
                         <div class="col-7">
                             <input id="longitud" name="longitud" type="text" class="form-control"
-                                value="{{ $propiedad->longitud }}">
+                                value="{{ $propiedad->longitud }}" disabled>
                         </div>
                     </div>
                 </div>
@@ -426,7 +426,7 @@
                         </div>
                         <div class="col-7">
                             <input id="latitud" name="latitud" type="text" class="form-control"
-                                value="{{ $propiedad->latitud }}">
+                                value="{{ $propiedad->latitud }}" disabled>
                         </div>
                     </div>
                 </div>
@@ -987,10 +987,10 @@
                 </div>
                 <div class="col-12 col-md-4 text-center">
                     <div class="form-group row">
-                        <label for="garaje_c" class="col-5 col-form-label">Cubierto(s)</label>
+                        <label for="gje_cubierto" class="col-5 col-form-label">Cubierto(s)</label>
                         <div class="col-7">
-                            <select id="garaje_c" class="form-select" name="garaje_c" required="required">
-                                @if ($propiedad->garaje_c == 'Si')
+                            <select id="gje_cubierto" class="form-select" name="gje_cubierto" required="required">
+                                @if ($propiedad->gje_cubierto == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else

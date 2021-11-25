@@ -313,7 +313,7 @@ class DetallesController extends Controller
             $propiedad->gje_cubierto = "No";
         }        
         
-        $propiedad->no_garajes = $request->n_garajes;
+        $propiedad->no_garajes = $request->no_garajes;
         $propiedad->tipo_garajes = $request->tipo_garaje;
 
         // checks

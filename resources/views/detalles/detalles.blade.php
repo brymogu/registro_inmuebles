@@ -542,7 +542,7 @@
                         <div class="form-group row">
                             <label for="no_garajes" class="col-6 col-form-label">Cantidad de garajes</label>
                             <div class="col-6">
-                                <input class="form-control" type="number" min="1" max="100" name="n_garajes"
+                                <input class="form-control" type="number" min="1" max="100" name="no_garajes"
                                     id="no_garajes">
                             </div>
                         </div>

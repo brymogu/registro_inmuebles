@@ -608,9 +608,9 @@
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label for="n_garajes" class="col-6 col-form-label">Cantidad de Garajes</label>
+                        <label for="no_garajes" class="col-6 col-form-label">Cantidad de Garajes</label>
                         <div class="col-6">
-                            <input class="form-control" type="number" min="1" max="100"  name="n_garajes" id="n_garajes"
+                            <input class="form-control" type="number" min="1" max="100"  name="no_garajes" id="no_garajes"
                                 value="{{ $propiedad->no_garajes }}">
                         </div>
                     </div>
@@ -625,19 +625,19 @@
                 </div>
                 <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
-                        <label for="garaje_c" class="col-5 col-form-label">Garaje(s)
+                        <label for="gje_cubierto" class="col-5 col-form-label">Garaje(s)
                             Cubiertos</label>
                         <div class="col-2">
                             <a>No</a>
                         </div>
                         <div class="col-3 bool text-center">
-                            @if ($propiedad->garaje_c == 'Si')
-                                <input type="checkbox" value="1" name="garaje_c" id="garaje_c" checked />
+                            @if ($propiedad->gje_cubierto == 'Si')
+                                <input type="checkbox" value="1" name="gje_cubierto" id="gje_cubierto" checked />
                             @else
-                                <input type="checkbox" value="1" name="garaje_c" id="garaje_c" />
+                                <input type="checkbox" value="1" name="gje_cubierto" id="gje_cubierto" />
                             @endif
 
-                            <label class="slider-v1" for="garaje_c"></label>
+                            <label class="slider-v1" for="gje_cubierto"></label>
                         </div>
                         <div class="col-2">
                             <a>Si</a>
