@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="row seccion">
                 <div class="col-12">
-                    <h5>Más detalles del inmueble</h5>
+                    <h5>Detalles del inmueble</h5>
                 </div>
             </div>
             {{ Form::open(['method' => 'post']) }}
@@ -121,7 +121,7 @@
             </div>
             <div class="row grupo seccion">
                 <div class="col-12">
-                    <p>Carcteristicas internas inmueble:</p>
+                    <p>Carcteristicas específicas inmueble:</p>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4 border-end">

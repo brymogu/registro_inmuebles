@@ -16,12 +16,13 @@ class NoGarajesSeeder extends Seeder
     {
         //
         
-        $garajes1 = new tipo_garajes();
-        $garajes1->tipo_garajes =  "Independiente";
-        $garajes1->save();
+        $garajes = new tipo_garajes();
+        $garajes->tipo_garajes =  "Independiente";
+        $garajes->save();
 
         $garajes2 = new tipo_garajes();
         $garajes2->tipo_garajes = "Servidumbre";
         $garajes2->save();
+
     }
 }

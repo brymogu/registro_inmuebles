@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="row seccion">
                 <div class="col-12">
-                    <h5>Características específicas del inmueble</h5>
+                    <h5>Detalles del inmueble</h5>
                 </div>
             </div>
             {{ Form::open(['method' => 'post']) }}
@@ -121,7 +121,7 @@
             </div>
             <div class="row grupo seccion">
                 <div class="col-12">
-                    <p>Características internas inmueble:</p>
+                    <p>Características específicas inmueble:</p>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4 ">
@@ -523,12 +523,12 @@
                     </div>
                     <div class="col-12 col-md-4 ">
                         <div class="form-group row" id="sec_independiente">
-                            <label for="gje_independiente" class="col-5 col-form-label">Garaje(s) Independiente(s)</label>
+                            <label for="gje_independiente" class="col-5 col-form-label">Garaje(s) comunal(es)</label>
                             <div class="col-2">
                                 <a>No</a>
                             </div>
                             <div class="col-3 bool text-center">
-                                <input type="checkbox" id="gje_independiente"  name="gje_independiente" value="1" />
+                                <input type="checkbox" id="gje_independiente"  name="gje_independiente" value="1" checked />
                                 <label class="slider-v1" for="gje_independiente"></label>
                             </div>
                             <div class="col-2">

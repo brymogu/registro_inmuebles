@@ -220,12 +220,13 @@ $(document).ready(function() {
 
         $('#gje_independiente').change(function() {
             if ($('#gje_independiente').prop('checked')) {
-                $('#sec_garajes').show();
+                $('#sec_garajes').hide();
+
                 $('#no_garajes').attr("required", "true");
                 $('#tipo_garaje').attr("required", "true");
 
             } else {
-                $('#sec_garajes').hide();
+                $('#sec_garajes').show();
                 $('#no_garajes').removeAttr('required');
                 $('#tipo_garaje').removeAttr('required');
             }
