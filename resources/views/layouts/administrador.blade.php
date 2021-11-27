@@ -68,7 +68,8 @@
                                 class="fas fa-pencil-alt"></i> Editar</a>
                     </li>
                     <li class="nav-item rounded-pill">
-                        <a class="nav-link" href="#"><i class="fas fa-angle-double-down"></i> Descargas </a>
+                        <a class="nav-link" href="{{ route('administrador.download') }}"><i 
+                            class="fas fa-angle-double-down"></i> Descargas </a>
                     </li>
                     <li class="nav-item rounded-pill">
                         <a class="nav-link" href="#"><i class="far fa-file-pdf"></i> Contratos </a>

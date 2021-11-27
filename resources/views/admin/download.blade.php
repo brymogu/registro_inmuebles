@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 @endsection
-@section('title', 'Editar')
+@section('title', 'Descargar')
 
 @section('content')
     <div class="col-12 pt-5 px-3">
@@ -60,9 +60,6 @@
                                     <input type="text" class="d-none" name="codiprop" value="{{ $propietario->id}}" >    
                                     <button type="submit" class="btn btn-epc rounded-circle"><i
                                                 class="fas fa-file-pdf"></i></button>
-
-                                                <i class="far fa-file-pdf"></i>
-                                                                                        
                                     {{ Form::close() }}
                                 </td>
                             </tr>

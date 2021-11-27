@@ -281,7 +281,7 @@
                                 <a>No</a>
                             </div>
                             <div class="col-3 bool text-center">
-                                @if ($propiedad->piso == 'Si')
+                                @if ($propiedad->ascensor == 'Si')
                                     <input type="checkbox" name="ascensor" value="1" id="ascensor" checked />
                                 @else
                                     <input type="checkbox" name="ascensor" value="1" id="ascensor" />

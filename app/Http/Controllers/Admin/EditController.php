@@ -35,7 +35,7 @@ use PhpParser\Node\Scalar\MagicConst\Function_;
 
 class EditController extends Controller
 {
-    //
+    
     public function showtable()
     {
         
@@ -101,10 +101,10 @@ class EditController extends Controller
         $codiprop->doc_number = $request->idnumber;
         $codiprop->save();
         //Negocio
-        //$negocio_unico->conc_precio = $request->conc_precio;
         $negocio_unico->tipo_negocio = $request->tipo;
         $negocio_unico->valor = $request->valor;
         $negocio_unico->asesor = $request->asesor;
+        $negocio_unico->conc_precio = $request->conc_precio;
         $negocio_unico->save();
         //propiedad
         $propiedad->chip = $request->chip;
@@ -112,17 +112,95 @@ class EditController extends Controller
         $propiedad->pqsolicita = $request->pqsolicita;
         $propiedad->tipo_inmueble = $request->tipo_inm;
         $propiedad->estrato = $request->estrato_inm;
+        $propiedad->ciudad = $request->ciudad;
         $propiedad->direccion = $request->direccion;
         $propiedad->direccion_comp = $request->direccion_comp;
+        $propiedad->latitud = $request->latitud;
+        $propiedad->longitud = $request->longitud;
         $propiedad->tiempo_inm = $request->tiempo_inm;
         $propiedad->estado = $request->estado_inb;
         $propiedad->remodelado = $request->remodelado;
         $propiedad->piso = $request->piso;
+        $propiedad->espropietario = $request->espropietario;
+        $propiedad->habitado = $request->habitado;
+        $propiedad->arrendado = $request->arrendado;
+        $propiedad->urbano = $request->urbano;
+        $propiedad->embargo = $request->embargo;
+        $propiedad->horizontal = $request->horizontal;
+        $propiedad->tuberia = $request->tuberia;
+        $propiedad->ascensor = $request->ascensor;
+        
+        //mas detalles del inmueble
+        $propiedad->a_construida = $request->a_construida;
+        $propiedad->a_privada = $request->a_privada;
+        $propiedad->a_terreno = $request->a_terreno;
+        $propiedad->nivel = $request->nivel;
+        $propiedad->n_hab = $request->n_hab;
+        $propiedad->n_banos = $request->n_banos;
+        $propiedad->mat_habitaciones = $request->mat_habitacion;
+        $propiedad->mat_cocina = $request->mat_piso_cocina;
+        $propiedad->mat_bano = $request->mat_piso_bano;
+        $propiedad->mat_zsocial = $request->mat_piso_zsocial;
+        //caracteristicas del inmueble
+        $propiedad->mb_cocina = $request->mb_cocina;
+        $propiedad->estufa = $request->estufa;
+        $propiedad->horno = $request->horno;
+        $propiedad->tipo_cocina = $request->tipo_cocina;
+        $propiedad->calentador = $request->calentador;
+        $propiedad->vista = $request->vista;
+        $propiedad->zonas = $request->zonas;
+        $propiedad->mat_fachada = $request->mat_fachada;
+        $propiedad->garaje = $request->tiene_garaje;
+        $propiedad->chimenea = $request->chimenea;
+        $propiedad->balcon = $request->balcon;
+        $propiedad->b_servicio = $request->b_servicio;
+        $propiedad->b_social = $request->b_social;
+        $propiedad->estudio = $request->estudio;
+        $propiedad->deposito = $request->deposito;
+        $propiedad->hab_servicio = $request->hab_servicio;
+        $propiedad->star = $request->star;
+        $propiedad->zona_lavanderia = $request->zona_lavanderia;
+        $propiedad->entrega_cortinas = $request->entrega_cortinas;
+        $propiedad->terraza = $request->terraza;
+        $propiedad->piscina_p = $request->piscina_p;
+        $propiedad->sauna_p = $request->sauna_p;
+        $propiedad->turco_p = $request->turco_p;
+        $propiedad->jacuzzi_p = $request->jacuzzi_p;
+        $propiedad->tina_p = $request->tina_p;
+        $propiedad->turco_p = $request->turco_p;
+        $propiedad->calefaccion_p = $request->calefaccion_p;
+        $propiedad->patio = $request->patio;
+        $propiedad->no_garajes = $request->no_garajes;
+        $propiedad->tipo_garaje = $request->tipo_garajes;
+        $propiedad->gje_cubierto = $request->gje_cubierto;
+        //Caracteristicas conjunto
+        $propiedad->tipo_vigilancia = $request->vigilancia;
+        $propiedad->tipo_seguridad = $request->seguridad;
+        $propiedad->tipo_cuota = $request->t_cuota;
+        $propiedad->nombre_c_e = $request->nombre_c_e;
+        $propiedad->adm_cp = $request->adm_cp;
+        $propiedad->adm_cd = $request->adm_cd;
+        $propiedad->pq_visitantes = $request->pq_visitantes;
+        $propiedad->bicicletero = $request->bicicletero;
+        $propiedad->s_social = $request->s_social;
+        $propiedad->bbq = $request->bbq;
+        $propiedad->s_juntas = $request->s_juntas;
+        $propiedad->p_infantil = $request->p_infantil;
+        $propiedad->gimnasio = $request->gimnasio;
+        $propiedad->turco = $request->turco;
+        $propiedad->sauna = $request->sauna;
+        $propiedad->c_squash = $request->c_squash;
+        $propiedad->c_tenis = $request->c_tenis;
+        $propiedad->c_multiple = $request->c_multiple;
+        $propiedad->s_juegos = $request->s_juegos;
+        $propiedad->s_estudio = $request->s_estudio;
+        $propiedad->lavanderia_c = $request->lavanderia_c;
+        $propiedad->planta_e = $request->planta_e;
+        $propiedad->piscina = $request->piscina;
+        $propiedad->jardin_interior = $request->jardin_interior;
         $propiedad->save();
 
-        
-
-        return redirect()->route('administrador.editform',$request->codiprop);
+        return redirect()->route('administrador.edit',$request->codiprop);
         
     }
 

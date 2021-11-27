@@ -86,8 +86,6 @@ class DetallesController extends Controller
         $Propiedad->tipo_vista = $request->vista;
         $Propiedad->zona_social = $request->zona_social;
         $Propiedad->material_fachada = $request->material_fachada;
-        $Propiedad->piso = $request->piso;
-
 
         if ($request->garaje) {
             $Propiedad->tiene_garaje = "Si";

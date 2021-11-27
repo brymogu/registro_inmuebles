@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\EditController;
 use App\Http\Controllers\Admin\InicioController;
 use App\Http\Controllers\Admin\UsuarioController;
+use App\Http\Controllers\Admin\DownloadController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,3 +17,5 @@ Route::post('administrador/editar', [EditController::class, 'convertir'])->name(
 
 Route::get('administrador/editar/inmueble/{codiprop}', [EditController::class, 'show'])->name('administrador.editform');
 Route::post('administrador/editar/inmueble/{codiprop}', [EditController::class, 'update'])->name('administrador.editupdate');
+
+Route::get('administrador/descargas', [DownloadController::class, 'showtable'])->name('administrador.download');
