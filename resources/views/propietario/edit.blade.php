@@ -2,6 +2,7 @@
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
 <script src="{!! asset('js/condiciones_edit.js') !!}"></script>
+<link rel="stylesheet" href="{!! asset('css/intlTelInput.css') !!}">
 @endsection
 
 
@@ -35,6 +36,14 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-12 col-md-6 border-end">
+                        <div class="form-group row">
+                            <label for="email" class="col-5 col-form-label">E-mail</label>
+                            <div class="col-7">
+                                <input id="email" name="email" type="email" value="{{ $propietario->email }}" class="form-control" disabled required>
+                            </div>
+                        </div>                        
+                    </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group row">
                             <label for="phone" class="col-5 col-form-label">Teléfono celular</label>
@@ -43,15 +52,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 border-end">
-                        <div class="form-group row">
-                            <label for="email" class="col-5 col-form-label">E-mail</label>
-                            <div class="col-7">
-                                <input id="email" name="email" type="email" value="{{ $propietario->email }}" class="form-control" disabled required>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
                 <div class="row">
                     <div class="col-12 my-3 text-left">
@@ -96,14 +96,14 @@
 </a>
 <script src="{!! asset('js/tel/intlTelInput.js') !!}"></script>
 <script>
-    var input = document.querySelector("#phone");
+     var input = document.querySelector("#phone");
     window.intlTelInput(input, {
         // allowDropdown: false,
-        // autoHideDialCode: false,
+        autoHideDialCode: false,
         autoPlaceholder: "aggressive",
         // dropdownContainer: document.body,
         // excludeCountries: ["us"],
-        // formatOnDisplay: false,
+        formatOnDisplay: true,
         // geoIpLookup: function(callback) {
         //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
         //     var countryCode = (resp && resp.country) ? resp.country : "";
@@ -117,7 +117,7 @@
         // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
         placeholderNumberType: "MOBILE",
         preferredCountries: ['co', 'us'],
-        // separateDialCode: true,
+        separateDialCode: true,
         utilsScript: "js/tel/utils.js",
     });
 </script>

@@ -70,15 +70,11 @@
                         <div class="form-group row">
                             <label for="conjunto" class="col-5">El inmueble se encuentra en
                                 conjunto cerrado o edificio </label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool text-center">
-                                <input type="checkbox" name="conjunto" value="1" id="conjunto" />
-                                <label class="slider-v1" for="conjunto"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
+                            <div class="col-7">
+                                <select class="form-select" id="conjunto" name="conjunto">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -278,8 +274,8 @@
                             <label for="asesor" class="col-5 col-form-label">Nombre del Asesor</label>
                             <div class="col-7">
                                 <input id="asesor" name="asesor" type="text" class="form-control">
+                                <span class="form-text text-muted">No obligatorio</span>
                             </div>
-                            <span class="form-text text-muted">No obligatorio</span>
                         </div>
                     </div>
                     <div class="col-12  col-md-6">
@@ -324,20 +320,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="form-group row border-end">
-                            <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
-                            <div class="col-7">
-                                {!! Form::select('estrato_inm', $estratos, null, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-
-                    </div>
-                </div>
+                </div>                
                 <div class="row">
                     <div class="col-12 col-md-6 border-end">
                         <div class="form-group row" id="anoconstruido">
@@ -406,6 +389,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row border-end">
+                            <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
+                            <div class="col-7">
+                                {!! Form::select('estrato_inm', $estratos, null, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+
+                    </div>
+                </div>
             </div>
             <div class="grupo mb-3">
                 <div class="row seccion">
@@ -431,7 +427,6 @@
                             <div class="col-7">
                                 <input id="direccion" name="direccion" type="text" class="form-control"
                                     required="required" placeholder="Ejemplo: Calle 25A #52B-06">
-
                             </div>
                         </div>
                     </div>

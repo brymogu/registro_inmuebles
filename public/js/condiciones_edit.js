@@ -27,6 +27,13 @@ $(document).ready(function() {
             $('#detalles').show();
             $('#direccion_comp').attr("required", "true");
 
+            if ($('#habitado').prop('checked')) {
+                $('#arrendado').show();
+
+            } else {
+                $('#arrendado').hide();
+            }
+
         } else {
             $('#direccion_comp').removeAttr('required');
             $('#detalles').hide();
@@ -44,11 +51,11 @@ $(document).ready(function() {
         if ($('#negocio').val() == 2) {
             $('#cortina').show();
             $('#admonhelper').show();
-            $('#valorlabel').html("¿Cu&aacute;l valor le vas a asignar al inmueble en arriendo?");
+            $('#valorlabel').html("¿Valor tentativo que le vas a  asignar al inmueblee en arriendo?");
         }
         if ($('#negocio').val() == 1) {
             $('#cortina').show();
-            $('#valorlabel').html("¿Cu&aacute;l valor le vas a asignar al inmueble en venta?");
+            $('#valorlabel').html("¿Valor tentativo que le vas a  asignar al inmueble en venta?");
             $('#admonhelper').hide();
         }
         if ($('#negocio').val() == 3) {
@@ -91,6 +98,15 @@ $(document).ready(function() {
             $('#sec_tuberia').hide();
             $('#tuberia').prop("checked", false);
         }
+
+
+        $('#arr_check').change(function() {
+            console.log("en");
+            if ($('#negocio').val() == 1) {
+                $('#motivo').html("si se encuentra arrendado");
+                myModal.show()
+            }
+        });
 
     } else if ($('#detalles').length) {
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");

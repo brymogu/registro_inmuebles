@@ -31,7 +31,7 @@ $(document).ready(function() {
             $('#piso').removeAttr('required');
         }
 
-        if ($('#conjunto').prop('checked')) {
+        if ($('#conjunto').val() == "Si") {
             $('#detalles').show();
         } else {
             $('#detalles').hide();
@@ -48,7 +48,7 @@ $(document).ready(function() {
         });
 
         $('#conjunto').change(function() {
-            if ($('#conjunto').prop('checked')) {
+            if ($('#conjunto').val() == "Si") {
                 $('#detalles').show();
                 $('#direccion_comp').attr("required", "true");
                 $('#iconjunto').show();
@@ -63,6 +63,7 @@ $(document).ready(function() {
                 $('#horizontal').hide();
             }
         });
+
 
         $('#habitado').change(function() {
             if ($('#habitado').prop('checked')) {
@@ -108,10 +109,14 @@ $(document).ready(function() {
             myModal.show()
         });
 
+
         $('#arr_check').change(function() {
-            $('#motivo').html("si se encuentra arrendado");
-            myModal.show()
+            if ($('#negocio').val() == 1) {
+                $('#motivo').html("si se encuentra arrendado");
+                myModal.show()
+            }
         });
+
 
 
         $('#tipo_inm').change(function() {
@@ -135,11 +140,6 @@ $(document).ready(function() {
             if ($('#negocio').val() == 1) {
                 $('#cortina').show();
                 $('#valorlabel').html("¿Cu&aacute;l valor tentativo le vas a asignar al inmueble en venta?");
-                $('#admonhelper').hide();
-                $('#reglas').hide();
-            }
-            if ($('#negocio').val() == 3) {
-                $('#cortina').hide();
                 $('#admonhelper').hide();
                 $('#reglas').hide();
             }

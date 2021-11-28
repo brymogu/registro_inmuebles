@@ -82,7 +82,7 @@ class NegocioController extends Controller
         } else {
             $propiedad->ascensor = "No";
         }
-        if ($request->arrendado) {
+        if ($request->arr_check) {
             $propiedad->arrendado = "Si";
         } else {
             $propiedad->arrendado = "No";
@@ -159,7 +159,7 @@ class NegocioController extends Controller
         } else {
             $propiedad->ascensor = "No";
         }
-        if ($request->arrendado) {
+        if ($request->arr_check) {
             $propiedad->arrendado = "Si";
         } else {
             $propiedad->arrendado = "No";
