@@ -112,7 +112,6 @@ $(document).ready(function() {
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
         $('#area_terraza_secc').hide();
-        $('#area_terraza_secc').hide();
 
         if ($('#garaje').prop('checked')) {
             $('#sec_independiente').show();
@@ -124,13 +123,14 @@ $(document).ready(function() {
 
         if ($('#gje_comunal').prop('checked')) {
             $('#sec_garajes').hide();
-            $('#no_garajes').attr("required", "true");
-            $('#tipo_garaje').attr("required", "true");
+            $('#no_garajes').removeAttr('required');
+            $('#tipo_garaje').removeAttr('required');
 
         } else {
             $('#sec_garajes').show();
-            $('#no_garajes').removeAttr('required');
-            $('#tipo_garaje').removeAttr('required');
+            $('#no_garajes').attr("required", "true");
+            $('#tipo_garaje').attr("required", "true");
+
         }
 
         if ($('#balcon').prop('checked')) {

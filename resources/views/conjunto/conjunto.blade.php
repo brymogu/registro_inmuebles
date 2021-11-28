@@ -376,7 +376,7 @@
                 <div class="d-none d-md-block col-md-8">
                 </div>
                 <div class="col-6 col-md-2 text-end">
-                    <button type="submit" class="btn botones">Enviar</button>
+                    <button type="submit" class="btn botones">Siguiente</button>
                 </div>
             </div>
             {{ Form::close() }}

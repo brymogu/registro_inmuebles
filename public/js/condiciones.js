@@ -205,6 +205,8 @@ $(document).ready(function() {
 
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
+        $('#sec_garajes').hide();
+        $('#sec_independiente').hide();
         $('#area_terraza_secc').hide();
         $('#area_balcon_secc').hide();
 
@@ -260,8 +262,6 @@ $(document).ready(function() {
         $(".usuario i, .negocio i, .detalles i, .conjunto i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar").css("background-color", "#01303c");
 
-
-
         $('#t_cuota').change(function() {
             if ($('#t_cuota').val() == 2) {
                 $('#descuento').show();
@@ -287,12 +287,20 @@ $(document).ready(function() {
 
 
     } else if ($('#fotos').length) {
-
         $(".usuario i, .negocio i, .detalles i, .conjunto i,.camara i").css("color", "#01303c");
-
     } else if ($('#planes_tarjeta').length) {
-
         $(".usuario i, .negocio i, .detalles i, .conjunto i, .planes i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
+
+        $('#sec_valor').hide();
+
+        $('#modificar').change(function() {
+            if ($('#modificar').prop('checked')) {
+                $('#sec_valor').show();
+            } else {
+                $('#sec_valor').hide();
+            }
+        });
+
     }
 });

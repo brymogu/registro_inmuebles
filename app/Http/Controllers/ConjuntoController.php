@@ -145,12 +145,6 @@ class ConjuntoController extends Controller
             $Propiedad->piscina = "No";
         }
 
-        if ($request->jardin_interior) {
-            $Propiedad->jardin_interior = "Si";
-        } else {
-            $Propiedad->jardin_interior = "No";
-        }
-
         $Propiedad->save();
 
         $negocio_unico = Negocios::where('propiedad', $Propiedad->id)->first();

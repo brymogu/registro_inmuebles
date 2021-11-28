@@ -116,7 +116,7 @@
                 </div>
                 <div id="reglasgral">
                     <div class="row">
-                        <div class="col-12 col-md-6 ">
+                        <div class="col-12 col-md-6 border-end">
                             <div class="form-group row">
                                 <label for="embargo" class="col-5">Inmueble con embargo</label>
                                 <div class="col-2">

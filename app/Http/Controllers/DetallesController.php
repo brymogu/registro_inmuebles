@@ -298,7 +298,9 @@ class DetallesController extends Controller
         $propiedad->tipo_vista = $request->vista;
         $propiedad->zona_social = $request->zona_social;
         $propiedad->material_fachada = $request->material_fachada;       
-        
+        $propiedad->area_terraza = $request->area_terraza;
+        $propiedad->area_balcon = $request->area_balcon;
+
         // garajes
 
         if ($request->garaje) {
@@ -307,10 +309,10 @@ class DetallesController extends Controller
             $propiedad->tiene_garaje = "No";
         }
 
-        if ($request->gje_independiente) {
-            $propiedad->gje_independiente = "Si";
+        if ($request->gje_comunal) {
+            $propiedad->gje_comunal = "Si";
         } else {
-            $propiedad->gje_independiente = "No";
+            $propiedad->gje_comunal = "No";
         }
 
         if ($request->gje_cubierto) {
@@ -448,8 +450,7 @@ class DetallesController extends Controller
             $propiedad->jardin_interior = "Si";
         } else {
             $propiedad->jardin_interior = "No";
-        }
-      
+        }     
 
         $propiedad->save();
         return redirect()->route('conjunto.show', $propiedad);

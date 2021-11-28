@@ -440,26 +440,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-end">
-                    <div class="form-group row">
-                        <label for="jardin_interior" class="col-5 col-form-label">
-                            Jardín Interior</label>
-                        <div class="col-2">
-                            <a>No</a>
-                        </div>
-                        <div class="col-3 bool text-center">
-                            @if ($propiedad->jardin_interior == 'Si')
-                            <input type="checkbox" value="1" name="jardin_interior" id="jardin_interior" checked />
-                            @else
-                                <input type="checkbox" value="1" name="jardin_interior" id="jardin_interior" />
-                            @endif
-                            <label class="slider-v1" for="jardin_interior"></label>
-                        </div>
-                        <div class="col-2">
-                            <a>Si</a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="row">
                 <div class="col-6 col-md-2 text-left">
@@ -468,7 +449,7 @@
                 <div class="d-none d-md-block col-md-8">
                 </div>
                 <div class="col-6 col-md-2 text-end">
-                    <button type="submit" class="btn botones">Enviar</button>
+                    <button type="submit" class="btn botones">Siguiente</button>
                 </div>
             </div>
             {{ Form::close() }}

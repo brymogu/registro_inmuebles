@@ -519,7 +519,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4" id="area_balcon_secc">
-                        <div class="form-group row">
+                        <div class="form-group row border-end">
                             <label for="area_balcon" class="col-5 col-form-label">Área del balcón</label>
                             <div class="col-7">
                                 <input id="area_balcon" name="area_balcon" type="number" step="1" min="1"
