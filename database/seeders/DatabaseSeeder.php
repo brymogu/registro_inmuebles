@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Conc_juridicos;
-use App\Models\Mats_piso_bano;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -42,6 +40,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NivelesSeeder::class);
         $this->call(UsuarioSeeder::class);
         $this->call(CuidadesyDepartamentos::class);
-        $this->call(Conc_juridicos::class);
+        $this->call(ConcJuridicosSeeder::class);
     }
 }
