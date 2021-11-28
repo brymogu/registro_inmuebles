@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AcuerdosController;
 use App\Http\Controllers\Admin\EditController;
 use App\Http\Controllers\Admin\InicioController;
 use App\Http\Controllers\Admin\UsuarioController;
@@ -21,5 +22,5 @@ Route::get('administrador/editar/inmueble/{codiprop}', [EditController::class, '
 Route::post('administrador/editar/inmueble/{codiprop}', [EditController::class, 'update'])->name('administrador.editupdate');
 
 Route::get('administrador/descargas', [DownloadController::class, 'showtable'])->name('administrador.download');
-Route::get('/storage/{file}', function ($file) {return Storage::response("uploads/$file");
-});
+
+Route::get('administrador/acuerdos', [AcuerdosController::class, 'showtable'])->name('administrador.acuerdos');

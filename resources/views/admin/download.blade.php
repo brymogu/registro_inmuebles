@@ -50,7 +50,6 @@
                                 <td>
                                     <a class="btn btn-epc rounded-circle" target="_blank" href="{{$negocio->certificado}}"><i
                                         class="fas fa-file-pdf"></i></a>
-                                        
                                 </td>
                             </tr>
                         @endforeach
@@ -73,7 +72,7 @@
                         next: '<i class="fas fa-angle-right"></i>',
                         last: "Ultimo"
                     },
-                    lengthMenu: '<p class="fw-bold ">Inmuebles Consignados</p>',
+                    lengthMenu: '<p class="fw-bold ">Descarga de Documentos</p>',
                     info: "Mostrando _START_ a _END_ de _TOTAL_ entradas",
                 },
             });

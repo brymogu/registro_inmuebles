@@ -72,7 +72,7 @@
                             class="fas fa-angle-double-down"></i> Descargas </a>
                     </li>
                     <li class="nav-item rounded-pill">
-                        <a class="nav-link" href="#"><i class="far fa-file-pdf"></i> Contratos </a>
+                        <a class="nav-link" href="{{ route('administrador.acuerdos') }}"><i class="far fa-file-pdf"></i> Contratos </a>
                     </li>
                 </ul>
             </div>

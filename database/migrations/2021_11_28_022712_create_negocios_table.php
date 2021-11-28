@@ -37,6 +37,14 @@ class CreateNegociosTable extends Migration
 
             $table->biginteger('valor')->nullable();
             $table->biginteger('conc_precio')->nullable();
+            $table->biginteger('precio_contrato')->nullable();
+
+            $table->unsignedBigInteger('conc_juridico')->nullable();
+            $table->foreign('conc_juridico')
+                ->references('id')->on('conc_juridicos')
+                ->onDelete('set null');
+            $table->text('obs_conc_juridico')->nullable();
+
             $table->string('cpvj')->nullable();
             $table->string('asesor')->nullable();         
             $table->timestamps();
@@ -53,3 +61,4 @@ class CreateNegociosTable extends Migration
         Schema::dropIfExists('negocios');
     }
 }
+

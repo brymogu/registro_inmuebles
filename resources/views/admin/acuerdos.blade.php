@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 @endsection
-@section('title', 'Editar')
+@section('title', 'Contratos')
 
 @section('content')
     <div class="col-12 pt-5 px-3">
@@ -22,46 +22,34 @@
                                 Documento
                             </th>
                             <th>
-                                Asesor
+                                Plan
                             </th>
                             <th>
-
+                                Certificado
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        @foreach ($propietarios as $propietario)
+                        @foreach ($negocios as $negocio)
                             <tr>
                                 <td>
                                     <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                        title="{{ date('d M Y', strtotime($propietario->created_at)) }}">{{ $propietario->created_at->diffForHumans() }}</button>
+                                        title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
+                                </td>                                                                   
+                                <td>
+                                    <b> {{ $negocio->name }}</b><br />
+                                    {{ $negocio->lastname }}
                                 </td>
                                 <td>
-                                    <b> {{ $propietario->name }}</b><br />
-                                    {{ $propietario->lastname }}
+                                    <b> {{ $negocio->desc_nombres_corto }}</b><br />
+                                    {{ $negocio->doc_number }}
                                 </td>
                                 <td>
-                                    
-                                    @foreach ($todos_documentos as $documento)
-                                        @if ($documento->id == $propietario->tipo_doc)
-                                        {{ $documento->desc_nombres_corto }}          
-                                        @endif
-                                    @endforeach
-                                    <br />
-                                    <b> {{ $propietario->doc_number }}</b>
-                                    
+                                    {{ $negocio->desc_plan }}
                                 </td>
                                 <td>
-                                    {{ $propietario->asesor }}
-                                </td>
-                                <td>
-                                    {{ Form::open(['method' => 'post']) }}
-                                    <input type="text" class="d-none" name="codiprop" value="{{ $propietario->id}}" >    
-                                    <button type="submit" class="btn btn-epc rounded-circle"><i
-                                                class="fas fa-pencil-alt"></i></button>
-                                                                                        
-                                    {{ Form::close() }}
+                                    <a class="btn btn-epc rounded-circle" target="_blank" href="{{$negocio->certificado}}"><i
+                                        class="fas fa-file-pdf"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -84,7 +72,7 @@
                         next: '<i class="fas fa-angle-right"></i>',
                         last: "Ultimo"
                     },
-                    lengthMenu: '<p class="fw-bold ">Editar Inmuebles</p>',
+                    lengthMenu: '<p class="fw-bold ">Edición de Contratos</p>',
                     info: "Mostrando _START_ a _END_ de _TOTAL_ entradas",
                 },
             });
