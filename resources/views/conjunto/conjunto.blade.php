@@ -365,20 +365,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4 border-end">
-                    <div class="form-group row">
-                        <label for="jardin_interior" class="col-5 col-form-label">
-                            Jardín Interior</label>
-                        <div class="col-2">
-                            <a>No</a>
-                        </div>
-                        <div class="col-3 bool text-center">
-                            <input type="checkbox" value="1" name="jardin_interior" id="jardin_interior" />
-                            <label class="slider-v1" for="jardin_interior"></label>
-                        </div>
-                        <div class="col-2">
-                            <a>Si</a>
-                        </div>
-                    </div>
+                    
+                    
                 </div>
             </div>
             <div class="row">

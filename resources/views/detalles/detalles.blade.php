@@ -14,26 +14,26 @@
             </div>
             {{ Form::open(['method' => 'post']) }}
             <div class="row grupo seccion">
-                <div class="col-12 ">
+                <div class="col-12">
                     <p>Área (m<sup>2</sup>)<br />
                         <span>(Sin incluir balcón(es) y/o terraza(s)<span>
                     </p>
                 </div>
-                <div class="col-12 col-md-4 ">
+                <div class="col-12 col-md-4">
                     <div class="form-group row">
                         <label for="a_construida" class="col-5 col-form-label">Construida</label>
                         <div class="col-7">
                             <input id="a_construida" name="a_construida" type="number" step="0.1" min="11"
-                                class="form-control" required="required">
+                                class="form-control" required>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 ">
+                <div class="col-12 col-md-4">
                     <div class="form-group row">
                         <label for="a_privada" class="col-5 col-form-label">Privada</label>
                         <div class="col-7">
-                            <input id="a_privada" name="a_privada" type="number" min="11" step="0.1" required="required"
-                                class="form-control">
+                            <input id="a_privada" name="a_privada" type="number" min="11" step="0.1" 
+                                class="form-control" required>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="col-12">
                     <p>Cantidad de:</p>
                 </div>
-                <div class="col-12 col-md-4 ">
+                <div class="col-12 col-md-4">
                     <div class="form-group row">
                         <label for="niveles" class="col-6 col-form-label">Nivel(es)</label>
                         <div class="col-6">
@@ -85,7 +85,7 @@
                 <div class="col-12">
                     <p>Material del piso en:</p>
                 </div>
-                <div class="col-12 col-md-3 ">
+                <div class="col-12 col-md-3">
                     <div class="form-group row">
                         <label for="material_hab" class="col-6 col-form-label">Habitación(es)</label>
                         <div class="col-6">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-3 ">
+                <div class="col-12 col-md-3">
                     <div class="form-group row">
                         <label for="mp_cocina" class="col-4 col-form-label">Cocina</label>
                         <div class="col-8">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-3 ">
+                <div class="col-12 col-md-3">
                     <div class="form-group row">
                         <label for="mat_piso_bano" class="col-4 col-form-label">Baño(s)</label>
                         <div class="col-8">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-3 ">
+                <div class="col-12 col-md-3">
                     <div class="form-group row">
                         <label for="mat_piso_zona_social" class="col-4 col-form-label">Zona
                             social</label>
@@ -124,7 +124,7 @@
                     <p>Características específicas inmueble:</p>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="mb_cocina" class="col-6 col-form-label">Mobiliario cocina</label>
                             <div class="col-6">
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="estufa" class="col-6 col-form-label">Estufa</label>
                             <div class="col-6">
@@ -150,7 +150,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="tp_cocina" class="col-6 col-form-label">Tipo de cocina</label>
                             <div class="col-6">
@@ -158,7 +158,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="calentador" class="col-6 col-form-label">Calentador</label>
                             <div class="col-6">
@@ -176,7 +176,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="zona_social" class="col-6 col-form-label">Zona social</label>
                             <div class="col-6">
@@ -184,7 +184,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="material_fachada" class="col-6 col-form-label">Material
                                 fachada</label>
@@ -196,7 +196,7 @@
                     <div class="d-none d-md-block col-md-4"></div>
                 </div>
                 <div class="row seccion">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="balcon" class="col-5 col-form-label">Balcón</label>
                             <div class="col-2">
@@ -211,7 +211,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="terraza" class="col-5 col-form-label">Terraza</label>
                             <div class="col-2">
@@ -243,7 +243,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="b_servicio" class="col-5 col-form-label">Baño servicio</label>
                             <div class="col-2">
@@ -258,7 +258,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="b_social" class="col-5 col-form-label">Baño social</label>
                             <div class="col-2">
@@ -290,7 +290,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="deposito" class="col-5 col-form-label">Depósito</label>
                             <div class="col-2">
@@ -305,7 +305,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="hab_servicio" class="col-5 col-form-label">Habitación de
                                 servicio</label>
@@ -322,7 +322,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
-                        <div class="form-group row ">
+                        <div class="form-group row">
                             <label for="star" class="col-5 col-form-label">Star de entretenimiento</label>
                             <div class="col-2">
                                 <a>No</a>
@@ -338,7 +338,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="zona_lavanderia" class="col-5 col-form-label">Zona de
                                 lavandería</label>
@@ -354,7 +354,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row" id="cortina">
                             <label for="entrega_cortinas" class="col-5 col-form-label">
                                 Entrega con cortinas</label>
@@ -370,7 +370,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="calefaccion_p" class="col-5 col-form-label">Calefacción privada</label>
                             <div class="col-2">
@@ -387,7 +387,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="piscina_p" class="col-5 col-form-label">Piscina privada</label>
                             <div class="col-2">
@@ -402,7 +402,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="sauna_p" class="col-5 col-form-label">Sauna privado</label>
                             <div class="col-2">
@@ -417,7 +417,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="turco_p" class="col-5 col-form-label">Turco privado</label>
                             <div class="col-2">
@@ -434,7 +434,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="jacuzzi_p" class="col-5 col-form-label">Jacuzzi privado</label>
                             <div class="col-2">
@@ -449,7 +449,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="tina_p" class="col-5 col-form-label">Tina privada</label>
                             <div class="col-2">
@@ -464,7 +464,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="aire_p" class="col-5 col-form-label">Aire acondicionado privado</label>
                             <div class="col-2">
@@ -481,7 +481,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         @if ($tipo_inm == 1)
                             <div class="form-group row">
                                 <label for="patio" class="col-5 col-form-label">Patio interior</label>
@@ -498,7 +498,44 @@
                             </div>
                         @endif
                     </div>
-                    
+                    <div class="col-12 col-md-4">
+                        @if ($tipo_inm == 1)
+                            <div class="form-group row">
+                                <label for="jardin_interior" class="col-5 col-form-label">
+                                    Jardín Interior</label>
+                                <div class="col-2">
+                                    <a>No</a>
+                                </div>
+                                <div class="col-3 bool text-center">
+                                    <input type="checkbox" value="1" name="jardin_interior" id="jardin_interior" />
+                                    <label class="slider-v1" for="jardin_interior"></label>
+                                </div>
+                                <div class="col-2">
+                                    <a>Si</a>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4" id="area_balcon_secc">
+                        <div class="form-group row">
+                            <label for="area_balcon" class="col-5 col-form-label">Área del balcón</label>
+                            <div class="col-7">
+                                <input id="area_balcon" name="area_balcon" type="number" step="1" min="1"
+                                    class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4" id="area_terraza_secc">
+                        <div class="form-group row">
+                            <label for="area_terraza" class="col-5 col-form-label">Área de la terraza</label>
+                            <div class="col-7">
+                                <input id="area_terraza" name="area_terraza" type="number" step="1" min="1"
+                                    class="form-control" >
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row grupo seccion">
@@ -506,7 +543,7 @@
                     <p>Garaje(s):</p>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="garaje" class="col-5 col-form-label">Cuenta con garaje(s)</label>
                             <div class="col-2">
@@ -521,15 +558,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 ">
+                    <div class="col-12 col-md-4">
                         <div class="form-group row" id="sec_independiente">
-                            <label for="gje_independiente" class="col-5 col-form-label">Garaje(s) comunal(es)</label>
+                            <label for="gje_comunal" class="col-5 col-form-label">Garaje(s) comunal(es)</label>
                             <div class="col-2">
                                 <a>No</a>
                             </div>
                             <div class="col-3 bool text-center">
-                                <input type="checkbox" id="gje_independiente"  name="gje_independiente" value="1" checked />
-                                <label class="slider-v1" for="gje_independiente"></label>
+                                <input type="checkbox" id="gje_comunal" name="gje_comunal" value="1" checked />
+                                <label class="slider-v1" for="gje_comunal"></label>
                             </div>
                             <div class="col-2">
                                 <a>Si</a>
@@ -581,7 +618,7 @@
 
                 </div>
                 <div class="col-6 col-md-2 text-end">
-                    <button type="submit" id="enviar3" class="btn botones ">Siguiente</button>
+                    <button type="submit" id="enviar3" class="btn botones">Siguiente</button>
                 </div>
             </div>
             {{ Form::close() }}

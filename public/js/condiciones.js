@@ -202,10 +202,11 @@ $(document).ready(function() {
             }
         });
     } else if ($('#detalles').length) {
+
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
-        $('#sec_garajes').hide();
-        $('#sec_independiente').hide();
+        $('#area_terraza_secc').hide();
+        $('#area_balcon_secc').hide();
 
 
         $('#garaje').change(function() {
@@ -218,8 +219,8 @@ $(document).ready(function() {
             }
         });
 
-        $('#gje_independiente').change(function() {
-            if ($('#gje_independiente').prop('checked')) {
+        $('#gje_comunal').change(function() {
+            if ($('#gje_comunal').prop('checked')) {
                 $('#sec_garajes').hide();
 
                 $('#no_garajes').attr("required", "true");
@@ -231,6 +232,28 @@ $(document).ready(function() {
                 $('#tipo_garaje').removeAttr('required');
             }
         });
+
+
+        $('#balcon').change(function() {
+            if ($('#balcon').prop('checked')) {
+                $('#area_balcon_secc').show();
+                $('#area_balcon').attr("required", "true");
+            } else {
+                $('#area_balcon_secc').hide();
+                $('#area_balcon').removeAttr('required');
+            }
+        });
+
+        $('#terraza').change(function() {
+            if ($('#terraza').prop('checked')) {
+                $('#area_terraza_secc').show();
+                $('#area_terraza').attr("required", "true");
+            } else {
+                $('#area_terraza_secca').hide();
+                $('#area_terraza').removeAttr('required');
+            }
+        });
+
 
     } else if ($('#conjunto_tarjeta').length) {
 

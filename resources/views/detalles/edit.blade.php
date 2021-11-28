@@ -198,24 +198,45 @@
                 <div class="row seccion">
                     <div class="col-12 col-md-4 ">
                         <div class="form-group row">
-                            <label for="garaje" class="col-5 col-form-label">Garaje</label>
+                            <label for="balcon" class="col-5 col-form-label">Balcón</label>
                             <div class="col-2">
                                 <a>No</a>
                             </div>
                             <div class="col-3 bool text-center">
-                                @if ($propiedad->tiene_garaje == 'Si')
-                                    <input type="checkbox" id="garaje" name="garaje" value="1" checked />
+                                @if ($propiedad->balcon == 'Si')
+                                    <input type="checkbox" value="1" name="balcon" id="balcon" checked />
                                 @else
-                                    <input type="checkbox" id="garaje" name="garaje" value="1" />
+                                    <input type="checkbox" value="1" name="balcon" id="balcon" />
                                 @endif
-                                <label class="slider-v1" for="garaje"></label>
+                                <label class="slider-v1" for="balcon"></label>
                             </div>
                             <div class="col-2">
                                 <a>Si</a>
                             </div>
                         </div>
+
                     </div>
                     <div class="col-12 col-md-4 border-end">
+                        <div class="form-group row">
+                            <label for="terraza" class="col-5 col-form-label">Terraza</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                @if ($propiedad->terraza == 'Si')
+                                    <input type="checkbox" value="1" name="terraza" id="terraza" checked />
+                                @else
+                                    <input type="checkbox" value="1" name="terraza" id="terraza" />
+                                @endif
+                                <label class="slider-v1" for="terraza"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-4">
                         <div class="form-group row">
                             <label for="chimenea" class="col-5 col-form-label">Chimenea</label>
                             <div class="col-2">
@@ -228,25 +249,6 @@
                                     <input type="checkbox" id="chimenea" name="chimenea" value="1" />
                                 @endif
                                 <label class="slider-v1" for="chimenea"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-group row">
-                            <label for="balcon" class="col-5 col-form-label">Balcón</label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool text-center">
-                                @if ($propiedad->balcon == 'Si')
-                                    <input type="checkbox" value="1" name="balcon" id="balcon" checked />
-                                @else
-                                    <input type="checkbox" value="1" name="balcon" id="balcon" />
-                                @endif
-                                <label class="slider-v1" for="balcon"></label>
                             </div>
                             <div class="col-2">
                                 <a>Si</a>
@@ -421,17 +423,18 @@
                     </div>
                     <div class="col-12 col-md-4 ">
                         <div class="form-group row">
-                            <label for="terraza" class="col-5 col-form-label">Terraza</label>
+                            <label for="calefaccion_p" class="col-5 col-form-label">Calefacción privada</label>
                             <div class="col-2">
                                 <a>No</a>
                             </div>
                             <div class="col-3 bool text-center">
-                                @if ($propiedad->terraza == 'Si')
-                                    <input type="checkbox" value="1" name="terraza" id="terraza" checked />
+                                @if ($propiedad->calefaccion_privada == 'Si')
+                                    <input type="checkbox" value="1" id="calefaccion_p" name="calefaccion_p" checked />
                                 @else
-                                    <input type="checkbox" value="1" name="terraza" id="terraza" />
+                                    <input type="checkbox" value="1" id="calefaccion_p" name="calefaccion_p" />
                                 @endif
-                                <label class="slider-v1" for="terraza"></label>
+
+                                <label class="slider-v1" for="calefaccion_p"></label>
                             </div>
                             <div class="col-2">
                                 <a>Si</a>
@@ -560,26 +563,6 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4 ">
-                        <div class="form-group row">
-                            <label for="calefaccion_p" class="col-5 col-form-label">Calefacción privada</label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool text-center">
-                                @if ($propiedad->calefaccion_privada == 'Si')
-                                    <input type="checkbox" value="1" id="calefaccion_p" name="calefaccion_p" checked />
-                                @else
-                                    <input type="checkbox" value="1" id="calefaccion_p" name="calefaccion_p" />
-                                @endif
-
-                                <label class="slider-v1" for="calefaccion_p"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 ">
                         @if ($tipo_inm == 1)
                             <div class="form-group row">
                                 <label for="patio" class="col-5 col-form-label">Patio interior</label>
@@ -600,50 +583,131 @@
                             </div>
                         @endif
                     </div>
+                    <div class="col-12 col-md-4 ">
+                        @if ($tipo_inm == 1)
+                            <div class="form-group row">
+                                <label for="jardin_interior" class="col-5 col-form-label">
+                                    Jardín Interior</label>
+                                <div class="col-2">
+                                    <a>No</a>
+                                </div>
+                                <div class="col-3 bool text-center">
+                                    <input type="checkbox" value="1" name="jardin_interior" id="jardin_interior" />
+                                    <label class="slider-v1" for="jardin_interior"></label>
+                                </div>
+                                <div class="col-2">
+                                    <a>Si</a>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4" id="area_balcon_secc">
+                        <div class="form-group row">
+                            <label for="area_balcon" class="col-5 col-form-label">Área del balcón</label>
+                            <div class="col-7">
+                                <input id="area_balcon" name="area_balcon" type="number" step="1" min="1"
+                                    class="form-control" value="{{ $propiedad->area_balcon }}" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4" id="area_terraza_secc">
+                        <div class="form-group row">
+                            <label for="area_terraza" class="col-5 col-form-label">Área de la terraza</label>
+                            <div class="col-7">
+                                <input id="area_terraza" name="area_terraza" type="number" step="1" min="1"
+                                    class="form-control" value="{{ $propiedad->area_terraza }}" >
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row grupo seccion" id="sec_garajes">
+            <div class="row grupo seccion">
                 <div class="col-12">
                     <p>Garaje(s):</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="no_garajes" class="col-6 col-form-label">Cantidad de Garajes</label>
-                        <div class="col-6">
-                            <input class="form-control" type="number" min="1" max="100"  name="no_garajes" id="no_garajes"
-                                value="{{ $propiedad->no_garajes }}">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="garaje" class="col-5 col-form-label">Cuenta con garaje(s)</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                @if ($propiedad->tiene_garaje == 'Si')
+                                    <input type="checkbox" id="garaje" name="garaje" value="1" checked />
+                                @else
+                                    <input type="checkbox" id="garaje" name="garaje" value="1" />
+                                @endif
+                                <label class="slider-v1" for="garaje"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row" id="sec_independiente">
+                            <label for="gje_comunal" class="col-5 col-form-label">Garaje(s) comunal(es)</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                @if ($propiedad->gje_comunal == 'Si')
+                                    <input type="checkbox" id="gje_comunal" name="gje_comunal" value="1" checked />
+                                @else
+                                    <input type="checkbox" id="gje_comunal" name="gje_comunal" value="1" />
+                                @endif
+                                <label class="slider-v1" for="gje_comunal"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="tipo_garaje" class="col-4 col-form-label">Tipo</label>
-                        <div class="col-8">
-                            {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garaje, ['class' => 'form-select']) !!}
+                <div class="row" id="sec_garajes">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="no_garajes" class="col-6 col-form-label">Cantidad de Garajes</label>
+                            <div class="col-6">
+                                <input class="form-control" type="number" min="1" max="100" name="no_garajes"
+                                    id="no_garajes" value="{{ $propiedad->no_garajes }}">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4 border-end">
-                    <div class="form-group row">
-                        <label for="gje_cubierto" class="col-5 col-form-label">Garaje(s)
-                            Cubiertos</label>
-                        <div class="col-2">
-                            <a>No</a>
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="tipo_garaje" class="col-4 col-form-label">Tipo</label>
+                            <div class="col-8">
+                                {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garaje, ['class' => 'form-select']) !!}
+                            </div>
                         </div>
-                        <div class="col-3 bool text-center">
-                            @if ($propiedad->gje_cubierto == 'Si')
-                                <input type="checkbox" value="1" name="gje_cubierto" id="gje_cubierto" checked />
-                            @else
-                                <input type="checkbox" value="1" name="gje_cubierto" id="gje_cubierto" />
-                            @endif
+                    </div>
+                    <div class="col-12 col-md-4 border-end">
+                        <div class="form-group row">
+                            <label for="gje_cubierto" class="col-5 col-form-label">Garaje(s)
+                                Cubiertos</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                @if ($propiedad->gje_cubierto == 'Si')
+                                    <input type="checkbox" value="1" name="gje_cubierto" id="gje_cubierto" checked />
+                                @else
+                                    <input type="checkbox" value="1" name="gje_cubierto" id="gje_cubierto" />
+                                @endif
 
-                            <label class="slider-v1" for="gje_cubierto"></label>
-                        </div>
-                        <div class="col-2">
-                            <a>Si</a>
+                                <label class="slider-v1" for="gje_cubierto"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
 
             </div>
             <div class="row">

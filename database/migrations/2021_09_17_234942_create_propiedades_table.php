@@ -56,7 +56,7 @@ class CreatePropiedadesTable extends Migration
             $table->float('a_construida')->nullable();
             $table->float('a_privada')->nullable();
             $table->float('a_terreno')->nullable();
-            $table->integer('a_balcon')->nullable();
+            
 
             $table->unsignedBigInteger('mat_habitacion')->nullable();
             $table->foreign('mat_habitacion')
@@ -94,11 +94,9 @@ class CreatePropiedadesTable extends Migration
                 ->onDelete('set null');
 
             $table->string('tiene_garaje')->nullable();
-            $table->string('gje_independiente')->nullable();
+            $table->string('gje_comunal')->nullable();
             $table->string('gje_cubierto')->nullable();
-            $table->integer('no_garajes')->nullable();
-
-            
+            $table->integer('no_garajes')->nullable();          
 
             $table->unsignedBigInteger('mb_cocina')->nullable();
             $table->foreign('mb_cocina')
@@ -141,8 +139,10 @@ class CreatePropiedadesTable extends Migration
                 ->onDelete('set null');
 
             $table->string('terraza')->nullable();
+            $table->string('area_terraza')->nullable();
             $table->string('chimenea')->nullable();
             $table->string('balcon')->nullable();
+            $table->integer('area_balcon')->nullable();
             $table->string('b_servicio')->nullable();
             $table->string('b_social')->nullable();
             $table->string('estudio')->nullable();
@@ -159,8 +159,6 @@ class CreatePropiedadesTable extends Migration
             $table->string('tina_privada')->nullable();
             $table->string('aire_privado')->nullable();
             $table->string('calefaccion_privada')->nullable();
-
-
 
             $table->unsignedBigInteger('tipo_vigilancia')->nullable();
             $table->foreign('tipo_vigilancia')
