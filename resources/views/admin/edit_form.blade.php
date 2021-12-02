@@ -1,6 +1,6 @@
 @extends('layouts.administrador')
 @section('more_head')
-
+<script src="{!! asset('js/selects.js') !!}"></script>
 @endsection
 
 @section('title', 'Editar Form')
@@ -15,8 +15,8 @@
                     <div class="form-group row">
                         <label class="col-5 col-form-label" for="name">Nombres</label>
                         <div class="col-7">
-                            <input id="name" name="name" type="text" class="form-control"
-                                value="{{ $codiprop->name }}" required>
+                            <input id="name" name="name" type="text" class="form-control" value="{{ $codiprop->name }}"
+                                required>
                         </div>
                     </div>
                 </div>
@@ -108,6 +108,36 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="text" class="col-5 col-form-label">Precio contrato</label>
+                        <div class="col-7">
+                            <input id="conc_precio" name="conc_precio" type="text" class="form-control"
+                                value="{{ $negocio_unico->precio_contrato }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label class="col-5 col-form-label" for="name">Concepto jurídico</label>
+                        <div class="col-7">
+                            {!! Form::select('id', $conc_juridico, $negocio_unico->conc_juridico, ['class' => 'form-select', 'required' => 'required']) !!}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="text" class="col-5 col-form-label">Observación concepto jurídico</label>
+                        <div class="col-7">
+                            <input id="text" name="matricula" type="text" class="form-control"
+                                value="{{ $negocio_unico->obs_conc_juridico }}" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="form-group row">
                         <label for="tipo" class="col-5">Tipo de negocio</label>
@@ -118,7 +148,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group row" id="valorgrupo">
-                        <label for="valor" id="valorlabel" class="col-5 col-form-label" >Valor tentativo</label>
+                        <label for="valor" id="valorlabel" class="col-5 col-form-label">Valor tentativo</label>
                         <div class="col-7">
                             <input id="valor" name="valor" type="number" value="{{ $negocio_unico->valor }}"
                                 class="form-control" min="99000" required="required" disabled>
@@ -237,7 +267,8 @@
                     <div class="form-group row">
                         <label for="asesor" class="col-5 col-form-label">Nombre del Asesor</label>
                         <div class="col-7">
-                            <input id="asesor" name="asesor" type="text" class="form-control " value="{{ $negocio_unico->asesor }}">
+                            <input id="asesor" name="asesor" type="text" class="form-control "
+                                value="{{ $negocio_unico->asesor }}">
                         </div>
                     </div>
                 </div>
@@ -1452,5 +1483,4 @@
     @endsection
 
     @section('final')
-
     @endsection

@@ -29,8 +29,6 @@ class AcuerdosController extends Controller
         ->select("negocios.id", "negocios.created_at", "propiedades.id", "propietarios.id", "tipos_documentos.desc_nombres_corto", "propietarios.doc_number", "propietarios.name", "propietarios.lastname", "planes.id", "tipos_negocios.id", "propiedades.certificado", "planes.desc_plan", "tipos_negocios.desc_tipo_negocio", "tipos_documentos.id")
         ->get();
         
-        
-
         return view('admin.acuerdos', compact('negocios'));
     }
 }

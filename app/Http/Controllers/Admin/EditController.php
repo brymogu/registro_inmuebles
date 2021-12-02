@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Calentadores;
 use App\Models\Ciudades;
+use App\Models\Conc_juridicos;
 use App\Models\Estados_inmueble;
 use App\Models\Estratos;
 use App\Models\Materiales_fachada;
@@ -80,10 +81,11 @@ class EditController extends Controller
         $vigilancia = Tipos_vigilancia::pluck('desc_tipo_vigilancia', 'id');
         $seguridad = Tipos_seguridad::pluck('desc_tipo_seguridad', 'id');
         $cuota = Tipos_cuotas::pluck('desc_tipo_cuota', 'id');
+        $conc_juridico = Conc_juridicos::pluck('des_conc_juridicos', 'id');
         
         return view('admin.edit_form', compact('propiedad', 'codiprop','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado',
         'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'
-        ,'vigilancia','seguridad','cuota'));
+        ,'vigilancia','seguridad','cuota','conc_juridico'));
 
     }
 
@@ -104,6 +106,9 @@ class EditController extends Controller
         $negocio_unico->tipo_negocio = $request->tipo;
         $negocio_unico->valor = $request->valor;
         $negocio_unico->asesor = $request->asesor;
+        $negocio_unico->conc_precio = $request->conc_precio;
+        $negocio_unico->precio_contrato = $request->precio_contrato;
+        $negocio_unico->conc_juridico = $request->conc_juridico;
         $negocio_unico->conc_precio = $request->conc_precio;
         $negocio_unico->save();
         //propiedad
