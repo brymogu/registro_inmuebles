@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\EditController;
 use App\Http\Controllers\Admin\InicioController;
 use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Admin\DownloadController;
+use App\Http\Controllers\NegocioController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -22,5 +23,6 @@ Route::get('administrador/editar/inmueble/{codiprop}', [EditController::class, '
 Route::post('administrador/editar/inmueble/{codiprop}', [EditController::class, 'update'])->name('administrador.editupdate');
 
 Route::get('administrador/descargas', [DownloadController::class, 'showtable'])->name('administrador.download');
+Route::get('download_public/{certificado}', [NegocioController::class, 'download_public'])->name('download_public');
 
 Route::get('administrador/acuerdos', [AcuerdosController::class, 'showtable'])->name('administrador.acuerdos');

@@ -176,4 +176,15 @@ class NegocioController extends Controller
 
         return redirect()->route('detalles.show', $propiedad);
     }
+
+    public function download_public(Request $request, Negocios $certificado) {
+        if (Storage::disk('public')->exists("certificados/$request->file")) {
+            $path = Storage::disk('public')->path("certificados/$request->file");
+            $content = file_get_contents($path);
+            //return redirect()->route('download_public',$request->file);
+            return response($content)->withHeaders(['Content-Type'=>mime_content_type($path)]);
+        } 
+        return redirect('/404');
+    }
+
 }
