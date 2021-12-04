@@ -4,6 +4,7 @@
     <script src="{!! asset('js/condiciones_edit.js') !!}"></script>
     <script src="{!! asset('js/condiciones.js') !!}"></script>
     <script src="{!! asset('js/funciones.js') !!}"></script>
+    <script src="{!! asset('js/selects_edit.js') !!}"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
@@ -27,7 +28,12 @@
                         <div class="form-group row border-end">
                             <label for="id" class="col-5 col-form-label">Tipo DI</label>
                             <div class="col-7">
-                                {!! Form::select('id', $tipos_documento, $propietario->tipo_doc, ['class' => 'form-select', 'required' => 'required', 'disabled' => 'disabled']) !!}
+                                @isset($propietario->tipo_doc)
+                                    {!! Form::select('id', $tipos_documento, $propietario->tipo_doc, ['class' => 'form-select', 'required' => 'required', 'disabled' => 'disabled']) !!}
+                                @endisset
+                                @empty($propietario->tipo_doc)
+                                    {!! Form::select('id', $tipos_documento, $propietario->tipo_doc, ['class' => 'form-select vacio', 'required' => 'required', 'disabled' => 'disabled']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -47,7 +53,12 @@
                             <label for="tipo" class="col-5">Escoge el negocio a realizar con este
                                 inmueble</label>
                             <div class="col-7">
-                                {!! Form::select('tipo', $negocio, $negocio_unico->tipo_negocio, ['class' => 'form-select', 'id' => 'negocio', 'required' => 'required']) !!}
+                                @isset($negocio_unico->tipo_negocio)
+                                    {!! Form::select('tipo', $negocio, $negocio_unico->tipo_negocio, ['class' => 'form-select', 'id' => 'negocio', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($negocio_unico->tipo_negocio)
+                                    {!! Form::select('tipo', $negocio, $negocio_unico->tipo_negocio, ['class' => 'form-select', 'id' => 'negocio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -135,7 +146,6 @@
                                 @else
                                     <input type="checkbox" value="1" name="habitado" id="habitado" />
                                 @endif
-
                                 <label class="slider-v1" for="habitado"></label>
                             </div>
                             <div class="col-2">
@@ -203,7 +213,12 @@
                         <div class="form-group row">
                             <label for="tipo_inm" class="col-5 col-form-label">Tipo de inmueble</label>
                             <div class="col-7">
-                                {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                @isset($propiedad->tipo_inmueble)
+                                    {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_inmueble)
+                                    {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select vacio', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -211,7 +226,12 @@
                         <div class="form-group row">
                             <label for="estado_inb" class="col-5 col-form-label">Estado del inmueble</label>
                             <div class="col-7">
-                                {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'id' => 'estado_inb', 'required' => 'required']) !!}
+                                @isset($estado, $propiedad->estado)
+                                    {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'id' => 'estado_inb', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->estado)
+                                    {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'id' => 'estado_inb', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -233,7 +253,12 @@
                                 <label for="remodelado" class="col-5 col-form-label">Remodelado hace menos de 5
                                     años</label>
                                 <div class="col-7">
-                                    {!! Form::select('remodelado', $remodelado, $propiedad->remodelado, ['class' => 'form-select', 'id' => 'remodelado']) !!}
+                                    @isset($propiedad->remodelado)
+                                        {!! Form::select('remodelado', $remodelado, $propiedad->remodelado, ['class' => 'form-select', 'id' => 'remodelado']) !!}
+                                    @endisset
+                                    @empty($propiedad->remodelado)
+                                        {!! Form::select('remodelado', $remodelado, $propiedad->remodelado, ['class' => 'form-select vacio', 'id' => 'remodelado']) !!}
+                                    @endempty
                                 </div>
                             </div>
                         @endif
@@ -296,101 +321,109 @@
                         <div class="form-group row border-end">
                             <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
                             <div class="col-7">
-                                {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                @isset($estado, $propiedad->estrato)
+                                    {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->estrato)
+                                    {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select vacio', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 "></div>
                 </div>
-            </div>       
-        <div class="grupo mb-3">
-            <div class="row seccion">
-                <div class="col-12">
-                    <h5>Ubicación</h5>
-                </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group row border-end">
-                        <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
-                        <div class="col-7">
-                            <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá D.C." required="required"
-                                class="form-control">
+            <div class="grupo mb-3">
+                <div class="row seccion">
+                    <div class="col-12">
+                        <h5>Ubicación</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row border-end">
+                            <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
+                            <div class="col-7">
+                                <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá D.C."
+                                    required="required" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row">
+                            <div class="col-5">
+                                <label for="direccion" class="col-form-label">Dirección inmueble</label>
+                            </div>
+                            <div class="col-7">
+                                <input id="direccion" name="direccion" type="text" class="form-control"
+                                    required="required" value="{{ $propiedad->direccion }}"
+                                    placeholder="Calle 25A #52B-06">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <div class="col-5">
-                            <label for="direccion" class="col-form-label">Dirección inmueble</label>
-                        </div>
-                        <div class="col-7">
-                            <input id="direccion" name="direccion" type="text" class="form-control" required="required"
-                                value="{{ $propiedad->direccion }}" placeholder="Calle 25A #52B-06">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group row border-end" id="detalles">
-                        <div class="col-5">
-                            <label for="direccion_comp" class="col-form-label">Detalles</label>
-                        </div>
-                        <div class="col-7">
-                            <input id="direccion_comp" name="direccion_comp" value="{{ $propiedad->direccion_comp }}"
-                                type="text" class="form-control" placeholder="Torre 7 Apto. 302">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row border-end" id="detalles">
+                            <div class="col-5">
+                                <label for="direccion_comp" class="col-form-label">Detalles</label>
+                            </div>
+                            <div class="col-7">
+                                <input id="direccion_comp" name="direccion_comp" value="{{ $propiedad->direccion_comp }}"
+                                    type="text" class="form-control" placeholder="Torre 7 Apto. 302">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6">
-                </div>
-            </div>
-            <div class="row d-none">
-                <div class="col-12 col-md-6">
-                    <div class="form-group row" id="detalles">
-                        <div class="col-5">
-                            <label for="longitud" class="col-form-label">Longitud</label>
-                        </div>
-                        <div class="col-7">
-                            <input id="longitud" name="longitud" type="text" class="form-control"
-                                value="{{ $propiedad->longitud }}">
-                        </div>
+                    <div class="col-12 col-md-6">
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group row" id="detalles">
-                        <div class="col-5">
-                            <label for="latitud" class="col-form-label">Latitud</label>
-                        </div>
-                        <div class="col-7">
-                            <input id="latitud" name="latitud" type="text" class="form-control"
-                                value="{{ $propiedad->latitud }}">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-4 col-md-2 text-start">
-                <a href="{{ route('propietario.edit', $propietario) }}" class="btn botones">Atrás</a>
-            </div>
-            <div class="d-none d-md-block col-md-3"></div>
 
-            <div class="col-4 col-md-2 text-end">
-                <div>
-                    <a type="button" class="btn botones" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
-                        aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i class="fas fa-map-marker-alt"></i>
-                        Ubicar</a>
+                <div class="row d-none">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row" id="detalles">
+                            <div class="col-5">
+                                <label for="longitud" class="col-form-label">Longitud</label>
+                            </div>
+                            <div class="col-7">
+                                <input id="longitud" name="longitud" type="text" class="form-control"
+                                    value="{{ $propiedad->longitud }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row" id="detalles">
+                            <div class="col-5">
+                                <label for="latitud" class="col-form-label">Latitud</label>
+                            </div>
+                            <div class="col-7">
+                                <input id="latitud" name="latitud" type="text" class="form-control"
+                                    value="{{ $propiedad->latitud }}">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="d-none d-md-block col-md-3"></div>
-            <div class="col-4 col-md-2 text-end">
-                <button type="submit" class="btn botones">Siguiente</button>
+            <div class="row mt-2">
+                <div class="col-4 col-md-2 text-start">
+                    <a href="{{ route('propietario.edit', $propietario) }}" class="btn botones">Atrás</a>
+                </div>
+                <div class="d-none d-md-block col-md-3"></div>
+
+                <div class="col-4 col-md-2 text-end">
+                    <div>
+                        <a type="button" class="btn botones" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i
+                                class="fas fa-map-marker-alt"></i>
+                            Ubicar</a>
+                    </div>
+                </div>
+                <div class="d-none d-md-block col-md-3"></div>
+                <div class="col-4 col-md-2 text-end">
+                    <button type="submit" class="btn botones">Siguiente</button>
+                </div>
             </div>
+            {{ Form::close() }}
         </div>
-        {{ Form::close() }}
-    </div>
     </div>
     <div class="offcanvas offcanvas-bottom rounded" tabindex="-1" id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel">
@@ -405,27 +438,27 @@
         </div>
     </div>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="sentimos text-center py-3">
-                    <img src="{!! asset('img/wesorry.png') !!}" class="img-fluid" alt="Lo sentimos">
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="sentimos text-center py-3">
+                        <img src="{!! asset('img/wesorry.png') !!}" class="img-fluid" alt="Lo sentimos">
+                    </div>
+                    Lo sentimos, no nos es posible comercializar y administrar el inmueble <span id="motivo"><span>
                 </div>
-                Lo sentimos, no nos es posible comercializar y administrar el inmueble <span id="motivo"><span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn botones" onclick="noposibles()"
-                    data-bs-dismiss="modal">Volver</button>
-                <a href="https://epicainmobiliaria.com" type="button" class="btn btn-secondary">Finalizar</a>
+                <div class="modal-footer">
+                    <button type="button" class="btn botones" onclick="noposibles()"
+                        data-bs-dismiss="modal">Volver</button>
+                    <a href="https://epicainmobiliaria.com" type="button" class="btn btn-secondary">Finalizar</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 @section('scripts_footer')
-<script>
-    var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {})
-</script>
+    <script>
+        var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {})
+    </script>
     <script src="{!! asset('js/mapa.js') !!}"></script>
 @endsection

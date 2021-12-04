@@ -1,7 +1,8 @@
 @extends('layouts.plantilla')
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
-    <script src="{!! asset('js/condiciones_edit.js') !!}"></script>
+    <script src="{!! asset('js/selects_edit.js') !!}"></script>
+    <script src="{{ 'js/condiciones_edit.js' }}"></script>
 @endsection
 
 @section('content')
@@ -18,7 +19,12 @@
                     <div class="form-group row">
                         <label for="vigilancia" class="col-6 col-form-label">Vigilancia</label>
                         <div class="col-6">
-                            {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select', 'id' => 'vigilancia', 'required' => 'required']) !!}
+                            @isset($propiedad->tipo_vigilancia)
+                                {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select', 'id' => 'vigilancia', 'required' => 'required']) !!}
+                            @endisset
+                            @empty($propiedad->tipo_vigilancia)
+                                {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select vacio', 'id' => 'vigilancia', 'required' => 'required']) !!}
+                            @endempty
                         </div>
                     </div>
                 </div>
@@ -26,7 +32,12 @@
                     <div class="form-group row">
                         <label for="seguridad" class="col-6 col-form-label">Seguridad</label>
                         <div class="col-6">
+                            @isset($propiedad->tipo_seguridad)
                             {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select', 'id' => 'seguridad', 'required' => 'required']) !!}
+                            @endisset
+                            @empty($propiedad->tipo_seguridad)
+                            {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select vacio', 'id' => 'seguridad', 'required' => 'required']) !!}
+                            @endempty                           
                         </div>
                     </div>
                 </div>
@@ -36,7 +47,12 @@
                             <span class="sub">Administración P.H.<span>
                         </label>
                         <div class="col-6">
+                            @isset($propiedad->tipo_cuota)
                             {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select', 'id' => 't_cuota', 'required' => 'required']) !!}
+                            @endisset
+                            @empty($propiedad->tipo_cuota)
+                            {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select vacio', 'id' => 't_cuota', 'required' => 'required']) !!}
+                            @endempty                              
                         </div>
                     </div>
                 </div>
@@ -440,7 +456,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="row">
                 <div class="col-6 col-md-2 text-left">

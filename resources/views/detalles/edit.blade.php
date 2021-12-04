@@ -2,6 +2,7 @@
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
     <script src="{!! asset('js/condiciones_edit.js') !!}"></script>
+    <script src="{!! asset('js/selects_edit.js') !!}"></script>
 @endsection
 
 @section('content')
@@ -55,7 +56,12 @@
                     <div class="form-group row">
                         <label for="niveles" class="col-6 col-form-label">Nivel(es)</label>
                         <div class="col-6">
-                            {!! Form::select('niveles', $niveles, $propiedad->nivel, ['class' => 'form-select', 'id' => 'niveles', 'required' => 'required']) !!}
+                            @isset($propiedad->nivel)
+                                {!! Form::select('niveles', $niveles, $propiedad->nivel, ['class' => 'form-select', 'id' => 'niveles', 'required' => 'required']) !!}
+                            @endisset
+                            @empty($propiedad->nivel)
+                                {!! Form::select('niveles', $niveles, $propiedad->nivel, ['class' => 'form-select vacio', 'id' => 'niveles', 'required' => 'required']) !!}
+                            @endempty
                         </div>
                     </div>
                 </div>
@@ -90,7 +96,12 @@
                     <div class="form-group row">
                         <label for="material_hab" class="col-6 col-form-label">Habitación(es)</label>
                         <div class="col-6">
-                            {!! Form::select('material_hab', $mat_habitaciones, $propiedad->mat_habitacion, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @isset($propiedad->mat_habitacion)
+                                {!! Form::select('material_hab', $mat_habitaciones, $propiedad->mat_habitacion, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @endisset
+                            @empty($propiedad->mat_habitacion)
+                                {!! Form::select('material_hab', $mat_habitaciones, $propiedad->mat_habitacion, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                            @endempty
                         </div>
                     </div>
                 </div>
@@ -98,7 +109,12 @@
                     <div class="form-group row">
                         <label for="mp_cocina" class="col-4 col-form-label">Cocina</label>
                         <div class="col-8">
-                            {!! Form::select('mp_cocina', $mat_cocina, $propiedad->mat_piso_cocina, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @isset($propiedad->mat_piso_cocina)
+                                {!! Form::select('mp_cocina', $mat_cocina, $propiedad->mat_piso_cocina, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @endisset
+                            @empty($propiedad->mat_piso_cocina)
+                                {!! Form::select('mp_cocina', $mat_cocina, $propiedad->mat_piso_cocina, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                            @endempty
                         </div>
                     </div>
                 </div>
@@ -106,7 +122,12 @@
                     <div class="form-group row">
                         <label for="mat_piso_bano" class="col-4 col-form-label">Baño(s)</label>
                         <div class="col-8">
-                            {!! Form::select('mat_piso_bano', $mat_bano, $propiedad->mat_piso_bano, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @isset($propiedad->mat_piso_bano)
+                                {!! Form::select('mat_piso_bano', $mat_bano, $propiedad->mat_piso_bano, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @endisset
+                            @empty($propiedad->mat_piso_bano)
+                                {!! Form::select('mat_piso_bano', $mat_bano, $propiedad->mat_piso_bano, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                            @endempty
                         </div>
                     </div>
                 </div>
@@ -114,7 +135,12 @@
                     <div class="form-group row">
                         <label for="mat_piso_zona_social" class="col-4 col-form-label">Zona social</label>
                         <div class="col-8">
-                            {!! Form::select('mat_piso_zona_social', $mat_zsocial, $propiedad->mat_piso_zsocial, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @isset($propiedad->mat_piso_zsocial)
+                                {!! Form::select('mat_piso_zona_social', $mat_zsocial, $propiedad->mat_piso_zsocial, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @endisset
+                            @empty($propiedad->mat_piso_zsocial)
+                                {!! Form::select('mat_piso_zona_social', $mat_zsocial, $propiedad->mat_piso_zsocial, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                            @endempty
                         </div>
                     </div>
                 </div>
@@ -128,7 +154,12 @@
                         <div class="form-group row">
                             <label for="mb_cocina" class="col-6 col-form-label">Mobiliario cocina</label>
                             <div class="col-6">
-                                {!! Form::select('mb_cocina', $mb_cocina, $propiedad->mb_cocina, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @isset($propiedad->mb_cocina)
+                                    {!! Form::select('mb_cocina', $mb_cocina, $propiedad->mb_cocina, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->mb_cocina)
+                                    {!! Form::select('mb_cocina', $mb_cocina, $propiedad->mb_cocina, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -136,7 +167,12 @@
                         <div class="form-group row">
                             <label for="estufa" class="col-6 col-form-label">Estufa</label>
                             <div class="col-6">
-                                {!! Form::select('estufa', $estufa, $propiedad->tipo_estufa, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @isset($propiedad->tipo_estufa)
+                                    {!! Form::select('mb_cocina', $mb_cocina, $propiedad->tipo_estufa, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_estufa)
+                                    {!! Form::select('mb_cocina', $mb_cocina, $propiedad->tipo_estufa, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -144,7 +180,12 @@
                         <div class="form-group row">
                             <label for="horno" class="col-6 col-form-label">Horno</label>
                             <div class="col-6">
-                                {!! Form::select('horno', $horno, $propiedad->tipo_horno, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @isset($propiedad->tipo_horno)
+                                    {!! Form::select('horno', $horno, $propiedad->tipo_horno, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_horno)
+                                    {!! Form::select('horno', $horno, $propiedad->tipo_horno, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -154,7 +195,12 @@
                         <div class="form-group row">
                             <label for="tp_cocina" class="col-6 col-form-label">Tipo de cocina</label>
                             <div class="col-6">
-                                {!! Form::select('tp_cocina', $tipo_cocina, $propiedad->tipo_cocina, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @isset($propiedad->tipo_cocina)
+                                    {!! Form::select('tp_cocina', $tipo_cocina, $propiedad->tipo_cocina, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_cocina)
+                                    {!! Form::select('tp_cocina', $tipo_cocina, $propiedad->tipo_cocina, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -162,7 +208,12 @@
                         <div class="form-group row">
                             <label for="calentador" class="col-6 col-form-label">Calentador</label>
                             <div class="col-6">
-                                {!! Form::select('calentador', $calentador, $propiedad->tipo_calentador, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @isset($propiedad->tipo_calentador)
+                                    {!! Form::select('tp_cocina', $tipo_cocina, $propiedad->tipo_calentador, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_calentador)
+                                    {!! Form::select('tp_cocina', $tipo_cocina, $propiedad->tipo_calentador, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -170,7 +221,12 @@
                         <div class="form-group row">
                             <label for="vista" class="col-6 col-form-label">Vista</label>
                             <div class="col-6">
-                                {!! Form::select('vista', $vista, $propiedad->tipo_vista, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @isset($propiedad->tipo_vista)
+                                    {!! Form::select('vista', $vista, $propiedad->tipo_vista, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_vista)
+                                    {!! Form::select('vista', $vista, $propiedad->tipo_vista, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -180,7 +236,12 @@
                         <div class="form-group row">
                             <label for="zona_social" class="col-6 col-form-label">Zona social</label>
                             <div class="col-6">
-                                {!! Form::select('zona_social', $zonas, $propiedad->zona_social, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @isset($propiedad->zona_social)
+                                    {!! Form::select('zona_social', $zonas, $propiedad->zona_social, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->zona_social)
+                                    {!! Form::select('zona_social', $zonas, $propiedad->zona_social, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -189,7 +250,12 @@
                             <label for="material_fachada" class="col-6 col-form-label">Material
                                 fachada</label>
                             <div class="col-6">
-                                {!! Form::select('material_fachada', $mat_fachada, $propiedad->material_fachada, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @isset($propiedad->material_fachada)
+                                    {!! Form::select('material_fachada', $mat_fachada, $propiedad->material_fachada, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->material_fachada)
+                                    {!! Form::select('material_fachada', $mat_fachada, $propiedad->material_fachada, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
@@ -608,7 +674,7 @@
                             <label for="area_balcon" class="col-5 col-form-label">Área del balcón</label>
                             <div class="col-7">
                                 <input id="area_balcon" name="area_balcon" type="number" step="1" min="1"
-                                    class="form-control" value="{{ $propiedad->area_balcon }}" >
+                                    class="form-control" value="{{ $propiedad->area_balcon }}">
                             </div>
                         </div>
                     </div>
@@ -617,7 +683,7 @@
                             <label for="area_terraza" class="col-5 col-form-label">Área de la terraza</label>
                             <div class="col-7">
                                 <input id="area_terraza" name="area_terraza" type="number" step="1" min="1"
-                                    class="form-control" value="{{ $propiedad->area_terraza }}" >
+                                    class="form-control" value="{{ $propiedad->area_terraza }}">
                             </div>
                         </div>
                     </div>
@@ -681,7 +747,12 @@
                         <div class="form-group row">
                             <label for="tipo_garaje" class="col-4 col-form-label">Tipo</label>
                             <div class="col-8">
-                                {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garaje, ['class' => 'form-select']) !!}
+                                @isset($propiedad->tipo_garaje)
+                                    {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garaje, ['class' => 'form-select']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_garaje)
+                                    {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garaje, ['class' => 'form-select vacio']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>

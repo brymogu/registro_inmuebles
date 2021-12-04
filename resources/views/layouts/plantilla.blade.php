@@ -29,6 +29,7 @@
     
     <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
     <script src="{!! asset('js/condiciones.js') !!}"></script>
+    
     @yield('more_head')
     <title>@yield('title')</title>
 
