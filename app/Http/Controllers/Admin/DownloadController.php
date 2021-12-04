@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Propiedades;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+use League\CommonMark\Inline\Element\Strong;
 
 
 class DownloadController extends Controller {
@@ -36,6 +39,19 @@ class DownloadController extends Controller {
 
         return view('admin.download', compact('negocios'));
     }
+
+    //public function download_public( ) {
+        //if (Storage::disk('public')->exists("certificados/$propiedad->certificado")) {
+           // $path = Storage::disk('public')->path("certificados/$propiedad->certificado");
+            //$content = file_get_contents($path);
+            //return redirect()->route('download_public',$propiedad->certificado);
+            //return response($content)->withHeaders(['Content-Type'=>mime_content_type($path)]);
+       // } 
+        //return redirect("/404");
+      //  $path = Storage::url('public/certificados/0owTScXvNsDOYsQ34DxYvnCqYgvA5iIJ7rpyO5vS.pdf');
+
+     //   return redirect()->route('download_public',$path);
+    //}
 
     
 }

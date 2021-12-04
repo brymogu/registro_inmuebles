@@ -48,7 +48,7 @@
                                     {{ $negocio->desc_plan }}
                                 </td>
                                 <td>
-                                    <a class="btn btn-epc rounded-circle" target="_blank" href="{{!! asset('download_public') !!}}"><i
+                                    <a class="btn btn-epc rounded-circle" target="_blank" href="{{Storage::url('public/certificados/0owTScXvNsDOYsQ34DxYvnCqYgvA5iIJ7rpyO5vS.pdf')}}"><i
                                         class="fas fa-file-pdf"></i></a>
                                 </td>
                             </tr>
