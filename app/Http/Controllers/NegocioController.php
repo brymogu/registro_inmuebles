@@ -87,7 +87,7 @@ class NegocioController extends Controller
         } else {
             $propiedad->arrendado = "No";
         }
-        $propiedad->certificado = Storage::put('public\certificados', $request->file('certificado'));
+        $propiedad->certificado = Storage::put('public/certificados', $request->file('certificado'));
         $propiedad->save();
 
         $negocio = new Negocios();
