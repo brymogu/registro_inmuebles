@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\EditController;
 use App\Http\Controllers\Admin\InicioController;
 use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Admin\DownloadController;
-use App\Http\Controllers\NegocioController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 

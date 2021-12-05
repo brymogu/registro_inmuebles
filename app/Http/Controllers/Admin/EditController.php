@@ -43,7 +43,7 @@ class EditController extends Controller
         $propietarios = Propietarios::where('paso' , 'Planes')->get();
         $todos_documentos = Tipos_documento::all();
         //return view('admin.edit')->with('propietarios',$propietarios)->with('tipo_doc',Tipos_documento::all());
-        return view('admin.edit', compact('propietarios','todos_documentos'));
+        return view('admin.editar.edit', compact('propietarios','todos_documentos'));
     }
 
     public function convertir(Request $request) {
@@ -83,7 +83,7 @@ class EditController extends Controller
         $cuota = Tipos_cuotas::pluck('desc_tipo_cuota', 'id');
         $conc_juridico = Conc_juridicos::pluck('des_conc_juridicos', 'id');
         
-        return view('admin.edit_form', compact('propiedad', 'codiprop','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado',
+        return view('admin.editar.edit_form', compact('propiedad', 'codiprop','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado',
         'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'
         ,'vigilancia','seguridad','cuota','conc_juridico'));
 

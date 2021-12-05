@@ -28,7 +28,7 @@
                 <div class="col-12 col-md-6" id="sec_valor">
                     <div
                         class="form-floating  shadow-lg my-3">
-                        <input type="email" class="form-control border-0 rounded" id="valor" value="{!! $valor !!}"
+                        <input type="number" class="form-control border-0 rounded" id="valor" value="{!! $valor !!}"
                             placeholder="10000000">
                         <label for="valor">valor de venta</label>
                     </div>

@@ -14,7 +14,23 @@ $(document).ready(function() {
     var premes = new Intl.NumberFormat("es-CO").format(valor * 0.12);
     $('#premes').html("$" + premes + " + IVA<br/><br/> Equivale al 12% mensual incluida poliza<strong><br/>(una vez sea arrendado)</strong><br/><br/><a href='#' data-bs-toggle='modal' class='btn btn-warning btn-sm' data-bs-target='#staticBackdrop' onclick='premium()' >Ver detalles</a>");
 
+    $('#valor').keyup(function() {
+        var valor = $('#valor').val();
+        $('#valinval').html("En valores: $ " + Intl.NumberFormat("es-CO").format(valor));
 
+        //Básico 2
+        var basico = valor * 0.08;
+        $('#estsem').html("$" + Intl.NumberFormat("es-CO").format(basico) + " + IVA<br/><br/> Equivale al 8% mensual incluida poliza<br/><strong>(una vez sea arrendado)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='estandar()' >Ver detalles</a>");
+
+        //PLUS
+        var plus = valor * 0.1;
+        $('#plus').html("$" + Intl.NumberFormat("es-CO").format(plus) + " + IVA<br/><br/> Equivale al 10% mensual incluida poliza <br/><strong>(una vez sea arrendado)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='plus()' >Ver detalles</a>");
+
+        //PREMIUM
+        var premes = new Intl.NumberFormat("es-CO").format(valor * 0.12);
+        $('#premes').html("$" + premes + " + IVA<br/><br/> Equivale al 12% mensual incluida poliza<strong><br/>(una vez sea arrendado)</strong><br/><br/><a href='#' data-bs-toggle='modal' class='btn btn-warning btn-sm' data-bs-target='#staticBackdrop' onclick='premium()' >Ver detalles</a>");
+
+    });
 });
 
 function estandar() {

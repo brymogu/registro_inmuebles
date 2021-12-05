@@ -16,6 +16,28 @@ $(document).ready(function() {
     //PREMIUM
     var premes = new Intl.NumberFormat("es-CO").format(valor * 0.03);
     $('#premes').html("$" + premes + " + IVA<br/><br/>Equivale al 3% <br/><strong>(una vez sea vendido)</strong><br/><br/> <a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='premium()' >Ver detalles</a>");
+
+    $('#valor').keyup(function() {
+        var valor = $('#valor').val();
+        $('#valinval').html("En valores: $ " + Intl.NumberFormat("es-CO").format(valor));
+        //Básico
+        var basmes = new Intl.NumberFormat("es-CO").format(valor * 0.005);
+
+        $('#basano').html("$" + basmes + " + IVA<br/><br/>Equivale al 0.5% <br/><strong>(una vez sea vendido)</strong> <br/><br/><a href='#' data-bs-toggle='modal' class='btn btn-warning btn-sm' data-bs-target='#staticBackdrop' onclick='basico()' >Ver detalles</a>");
+
+        //ESTÁNDAR
+        var estmes = new Intl.NumberFormat("es-CO").format(valor * 0.01);
+        $('#estsem').html("$" + estmes + " + IVA<br/><br/>Equivale al 1% <br/><strong>(una vez sea vendido)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='estandar()' >Ver detalles</a>");
+        //PLUS
+        var plus = new Intl.NumberFormat("es-CO").format((valor * 0.02));
+        $('#plusmes').html("$" + plus + " + IVA<br/><br/>Equivale al 2% <br/><strong>(una vez sea vendido)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='plus()' >Ver detalles</a>");
+
+        //PREMIUM
+        var premes = new Intl.NumberFormat("es-CO").format(valor * 0.03);
+        $('#premes').html("$" + premes + " + IVA<br/><br/>Equivale al 3% <br/><strong>(una vez sea vendido)</strong><br/><br/> <a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='premium()' >Ver detalles</a>");
+
+    });
+
 });
 
 function basico() {
