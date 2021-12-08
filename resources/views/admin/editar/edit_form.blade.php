@@ -517,8 +517,8 @@
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label for="niveles" class="col-6 col-form-label">Nivel(es)</label>
-                        <div class="col-6">
+                        <label for="niveles" class="col-5 col-form-label">Nivel(es)</label>
+                        <div class="col-7">
                             @isset($propiedad->nivel)
                                 {!! Form::select('niveles', $niveles, $propiedad->nivel, ['class' => 'form-select', 'id' => 'niveles', 'required' => 'required']) !!}
                             @endisset
@@ -530,17 +530,17 @@
                 </div>
                 <div class="col-12 col-md-4 ">
                     <div class="form-group row mb-3">
-                        <label for="n_hab" class="col-6 col-form-label">Habitación(es)</label>
-                        <div class="col-6">
+                        <label for="n_hab" class="col-5 col-form-label">Habitación(es)</label>
+                        <div class="col-7">
                             <input class="form-control" name="n_hab" type="number" min="1" max="100" id="n_hab"
                                 value="{{ $propiedad->n_hab }}" required>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 ">
+                <div class="col-12 col-md-4">
                     <div class="form-group row mb-3">
-                        <label for="no_banos" class="col-6 col-form-label">Baño(s)</label>
-                        <div class="col-6">
+                        <label for="no_banos" class="col-5 col-form-label">Baño(s)</label>
+                        <div class="col-7">
                             <input class="form-control" type="number" name="n_banos" min="1" max="100" id="n_banos"
                                 value="{{ $propiedad->n_banos }}" required>
                         </div>
