@@ -85,16 +85,16 @@
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label for="text" class="col-5 col-form-label">Concepto de precio</label>
+                        <label for="conc_precio" class="col-5 col-form-label">Concepto de precio</label>
                         <div class="col-7">
                             <input id="conc_precio" name="conc_precio" type="text" class="form-control"
-                                value="{{ $propiedad->conc_precio }}">
+                                value="{{ $negocio_unico->conc_precio }}">
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label class="col-5 col-form-label" for="name">CHIP</label>
+                        <label class="col-5 col-form-label" for="chip">CHIP</label>
                         <div class="col-7">
                             <input id="chip" name="chip" type="text" class="form-control" value="{{ $propiedad->chip }}"
                                 required>
@@ -103,9 +103,9 @@
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label for="text" class="col-5 col-form-label">Matricula</label>
+                        <label for="matricula" class="col-5 col-form-label">Matricula</label>
                         <div class="col-7">
-                            <input id="text" name="matricula" type="text" class="form-control"
+                            <input id="matricula" name="matricula" type="text" class="form-control"
                                 value="{{ $propiedad->matricula }}" required>
                         </div>
                     </div>
@@ -116,31 +116,31 @@
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label for="text" class="col-5 col-form-label">Precio contrato</label>
+                        <label for="precio_contrato" class="col-5 col-form-label">Precio contrato</label>
                         <div class="col-7">
-                            <input id="conc_precio" name="conc_precio" type="text" class="form-control"
+                            <input id="precio_contrato" name="precio_contrato" type="text" class="form-control"
                                 value="{{ $negocio_unico->precio_contrato }}">
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label class="col-5 col-form-label" for="concepto">Concepto jurídico</label>
+                        <label class="col-5 col-form-label" for="conc_juridico">Concepto jurídico</label>
                         <div class="col-7">
                             @isset($negocio_unico->conc_juridico)
-                                {!! Form::select('concepto', $conc_juridico, $negocio_unico->conc_juridico, ['class' => 'form-select', 'required' => 'required']) !!}
+                                {!! Form::select('conc_juridico', $conc_juridico, $negocio_unico->conc_juridico, ['class' => 'form-select', 'required' => 'required']) !!}
                             @endisset
                             @empty($negocio_unico->conc_juridico)
-                                {!! Form::select('concepto', $conc_juridico, $negocio_unico->conc_juridico, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                {!! Form::select('conc_juridico', $conc_juridico, $negocio_unico->conc_juridico, ['class' => 'form-select vacio', 'required' => 'required']) !!}
                             @endempty
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label for="text" class="col-5 col-form-label">Observación concepto jurídico</label>
+                        <label for="obs_conc_juridico" class="col-5 col-form-label">Observación concepto jurídico</label>
                         <div class="col-7">
-                            <input id="text" name="matricula" type="text" class="form-control"
+                            <input id="obs_conc_juridico" name="obs_conc_juridico" type="text" class="form-control"
                                 value="{{ $negocio_unico->obs_conc_juridico }}" required>
                         </div>
                     </div>
@@ -164,10 +164,10 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group row" id="valorgrupo">
-                        <label for="valor" id="valorlabel" class="col-5 col-form-label">Valor tentativo</label>
+                        <label for="valor" class="col-5 col-form-label">Valor tentativo</label>
                         <div class="col-7">
-                            <input id="valor" name="valor" type="number" value="{{ $negocio_unico->valor }}"
-                                class="form-control" min="99000" required="required" disabled>
+                            <input id="valor" readonly name="valor" type="number" value="{{ $negocio_unico->valor }}"
+                                class="form-control" min="99000" required="required" >
                             <span id="valorpesos" class="form-text text-muted"></span>
                         </div>
                     </div>
@@ -316,7 +316,7 @@
                             contruido</label>
                         <div class="col-7">
                             <input id="tiempo_inm" name="tiempo_inm" type="number" value="{{ $propiedad->tiempo_inm }}"
-                                min="0" class="form-control" max="80" required="required">
+                                min="0" class="form-control" max="80">
                         </div>
                     </div>
                 </div>
@@ -415,10 +415,10 @@
                         <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
                         <div class="col-7">
                             @isset($propiedad->ciudad)
-                                {!! Form::select('ciudad', $ciudad, 1, ['class' => 'form-select', 'id' => 'ciudad', 'disabled' => 'disabled']) !!}
+                                {!! Form::select('ciudad', $ciudad, $propiedad->ciudad, ['class' => 'form-select', 'id' => 'ciudad']) !!}
                             @endisset
                             @empty($propiedad->ciudad)
-                                {!! Form::select('ciudad', $ciudad, 1, ['class' => 'form-select vacio', 'id' => 'ciudad']) !!}
+                                {!! Form::select('ciudad', $ciudad,$propiedad->ciudad, ['class' => 'form-select vacio', 'id' => 'ciudad']) !!}
                             @endempty
                         </div>
                     </div>
@@ -582,10 +582,10 @@
                         <label for="mat_piso_bano" class="col-4 col-form-label">Baño(s)</label>
                         <div class="col-8">
                             @isset($propiedad->mat_piso_bano)
-                                {!! Form::select('mp_cocina', $mat_cocina, $propiedad->mat_piso_bano, ['class' => 'form-select', 'required' => 'required']) !!}
+                                {!! Form::select('mat_piso_bano', $mat_bano, $propiedad->mat_piso_bano, ['class' => 'form-select', 'required' => 'required']) !!}
                             @endisset
                             @empty($propiedad->mat_piso_bano)
-                                {!! Form::select('mp_cocina', $mat_cocina, $propiedad->mat_piso_bano, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                {!! Form::select('mat_piso_bano', $mat_bano, $propiedad->mat_piso_bano, ['class' => 'form-select vacio', 'required' => 'required']) !!}
                             @endempty
                         </div>
                     </div>
@@ -672,7 +672,7 @@
                             @isset($propiedad->tipo_calentador)
                                 {!! Form::select('calentador', $calentador, $propiedad->tipo_calentador, ['class' => 'form-select', 'required' => 'required']) !!}
                             @endisset
-                            @empty($propiedad->tipo_cocina)
+                            @empty($propiedad->tipo_calentador)
                                 {!! Form::select('calentador', $calentador, $propiedad->tipo_calentador, ['class' => 'form-select vacio', 'required' => 'required']) !!}
                             @endempty
                         </div>
@@ -922,7 +922,7 @@
                         <label for="calefaccion_p" class="col-5 col-form-label">Calefacción privada</label>
                         <div class="col-7">
                             <select id="calefaccion_p" class="form-select" name="calefaccion_p" required="required">
-                                @if ($propiedad->calefaccion_p == 'Si')
+                                @if ($propiedad->calefaccion_privada == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else
@@ -942,7 +942,7 @@
                         <label for="piscina_p" class="col-5 col-form-label">Piscina privada</label>
                         <div class="col-7">
                             <select id="piscina_p" class="form-select" name="piscina_p" required="required">
-                                @if ($propiedad->piscina_p == 'Si')
+                                @if ($propiedad->piscina_privada == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else
@@ -958,7 +958,7 @@
                         <label for="sauna_p" class="col-5 col-form-label">Sauna privado</label>
                         <div class="col-7">
                             <select id="sauna_p" class="form-select" name="sauna_p" required="required">
-                                @if ($propiedad->sauna_p == 'Si')
+                                @if ($propiedad->sauna_privada == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else
@@ -974,7 +974,7 @@
                         <label for="turco_p" class="col-5 col-form-label">Turco privado</label>
                         <div class="col-7">
                             <select id="turco_p" class="form-select" name="turco_p" required="required">
-                                @if ($propiedad->turco_p == 'Si')
+                                @if ($propiedad->turco_privado == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else
@@ -994,7 +994,7 @@
                         <label for="jacuzzi_p" class="col-5 col-form-label">Jacuzzi privado</label>
                         <div class="col-7">
                             <select id="jacuzzi_p" class="form-select" name="jacuzzi_p" required="required">
-                                @if ($propiedad->jacuzzi_p == 'Si')
+                                @if ($propiedad->jacuzzi_privado == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else
@@ -1010,7 +1010,7 @@
                         <label for="tina_p" class="col-5 col-form-label">Tina privada</label>
                         <div class="col-7">
                             <select id="tina_p" class="form-select" name="tina_p" required="required">
-                                @if ($propiedad->tina_p == 'Si')
+                                @if ($propiedad->tina_privada == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else
@@ -1075,6 +1075,28 @@
                 </div>
             </div>
         </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
+                <div class="col-12 col-md-4" id="area_balcon_secc">
+                    <div class="form-group row">
+                        <label for="area_balcon" class="col-5 col-form-label">Área del balcón</label>
+                        <div class="col-7">
+                            <input id="area_balcon" name="area_balcon" type="number" step="1" min="1"
+                                class="form-control" value="{{ $propiedad->area_balcon }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4" id="area_terraza_secc">
+                    <div class="form-group row">
+                        <label for="area_terraza" class="col-5 col-form-label">Área de la terraza</label>
+                        <div class="col-7">
+                            <input id="area_terraza" name="area_terraza" type="number" step="1" min="1"
+                                class="form-control" value="{{ $propiedad->area_terraza }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <p class="fw-bold my-3">Garaje(s):</p>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
@@ -1083,7 +1105,7 @@
                         <label for="garaje" class="col-5 col-form-label">Cuenta con garaje(s)</label>
                         <div class="col-7">
                             <select id="garaje" class="form-select" name="garaje" required="required">
-                                @if ($propiedad->garaje == 'Si')
+                                @if ($propiedad->tiene_garaje == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else
@@ -1118,8 +1140,8 @@
                     <div class="form-group row">
                         <label for="no_garajes" class="col-5 col-form-label">Cantidad</label>
                         <div class="col-7">
-                            <input class="form-control" type="number" min="1" max="100" id="no_garajes"
-                                value="{{ $propiedad->no_garajes }}" required>
+                            <input class="form-control" name="no_garajes" type="number" min="1" max="100" id="no_garajes"
+                                value="{{ $propiedad->no_garajes }}">
                         </div>
                     </div>
                 </div>
@@ -1131,7 +1153,7 @@
                                 {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garajes, ['class' => 'form-select', 'required' => 'required']) !!}
                             @endisset
                             @empty($propiedad->tipo_garajes)
-                                {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garajes, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garajes, ['class' => 'form-select vacio']) !!}
                             @endempty
                         </div>
                     </div>

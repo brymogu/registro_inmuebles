@@ -424,17 +424,17 @@
                             <div class="col-5">
                                 <label for="direccion" class="col-form-label">Dirección inmueble</label>
                             </div>
-                            <div class="col-7">
-                                <input id="direccion" name="direccion" type="text" class="form-control"
-                                    required="required" placeholder="Ejemplo: Calle 25A #52B-06">
-                            </div>
+                            <input id="direccion" name="direccion" type="text" class="form-control"
+                                required="required" placeholder="Ejemplo: Calle 25A #52B-06">
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="form-group row border-end" id="detalles">
-                            <div class="col-5">
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row border-end" id="detalles">
+                        <div class="col-5">
+                            <div class="col-7">
                                 <label for="direccion_comp" class="col-form-label">Detalles</label>
                             </div>
                             <div class="col-7">
