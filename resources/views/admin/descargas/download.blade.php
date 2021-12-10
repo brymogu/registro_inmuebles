@@ -48,7 +48,7 @@
                                     {{ $negocio->desc_plan }}
                                 </td>
                                 <td>
-                                    <a class="btn btn-epc rounded-circle" target="_blank" href="{{Storage::url($negocio->certificado)}}"><i
+                                    <a class="btn btn-epc rounded-circle" target="_blank" href="{{Storage::url($negocio->certificado)}}" download><i
                                         class="fas fa-file-pdf"></i></a>
                                 </td>
                             </tr>
