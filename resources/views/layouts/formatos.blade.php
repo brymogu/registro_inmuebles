@@ -34,25 +34,23 @@
 
 <body>
     <div class="container-fluid">
-
         <div class="shadow stiky-top p-3">
             <div class="row">
                 <div class="col-4">
                     <img src="{!! asset('img/epica.svg') !!}" alt="" class="logo">
                 </div>
-                <div class="col-4 d-flex align-items-center justify-content-center">
+                <div class="col-4 d-flex align-items-center text-center justify-content-center">
                     @yield('title')
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row my-3">
             <div class="col-1 lateral"></div>
             <div class="col-10 contenido">
                @yield('content') 
             </div>            
             <div class="col-1 lateral"></div>
         </div>
-
     </div>
     @yield('final')
 </body>

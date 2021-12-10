@@ -23,7 +23,7 @@ Route::get('administrador/editar/inmueble/{codiprop}', [EditController::class, '
 Route::post('administrador/editar/inmueble/{codiprop}', [EditController::class, 'update'])->name('administrador.editupdate');
 
 Route::get('administrador/descargas', [DownloadController::class, 'showtable'])->name('administrador.download');
-Route::get('administrador/descargas/formatos', [FormatosContraller::class, 'show'])->name('administrador.formatos');
+Route::get('administrador/descargas/formatos/{codiprop}', [FormatosContraller::class, 'show'])->name('administrador.formatos');
 //Route::get('download_public/', [DownloadController::class, 'download_public'])->name('download_public');
 
 Route::get('administrador/acuerdos', [AcuerdosController::class, 'showtable'])->name('administrador.acuerdos');

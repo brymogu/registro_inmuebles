@@ -17,3 +17,7 @@ body {
 .lateral {
     height: 90vh;
 }
+
+#map {
+    height: 40vh;
+}
