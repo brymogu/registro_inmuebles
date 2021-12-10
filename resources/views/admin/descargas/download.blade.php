@@ -35,21 +35,22 @@
                                 <td>
                                     <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                         title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
-                                </td>                                                                   
+                                </td>
                                 <td>
                                     <b> {{ $negocio->name }}</b><br />
                                     {{ $negocio->lastname }}
                                 </td>
                                 <td>
-                                    <b> {{ $negocio->desc_nombres_corto }}</b><br />
-                                    {{ $negocio->doc_number }}
+                                    <b> {{ $negocio->doc_number }}</b><br />
+                                    {{ $negocio->desc_nombres_corto }}
                                 </td>
                                 <td>
                                     {{ $negocio->desc_plan }}
                                 </td>
                                 <td>
-                                    <a class="btn btn-epc rounded-circle" target="_blank" href="{{Storage::url($negocio->certificado)}}" download><i
-                                        class="fas fa-file-pdf"></i></a>
+                                    <a class="btn btn-epc rounded-circle" target="_blank"
+                                        href="{{ Storage::url($negocio->certificado) }}" download><i
+                                            class="fas fa-file-pdf"></i></a>
                                 </td>
                             </tr>
                         @endforeach

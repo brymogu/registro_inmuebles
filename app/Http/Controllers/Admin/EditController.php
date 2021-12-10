@@ -58,6 +58,7 @@ class EditController extends Controller
         $codigo_ppdad = $negocio_unico->propiedad;
         $propiedad = Propiedades::find($codigo_ppdad);
         
+        
         $negocio_tipo = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
         $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
         $inmueble = Tipos_inmueble::pluck('desc_tipo_inmueble', 'id');

@@ -39,17 +39,15 @@
                 <div class="col-4">
                     <img src="{!! asset('img/epica.svg') !!}" alt="" class="logo">
                 </div>
-                <div class="col-4 d-flex align-items-center text-center justify-content-center">
+                <div class="col-4 d-flex align-items-center text-center justify-content-center fw-bold">
                     @yield('title')
                 </div>
             </div>
         </div>
-        <div class="row my-3">
-            <div class="col-1 lateral"></div>
-            <div class="col-10 contenido">
+        <div class="row my-3 p-3">            
+            <div class="col-12 px-5 contenido">
                @yield('content') 
-            </div>            
-            <div class="col-1 lateral"></div>
+            </div>          
         </div>
     </div>
     @yield('final')

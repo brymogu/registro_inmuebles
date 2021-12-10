@@ -10,27 +10,25 @@
 @endsection
 
 @section('content')
-    <div class="row p-3">
+    <div class="row my-3 d-flex justify-content-evenly">
+        <div class="col-3 card rounded shadow border-0 text-center">
+            {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select text-center', 'required' => 'required']) !!}
+            <small>Tipo de inmueble</small>
+        </div>
+        <div class="col-3 card rounded shadow border-0 text-center">
+            {!! Form::select('tipo', $negocio_tipo, $negocio_unico->tipo_negocio, ['class' => 'form-select text-center', 'required' => 'required', 'disabled' => 'disabled']) !!}
+            <small>Tipo de negocio</small>
+        </div>
+        <div class="col-4 card rounded shadow border-0 text-center">
+            <h3> {!! Form::select('conc_juridico', $conc_juridico, $negocio_unico->conc_juridico, ['class' => 'form-select text-center', 'required' => 'required', 'disabled' => 'disabled']) !!}</h3>
+            <small>Concepto jurídico</small>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12">
-            <div class="row my-3 d-flex justify-content-evenly">
-                <div class="col-3 card rounded shadow border-0">
-                    {{ $propietario->name }}<br />
-                    {{ $propietario->lastname }}
-                </div>
-                <div class="col-3 card rounded shadow border-0">
+            <div class="card shadow rounded border-0">
+                <div id="map">
 
-                </div>
-                <div class="col-3 card rounded shadow border-0">
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card shadow rounded border-0">
-                        <div id="map">
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
