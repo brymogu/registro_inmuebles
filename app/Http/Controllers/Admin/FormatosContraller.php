@@ -31,17 +31,15 @@ use App\Models\Tipos_seguridad;
 use App\Models\Tipos_vigilancia;
 use App\Models\Vista;
 use App\Models\Zonas_sociales;
-use Illuminate\Http\Request;
 
 class FormatosContraller extends Controller
 {
     //
-    public function show($codiprop)
+    public function show($codineg)
     {
-        $propietario = Propietarios::find($codiprop);
-        $negocio_unico = Negocios::where('propietario', $codiprop)->first();
-        $codigo_ppdad = $negocio_unico->propiedad;
-        $propiedad = Propiedades::find($codigo_ppdad);
+        $negocio_unico = Negocios::find($codineg);
+        $propietario = Propietarios::find($negocio_unico->propietario);
+        $propiedad = Propiedades::find($negocio_unico->propiedad);
 
         $negocio_tipo = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
         $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
@@ -68,7 +66,6 @@ class FormatosContraller extends Controller
         $seguridad = Tipos_seguridad::pluck('desc_tipo_seguridad', 'id');
         $cuota = Tipos_cuotas::pluck('desc_tipo_cuota', 'id');
         $conc_juridico = Conc_juridicos::pluck('des_conc_juridicos', 'id');
-
 
         return view('admin.descargas.cpvj', compact('propiedad', 'negocio_unico', 'propietario','tipos_documento','negocio_tipo','inmueble','estratos','estado','remodelado',
         'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'

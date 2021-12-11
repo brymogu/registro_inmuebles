@@ -27,6 +27,9 @@
                             <th>
                                 Certificado
                             </th>
+                            <th>
+                                Ficha
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,6 +54,14 @@
                                     <a class="btn btn-epc rounded-circle" target="_blank"
                                         href="{{ Storage::url($negocio->certificado) }}" download><i
                                             class="fas fa-file-pdf"></i></a>
+                                </td>
+                                <td>
+                                    {{ Form::open(['method' => 'post']) }}
+                                    <input type="text" class="d-none" name="codineg" value="{{ $negocio->id_neg}}" >    
+                                    <button type="submit" class="btn btn-epc rounded-circle"><i
+                                                class="fas fa-file-invoice"></i></button>
+                                                                                        
+                                    {{ Form::close() }}
                                 </td>
                             </tr>
                         @endforeach

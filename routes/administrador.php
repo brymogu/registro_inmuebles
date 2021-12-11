@@ -7,9 +7,6 @@ use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Admin\DownloadController;
 use App\Http\Controllers\admin\FormatosContraller;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
-
-
 
 
 // Route::get('/administrador', InicioController::class);
@@ -23,7 +20,9 @@ Route::get('administrador/editar/inmueble/{codiprop}', [EditController::class, '
 Route::post('administrador/editar/inmueble/{codiprop}', [EditController::class, 'update'])->name('administrador.editupdate');
 
 Route::get('administrador/descargas', [DownloadController::class, 'showtable'])->name('administrador.download');
-Route::get('administrador/descargas/formatos/{codiprop}', [FormatosContraller::class, 'show'])->name('administrador.formatos');
-//Route::get('download_public/', [DownloadController::class, 'download_public'])->name('download_public');
+Route::post('administrador/descargas', [DownloadController::class, 'convertir'])->name('administrador.pasarformatos');
+
+Route::get('administrador/descargas/formatos/{codineg}', [FormatosContraller::class, 'show'])->name('administrador.formatos');
+Route::post('administrador/descargas/formatos/{codineg}', [FormatosController::class, 'convertir'])->name('administrador.irformatos');
 
 Route::get('administrador/acuerdos', [AcuerdosController::class, 'showtable'])->name('administrador.acuerdos');
