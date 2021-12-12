@@ -750,10 +750,10 @@
                             <label for="tipo_garaje" class="col-4 col-form-label">Tipo</label>
                             <div class="col-8">
                                 @isset($propiedad->tipo_garaje)
-                                    {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garaje, ['class' => 'form-select']) !!}
+                                    {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garajes, ['class' => 'form-select']) !!}
                                 @endisset
                                 @empty($propiedad->tipo_garaje)
-                                    {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garaje, ['class' => 'form-select vacio']) !!}
+                                    {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garajes, ['class' => 'form-select vacio']) !!}
                                 @endempty
                             </div>
                         </div>

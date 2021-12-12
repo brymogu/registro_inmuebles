@@ -3,43 +3,16 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Negocios;
-use App\Models\Propiedades;
-use App\Models\Propietarios;
-use App\Models\Tipos_documento;
-use App\Models\Calentadores;
-use App\Models\Ciudades;
-use App\Models\Conc_juridicos;
-use App\Models\Estados_inmueble;
-use App\Models\Estratos;
-use App\Models\Materiales_fachada;
-use App\Models\Mats_piso_bano;
-use App\Models\Mats_piso_cocina;
-use App\Models\Mats_piso_habitacion;
-use App\Models\Mats_piso_zsocial;
-use App\Models\Mb_cocina;
-use App\Models\Niveles;
-use App\Models\Remodelados;
-use App\Models\tipo_garajes;
-use App\Models\Tipos_cocina;
-use App\Models\Tipos_cuotas;
-use App\Models\Tipos_estufa;
-use App\Models\Tipos_horno;
-use App\Models\Tipos_inmueble;
-use App\Models\Tipos_negocios;
-use App\Models\Tipos_seguridad;
-use App\Models\Tipos_vigilancia;
-use App\Models\Vista;
-use App\Models\Zonas_sociales;
 use Illuminate\Support\Facades\DB;
 
 class FormatosContraller extends Controller
 {
     //
-    public function show()
+    public function show($codineg)
     {
 
-        DB::table("negocios")
+        $datos = DB::table("negocios")
+            ->where('negocios.id', '=', $codineg)
             ->leftJoin("propietarios", function ($join) {
                 $join->on("negocios.propietario", "=", "propietarios.id");
             })
@@ -55,8 +28,8 @@ class FormatosContraller extends Controller
             ->leftJoin("planes", function ($join) {
                 $join->on("negocios.plan", "=", "planes.id");
             })
-            ->leftJoin("c", function ($join) {
-                $join->on("onc_juridicos", "negocios.conc_juridico", "=");
+            ->leftJoin("conc_juridicos", function ($join) {
+                $join->on("negocios.conc_juridico", "=", "conc_juridicos.id");
             })
             ->leftJoin("tipos_inmuebles", function ($join) {
                 $join->on("propiedades.tipo_inmueble", "=", "tipos_inmuebles.id");
@@ -73,8 +46,8 @@ class FormatosContraller extends Controller
             ->leftJoin("remodelados", function ($join) {
                 $join->on("propiedades.remodelado", "=", "remodelados.id");
             })
-            ->leftJoin("mats_piso_habitaci", function ($join) {
-                $join->on("ons", "propiedades.mat_habitaci=", "mats_piso_habitacions.id");
+            ->leftJoin("mats_piso_habitacions", function ($join) {
+                $join->on("propiedades.mat_habitacion","=", "mats_piso_habitacions.id");
             })
             ->leftJoin("mats_piso_cocinas", function ($join) {
                 $join->on("propiedades.mat_piso_cocina", "=", "mats_piso_cocinas.id");
@@ -109,8 +82,8 @@ class FormatosContraller extends Controller
             ->leftJoin("vistas", function ($join) {
                 $join->on("propiedades.tipo_vista", "=", "vistas.id");
             })
-            ->leftJoin("z", function ($join) {
-                $join->on("onas_sociales", "propiedades.zona_social", "=");
+            ->leftJoin("zonas_sociales", function ($join) {
+                $join->on("propiedades.zona_social", "=", "zonas_sociales.id");
             })
             ->leftJoin("materiales_fachadas", function ($join) {
                 $join->on("propiedades.material_fachada", "=", "materiales_fachadas.id");
@@ -124,9 +97,9 @@ class FormatosContraller extends Controller
             ->leftJoin("tipos_cuotas", function ($join) {
                 $join->on("propiedades.tipo_cuota", "=", "tipos_cuotas.id");
             })
-            ->select("negocios.propietario as id_pptario", "negocios.propiedad as id_ppdad", "negocios.tipo_negocio as id_tiponeg", "negocios.plan as id_plan", "negocios.conc_juridico as id_concjuridico", "propietarios.tipo_doc as id_tipodoc", "propiedades.tipo_inmueble as id_tipoinm", "propiedades.ciudad as id_ciudad", "propiedades.estrato as id_estrato", "propiedades.estado as id_estado", "propiedades.remodelado as id_remodelado", "propiedades.mat_habitacion as id_mathab", "propiedades.mat_piso_cocina as id_matpcocina", "propiedades.mat_piso_bano as id_matpbano", "propiedades.mat_piso_zsocial as id_matpsocial", "propiedades.nivel as id_nivel", "propiedades.tipo_garajes as id_tipogaraje", "propiedades.mb_cocina as id_mbcocina", "propiedades.tipo_estufa as id_tipoest", "propiedades.tipo_horno as id_tipohor", "propiedades.tipo_cocina as id_tipococ", "propiedades.tipo_calentador as id_calentador", "propiedades.tipo_vista as id_vista", "propiedades.zona_social as id_zonasocial", "propiedades.material_fachada as id_matfachada", "propiedades.tipo_vigilancia as id_tipovigilancia", "propiedades.tipo_seguridad as id_tiposeguridad", "propiedades.tipo_cuota as id_tipocuota", "propietarios.name", "propietarios.lastname", "propietarios.doc_number", "tipos_documentos.desc_tipos_documento", "propietarios.email", "propietarios.phone", "propietarios.paso", "tipos_negocios.desc_tipo_negocio as tipo_negocio", "planes.desc_plan as plan", "negocios.valor", "negocios.conc_precio", "negocios.precio_contrato", "conc_juridicos.des_conc_juridicos as conc_juridico", "negocios.obs_conc_juridico", "negocios.cpvj", "negocios.asesor", "tipos_inmuebles.desc_tipo_inmueble as tipo_inmueble", "propiedades.espropietario", "propiedades.pqsolicita", "propiedades.horizontal", "propiedades.arrendado", "estratos.estrato", "ciudades.desc_ciudades as ciudad", "propiedades.direccion", "propiedades.direccion_comp", "propiedades.tiempo_inm", "propiedades.longitud", "propiedades.latitud", "estados_inmuebles.desc_estado as estado", "remodelados.desc_remodelado as remodelado", "propiedades.tuberia", "propiedades.piso", "propiedades.ascensor", "propiedades.a_construida", "propiedades.a_privada", "propiedades.a_terreno", "mats_piso_habitacions.desc_mats_piso_habitaciones as mat_habitacion", "mats_piso_cocinas.desc_mats_piso_cocina as mat_piso_cocina", "mats_piso_banos.desc_mats_piso_bano as mat_piso_bano", "mats_piso_zsocials.desc_mats_piso_zsocial as mat_piso_zsocial", "niveles.des_nivel as nivel", "propiedades.n_hab", "propiedades.n_banos", "tipo_garajes.tipo_garajes as tipo_garaje", "propiedades.tiene_garaje", "propiedades.gje_comunal", "propiedades.gje_cubierto", "propiedades.no_garajes", "mb_cocinas.desc_mbs_cocina as mb_cocina", "tipos_estufas.desc_tipos_estufa as tipo_estufa", "tipos_hornos.desc_tipos_horno as tipo_horno", "tipos_cocinas.desc_tipos_cocina as tipo_cocina", "calentadores.desc_tipos_calentador as tipo_calentador", "vistas.desc_vista as tipo_vista", "zonas_sociales.desc_zona_social as zona_social", "materiales_fachadas.desc_mats_fachada as material_fachada", "propiedades.terraza", "propiedades.area_terraza", "propiedades.chimenea", "propiedades.balcon", "propiedades.area_balcon", "propiedades.b_servicio", "propiedades.b_social", "propiedades.estudio", "propiedades.deposito", "propiedades.hab_servicio", "propiedades.star", "propiedades.zona_lavanderia", "propiedades.patio", "propiedades.entrega_cortinas", "propiedades.piscina_privada", "propiedades.sauna_privada", "propiedades.turco_privado", "propiedades.jacuzzi_privado", "propiedades.tina_privada", "propiedades.aire_privado", "propiedades.calefaccion_privada", "tipos_vigilancias.desc_tipo_vigilancia as tipo_vigilancia", "tipos_seguridads.desc_tipo_seguridad as tipo_seguridad", "tipos_cuotas.desc_tipo_cuota as tipo_cuota", "propiedades.nombre_c_e", "propiedades.adm_cp", "propiedades.adm_cd", "propiedades.pq_visitantes", "propiedades.bicicletero", "propiedades.s_social", "propiedades.bbq", "propiedades.s_juntas", "propiedades.p_infantil", "propiedades.gimnasio", "propiedades.turco", "propiedades.sauna", "propiedades.c_squash", "propiedades.c_tenis", "propiedades.c_multiple", "propiedades.s_juegos", "propiedades.s_estudio", "propiedades.lavanderia_c", "propiedades.planta_e", "propiedades.certificado", "propiedades.habitado", "propiedades.piscina", "propiedades.n_ascensores", "propiedades.jardin_interior", "propiedades.chip", "propiedades.matricula")
+            ->select("negocios.id as id_neg", "negocios.propietario as id_pptario", "negocios.propiedad as id_ppdad", "negocios.tipo_negocio as id_tiponeg", "negocios.plan as id_plan", "negocios.conc_juridico as id_concjuridico", "propietarios.tipo_doc as id_tipodoc", "propiedades.tipo_inmueble as id_tipoinm", "propiedades.ciudad as id_ciudad", "propiedades.estrato as id_estrato", "propiedades.estado as id_estado", "propiedades.remodelado as id_remodelado", "propiedades.mat_habitacion as id_mathab", "propiedades.mat_piso_cocina as id_matpcocina", "propiedades.mat_piso_bano as id_matpbano", "propiedades.mat_piso_zsocial as id_matpsocial", "propiedades.nivel as id_nivel", "propiedades.tipo_garajes as id_tipogaraje", "propiedades.mb_cocina as id_mbcocina", "propiedades.tipo_estufa as id_tipoest", "propiedades.tipo_horno as id_tipohor", "propiedades.tipo_cocina as id_tipococ", "propiedades.tipo_calentador as id_calentador", "propiedades.tipo_vista as id_vista", "propiedades.zona_social as id_zonasocial", "propiedades.material_fachada as id_matfachada", "propiedades.tipo_vigilancia as id_tipovigilancia", "propiedades.tipo_seguridad as id_tiposeguridad", "propiedades.tipo_cuota as id_tipocuota", "propietarios.name", "propietarios.lastname", "propietarios.doc_number", "tipos_documentos.desc_tipos_documento", "propietarios.email", "propietarios.phone", "propietarios.paso", "tipos_negocios.desc_tipo_negocio as tipo_negocio", "planes.desc_plan as plan", "negocios.valor", "negocios.conc_precio", "negocios.precio_contrato", "conc_juridicos.des_conc_juridicos as conc_juridico", "negocios.obs_conc_juridico", "negocios.cpvj", "negocios.asesor", "tipos_inmuebles.desc_tipo_inmueble as tipo_inmueble", "propiedades.espropietario", "propiedades.pqsolicita", "propiedades.horizontal", "propiedades.arrendado", "estratos.estrato", "ciudades.desc_ciudades as ciudad", "propiedades.direccion", "propiedades.direccion_comp", "propiedades.tiempo_inm", "propiedades.longitud", "propiedades.latitud", "estados_inmuebles.desc_estado as estado", "remodelados.desc_remodelado as remodelado", "propiedades.tuberia", "propiedades.piso", "propiedades.ascensor", "propiedades.a_construida", "propiedades.a_privada", "propiedades.a_terreno", "mats_piso_habitacions.desc_mats_piso_habitaciones as mat_habitacion", "mats_piso_cocinas.desc_mats_piso_cocina as mat_piso_cocina", "mats_piso_banos.desc_mats_piso_bano as mat_piso_bano", "mats_piso_zsocials.desc_mats_piso_zsocial as mat_piso_zsocial", "niveles.des_nivel as nivel", "propiedades.n_hab", "propiedades.n_banos", "tipo_garajes.tipo_garajes as tipo_garaje", "propiedades.tiene_garaje", "propiedades.gje_comunal", "propiedades.gje_cubierto", "propiedades.no_garajes", "mb_cocinas.desc_mbs_cocina as mb_cocina", "tipos_estufas.desc_tipos_estufa as tipo_estufa", "tipos_hornos.desc_tipos_horno as tipo_horno", "tipos_cocinas.desc_tipos_cocina as tipo_cocina", "calentadores.desc_tipos_calentador as tipo_calentador", "vistas.desc_vista as tipo_vista", "zonas_sociales.desc_zona_social as zona_social", "materiales_fachadas.desc_mats_fachada as material_fachada", "propiedades.terraza", "propiedades.area_terraza", "propiedades.chimenea", "propiedades.balcon", "propiedades.area_balcon", "propiedades.b_servicio", "propiedades.b_social", "propiedades.estudio", "propiedades.deposito", "propiedades.hab_servicio", "propiedades.star", "propiedades.zona_lavanderia", "propiedades.patio", "propiedades.entrega_cortinas", "propiedades.piscina_privada", "propiedades.sauna_privada", "propiedades.turco_privado", "propiedades.jacuzzi_privado", "propiedades.tina_privada", "propiedades.aire_privado", "propiedades.calefaccion_privada", "tipos_vigilancias.desc_tipo_vigilancia as tipo_vigilancia", "tipos_seguridads.desc_tipo_seguridad as tipo_seguridad", "tipos_cuotas.desc_tipo_cuota as tipo_cuota", "propiedades.nombre_c_e", "propiedades.adm_cp", "propiedades.adm_cd", "propiedades.pq_visitantes", "propiedades.bicicletero", "propiedades.s_social", "propiedades.bbq", "propiedades.s_juntas", "propiedades.p_infantil", "propiedades.gimnasio", "propiedades.turco", "propiedades.sauna", "propiedades.c_squash", "propiedades.c_tenis", "propiedades.c_multiple", "propiedades.s_juegos", "propiedades.s_estudio", "propiedades.lavanderia_c", "propiedades.planta_e", "propiedades.certificado", "propiedades.habitado", "propiedades.piscina", "propiedades.n_ascensores", "propiedades.jardin_interior", "propiedades.chip", "propiedades.matricula")
             ->get();
 
-        return view('admin.descargas.cpvj', compact('negocios'));
+        return view('admin.descargas.cpvj', compact('datos'));
     }
 }
