@@ -15,7 +15,7 @@
             <div class="row lateral d-flex align-content-around flex-wrap rounded-3 fs-6 text-left">
                 <div class="col-12">
                     <i class="fas fa-handshake"></i>
-                    <small class="fw-bold">{{ $negocio_unico->conc_precio }} </small><br>
+                    <small class="fw-bold">{{ $negocio->conc_precio }} </small><br>
                     <small class="fw-light fst-italic">Valor total calculado</small>
                 </div>
                 <div class="col-12">
@@ -24,7 +24,7 @@
                     @else
                         <i class="fas fa-building"></i>
                     @endif
-                    <small class="fw-bold">{{ $negocio_unico->tipo_negocio }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->tipo_negocio }}</small> <br>
                     <small class="fw-light fst-italic">Tipo de negocio</small>
                 </div>
                 <div class="col-12">
@@ -33,7 +33,7 @@
                     @else
                         <i class="far fa-times-circle"></i>
                     @endif
-                    <small class="fw-bold">{{ $negocio_unico->conc_juridico }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->conc_juridico }}</small> <br>
                     <small class="fw-light fst-italic">Concepto jurídico</small>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                 <div class="col-1"></div>
                 <div class="col-10 cabeza">
                     <p class="fw-bold">
-                        @if ($propiedad->tipo_inmueble == 1)
+                        @if ($negocio->id_tipo_inm == 1)
                             <i class="fas fa-home"></i>
                         @else
                         <i class="far fa-building"></i>
@@ -61,71 +61,71 @@
             </div>
             <div class="row mt-1 interior">
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->tipo_inmueble }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->tipo_inmueble }}</small> <br>
                     <small class="fw-light fst-italic">Tipo de inmueble</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->matricula }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->matricula }}</small> <br>
                     <small class="fw-light fst-italic">N° matricula</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->chip }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->chip }}</small> <br>
                     <small class="fw-light fst-italic">Chip</small>
                 </div>
             </div>
             <div class="row my-1 interior">
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->direccion }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->direccion }}</small> <br>
                     <small class="fw-light fst-italic">Dirección</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->ciudad }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->ciudad }}</small> <br>
                     <small class="fw-light fst-italic">Ciudad</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->estrato }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->estrato }}</small> <br>
                     <small class="fw-light fst-italic">Estrato</small>
                 </div>
             </div>
             <div class="row my-1 interior">
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->a_construida }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->a_construida }}</small> <br>
                     <small class="fw-light fst-italic">Área construida</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->a_privada }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->a_privada }}</small> <br>
                     <small class="fw-light fst-italic">Área privada</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->a_terreno }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->a_terreno }}</small> <br>
                     <small class="fw-light fst-italic">Área del terreno</small>
                 </div>
             </div>
             <div class="row my-1 interior">
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->horizontal }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->horizontal }}</small> <br>
                     <small class="fw-light fst-italic">En propiedad horizontal</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->estado }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->estado }}</small> <br>
                     <small class="fw-light fst-italic">Estado del inmueble</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->tiempo_inm }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->tiempo_inm }}</small> <br>
                     <small class="fw-light fst-italic">Tiempo de construido</small>
                 </div>
             </div>
             <div class="row my-1 interior">
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->n_hab }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->n_hab }}</small> <br>
                     <small class="fw-light fst-italic">N° de habitaciones</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->n_banos }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->n_banos }}</small> <br>
                     <small class="fw-light fst-italic">N° de baños</small>
                 </div>
                 <div class="col-4">
-                    <small class="fw-bold">{{ $propiedad->nivel }}</small> <br>
+                    <small class="fw-bold">{{ $negocio->nivel }}</small> <br>
                     <small class="fw-light fst-italic">Niveles</small>
                 </div>
             </div>
@@ -139,8 +139,8 @@
         </div>
     </div>
     <div class="d-none">
-        <input type="number" name="latitud" id="latitud" value="{{ $propiedad->latitud }}">
-        <input type="number" name="longitud" id="longitud" value="{{ $propiedad->longitud }}">
+        <input type="number" name="latitud" id="latitud" value="{{ $negocio->latitud }}">
+        <input type="number" name="longitud" id="longitud" value="{{ $negocio->longitud }}">
     </div>
 @endsection
 @section('final')
