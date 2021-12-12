@@ -461,24 +461,23 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-6 col-md-2 text-start">
-                <a href="{{ route('propietario.edit', $propietario) }}" class="btn botones">Atrás</a>
-            </div>
-            <div class="d-none d-md-block col-md-8"></div>
-            <div class="col-6 col-md-2 text-end">
-                <div id="botonmapa">
-                    <a type="button" class="btn botones" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
-                        aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i class="fas fa-map-marker-alt"></i>
-                        Ubicar</a>
+            <div class="row mt-2">
+                <div class="col-6 col-md-2 text-start">
+                    <a href="{{ route('propietario.edit', $propietario) }}" class="btn botones">Atrás</a>
                 </div>
-                <button type="submit" class="btn botones" id="enviarnegocio">Siguiente</button>
+                <div class="d-none d-md-block col-md-8"></div>
+                <div class="col-6 col-md-2 text-end">
+                    <div id="botonmapa">
+                        <a type="button" class="btn botones" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i
+                                class="fas fa-map-marker-alt"></i>
+                            Ubicar</a>
+                    </div>
+                    <button type="submit" class="btn botones" id="enviarnegocio">Siguiente</button>
+                </div>
             </div>
-
+            {{ Form::close() }}
         </div>
-        {{ Form::close() }}
-    </div>
     </div>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
