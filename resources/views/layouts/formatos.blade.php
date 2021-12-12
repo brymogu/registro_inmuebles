@@ -27,27 +27,29 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="{!! asset('css/formatos.css') !!}">
     @yield('more_head')
     <title>@yield('title')</title>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="shadow stiky-top p-3">
-            <div class="row">
-                <div class="col-4">
-                    <img src="{!! asset('img/epica.svg') !!}" alt="" class="logo">
-                </div>
-                <div class="col-4 d-flex align-items-center text-center justify-content-center fw-bold">
-                    @yield('title')
-                </div>
+    <div class="container">
+        <div class="row stiky-top p-3 cabecera shadow-sm">
+            <div class="col-4">
+                <img src="{!! asset('img/epica.svg') !!}" alt="" class="logo">
             </div>
+            <div class="col-4 d-flex align-items-center text-center justify-content-center fw-bold">
+                @yield('title')
+            </div>
+            <div class="col-4"></div>
         </div>
-        <div class="row my-3 p-3">            
-            <div class="col-12 px-5 contenido">
-               @yield('content') 
-            </div>          
+        <div class="row my-2">
+            <div class="col-12">
+                @yield('content')
+            </div>
         </div>
     </div>
     @yield('final')

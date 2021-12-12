@@ -264,73 +264,73 @@
                         @endif
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group row border-end" id="sec_tuberia">
-                        <label for="tuberia" class="col-5  col-form-label @if ($propiedad->remodelado == 'Total') d-none @endif ">Incluyó
-                            cambio de toda la tubería</label>
-                        <div class="col-2">
-                            <a>No</a>
-                        </div>
-                        <div class="col-3 bool text-center">
-                            <input type="checkbox" value="1" name="tuberia" id="tuberia" />
-                            <label class="slider-v1" for="tuberia"></label>
-                        </div>
-                        <div class="col-2">
-                            <a>Si</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="aptos2">
-                <div class="col-12 col-md-6 border-end">
-                    <div class="form-group row">
-                        <label for="piso" class="col-5 col-form-label">Piso en el que está el
-                            inmueble</label>
-                        <div class="col-7">
-                            <input id="piso" name="piso" type="number" min="1" max="30" value="{{ $propiedad->piso }}"
-                                class="form-control">
-                            <div class="invalid-feedback d-none" id="errorpiso">
-                                Si el piso es superior a 30, dejalo en 30 😉
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group row">
-                        <label for="ascensor" class="col-5 col-form-label">Ascensor</label>
-                        <div class="col-2">
-                            <a>No</a>
-                        </div>
-                        <div class="col-3 bool text-center">
-                            @if ($propiedad->ascensor == 'Si')
-                                <input type="checkbox" name="ascensor" value="1" id="ascensor" checked />
-                            @else
-                                <input type="checkbox" name="ascensor" value="1" id="ascensor" />
-                            @endif
-                            <label class="slider-v1" for="ascensor"></label>
-                        </div>
-                        <div class="col-2">
-                            <a>Si</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-group row border-end">
-                            <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
-                            <div class="col-7">
-                                @isset($estado, $propiedad->estrato)
-                                    {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
-                                @endisset
-                                @empty($propiedad->estrato)
-                                    {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select vacio', 'id' => 'tipo_inm', 'required' => 'required']) !!}
-                                @endempty
+                        <div class="form-group row border-end" id="sec_tuberia">
+                            <label for="tuberia" class="col-5  col-form-label @if ($propiedad->remodelado == 'Total') d-none @endif ">Incluyó
+                                cambio de toda la tubería</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" value="1" name="tuberia" id="tuberia" />
+                                <label class="slider-v1" for="tuberia"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 "></div>
+                </div>
+                <div class="row" id="aptos2">
+                    <div class="col-12 col-md-6 border-end">
+                        <div class="form-group row">
+                            <label for="piso" class="col-5 col-form-label">Piso en el que está el
+                                inmueble</label>
+                            <div class="col-7">
+                                <input id="piso" name="piso" type="number" min="1" max="30" value="{{ $propiedad->piso }}"
+                                    class="form-control">
+                                <div class="invalid-feedback d-none" id="errorpiso">
+                                    Si el piso es superior a 30, dejalo en 30 😉
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row">
+                            <label for="ascensor" class="col-5 col-form-label">Ascensor</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                @if ($propiedad->ascensor == 'Si')
+                                    <input type="checkbox" name="ascensor" value="1" id="ascensor" checked />
+                                @else
+                                    <input type="checkbox" name="ascensor" value="1" id="ascensor" />
+                                @endif
+                                <label class="slider-v1" for="ascensor"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group row border-end">
+                                <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
+                                <div class="col-7">
+                                    @isset($estado, $propiedad->estrato)
+                                        {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                    @endisset
+                                    @empty($propiedad->estrato)
+                                        {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select vacio', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                    @endempty
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 "></div>
+                    </div>
                 </div>
             </div>
             <div class="grupo mb-3">
