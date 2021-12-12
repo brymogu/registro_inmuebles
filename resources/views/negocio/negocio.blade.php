@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="form-group row border-end">
-                            <label for="id" class="col-5 col-form-label">Tipo DI</label>
+                            <label for="id" class="col-5 form-label">Tipo DI</label>
                             <div class="col-7">
                                 {!! Form::select('id', $tipos_documento, null, ['class' => 'form-select', 'required' => 'required']) !!}
                             </div>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group row">
-                            <label for="idnumber" class="col-5 col-form-label">Número DI</label>
+                            <label for="idnumber" class="col-5 form-label">Número DI</label>
                             <div class="col-7">
                                 <input id="idnumber" name="idnumber" type="number" class="form-control"
                                     required="required" min="800">
@@ -52,7 +52,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group row" id="valorgrupo">
-                            <label for="valor" id="valorlabel" class="col-5 col-form-label">¿Valor tentativo que le vas a
+                            <label for="valor" id="valorlabel" class="col-5 form-label">¿Valor tentativo que le vas a
                                 asignar
                                 al inmueble?</label>
                             <div class="col-7">
@@ -105,7 +105,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group row" id="pqgrupo">
-                            <label for="pqsolicita" class="col-5 col-form-label">¿Por qué deseas publicar el
+                            <label for="pqsolicita" class="col-5 form-label">¿Por qué deseas publicar el
                                 inmueble?</label>
                             <div class="col-7">
                                 <input id="pqsolicita" name="pqsolicita" type="text" class="form-control"
@@ -169,7 +169,7 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group row">
-                                <label for="serv_independ" class="col-5 col-form-label">¿Tiene servicios públicos
+                                <label for="serv_independ" class="col-5 form-label">¿Tiene servicios públicos
                                     independientes?</label>
                                 <div class="col-2">
                                     <a>No</a>
@@ -239,7 +239,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 ">
                         <div class="form-group row border-end">
-                            <label for="habitado" class="col-5 col-form-label">Inmueble habitado</label>
+                            <label for="habitado" class="col-5 form-label">Inmueble habitado</label>
                             <div class="col-2">
                                 <a>No</a>
                             </div>
@@ -271,7 +271,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="form-group row border-end">
-                            <label for="asesor" class="col-5 col-form-label">Nombre del Asesor</label>
+                            <label for="asesor" class="col-5 form-label">Nombre del Asesor</label>
                             <div class="col-7">
                                 <input id="asesor" name="asesor" type="text" class="form-control">
                                 <span class="form-text text-muted">No obligatorio</span>
@@ -306,7 +306,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 border-end">
                         <div class="form-group row">
-                            <label for="tipo_inm" class="col-5 col-form-label">Tipo de inmueble</label>
+                            <label for="tipo_inm" class="col-5 form-label">Tipo de inmueble</label>
                             <div class="col-7">
                                 {!! Form::select('tipo_inm', $inmueble, null, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
                             </div>
@@ -314,17 +314,17 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group row">
-                            <label for="estado_inb" class="col-5 col-form-label">Estado del inmueble</label>
+                            <label for="estado_inb" class="col-5 form-label">Estado del inmueble</label>
                             <div class="col-7">
                                 {!! Form::select('estado_inb', $estado, null, ['class' => 'form-select', 'required' => 'required', 'id' => 'estado_inb']) !!}
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <div class="row">
                     <div class="col-12 col-md-6 border-end">
                         <div class="form-group row" id="anoconstruido">
-                            <label for="tiempo_inm" class="col-5 col-form-label">Años de
+                            <label for="tiempo_inm" class="col-5 form-label">Años de
                                 contruido</label>
                             <div class="col-7">
                                 <input id="tiempo_inm" name="tiempo_inm" type="number" min="1" class="form-control"
@@ -334,7 +334,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group row" id="SecRemodelado">
-                            <label for="remodelado" class="col-5 col-form-label">Remodelado hace menos de 5
+                            <label for="remodelado" class="col-5 form-label">Remodelado hace menos de 5
                                 años</label>
                             <div class="col-7">
                                 {!! Form::select('remodelado', $remodelado, null, ['class' => 'form-select', 'id' => 'remodelado']) !!}
@@ -345,7 +345,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="form-group row" id="sec_tuberia">
-                            <label for="tuberia" class="col-5 col-form-label">Incluyó cambio de toda la
+                            <label for="tuberia" class="col-5 form-label">Incluyó cambio de toda la
                                 tubería</label>
                             <div class="col-2">
                                 <a>No</a>
@@ -363,7 +363,7 @@
                 <div class="row" id="aptos2">
                     <div class="col-12 col-md-6 ">
                         <div class="form-group row border-end">
-                            <label for="piso" class="col-5 col-form-label">Piso en el que está el
+                            <label for="piso" class="col-5 form-label">Piso en el que está el
                                 inmueble</label>
                             <div class="col-7">
                                 <input id="piso" name="piso" type="number" min="1" max="30" class="form-control">
@@ -375,7 +375,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group row">
-                            <label for="ascensor" class="col-5 col-form-label">Ascensor</label>
+                            <label for="ascensor" class="col-5 form-label">Ascensor</label>
                             <div class="col-2">
                                 <a>No</a>
                             </div>
@@ -392,7 +392,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="form-group row border-end">
-                            <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
+                            <label for="estrato_inm" class="col-5 form-label">Estrato</label>
                             <div class="col-7">
                                 {!! Form::select('estrato_inm', $estratos, null, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
                             </div>
@@ -412,7 +412,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="form-group row border-end">
-                            <label for="ciudad" class="col-5 col-form-label">Ciudad</label>
+                            <label for="ciudad" class="col-5 form-label">Ciudad</label>
                             <div class="col-7">
                                 <input id="ciudad" readonly name="ciudad" type="text" value="Bogotá" required="required"
                                     class="form-control">
@@ -421,11 +421,11 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group row">
-                            <div class="col-5">
-                                <label for="direccion" class="col-form-label">Dirección inmueble</label>
+                            <label for="direccion" class="col-5 form-label">Dirección inmueble</label>
+                            <div class="col-7">
+                                <input id="direccion" name="direccion" type="text" class="form-control"
+                                    required="required" placeholder="Ejemplo: Calle 25A #52B-06">
                             </div>
-                            <input id="direccion" name="direccion" type="text" class="form-control"
-                                required="required" placeholder="Ejemplo: Calle 25A #52B-06">
                         </div>
                     </div>
                 </div>
@@ -433,59 +433,52 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="form-group row border-end" id="detalles">
-                        <div class="col-5">
-                            <div class="col-7">
-                                <label for="direccion_comp" class="col-form-label">Detalles</label>
-                            </div>
-                            <div class="col-7">
-                                <input id="direccion_comp" name="direccion_comp" type="text" class="form-control"
-                                    placeholder="Torre 7 Apto. 302">
-                            </div>
+                        <label for="direccion_comp" class="col-5 form-label">Detalles</label>
+                        <div class="col-7">
+                            <input id="direccion_comp" name="direccion_comp" type="text" class="form-control"
+                                placeholder="Torre 7 Apto. 302">
                         </div>
-                    </div>
-                    <div class="col-12 col-md-6">
                     </div>
                 </div>
-                <div class="row d-none">
-                    <div class="col-12 col-md-6">
-                        <div class="form-group row" id="detalles">
-                            <div class="col-5">
-                                <label for="longitud" class="col-form-label">Longitud</label>
-                            </div>
-                            <div class="col-7">
-                                <input id="longitud" name="longitud" type="text" class="form-control">
-                            </div>
+                <div class="col-12 col-md-6">
+                </div>
+            </div>
+            <div class="row d-none">
+                <div class="col-12 col-md-6">
+                    <div class="form-group row" id="detalles">
+                        <label for="longitud" class="col-5 form-label">Longitud</label>
+                        <div class="col-7">
+                            <input id="longitud" name="longitud" type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-group row" id="detalles">
-                            <div class="col-5">
-                                <label for="latitud" class="col-form-label">Latitud</label>
-                            </div>
-                            <div class="col-7">
-                                <input id="latitud" name="latitud" type="text" class="form-control">
-                            </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group row" id="detalles">
+                        <label for="latitud" class="col-5 form-label">Latitud</label>
+                        <div class="col-7">
+                            <input id="latitud" name="latitud" type="text" class="form-control">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-2">
-                <div class="col-6 col-md-2 text-start">
-                    <a href="{{ route('propietario.edit', $propietario) }}" class="btn botones">Atrás</a>
-                </div>
-                <div class="d-none d-md-block col-md-8"></div>
-                <div class="col-6 col-md-2 text-end">
-                    <div id="botonmapa">
-                        <a type="button" class="btn botones" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i
-                                class="fas fa-map-marker-alt"></i> Ubicar</a>
-                    </div>
-                    <button type="submit" class="btn botones" id="enviarnegocio">Siguiente</button>
-                </div>
-
-            </div>
-            {{ Form::close() }}
         </div>
+        <div class="row mt-2">
+            <div class="col-6 col-md-2 text-start">
+                <a href="{{ route('propietario.edit', $propietario) }}" class="btn botones">Atrás</a>
+            </div>
+            <div class="d-none d-md-block col-md-8"></div>
+            <div class="col-6 col-md-2 text-end">
+                <div id="botonmapa">
+                    <a type="button" class="btn botones" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
+                        aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i class="fas fa-map-marker-alt"></i>
+                        Ubicar</a>
+                </div>
+                <button type="submit" class="btn botones" id="enviarnegocio">Siguiente</button>
+            </div>
+
+        </div>
+        {{ Form::close() }}
+    </div>
     </div>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
