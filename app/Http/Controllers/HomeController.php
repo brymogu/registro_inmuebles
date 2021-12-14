@@ -21,13 +21,21 @@ class HomeController extends Controller
         $user = Propietarios::where('email', '=', $correo)->first();
 
         if ($user === null) {
-            $propietarionew = Propietarios::create($request->all());
-            return redirect()->route('negocio.show', $propietarionew);
+            $propietario = new Propietarios();
+            $propietario->name = $request->name;
+            $propietario->lastname = $request->lastname;
+            $propietario->email = $request->email;
+            $propietario->phone = $request->phone;
+            $propietario->full_number = $request->full_number;
+            $propietario->paso = "datos";
+            $propietario->save();
+            return redirect()->route('negocio.show', $propietario);
         } else {
             $user->name = $request->name;
             $user->lastname = $request->lastname;
             $user->phone = $request->phone;
-            $user->paso = "datos";            
+            $user->full_number = $request->full_number;
+            $user->paso = "datos";
             $user->save();
             return redirect()->route('negocio.show', $user);
         }
@@ -43,7 +51,7 @@ class HomeController extends Controller
     {
         $propietario->name = $request->name;
         $propietario->lastname = $request->lastname;
-        $propietario->phone = $request->phone;
+        $propietario->phone = $request->full_number;
         $propietario->save();
         return redirect()->route('negocio.show', $propietario);
     }

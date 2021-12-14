@@ -429,18 +429,18 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group row border-end" id="detalles">
-                        <label for="direccion_comp" class="col-5 form-label">Detalles</label>
-                        <div class="col-7">
-                            <input id="direccion_comp" name="direccion_comp" type="text" class="form-control"
-                                placeholder="Torre 7 Apto. 302">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row border-end" id="detalles">
+                            <label for="direccion_comp" class="col-5 form-label">Detalles</label>
+                            <div class="col-7">
+                                <input id="direccion_comp" name="direccion_comp" type="text" class="form-control"
+                                    placeholder="Torre 7 Apto. 302">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6">
+                    </div>
                 </div>
             </div>
             <div class="row d-none">

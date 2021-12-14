@@ -20,7 +20,7 @@
                         <small class="fw-light fst-italic">Valor total calculado</small>
                     </div>
                     <div class="col-12">
-                        @if ($datos->tipo_inmueble == "Casa uso vivienda")
+                        @if ($datos->tipo_inmueble == 'Casa uso vivienda')
                             <i class="fas fa-home"></i>
                         @else
                             <i class="fas fa-building"></i>
@@ -29,7 +29,7 @@
                         <small class="fw-light fst-italic">Tipo de negocio</small>
                     </div>
                     <div class="col-12">
-                        @if ($datos->conc_juridico == "Viable")
+                        @if ($datos->conc_juridico == 'Viable')
                             <i class="far fa-check-circle"></i>
                         @else
                             <i class="far fa-times-circle"></i>
@@ -50,7 +50,7 @@
                     <div class="col-1"></div>
                     <div class="col-10 cabeza">
                         <p class="fw-bold">
-                            @if ($datos->tipo_inmueble == "Casa uso vivienda")
+                            @if ($datos->tipo_inmueble == 'Casa uso vivienda')
                                 <i class="fas fa-home"></i>
                             @else
                                 <i class="far fa-building"></i>
@@ -130,6 +130,23 @@
                         <small class="fw-light fst-italic">Niveles</small>
                     </div>
                 </div>
+                @if ($datos->gje_comunal == 'No')
+                    <div class="row my-1 interior">
+                        <div class="col-4">
+                            <small class="fw-bold">{{ $datos->gje_comunal }}</small> <br>
+                            <small class="fw-light fst-italic">Garaje Comunal</small>
+                        </div>
+                        <div class="col-4">
+                            <small class="fw-bold">{{ $datos->no_garajes }}</small> <br>
+                            <small class="fw-light fst-italic">N° de garajes</small>
+                        </div>
+                        <div class="col-4">
+                            <small class="fw-bold">{{ $datos->gje_cubierto }}</small> <br>
+                            <small class="fw-light fst-italic">Niveles</small>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10 pie">

@@ -20,6 +20,7 @@ class CreatePropietariosTable extends Migration
             $table->biginteger('doc_number')->nullable();
             $table->string('email');
             $table->string('phone');
+            $table->string('full_number');
             $table->unsignedBigInteger('tipo_doc')->nullable();
             $table->foreign('tipo_doc')
                 ->references('id')->on('tipos_documentos')

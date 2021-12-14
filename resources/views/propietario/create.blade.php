@@ -101,7 +101,7 @@
 <script>
     var input = document.querySelector("#phone");
     window.intlTelInput(input, {
-        // allowDropdown: false,
+        allowDropdown: true,
         autoHideDialCode: false,
         autoPlaceholder: "aggressive",
         // dropdownContainer: document.body,
@@ -113,7 +113,7 @@
         //     callback(countryCode);
         //   });
         // },
-        // hiddenInput: "full_number",
+        hiddenInput: "full_number",
         initialCountry: "co",
         // localizedCountries: { 'de': 'Deutschland' },
         nationalMode: false,

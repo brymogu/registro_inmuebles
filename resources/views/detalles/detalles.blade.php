@@ -544,7 +544,7 @@
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <div class="form-group row border-end">
-                            <label for="garaje" class="col-5 col-form-label">Cuenta con garaje(s)</label>
+                            <label for="garaje" class="col-5 col-form-label">Tiene garaje(s)</label>
                             <div class="col-2">
                                 <a>No</a>
                             </div>
