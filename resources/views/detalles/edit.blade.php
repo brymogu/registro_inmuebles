@@ -703,7 +703,7 @@
                                 <a>No</a>
                             </div>
                             <div class="col-3 bool">
-                                @if ($propiedad->tiene_garaje == 'Si')
+                                @if ($propiedad->tiene_garajes == 'Si')
                                     <input type="checkbox" id="garaje" name="garaje" value="1" checked />
                                 @else
                                     <input type="checkbox" id="garaje" name="garaje" value="1" />

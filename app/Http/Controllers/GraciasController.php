@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Propiedades;
 use App\Models\Negocios;
+use App\Models\Propietarios;
 
 class GraciasController extends Controller
 {
@@ -14,14 +15,9 @@ class GraciasController extends Controller
         $tipo_inm =  $Propiedad->tipo_inmueble;
 
         $negocio = Negocios::where('propiedad', $id)->first();
-        $cpvj = $negocio->cpvj;
+        $codigo_pptrio = $negocio->propietario;
+        $propietario = Propietarios::find($codigo_pptrio);
 
-        if ($cpvj == "Si") {
-            $cpvj_bool = true;
-        } else if ($cpvj == "No") {
-            $cpvj_bool = false;
-        }
-
-        return view('gracias', ['cpvj' => $cpvj_bool], ['tipo' => $tipo_inm]);
+        return view('gracias', ['tipo' => $tipo_inm], compact('propietario'));
     }
 }

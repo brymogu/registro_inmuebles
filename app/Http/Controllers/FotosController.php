@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Propiedades;
 use App\Models\Negocios;
-use App\Models\Propietarios;
 use App\Models\Fotos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -19,21 +18,12 @@ class FotosController extends Controller
 
     public function store(Request $request, $id)
     {
-        if ($request->hasfile('fileCollection')) {
+        $imagenes = $request->file('file')->store('public/fotos/' . $id . '/');
+        $url = Storage::url($imagenes);
 
-            foreach ($request->file('fileCollection') as $file) {
-                $name = $file->getClientOriginalName();
-                $file->move(public_path() . '/storage/fotos/' . $id . '/', $name);
-                $data[] = $name;
-            }
-        }
-
-
-        return redirect()->route('planes.show', $id);
-    }
-
-    public function saltar($id)
-    {
-        return redirect()->route('planes.show', $id);
+        $fotos = new Fotos();        
+        $fotos->url = $url;   
+        $fotos->propiedad = $id;      
+        $fotos->save();
     }
 }

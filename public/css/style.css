@@ -264,6 +264,11 @@ thead tr th {
     border-style: unset !important;
 }
 
+table td,
+table th {
+    text-align: center;
+}
+
 table .fa-check {
     color: #f5c600;
 }
@@ -274,6 +279,14 @@ table .fa-minus {
 
 .table-hover tbody tr:hover {
     background-color: rgb(149 149 149 / 10%) !important;
+}
+
+.cara {
+    text-align: left !important;
+}
+
+.separador {
+    border-top: 2px solid #f5c600;
 }
 
 .mate strong,
@@ -294,4 +307,21 @@ table .fa-minus {
     color: #212529;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
     font-weight: 600;
+}
+
+.dropzone {
+    border: 0 !important;
+    color: white;
+    background-color: #518697 !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
+}
+
+.dropzone .far {
+    font-size: 80px;
+    margin-bottom: 1rem!important;
+}
+
+.dropzone .dz-preview.dz-image-preview {
+    background: #518697 !important;
 }

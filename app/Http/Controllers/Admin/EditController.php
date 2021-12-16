@@ -154,8 +154,7 @@ class EditController extends Controller
         $propiedad->tipo_vista = $request->vista;
         $propiedad->zona_social = $request->zona_social;
         $propiedad->material_fachada = $request->material_fachada;
-        $propiedad->tiene_garaje = $request->garaje;
-        $propiedad->gje_comunal = $request->gje_comunal;
+        $propiedad->tiene_garajes = $request->garaje;
         $propiedad->chimenea = $request->chimenea;
         $propiedad->balcon = $request->balcon;
         $propiedad->b_servicio = $request->b_servicio;

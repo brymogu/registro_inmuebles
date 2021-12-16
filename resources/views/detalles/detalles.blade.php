@@ -544,31 +544,13 @@
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <div class="form-group row border-end">
-                            <label for="garaje" class="col-5 col-form-label">Tiene garaje(s)</label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool">
-                                <input type="checkbox" id="garaje" name="garaje" value="1" />
-                                <label class="slider-v1" for="garaje"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-group row" id="sec_independiente">
-                            <label for="gje_comunal" class="col-5 col-form-label">Garaje(s) comunal(es)</label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool">
-                                <input type="checkbox" id="gje_comunal" name="gje_comunal" value="1" checked />
-                                <label class="slider-v1" for="gje_comunal"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
+                            <label for="garaje" class="col-6 col-form-label">Tiene garaje(s)</label>
+                            <div class="col-6">
+                                <select name="garaje" id="garaje" class="form-select" required>
+                                    <option value="Si">Si</option>
+                                    <option value="Comunal" selected>Comunal</option>
+                                    <option value="No">No</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -587,7 +569,7 @@
                         <div class="form-group row border-end">
                             <label for="tipo_garaje" class="col-4 col-form-label">Tipo</label>
                             <div class="col-8">
-                                {!! Form::select('tipo_garaje', $tipo_garaje, null, ['class' => 'form-select']) !!}
+                                {!! Form::select('tipo_garaje', $tipo_garaje, null, ['class' => 'form-select', 'id' => 'tipo_garaje']) !!}
                             </div>
                         </div>
                     </div>

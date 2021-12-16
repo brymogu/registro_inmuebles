@@ -1105,7 +1105,7 @@
                         <label for="garaje" class="col-5 col-form-label">Cuenta con garaje(s)</label>
                         <div class="col-7">
                             <select id="garaje" class="form-select" name="garaje" required="required">
-                                @if ($propiedad->tiene_garaje == 'Si')
+                                @if ($propiedad->tiene_garajes == 'Si')
                                     <option selected value="Si">Si</option>
                                     <option value="No">No</option>
                                 @else

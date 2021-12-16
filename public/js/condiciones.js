@@ -212,28 +212,19 @@ $(document).ready(function() {
 
 
         $('#garaje').change(function() {
-            if ($('#garaje').prop('checked')) {
-                $('#sec_independiente').show();
-
-            } else {
-                $('#sec_garajes').hide();
-                $('#sec_independiente').hide();
-            }
-        });
-
-        $('#gje_comunal').change(function() {
-            if ($('#gje_comunal').prop('checked')) {
-                $('#sec_garajes').hide();
-
+            if ($('#garaje').val() == 'Si') {
+                $('#sec_garajes').show();
                 $('#no_garajes').attr("required", "true");
                 $('#tipo_garaje').attr("required", "true");
-
             } else {
-                $('#sec_garajes').show();
+                $('#sec_garajes').hide();
+                $('#no_garajes').val('');
                 $('#no_garajes').removeAttr('required');
                 $('#tipo_garaje').removeAttr('required');
             }
         });
+
+
 
 
         $('#balcon').change(function() {
@@ -287,11 +278,15 @@ $(document).ready(function() {
 
 
     } else if ($('#fotos').length) {
-        $(".usuario i, .negocio i, .detalles i, .conjunto i,.camara i").css("color", "#01303c");
+        $(".usuario i, .negocio i, .detalles i, .conjunto i,.planes i,.camara i").css("color", "#01303c");
+        $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
+
+        $('#finalizar').hide()
+
     } else if ($('#planes_tarjeta').length) {
         $(".usuario i, .negocio i, .detalles i, .conjunto i, .planes i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
-
+        $('.toast').toast("show");
         $('#sec_valor').hide();
 
         $('#modificar').change(function() {

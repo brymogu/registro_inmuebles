@@ -56,7 +56,7 @@ class CreatePropiedadesTable extends Migration
             $table->float('a_construida')->nullable();
             $table->float('a_privada')->nullable();
             $table->float('a_terreno')->nullable();
-            
+
 
             $table->unsignedBigInteger('mat_habitacion')->nullable();
             $table->foreign('mat_habitacion')
@@ -88,15 +88,13 @@ class CreatePropiedadesTable extends Migration
             $table->unsignedBigInteger('n_banos')->nullable();
 
 
+            $table->string('tiene_garajes')->nullable();
+            $table->string('gje_cubierto')->nullable();
+            $table->integer('no_garajes')->nullable();
             $table->unsignedBigInteger('tipo_garajes')->nullable();
             $table->foreign('tipo_garajes')
                 ->references('id')->on('tipo_garajes')
                 ->onDelete('set null');
-
-            $table->string('tiene_garaje')->nullable();
-            $table->string('gje_comunal')->nullable();
-            $table->string('gje_cubierto')->nullable();
-            $table->integer('no_garajes')->nullable();          
 
             $table->unsignedBigInteger('mb_cocina')->nullable();
             $table->foreign('mb_cocina')

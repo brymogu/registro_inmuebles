@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row stiky-top p-3 cabecera shadow-sm">
             <div class="col-4">
-                <img src="{!! asset('img/epica.svg') !!}" alt="" class="logo">
+                <img src="{!! asset('img/logo_admin.png') !!}" alt="" class="logo">
             </div>
             <div class="col-4 d-flex align-items-center text-center justify-content-center fw-bold">
                 @yield('title')

@@ -14,12 +14,11 @@ class CreateFotosTable extends Migration
     public function up()
     {
         Schema::create('fotos', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->nullable();
-            $table->string('image_path')->nullable();
-            $table->unsignedBigInteger('negocio')->nullable();
-            $table->foreign('negocio')
-                ->references('id')->on('negocios')
+            $table->id();            
+            $table->string('url')->nullable();
+            $table->unsignedBigInteger('propiedad')->nullable();
+            $table->foreign('propiedad')
+                ->references('id')->on('propiedades')
                 ->onDelete('set null');
             $table->timestamps();
         });

@@ -29,9 +29,11 @@ class PlanesController extends Controller
     public function store(Request $request, Propiedades $id)
     {
         $negocio = Negocios::where('propiedad', $id->id)->first();
+        
+        if($request->modificar){
+            $negocio->valor = $request->valor;
+        }
         $negocio->plan = $request->plan;
-
-
         $negocio->save();
 
         $codigo_pptrio = $negocio->propietario;
@@ -39,6 +41,11 @@ class PlanesController extends Controller
         $propietario->paso = "Planes";
         $propietario->save();
 
-        return view('gracias', ['tipo' => $id->horizontal]);
+        if($request->plan = '1'){
+            return redirect()->route('fotos.show', $id);
+        }else{
+          return view('gracias', ['tipo' => $id->horizontal]);  
+        }
+        
     }
 }

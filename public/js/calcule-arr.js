@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     //Básico 2
     var basico = valor * 0.08;
-    $('#estsem').html("$" + Intl.NumberFormat("es-CO").format(basico) + " + IVA<br/><br/> Equivale al 8% mensual incluida poliza<br/><strong>(una vez sea arrendado)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='estandar()' >Ver detalles</a>");
+    $('#estsem').html("$" + Intl.NumberFormat("es-CO").format(basico) + " + IVA<br/><br/> Equivale al 8% mensual incluida poliza<br/><strong>(una vez sea arrendado)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='basico()' >Ver detalles</a>");
 
     //PLUS
     var plus = valor * 0.1;
@@ -20,7 +20,7 @@ $(document).ready(function() {
 
         //Básico 2
         var basico = valor * 0.08;
-        $('#estsem').html("$" + Intl.NumberFormat("es-CO").format(basico) + " + IVA<br/><br/> Equivale al 8% mensual incluida poliza<br/><strong>(una vez sea arrendado)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='estandar()' >Ver detalles</a>");
+        $('#estsem').html("$" + Intl.NumberFormat("es-CO").format(basico) + " + IVA<br/><br/> Equivale al 8% mensual incluida poliza<br/><strong>(una vez sea arrendado)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='basico()' >Ver detalles</a>");
 
         //PLUS
         var plus = valor * 0.1;
@@ -33,24 +33,7 @@ $(document).ready(function() {
     });
 });
 
-function estandar() {
-    var valor = $('#valor').val();
-    var mensual = valor * 0.08;
-    var meses = 1;
-    var subtotal = mensual * meses;
-    var IVA = subtotal * 0.19;
-    var cpm = valor * 0.004;
-    var total = subtotal + IVA + cpm;
-    var plan = "Plan Básico";
-    var efectivo = "cada mes";
-    var servicios = valor * 0.0584;
-    var poliza = valor * 0.0216;
-
-    llenar_datos(plan, meses, efectivo, valor, mensual, subtotal, IVA, cpm, total, servicios, poliza);
-    tabla(meses, valor, total);
-}
-
-function estandar() {
+function basico() {
     var valor = $('#valor').val();
     var mensual = valor * 0.08;
     var porcentaje = "8%";
@@ -60,7 +43,7 @@ function estandar() {
     var cpm = valor * 0.004;
     var total = subtotal + IVA + cpm;
     var plan = "Plan Básico";
-    var efectivo = "cada mes";
+    var efectivo = "mensual";
     var servicios = valor * 0.0584;
     var poliza = valor * 0.0216;
 
@@ -78,7 +61,7 @@ function plus() {
     var cpm = valor * 0.004;
     var total = subtotal + IVA + cpm;
     var plan = "Plan Estándar";
-    var efectivo = "cada mes";
+    var efectivo = "mensual";
     var servicios = valor * 0.0784;
     var poliza = valor * 0.0216;
 
@@ -96,7 +79,7 @@ function premium() {
     var cpm = valor * 0.004;
     var total = subtotal + IVA + cpm;
     var plan = "Plan Premium";
-    var efectivo = "cada mes";
+    var efectivo = "mensual";
     var servicios = valor * 0.0984;
     var poliza = valor * 0.0216;
 
