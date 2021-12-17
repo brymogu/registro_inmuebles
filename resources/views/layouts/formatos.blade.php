@@ -37,16 +37,20 @@
 
 <body>
     <div class="container">
-        <div class="row stiky-top p-3 cabecera shadow-sm">
-            <div class="col-4">
+        <div class="row fixed-top p-3 cabecera shadow-sm">
+            <div class="col-3">
                 <img src="{!! asset('img/logo_admin.png') !!}" alt="" class="logo">
             </div>
-            <div class="col-4 d-flex align-items-center text-center justify-content-center fw-bold">
+            <div class="col-1"></div>
+            <div class="col-4 text-center fw-bold">
                 @yield('title')
             </div>
-            <div class="col-4"></div>
+            <div class="col-4 d-flex align-items-end justify-content-end">
+                <small class="fw-light fecha">{{ date('d/ m/ Y') }}</small>
+            </div>
         </div>
-        <div class="row my-2">
+        <div class="separador"></div>
+        <div class="row">
             <div class="col-12">
                 @yield('content')
             </div>

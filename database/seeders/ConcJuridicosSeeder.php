@@ -21,5 +21,9 @@ class ConcJuridicosSeeder extends Seeder
         $conc_juridico2 = new Conc_juridicos();
         $conc_juridico2->des_conc_juridicos = "No viable";
         $conc_juridico2->save();
+
+        $conc_juridico3 = new Conc_juridicos();
+        $conc_juridico3->des_conc_juridicos = "Pendiente";
+        $conc_juridico3->save();
     }
 }

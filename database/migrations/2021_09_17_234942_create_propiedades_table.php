@@ -36,6 +36,8 @@ class CreatePropiedadesTable extends Migration
                 ->onDelete('set null');
 
             $table->string('direccion')->nullable();
+            $table->string('barrio_catastral')->nullable();
+            $table->string('upz')->nullable();
             $table->string('direccion_comp')->nullable();
             $table->integer('tiempo_inm')->nullable();
             $table->string('longitud')->nullable();

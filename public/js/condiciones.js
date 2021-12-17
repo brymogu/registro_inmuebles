@@ -224,9 +224,6 @@ $(document).ready(function() {
             }
         });
 
-
-
-
         $('#balcon').change(function() {
             if ($('#balcon').prop('checked')) {
                 $('#area_balcon_secc').show();
