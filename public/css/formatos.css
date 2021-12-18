@@ -9,6 +9,7 @@ body {
 }
 
 .cabecera {
+    border-top: 3px solid transparent;
     border-bottom: 3px solid #f6c015;
     background-color: #01303c;
     color: white;
@@ -25,6 +26,14 @@ body {
 
 .separador {
     height: 100px;
+}
+
+.rayita_down {
+    border-bottom: 3px solid #f6c015;
+}
+
+.ficha {
+    background-color: whitesmoke;
 }
 
 .lateral {
