@@ -88,7 +88,7 @@
                         <label for="conc_precio" class="col-5 col-form-label">Concepto de precio</label>
                         <div class="col-7">
                             <input id="conc_precio" name="conc_precio" type="text" class="form-control"
-                                value="{{ $negocio_unico->conc_precio }}">
+                                value="{{ $negocio_unico->conc_precio }}" required>
                         </div>
                     </div>
                 </div>
@@ -149,6 +149,37 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="barrio_catastral" class="col-5 col-form-label">Barrio catastral</label>
+                        <div class="col-7">
+                            <input id="barrio_catastral" name="barrio_catastral" type="text" class="form-control"
+                                value="{{ $negocio_unico->barrio_catastral }}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label class="col-5 col-form-label" for="upz">UPZ</label>
+                        <div class="col-7">
+                            <input id="upz" name="upz" type="text" class="form-control"
+                                value="{{ $negocio_unico->upz }}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="localidad" class="col-5 col-form-label">Localidad</label>
+                        <div class="col-7">
+                            <input id="localidad" name="localidad" type="text" class="form-control"
+                                value="{{ $negocio_unico->localidad }}" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0">
+            <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="form-group row">
                         <label for="tipo" class="col-5">Tipo de negocio</label>
@@ -167,7 +198,7 @@
                         <label for="valor" class="col-5 col-form-label">Valor tentativo</label>
                         <div class="col-7">
                             <input id="valor" readonly name="valor" type="number" value="{{ $negocio_unico->valor }}"
-                                class="form-control" min="99000" required="required" >
+                                class="form-control" min="99000" required="required">
                             <span id="valorpesos" class="form-text text-muted"></span>
                         </div>
                     </div>
@@ -307,7 +338,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
                 <div class="col-12 col-md-6 border-end">
@@ -389,6 +420,15 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
+                <div class="col-12 col-md-6" id="sec_n_ascensores">
+                    <div class="form-group row border-end">
+                        <label for="n_ascensores" class="col-5 form-label">Cantidad de ascensores</label>
+                        <div class="col-7">
+                            <input id="n_ascensores" name="n_ascensores" type="number" min="1" max="30"
+                                class="form-control" value="{{$propiedad->n_ascensores}}">
+                        </div>
+                    </div>
+                </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group row">
                         <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
@@ -401,9 +441,6 @@
                             @endempty
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    
                 </div>
             </div>
         </div>
@@ -418,7 +455,7 @@
                                 {!! Form::select('ciudad', $ciudad, $propiedad->ciudad, ['class' => 'form-select', 'id' => 'ciudad']) !!}
                             @endisset
                             @empty($propiedad->ciudad)
-                                {!! Form::select('ciudad', $ciudad,$propiedad->ciudad, ['class' => 'form-select vacio', 'id' => 'ciudad']) !!}
+                                {!! Form::select('ciudad', $ciudad, $propiedad->ciudad, ['class' => 'form-select vacio', 'id' => 'ciudad']) !!}
                             @endempty
                         </div>
                     </div>

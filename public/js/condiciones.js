@@ -1,11 +1,5 @@
 $(document).ready(function() {
 
-    $('#descuento').hide();
-    $('#admonhelper').hide();
-    var year = (new Date).getFullYear();
-
-
-
     if ($('#propietario').length) {
         $(".usuario i").css("color", "#01303c");
         $(".usuario .progress-bar").css("background-color", "#01303c");
@@ -15,13 +9,6 @@ $(document).ready(function() {
         $(".usuario i, .negocio i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar").css("background-color", "#01303c");
 
-        $('#reglas').hide();
-        $('#sec_tuberia').hide();
-        $('#anoconstruido').hide();
-        $('#botonmapa').hide();
-        $('#enviarnegocio').hide();
-        $('#arrendado').hide();
-        $('#horizontal').hide();
 
         if ($('#tipo_inm').val() == 2) {
             $('#aptos2').show();
@@ -127,6 +114,19 @@ $(document).ready(function() {
             if ($('#tipo_inm').val() == 1) {
                 $('#piso').removeAttr('required');
                 $('#aptos2').hide();
+                $('#n_ascensores').removeAttr('required');
+                $('#sec_n_ascensores').hide();
+                $('#n_ascensores').removeAttr('required');
+            }
+        });
+
+        $('#ascensor').change(function() {
+            if ($('#ascensor').prop('checked')) {
+                $('#sec_n_ascensores').show();
+                $('#n_ascensores').attr("required", "true");
+            } else {
+                $('#sec_n_ascensores').hide();
+                $('#n_ascensores').removeAttr('required');
             }
         });
 
@@ -151,7 +151,7 @@ $(document).ready(function() {
         });
 
         $('#estado_inb').change(function() {
-            if ($('#estado_inb').val() >= 4) {
+            if ($('#estado_inb').val() == 4) {
                 $('#anoconstruido').show();
                 $('#tiempo_inm').attr("required", "true");
             } else {
@@ -205,11 +205,6 @@ $(document).ready(function() {
 
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
-        $('#sec_garajes').hide();
-        $('#sec_independiente').hide();
-        $('#area_terraza_secc').hide();
-        $('#area_balcon_secc').hide();
-
 
         $('#garaje').change(function() {
             if ($('#garaje').val() == 'Si') {
@@ -278,13 +273,10 @@ $(document).ready(function() {
         $(".usuario i, .negocio i, .detalles i, .conjunto i,.planes i,.camara i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
 
-        $('#finalizar').hide()
-
     } else if ($('#planes_tarjeta').length) {
         $(".usuario i, .negocio i, .detalles i, .conjunto i, .planes i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
         $('.toast').toast("show");
-        $('#sec_valor').hide();
 
         $('#modificar').change(function() {
             if ($('#modificar').prop('checked')) {

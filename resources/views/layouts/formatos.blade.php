@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="{!! asset('css/formatos.css') !!}">
     @yield('more_head')
     <title>@yield('title')</title>
@@ -42,8 +44,7 @@
                 <img src="{!! asset('img/logo_admin.png') !!}" alt="" class="logo">
             </div>
             <div class="col-1"></div>
-            <div class="col-4 text-center fw-bold">
-                @yield('title')
+            <div class="col-4">
             </div>
             <div class="col-4 d-flex align-items-end justify-content-end">
                 <small class="fw-light fecha">{{ date('d/ m/ Y') }}</small>
@@ -53,6 +54,16 @@
         <div class="row">
             <div class="col-12">
                 @yield('content')
+            </div>
+        </div>
+        <div class="row fixed-bottom mb-3 d-print-none">
+            <div class="col-10">
+            </div>
+            <div class="col-2 text-center ">
+                <div class="rounded-circle imprimir shadow d-flex border justify-content-center align-items-center animate__animated animate__fadeInUp"
+                    onclick="window.print();return false;">
+                    <i class="fas fa-print"></i>
+                </div>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
     <script src="{!! asset('js/selects.js') !!}"></script>
+    <script src="{!! asset('js/ocultos.js') !!}"></script>
 @endsection
 
 @section('content')
@@ -548,7 +549,7 @@
                             <div class="col-6">
                                 <select name="garaje" id="garaje" class="form-select" required>
                                     <option value="Si">Si</option>
-                                    <option value="Comunal" selected>Comunal</option>
+                                    <option value="Comunal">Comunal</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>

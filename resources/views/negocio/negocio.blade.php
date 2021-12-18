@@ -1,6 +1,7 @@
 @extends('layouts.plantilla')
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
+    <script src="{!! asset('js/ocultos.js') !!}"></script>
     <script src="{!! asset('js/selects.js') !!}"></script>
     <script src="{!! asset('js/funciones.js') !!}"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -344,7 +345,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-group row" id="sec_tuberia">
+                        <div class="form-group row border-end" id="sec_tuberia">
                             <label for="tuberia" class="col-5 form-label">Incluyó cambio de toda la
                                 tubería</label>
                             <div class="col-2">
@@ -390,17 +391,24 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6" id="sec_n_ascensores">
                         <div class="form-group row border-end">
+                            <label for="n_ascensores" class="col-5 form-label">Cantidad de ascensores</label>
+                            <div class="col-7">
+                                <input id="n_ascensores" name="n_ascensores" type="number" min="1" max="30"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row">
                             <label for="estrato_inm" class="col-5 form-label">Estrato</label>
                             <div class="col-7">
                                 {!! Form::select('estrato_inm', $estratos, null, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
 
-                    </div>
                 </div>
             </div>
             <div class="grupo mb-3">

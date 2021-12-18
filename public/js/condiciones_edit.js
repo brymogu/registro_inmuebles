@@ -42,10 +42,22 @@ $(document).ready(function() {
         if ($('#tipo_inm').val() == 2) {
             $('#aptos2').show();
             $('#piso').attr("required", "true");
+
         }
         if ($('#tipo_inm').val() == 1) {
             $('#piso').removeAttr('required');
             $('#aptos2').hide();
+            $('#sec_n_ascensores').hide();
+            $('#ascensor').removeAttr('checked');
+        }
+
+
+        if ($('#ascensor').prop('checked')) {
+            $('#sec_n_ascensores').show();
+            $('#n_ascensores').attr("required", "true");
+        } else {
+            $('#sec_n_ascensores').hide();
+            $('#ascensor').removeAttr('checked');
         }
 
         if ($('#negocio').val() == 2) {
@@ -67,7 +79,7 @@ $(document).ready(function() {
         $('#valorpesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));
 
 
-        if ($('#estado_inb').val() >= 4) {
+        if ($('#estado_inb').val() == 4) {
             $('#anoconstruido').show();
             $('#tiempo_inm').attr("required", "true");
         } else {
@@ -108,30 +120,24 @@ $(document).ready(function() {
             }
         });
 
+
+
     } else if ($('#detalles').length) {
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
         $('#area_terraza_secc').hide();
 
-        if ($('#garaje').prop('checked')) {
-            $('#sec_independiente').show();
-
-        } else {
-            $('#sec_garajes').hide();
-            $('#sec_independiente').hide();
-        }
-
-        if ($('#gje_comunal').prop('checked')) {
-            $('#sec_garajes').hide();
-            $('#no_garajes').removeAttr('required');
-            $('#tipo_garaje').removeAttr('required');
-
-        } else {
+        if ($('#garaje').val() == 'Si') {
             $('#sec_garajes').show();
             $('#no_garajes').attr("required", "true");
             $('#tipo_garaje').attr("required", "true");
-
+        } else {
+            $('#sec_garajes').hide();
+            $('#no_garajes').val('');
+            $('#no_garajes').removeAttr('required');
+            $('#tipo_garaje').removeAttr('required');
         }
+
 
         if ($('#balcon').prop('checked')) {
             $('#area_balcon_secc').show();

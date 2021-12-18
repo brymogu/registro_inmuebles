@@ -66,7 +66,7 @@ class DetallesController extends Controller
         );
     }
     public function store(Request $request, $id)
-    {        
+    {
         $Propiedad = Inmueble::find($id);
         $Propiedad->a_construida = $request->a_construida;
         $Propiedad->a_privada = $request->a_privada;
@@ -86,15 +86,11 @@ class DetallesController extends Controller
         $Propiedad->tipo_vista = $request->vista;
         $Propiedad->zona_social = $request->zona_social;
         $Propiedad->material_fachada = $request->material_fachada;
-        $Propiedad->area_terraza = $request->area_terraza;
-        $Propiedad->area_balcon = $request->area_balcon;
-
         $Propiedad->tiene_garajes = $request->garaje;
 
         if ($request->garaje == "Si") {
             $Propiedad->no_garajes = $request->no_garajes;
             $Propiedad->tipo_garajes = $request->tipo_garaje;
-
             if ($request->gje_cubierto) {
                 $Propiedad->gje_cubierto = "Si";
             } else {
@@ -102,10 +98,10 @@ class DetallesController extends Controller
             }
         }
 
-
         // checks
         if ($request->terraza) {
             $Propiedad->terraza = "Si";
+            $Propiedad->area_terraza = $request->area_terraza;
         } else {
             $Propiedad->terraza = "No";
         }
@@ -118,6 +114,7 @@ class DetallesController extends Controller
 
         if ($request->balcon) {
             $Propiedad->balcon = "Si";
+            $Propiedad->area_balcon = $request->area_balcon;
         } else {
             $Propiedad->balcon = "No";
         }
@@ -294,29 +291,22 @@ class DetallesController extends Controller
         $propiedad->material_fachada = $request->material_fachada;
         $propiedad->area_terraza = $request->area_terraza;
         $propiedad->area_balcon = $request->area_balcon;
-
+        $propiedad->tiene_garajes = $request->garaje;
         // garajes
 
-        if ($request->garaje) {
-            $propiedad->tiene_garajes = "Si";
+        if ($request->garaje == "Si") {
+            $propiedad->no_garajes = $request->no_garajes;
+            $propiedad->tipo_garajes = $request->tipo_garaje;
+            if ($request->gje_cubierto) {
+                $propiedad->gje_cubierto = "Si";
+            } else {
+                $propiedad->gje_cubierto = "No";
+            }
         } else {
-            $propiedad->tiene_garajes = "No";
+            $propiedad->no_garajes = null;
+            $propiedad->tipo_garajes = null;
+            $propiedad->gje_cubierto = null;
         }
-
-        if ($request->gje_comunal) {
-            $propiedad->gje_comunal = "Si";
-        } else {
-            $propiedad->gje_comunal = "No";
-        }
-
-        if ($request->gje_cubierto) {
-            $propiedad->gje_cubierto = "Si";
-        } else {
-            $propiedad->gje_cubierto = "No";
-        }
-
-        $propiedad->no_garajes = $request->no_garajes;
-        $propiedad->tipo_garajes = $request->tipo_garaje;
 
         // checks
 

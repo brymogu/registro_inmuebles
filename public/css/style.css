@@ -64,7 +64,7 @@ body {
 }
 
 .tarjeta {
-    border-radius: 1rem !important;
+    border-radius: .5rem !important;
     background-color: #F5F5F5 !important;
     margin-top: 1rem!important;
     margin-bottom: 1rem!important;

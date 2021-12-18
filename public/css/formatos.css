@@ -95,3 +95,19 @@ select {
     font-size: .875em !important;
     line-height: 1 !important;
 }
+
+.btn:hover,
+.imprimir:hover {
+    background-color: #f6c015;
+    color: #01303c;
+    cursor: pointer;
+}
+
+.imprimir {
+    height: 50px;
+    width: 50px;
+}
+
+.imprimir i {
+    font-size: 2rem;
+}

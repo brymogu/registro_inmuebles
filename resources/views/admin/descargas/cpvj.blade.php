@@ -1,5 +1,4 @@
 @extends('layouts.formatos')
-@section('title', 'Concepto de precio y viabilidad jurídica')
 @section('more_head')
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -7,12 +6,14 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
-    <script src="{!! asset('js/cpvj.js') !!}"></script>
 @endsection
 
 @section('content')
     @foreach ($datos as $datos)
+
+        @section('title', 'Epica Inmobiliaria - ' . $datos->doc_number)
         <!-- Editables-->
+        {{ Form::open(['method' => 'post']) }}
         <div class="row mb-5 d-print-none">
             <div class="col-12 seccion">
                 <div class="row">
@@ -32,8 +33,9 @@
                         <small class="fw-light fst-italic">Concepto de precio</small>
                     </div>
                     <div class="col-4">
-                        {!! Form::select('conc_juridico_edit', $conc_juridico, $datos->id_concjuridico, ['class' => 'form-select', 'required' => 'required', 'id' => 'conc_juridico_edit']) !!}
-                        <small class="fw-light fst-italic">Concepto jurídico</small>
+                        <input id="chip_edit" name="chip_edit" type="text" class="form-control"
+                            value="{{ $datos->chip }}">
+                        <small class="fw-light fst-italic">Chip</small>
                     </div>
                     <div class="col-4">
                         <input id="matricula_edit" name="matricula_edit" type="text" class="form-control"
@@ -43,19 +45,33 @@
                 </div>
                 <div class="row mt-1 interior">
                     <div class="col-4">
-                        <input id="chip_edit" name="chip_edit" type="text" class="form-control"
-                            value="{{ $datos->chip }}">
-                        <small class="fw-light fst-italic">Chip</small>
-                    </div>
-                    <div class="col-4">
                         <input id="barrio_catastral_edit" name="barrio_catastral_edit" type="text" class="form-control"
-                            value="{{ $datos->ciudad }}">
+                            value="{{ $datos->barrio_catastral }}">
                         <small class="fw-light fst-italic">Barrio catastral</small>
                     </div>
                     <div class="col-4">
-                        <input id="upz_edit" name="upz_edit" type="text" class="form-control"
-                            value="{{ $datos->ciudad }}">
+                        <input id="upz_edit" name="upz_edit" type="text" class="form-control" value="{{ $datos->upz }}">
                         <small class="fw-light fst-italic">UPZ</small>
+                    </div>
+                    <div class="col-4">
+                        <input id="localidad_edit" name="localidad_edit" type="text" class="form-control"
+                            value="{{ $datos->localidad }}">
+                        <small class="fw-light fst-italic">Localidad</small>
+                    </div>
+                </div>
+                <div class="row mt-1 interior">
+                    <div class="col-4">
+                        {!! Form::select('conc_juridico_edit', $conc_juridico, $datos->id_concjuridico, ['class' => 'form-select', 'required' => 'required', 'id' => 'conc_juridico_edit']) !!}
+                        <small class="fw-light fst-italic">Concepto jurídico</small>
+                    </div>
+                    <div class="col-4">
+                        <input id="obs_conc_juridico_edit" name="obs_conc_juridico_edit" type="text" class="form-control"
+                            value="{{ $datos->obs_conc_juridico }}" required>
+                        <small class="fw-light fst-italic">Obs. concepto jurídico</small>
+                    </div>
+                    <div class="col-4 text-center pt-1">
+
+                        <button type="submit" class="btn shadow-sm">Guardar</button>
                     </div>
                 </div>
                 <div class="row">
@@ -116,7 +132,8 @@
             </div>
             <div class="interior rayita col-4">
                 <i class="fas fa-handshake"></i>
-                <small class="fw-bold" id="concepto_precio">$ {{ number_format($datos->conc_precio, 0, ',', '.') }}
+                <small class="fw-bold" id="concepto_precio">$
+                    {{ number_format($datos->conc_precio, 0, ',', '.') }}
                 </small><br>
                 <small class="fw-light fst-italic">Valor total calculado</small>
             </div>
@@ -263,6 +280,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="row my-3">
+            <div class="col-12 interior rayita">
+                <small><sup>*</sup>{{ $datos->obs_conc_juridico }}</small><br />
+                <small>
+                    <b>Importante: </b>Este concepto se ha basado en la revisión del certificado aportado, no es un estudio
+                    de títulos.
+                </small>
+            </div>
+        </div>
+        <div class="pagebreak"> </div>
+        <div class="separador d-none d-print-block"></div>
         <div class="row my-3">
             <div class="col-12 seccion">
                 <div class="row">
@@ -298,17 +327,6 @@
                 </div>
             </div>
         </div>
-        <div class="row my-3">
-            <div class="col-12 interior rayita">
-                <small><sup>*</sup>{{ $datos->obs_conc_juridico }}</small><br />
-                <small>
-                    <b>Importante: </b>Este concepto se ha basado en la revisión del certificado aportado, no es un estudio
-                    de títulos.
-                </small>
-            </div>
-        </div>
-        <div class="pagebreak"> </div>
-        <div class="separador d-none d-print-block"></div>
         <div class="row">
             <div class="col-12 seccion">
                 <div class="row">

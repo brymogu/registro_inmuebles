@@ -41,10 +41,11 @@ class PlanesController extends Controller
         $propietario->paso = "Planes";
         $propietario->save();
 
-        if($request->plan = '1'){
+        if($request->plan == '1'){
             return redirect()->route('fotos.show', $id);
         }else{
-          return view('gracias', ['tipo' => $id->horizontal]);  
+            
+            return redirect()->route('gracias.show', $id);
         }
         
     }

@@ -1,6 +1,7 @@
 @extends('layouts.plantilla')
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
+    <script src="{!! asset('js/ocultos.js') !!}"></script>
     <script src="{!! asset('js/selects.js') !!}"></script>
 @endsection
 
@@ -365,8 +366,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4 border-end">
-                    
-                    
+
                 </div>
             </div>
             <div class="row">

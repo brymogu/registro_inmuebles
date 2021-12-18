@@ -85,9 +85,9 @@
                             <input class="form-control" type="number" name="n_banos" min="1" max="100" id="n_banos"
                                 value="{{ $propiedad->n_banos }}" required>
                         </div>
-                      <span class="form-text text-muted">(Sin incluir servicio o social)<span>  
+                        <span class="form-text text-muted">(Sin incluir servicio o social)<span>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="row grupo seccion">
@@ -170,10 +170,10 @@
                             <label for="estufa" class="col-6 col-form-label">Estufa</label>
                             <div class="col-6">
                                 @isset($propiedad->tipo_estufa)
-                                    {!! Form::select('mb_cocina', $mb_cocina, $propiedad->tipo_estufa, ['class' => 'form-select', 'required' => 'required']) !!}
+                                    {!! Form::select('estufa', $estufa, $propiedad->tipo_estufa, ['class' => 'form-select', 'required' => 'required']) !!}
                                 @endisset
                                 @empty($propiedad->tipo_estufa)
-                                    {!! Form::select('mb_cocina', $mb_cocina, $propiedad->tipo_estufa, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                    {!! Form::select('estufa', $estufa, $propiedad->tipo_estufa, ['class' => 'form-select vacio', 'required' => 'required']) !!}
                                 @endempty
                             </div>
                         </div>
@@ -211,10 +211,10 @@
                             <label for="calentador" class="col-6 col-form-label">Calentador</label>
                             <div class="col-6">
                                 @isset($propiedad->tipo_calentador)
-                                    {!! Form::select('tp_cocina', $tipo_cocina, $propiedad->tipo_calentador, ['class' => 'form-select', 'required' => 'required']) !!}
+                                    {!! Form::select('calentador', $calentador, $propiedad->tipo_calentador, ['class' => 'form-select', 'required' => 'required']) !!}
                                 @endisset
                                 @empty($propiedad->tipo_calentador)
-                                    {!! Form::select('tp_cocina', $tipo_cocina, $propiedad->tipo_calentador, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                    {!! Form::select('calentador', $calentador, $propiedad->tipo_calentador, ['class' => 'form-select vacio', 'required' => 'required']) !!}
                                 @endempty
                             </div>
                         </div>
@@ -698,39 +698,26 @@
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <div class="form-group row border-end">
-                            <label for="garaje" class="col-5 col-form-label">Cuenta con garaje(s)</label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool">
-                                @if ($propiedad->tiene_garajes == 'Si')
-                                    <input type="checkbox" id="garaje" name="garaje" value="1" checked />
-                                @else
-                                    <input type="checkbox" id="garaje" name="garaje" value="1" />
-                                @endif
-                                <label class="slider-v1" for="garaje"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-group row border-end" id="sec_independiente">
-                            <label for="gje_comunal" class="col-5 col-form-label">Garaje(s) comunal(es)</label>
-                            <div class="col-2">
-                                <a>No</a>
-                            </div>
-                            <div class="col-3 bool">
-                                @if ($propiedad->gje_comunal == 'Si')
-                                    <input type="checkbox" id="gje_comunal" name="gje_comunal" value="1" checked />
-                                @else
-                                    <input type="checkbox" id="gje_comunal" name="gje_comunal" value="1" />
-                                @endif
-                                <label class="slider-v1" for="gje_comunal"></label>
-                            </div>
-                            <div class="col-2">
-                                <a>Si</a>
+                            <label for="garaje" class="col-6 col-form-label">Tiene garaje(s)</label>
+                            <div class="col-6">
+                                <select name="garaje" id="garaje" class="form-select" required>
+                                    @if ($propiedad->tiene_garajes == 'Si'){
+                                        <option value="Si" selected>Si</option>
+                                        <option value="Comunal">Comunal</option>
+                                        <option value="No">No</option>
+                                    }@elseif($propiedad->tiene_garajes == 'Comunal'){
+                                        <option value="Si">Si</option>
+                                        <option value="Comunal" selected>Comunal</option>
+                                        <option value="No">No</option>
+                                    }@elseif($propiedad->tiene_garajes == 'No'){
+                                        <option value="Si">Si</option>
+                                        <option value="Comunal">Comunal</option>
+                                        <option value="No" selected>No</option>
+                                        }
+
+                                    @endif
+
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -749,10 +736,10 @@
                         <div class="form-group row border-end">
                             <label for="tipo_garaje" class="col-4 col-form-label">Tipo</label>
                             <div class="col-8">
-                                @isset($propiedad->tipo_garaje)
+                                @isset($propiedad->tipo_garajes)
                                     {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garajes, ['class' => 'form-select']) !!}
                                 @endisset
-                                @empty($propiedad->tipo_garaje)
+                                @empty($propiedad->tipo_garajes)
                                     {!! Form::select('tipo_garaje', $tipo_garaje, $propiedad->tipo_garajes, ['class' => 'form-select vacio']) !!}
                                 @endempty
                             </div>

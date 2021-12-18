@@ -116,6 +116,9 @@ class EditController extends Controller
         //propiedad
         $propiedad->chip = $request->chip;
         $propiedad->matricula = $request->matricula;
+        $propiedad->barrio_catastral = $request->barrio_catastral;
+        $propiedad->upz = $request->upz;
+        $propiedad->localidad = $request->localidad;
         $propiedad->pqsolicita = $request->pqsolicita;
         $propiedad->tipo_inmueble = $request->tipo_inm;
         $propiedad->estrato = $request->estrato_inm;
@@ -134,6 +137,7 @@ class EditController extends Controller
         $propiedad->horizontal = $request->horizontal;
         $propiedad->tuberia = $request->tuberia;
         $propiedad->ascensor = $request->ascensor;
+        $propiedad->n_ascensores = $request->n_ascensores;        
         //mas detalles del inmueble
         $propiedad->a_construida = $request->a_construida;
         $propiedad->a_privada = $request->a_privada;

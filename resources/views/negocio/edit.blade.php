@@ -1,8 +1,7 @@
 @extends('layouts.plantilla')
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
-    <script src="{!! asset('js/condiciones_edit.js') !!}"></script>
-    <script src="{!! asset('js/condiciones.js') !!}"></script>
+    <script src="{!! asset('js/condiciones_edit.js') !!}"></script>    
     <script src="{!! asset('js/funciones.js') !!}"></script>
     <script src="{!! asset('js/selects_edit.js') !!}"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -85,7 +84,9 @@
                                 <select class="form-select" id="conjunto" name="conjunto">
                                     @if ($propiedad->horizontal == 'Si')
                                         <option value="Si" selected>Si</option>
+                                        <option value="No">No</option>
                                     @else
+                                        <option value="Si">Si</option>
                                         <option value="No" selected>No</option>
                                     @endif
                                 </select>
@@ -315,23 +316,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group row border-end">
-                                <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
-                                <div class="col-7">
-                                    @isset($estado, $propiedad->estrato)
-                                        {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
-                                    @endisset
-                                    @empty($propiedad->estrato)
-                                        {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select vacio', 'id' => 'tipo_inm', 'required' => 'required']) !!}
-                                    @endempty
-                                </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6" id="sec_n_ascensores">
+                        <div class="form-group row border-end">
+                            <label for="n_ascensores" class="col-5 form-label">Cantidad de ascensores</label>
+                            <div class="col-7">
+                                <input id="n_ascensores" name="n_ascensores" type="number" min="1" max="30"
+                                    class="form-control" value="{{ $propiedad->n_ascensores }}">
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 "></div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="form-group row">
+                            <label for="estrato_inm" class="col-5 col-form-label">Estrato</label>
+                            <div class="col-7">
+                                @isset($estado, $propiedad->estrato)
+                                    {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->estrato)
+                                    {!! Form::select('estrato_inm', $estratos, $propiedad->estrato, ['class' => 'form-select vacio', 'id' => 'tipo_inm', 'required' => 'required']) !!}
+                                @endempty
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
             <div class="grupo mb-3">
                 <div class="row seccion">

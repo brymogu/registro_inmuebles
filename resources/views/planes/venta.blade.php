@@ -1,6 +1,7 @@
 @extends('layouts.plantilla')
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
+<script src="{!! asset('js/ocultos.js') !!}"></script>
     <script src="{!! asset('js/calcule-vta.js') !!}"></script>
 @endsection
 

@@ -23,6 +23,6 @@ Route::get('administrador/descargas', [DownloadController::class, 'showtable'])-
 Route::post('administrador/descargas', [DownloadController::class, 'convertir'])->name('administrador.pasarformatos');
 
 Route::get('administrador/descargas/formatos/{codineg}', [FormatosContraller::class, 'show'])->name('administrador.formatos');
-Route::post('administrador/descargas/formatos/{codineg}', [FormatosController::class, 'convertir'])->name('administrador.irformatos');
+Route::post('administrador/descargas/formatos/{codineg}', [FormatosContraller::class, 'update'])->name('administrador.irformatos');
 
 Route::get('administrador/acuerdos', [AcuerdosController::class, 'showtable'])->name('administrador.acuerdos');
