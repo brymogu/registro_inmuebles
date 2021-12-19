@@ -62,7 +62,7 @@
                         <label for="id" class="col-5 col-form-label">Tipo DI</label>
                         <div class="col-7">
                             @isset($codiprop->tipo_doc)
-                                {!! Form::select('id', $tipos_documento, $codiprop->tipo_doc, ['class' => 'form-select', 'required' => 'required' ]) !!}
+                                {!! Form::select('id', $tipos_documento, $codiprop->tipo_doc, ['class' => 'form-select', 'required' => 'required']) !!}
                             @endisset
                             @empty($codiprop->tipo_doc)
                                 {!! Form::select('id', $tipos_documento, $codiprop->tipo_doc, ['class' => 'form-select vacio', 'required' => 'required']) !!}
@@ -316,10 +316,10 @@
                         <label for="tipo_inm" class="col-5 col-form-label">Tipo de inmueble</label>
                         <div class="col-7">
                             @isset($propiedad->tipo_inmueble)
-                                {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select', 'required' => 'required' , 'id' => 'tipo_inm' ]) !!}
+                                {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select', 'required' => 'required', 'id' => 'tipo_inm']) !!}
                             @endisset
                             @empty($propiedad->tipo_inmueble)
-                                {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select vacio', 'required' => 'required', 'id' => 'tipo_inm' ]) !!}
+                                {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select vacio', 'required' => 'required', 'id' => 'tipo_inm']) !!}
                             @endempty
                         </div>
                     </div>
@@ -329,10 +329,10 @@
                         <label for="estado_inb" class="col-5 col-form-label">Estado del inmueble</label>
                         <div class="col-7">
                             @isset($propiedad->estado)
-                                {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'required' => 'required' , 'id' => 'estado_inb']) !!}
+                                {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'required' => 'required', 'id' => 'estado_inb']) !!}
                             @endisset
                             @empty($propiedad->estado)
-                                {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select vacio', 'required' => 'required' , 'id' => 'estado_inb']) !!}
+                                {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select vacio', 'required' => 'required', 'id' => 'estado_inb']) !!}
                             @endempty
                         </div>
                     </div>
@@ -341,7 +341,7 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0" id="anoconstruido">
             <div class="row">
-                <div class="col-12 col-md-6 " >
+                <div class="col-12 col-md-6 ">
                     <div class="form-group row">
                         <label for="tiempo_inm" class="col-5 col-form-label">Años de
                             contruido</label>
@@ -352,7 +352,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 " id="SecRemodelado">
-                    <div class="form-group row" >
+                    <div class="form-group row">
                         <label for="remodelado" class="col-5 col-form-label">Remodelado hace menos de 5
                             años </label>
                         <div class="col-7">
@@ -389,7 +389,7 @@
             </div>
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0" id="aptos2">
-            <div class="row" >
+            <div class="row">
                 <div class="col-12 col-md-6 ">
                     <div class="form-group row">
                         <label for="piso" class="col-5 col-form-label">Piso en el que está el
@@ -425,7 +425,7 @@
                         <label for="n_ascensores" class="col-5 form-label">Cantidad de ascensores</label>
                         <div class="col-7">
                             <input id="n_ascensores" name="n_ascensores" type="number" min="1" max="30"
-                                class="form-control" value="{{$propiedad->n_ascensores}}">
+                                class="form-control" value="{{ $propiedad->n_ascensores }}">
                         </div>
                     </div>
                 </div>
@@ -476,7 +476,7 @@
         <div class="card p-3 mt-3 shadow-sm border-0" id="detalles">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <div class="form-group row" >
+                    <div class="form-group row">
                         <div class="col-5">
                             <label for="direccion_comp" class="col-form-label">Detalles</label>
                         </div>
@@ -491,7 +491,7 @@
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <div class="form-group row" >
+                    <div class="form-group row">
                         <div class="col-5">
                             <label for="latitud" class="col-form-label">Latitud</label>
                         </div>
@@ -502,7 +502,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="form-group row" >
+                    <div class="form-group row">
                         <div class="col-5">
                             <label for="longitud" class="col-form-label">Longitud</label>
                         </div>
@@ -1112,7 +1112,7 @@
                 </div>
             </div>
         </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
+        <div class="card p-3 mt-3 shadow-sm border-0" id="area_bt">
             <div class="row">
                 <div class="col-12 col-md-4" id="area_balcon_secc">
                     <div class="form-group row">
@@ -1139,39 +1139,31 @@
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
-                        <label for="garaje" class="col-5 col-form-label">Cuenta con garaje(s)</label>
+                        <label for="garaje" class="col-5 col-form-label">Tiene garaje(s)</label>
                         <div class="col-7">
-                            <select id="garaje" class="form-select" name="garaje" required="required">
-                                @if ($propiedad->tiene_garajes == 'Si')
-                                    <option selected value="Si">Si</option>
+                            <select name="garaje" id="garaje" class="form-select" required>
+                                @if ($propiedad->tiene_garajes == 'Si'){
+                                    <option value="Si" selected>Si</option>
+                                    <option value="Comunal">Comunal</option>
                                     <option value="No">No</option>
-                                @else
+                                }@elseif($propiedad->tiene_garajes == 'Comunal'){
                                     <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
+                                    <option value="Comunal" selected>Comunal</option>
+                                    <option value="No">No</option>
+                                }@elseif($propiedad->tiene_garajes == 'No'){
+                                    <option value="Si">Si</option>
+                                    <option value="Comunal">Comunal</option>
+                                    <option value="No" selected>No</option>
+                                    }
                                 @endif
                             </select>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="gje_comunal" class="col-5 col-form-label">Garaje(s) comunal(es)</label>
-                        <div class="col-7">
-                            <select id="gje_comunal" class="form-select" name="gje_comunal" required="required">
-                                @if ($propiedad->gje_comunal == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
+        <div class="card p-3 mt-3 shadow-sm border-0" id="sec_garajes">
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
@@ -1213,383 +1205,385 @@
                 </div>
             </div>
         </div>
-        <h5 class="fw-bold my-3">Características conjunto cerrado o edificio</h5>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="vigilancia" class="col-5 col-form-label">Vigilancia</label>
-                        <div class="col-7">
-                            @isset($propiedad->tipo_vigilancia)
-                                {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select', 'required' => 'required']) !!}
-                            @endisset
-                            @empty($propiedad->tipo_vigilancia)
-                                {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select vacio', 'required' => 'required']) !!}
-                            @endempty
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="seguridad" class="col-5 col-form-label">Seguridad</label>
-                        <div class="col-7">
-                            @isset($propiedad->tipo_seguridad)
-                                {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select', 'required' => 'required']) !!}
-                            @endisset
-                            @empty($propiedad->tipo_seguridad)
-                                {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select vacio', 'required' => 'required']) !!}
-                            @endempty
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="t_cuota" class="col-5 col-form-label">Tipo de cuota
-                            <span class="sub">Administración P.H.<span>
-                        </label>
-                        <div class="col-7">
-                            @isset($propiedad->tipo_cuota)
-                                {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select', 'id' => 't_cuota', 'required' => 'required']) !!}
-                            @endisset
-                            @empty($propiedad->tipo_cuota)
-                                {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select vacio', 'id' => 't_cuota', 'required' => 'required']) !!}
-                            @endempty
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="nombre_c_e" class="col-5 col-form-label">Nombre del conjunto o
-                            edificio</label>
-                        <div class="col-7">
-                            <input id="nombre_c_e" name="nombre_c_e" type="text" class="form-control"
-                                value="{{ $propiedad->nombre_c_e }}" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="adm_cp" class="col-5 col-form-label">Valor Administración
-                            <span class="sub">Cuota plena<span>
-                        </label>
-                        <div class="col-7">
-                            <div class="input-group">
-                                <input id="adm_cp" name="adm_cp" type="number" min="0" class="form-control"
-                                    value="{{ $propiedad->adm_cp }}" required>
+        <div id="caracteristicas">
+            <h5 class="fw-bold my-3">Características conjunto cerrado o edificio</h5>
+            <div class="card p-3 mt-3 shadow-sm border-0">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="vigilancia" class="col-5 col-form-label">Vigilancia</label>
+                            <div class="col-7">
+                                @isset($propiedad->tipo_vigilancia)
+                                    {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_vigilancia)
+                                    {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4" id="descuento">
-                    <div class="form-group row">
-                        <label for="adm_cd" class="col-5 col-form-label">Valor Administración
-                            <span class="sub">Cuota con descuento<span>
-                        </label>
-                        <div class="col-7">
-                            <div class="input-group">
-                                <input id="adm_cd" name="adm_cd" type="number" min="0" class="form-control"
-                                    value="{{ $propiedad->adm_cd }}">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="seguridad" class="col-5 col-form-label">Seguridad</label>
+                            <div class="col-7">
+                                @isset($propiedad->tipo_seguridad)
+                                    {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_seguridad)
+                                    {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                @endempty
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="t_cuota" class="col-5 col-form-label">Tipo de cuota
+                                <span class="sub">Administración P.H.<span>
+                            </label>
+                            <div class="col-7">
+                                @isset($propiedad->tipo_cuota)
+                                    {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select', 'id' => 't_cuota', 'required' => 'required']) !!}
+                                @endisset
+                                @empty($propiedad->tipo_cuota)
+                                    {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select vacio', 'id' => 't_cuota', 'required' => 'required']) !!}
+                                @endempty
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="pq_visitantes" class="col-5 col-form-label">Parqueadero de visitantes</label>
-                        <div class="col-7">
-                            <select id="pq_visitantes" class="form-select" name="pq_visitantes" required="required">
-                                @if ($propiedad->pq_visitantes == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+            <div class="card p-3 mt-3 shadow-sm border-0">
+                <div class="row">
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="nombre_c_e" class="col-5 col-form-label">Nombre del conjunto o
+                                edificio</label>
+                            <div class="col-7">
+                                <input id="nombre_c_e" name="nombre_c_e" type="text" class="form-control"
+                                    value="{{ $propiedad->nombre_c_e }}" required>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="bicicletero" class="col-5 col-form-label">Bicicletero</label>
-                        <div class="col-7">
-                            <select id="bicicletero" class="form-select" name="bicicletero" required="required">
-                                @if ($propiedad->bicicletero == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="adm_cp" class="col-5 col-form-label">Valor Administración
+                                <span class="sub">Cuota plena<span>
+                            </label>
+                            <div class="col-7">
+                                <div class="input-group">
+                                    <input id="adm_cp" name="adm_cp" type="number" min="0" class="form-control"
+                                        value="{{ $propiedad->adm_cp }}" required>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="s_social" class="col-5 col-form-label">Salón social</label>
-                        <div class="col-7">
-                            <select id="s_social" class="form-select" name="s_social" required="required">
-                                @if ($propiedad->s_social == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+                    <div class="col-12 col-md-4" id="descuento">
+                        <div class="form-group row">
+                            <label for="adm_cd" class="col-5 col-form-label">Valor Administración
+                                <span class="sub">Cuota con descuento<span>
+                            </label>
+                            <div class="col-7">
+                                <div class="input-group">
+                                    <input id="adm_cd" name="adm_cd" type="number" min="0" class="form-control"
+                                        value="{{ $propiedad->adm_cd }}">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="bbq" class="col-5 col-form-label">BBQ</label>
-                        <div class="col-7">
-                            <select id="bbq" class="form-select" name="bbq" required="required">
-                                @if ($propiedad->bbq == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+            <div class="card p-3 mt-3 shadow-sm border-0">
+                <div class="row">
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="pq_visitantes" class="col-5 col-form-label">Parqueadero de visitantes</label>
+                            <div class="col-7">
+                                <select id="pq_visitantes" class="form-select" name="pq_visitantes" required="required">
+                                    @if ($propiedad->pq_visitantes == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="s_juntas" class="col-5 col-form-label">Sala de juntas</label>
-                        <div class="col-7">
-                            <select id="s_juntas" class="form-select" name="s_juntas" required="required">
-                                @if ($propiedad->s_juntas == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="bicicletero" class="col-5 col-form-label">Bicicletero</label>
+                            <div class="col-7">
+                                <select id="bicicletero" class="form-select" name="bicicletero" required="required">
+                                    @if ($propiedad->bicicletero == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4" >
-                    <div class="form-group row">
-                        <label for="p_infantil" class="col-5 col-form-label">Parque infantil</label>
-                        <div class="col-7">
-                            <select id="p_infantil" class="form-select" name="p_infantil" required="required">
-                                @if ($propiedad->p_infantil == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="gimnasio" class="col-5 col-form-label">Gimnasio</label>
-                        <div class="col-7">
-                            <select id="gimnasio" class="form-select" name="gimnasio" required="required">
-                                @if ($propiedad->gimnasio == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="turco" class="col-5 col-form-label">Turco</label>
-                        <div class="col-7">
-                            <select id="turco" class="form-select" name="turco" required="required">
-                                @if ($propiedad->turco == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4" >
-                    <div class="form-group row">
-                        <label for="sauna" class="col-5 col-form-label">Sauna</label>
-                        <div class="col-7">
-                            <select id="sauna" class="form-select" name="sauna" required="required">
-                                @if ($propiedad->sauna == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="s_social" class="col-5 col-form-label">Salón social</label>
+                            <div class="col-7">
+                                <select id="s_social" class="form-select" name="s_social" required="required">
+                                    @if ($propiedad->s_social == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="c_squash" class="col-5 col-form-label">Cancha de squash</label>
-                        <div class="col-7">
-                            <select id="c_squash" class="form-select" name="c_squash" required="required">
-                                @if ($propiedad->c_squash == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+            <div class="card p-3 mt-3 shadow-sm border-0">
+                <div class="row">
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="bbq" class="col-5 col-form-label">BBQ</label>
+                            <div class="col-7">
+                                <select id="bbq" class="form-select" name="bbq" required="required">
+                                    @if ($propiedad->bbq == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="c_tenis" class="col-5 col-form-label">Cancha de tenis</label>
-                        <div class="col-7">
-                            <select id="c_tenis" class="form-select" name="c_tenis" required="required">
-                                @if ($propiedad->c_tenis == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="s_juntas" class="col-5 col-form-label">Sala de juntas</label>
+                            <div class="col-7">
+                                <select id="s_juntas" class="form-select" name="s_juntas" required="required">
+                                    @if ($propiedad->s_juntas == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="c_multiple" class="col-5 col-form-label">Cancha múltiple</label>
-                        <div class="col-7">
-                            <select id="c_multiple" class="form-select" name="c_multiple" required="required">
-                                @if ($propiedad->c_multiple == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="s_juegos" class="col-5 col-form-label">Salón de juegos</label>
-                        <div class="col-7">
-                            <select id="s_juegos" class="form-select" name="s_juegos" required="required">
-                                @if ($propiedad->s_juegos == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="s_estudio" class="col-5 col-form-label">Salón de estudio</label>
-                        <div class="col-7">
-                            <select id="s_estudio" class="form-select" name="s_estudio" required="required">
-                                @if ($propiedad->s_estudio == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="lavanderia_c" class="col-5 col-form-label">Lavandería comunal</label>
-                        <div class="col-7">
-                            <select id="lavanderia_c" class="form-select" name="lavanderia_c" required="required">
-                                @if ($propiedad->lavanderia_c == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="p_infantil" class="col-5 col-form-label">Parque infantil</label>
+                            <div class="col-7">
+                                <select id="p_infantil" class="form-select" name="p_infantil" required="required">
+                                    @if ($propiedad->p_infantil == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row">
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="planta_e" class="col-5 col-form-label">Planta eléctrica</label>
-                        <div class="col-7">
-                            <select id="planta_e" class="form-select" name="planta_e" required="required">
-                                @if ($propiedad->planta_e == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+            <div class="card p-3 mt-3 shadow-sm border-0">
+                <div class="row">
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="gimnasio" class="col-5 col-form-label">Gimnasio</label>
+                            <div class="col-7">
+                                <select id="gimnasio" class="form-select" name="gimnasio" required="required">
+                                    @if ($propiedad->gimnasio == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="turco" class="col-5 col-form-label">Turco</label>
+                            <div class="col-7">
+                                <select id="turco" class="form-select" name="turco" required="required">
+                                    @if ($propiedad->turco == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="sauna" class="col-5 col-form-label">Sauna</label>
+                            <div class="col-7">
+                                <select id="sauna" class="form-select" name="sauna" required="required">
+                                    @if ($propiedad->sauna == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 border-right">
-                    <div class="form-group row">
-                        <label for="piscina" class="col-5 col-form-label">Piscina</label>
-                        <div class="col-7">
-                            <select id="piscina" class="form-select" name="piscina" required="required">
-                                @if ($propiedad->piscina == 'Si')
-                                    <option selected value="Si">Si</option>
-                                    <option value="No">No</option>
-                                @else
-                                    <option value="Si">Si</option>
-                                    <option selected value="No">No</option>
-                                @endif
-                            </select>
+            </div>
+            <div class="card p-3 mt-3 shadow-sm border-0">
+                <div class="row">
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="c_squash" class="col-5 col-form-label">Cancha de squash</label>
+                            <div class="col-7">
+                                <select id="c_squash" class="form-select" name="c_squash" required="required">
+                                    @if ($propiedad->c_squash == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="c_tenis" class="col-5 col-form-label">Cancha de tenis</label>
+                            <div class="col-7">
+                                <select id="c_tenis" class="form-select" name="c_tenis" required="required">
+                                    @if ($propiedad->c_tenis == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="c_multiple" class="col-5 col-form-label">Cancha múltiple</label>
+                            <div class="col-7">
+                                <select id="c_multiple" class="form-select" name="c_multiple" required="required">
+                                    @if ($propiedad->c_multiple == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-3 mt-3 shadow-sm border-0">
+                <div class="row">
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="s_juegos" class="col-5 col-form-label">Salón de juegos</label>
+                            <div class="col-7">
+                                <select id="s_juegos" class="form-select" name="s_juegos" required="required">
+                                    @if ($propiedad->s_juegos == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="s_estudio" class="col-5 col-form-label">Salón de estudio</label>
+                            <div class="col-7">
+                                <select id="s_estudio" class="form-select" name="s_estudio" required="required">
+                                    @if ($propiedad->s_estudio == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="form-group row">
+                            <label for="lavanderia_c" class="col-5 col-form-label">Lavandería comunal</label>
+                            <div class="col-7">
+                                <select id="lavanderia_c" class="form-select" name="lavanderia_c" required="required">
+                                    @if ($propiedad->lavanderia_c == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-3 mt-3 shadow-sm border-0">
+                <div class="row">
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="planta_e" class="col-5 col-form-label">Planta eléctrica</label>
+                            <div class="col-7">
+                                <select id="planta_e" class="form-select" name="planta_e" required="required">
+                                    @if ($propiedad->planta_e == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="form-group row">
+                            <label for="piscina" class="col-5 col-form-label">Piscina</label>
+                            <div class="col-7">
+                                <select id="piscina" class="form-select" name="piscina" required="required">
+                                    @if ($propiedad->piscina == 'Si')
+                                        <option selected value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    @else
+                                        <option value="Si">Si</option>
+                                        <option selected value="No">No</option>
+                                    @endif
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>

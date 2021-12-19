@@ -25,6 +25,31 @@ $(document).ready(function() {
             $('#piso').removeAttr('required');
         }
 
+        if ($('#tipo_inm').val() == 1) {
+            $('#piso').removeAttr('required');
+            $('#aptos2').hide();
+            $('#sec_n_ascensores').hide();
+            $('#ascensor').removeAttr('checked');
+        }
+
+        if ($('#ascensor').val() == "Si") {
+            $('#sec_n_ascensores').show();
+            $('#n_ascensores').attr("required", "true");
+        } else {
+            $('#sec_n_ascensores').hide();
+            $('#ascensor').removeAttr('checked');
+        }
+
+        $('#ascensor').change(function() {
+            if ($('#ascensor').val() == "Si") {
+                $('#sec_n_ascensores').show();
+                $('#n_ascensores').attr("required", "true");
+            } else {
+                $('#sec_n_ascensores').hide();
+                $('#ascensor').removeAttr('checked');
+            }
+        });
+
         if ($('#conjunto').val() == "Si") {
             $('#detalles').show();
         } else {
@@ -54,13 +79,14 @@ $(document).ready(function() {
                 $('#iconjunto').show();
                 $('#conjunto_bar').show();
                 $('#horizontal').show();
-
+                $('#caracteristicas').show();
             } else {
                 $('#direccion_comp').removeAttr('required');
                 $('#detalles').hide();
                 $('#iconjunto').hide();
                 $('#conjunto_bar').hide();
                 $('#horizontal').hide();
+                $('#caracteristicas').hide();
             }
         });
 
@@ -155,7 +181,7 @@ $(document).ready(function() {
                 $('#botonmapa').hide();
             }
         });
-    } else if ($('#detalles').length) {
+
 
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
@@ -178,8 +204,35 @@ $(document).ready(function() {
             }
         });
 
+        if ($('#balcon').val() == 'No' && $('#terraza').val() == 'No') {
+            $('#area_bt').hide();
+        } else {
+            $('#area_bt').show();
+        }
 
+        $('#balcon').change(function() {
+            if ($('#balcon').val() == 'No' && $('#terraza').val() == 'No') {
+                $('#area_bt').hide();
+            } else {
+                $('#area_bt').show();
+            }
+        });
 
+        $('#terraza').change(function() {
+            if ($('#balcon').val() == 'No' && $('#terraza').val() == 'No') {
+                $('#area_bt').hide();
+            } else {
+                $('#area_bt').show();
+            }
+        });
+
+        if ($('#balcon').val() == 'Si') {
+            $('#area_balcon_secc').show();
+            $('#area_balcon').attr("required", "true");
+        } else {
+            $('#area_balcon_secc').hide();
+            $('#area_balcon').removeAttr('required');
+        }
 
         $('#balcon').change(function() {
             if ($('#balcon').val() == 'Si') {
@@ -191,28 +244,39 @@ $(document).ready(function() {
             }
         });
 
+        if ($('#terraza').val() == 'Si') {
+            $('#area_terraza_secc').show();
+            $('#area_terraza').attr("required", "true");
+        } else {
+            $('#area_terraza_secca').hide();
+            $('#area_terraza').removeAttr('required');
+        }
+
         $('#terraza').change(function() {
             if ($('#terraza').val() == 'Si') {
                 $('#area_terraza_secc').show();
                 $('#area_terraza').attr("required", "true");
             } else {
-                $('#area_terraza_secca').hide();
+                $('#area_terraza_secc').hide();
                 $('#area_terraza').removeAttr('required');
             }
         });
 
-
-    } else if ($('#conjunto_tarjeta').length) {
-
-        $(".usuario i, .negocio i, .detalles i, .conjunto i").css("color", "#01303c");
-        $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar").css("background-color", "#01303c");
+        if ($('#t_cuota').val() == 2) {
+            $('#descuento').show();
+            console.log("ya");
+            $('#adm_cd').attr("required", "true");
+        } else {
+            $('#descuento').hide();
+            $('#adm_cd').val("");
+            $('#adm_cd').removeAttr('required');
+        }
 
         $('#t_cuota').change(function() {
             if ($('#t_cuota').val() == 2) {
                 $('#descuento').show();
                 console.log("ya");
                 $('#adm_cd').attr("required", "true");
-
             } else {
                 $('#descuento').hide();
                 $('#adm_cd').val("");
@@ -229,27 +293,6 @@ $(document).ready(function() {
             var valor = $('#adm_cd').val();
             $('#adm_cd_pesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));
         });
-
-
-    } else if ($('#fotos').length) {
-        $(".usuario i, .negocio i, .detalles i, .conjunto i,.planes i,.camara i").css("color", "#01303c");
-        $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
-
-        $('#finalizar').hide()
-
-    } else if ($('#planes_tarjeta').length) {
-        $(".usuario i, .negocio i, .detalles i, .conjunto i, .planes i").css("color", "#01303c");
-        $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
-        $('.toast').toast("show");
-        $('#sec_valor').hide();
-
-        $('#modificar').change(function() {
-            if ($('#modificar').val() == 'Si') {
-                $('#sec_valor').show();
-            } else {
-                $('#sec_valor').hide();
-            }
-        });
-
     }
+
 });
