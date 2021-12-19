@@ -8,7 +8,6 @@ use App\Models\Negocios;
 use App\Models\Propiedades;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use PhpParser\Node\Stmt\Return_;
 
 class FormatosContraller extends Controller
 {
