@@ -1,13 +1,14 @@
 @extends('layouts.administrador')
 @section('more_head')
     <script src="{!! asset('js/selects_edit.js') !!}"></script>
+    <script src="{!! asset('js/cond_editform.js') !!}"></script>
 
 @endsection
 
 @section('title', 'Editar Form')
 
 @section('content')
-    <div class="col-12 pt-5 px-3 formulario_edit">
+    <div class="col-12 pt-5 px-3 formulario_edit" id="negocio_tarjeta">
         <p class="fw-bold ">Datos Personales</p>
         {{ Form::open(['method' => 'post']) }}
         <div class="card p-3 shadow-sm border-0 ">
@@ -56,12 +57,12 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0 ">
             <div class="row">
-                <div class="col-12 col-md-6 border-end">
+                <div class="col-12 col-md-6 ">
                     <div class="form-group row">
                         <label for="id" class="col-5 col-form-label">Tipo DI</label>
                         <div class="col-7">
                             @isset($codiprop->tipo_doc)
-                                {!! Form::select('id', $tipos_documento, $codiprop->tipo_doc, ['class' => 'form-select', 'required' => 'required']) !!}
+                                {!! Form::select('id', $tipos_documento, $codiprop->tipo_doc, ['class' => 'form-select', 'required' => 'required' ]) !!}
                             @endisset
                             @empty($codiprop->tipo_doc)
                                 {!! Form::select('id', $tipos_documento, $codiprop->tipo_doc, ['class' => 'form-select vacio', 'required' => 'required']) !!}
@@ -277,7 +278,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="form-group row">
+                    <div class="form-group row" id="arrendado">
                         <label for="arrendado" class="col-5">¿Arrendado actualmente?</label>
                         <div class="col-7">
                             <select id="arrendado" class="form-select" name="arrendado" required="required">
@@ -315,10 +316,10 @@
                         <label for="tipo_inm" class="col-5 col-form-label">Tipo de inmueble</label>
                         <div class="col-7">
                             @isset($propiedad->tipo_inmueble)
-                                {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select', 'required' => 'required']) !!}
+                                {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select', 'required' => 'required' , 'id' => 'tipo_inm' ]) !!}
                             @endisset
                             @empty($propiedad->tipo_inmueble)
-                                {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                {!! Form::select('tipo_inm', $inmueble, $propiedad->tipo_inmueble, ['class' => 'form-select vacio', 'required' => 'required', 'id' => 'tipo_inm' ]) !!}
                             @endempty
                         </div>
                     </div>
@@ -328,20 +329,19 @@
                         <label for="estado_inb" class="col-5 col-form-label">Estado del inmueble</label>
                         <div class="col-7">
                             @isset($propiedad->estado)
-                                {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'required' => 'required']) !!}
+                                {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select', 'required' => 'required' , 'id' => 'estado_inb']) !!}
                             @endisset
                             @empty($propiedad->estado)
-                                {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                {!! Form::select('estado_inb', $estado, $propiedad->estado, ['class' => 'form-select vacio', 'required' => 'required' , 'id' => 'estado_inb']) !!}
                             @endempty
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="card p-3 mt-3 shadow-sm border-0">
+        <div class="card p-3 mt-3 shadow-sm border-0" id="anoconstruido">
             <div class="row">
-                <div class="col-12 col-md-6 border-end">
+                <div class="col-12 col-md-6 " >
                     <div class="form-group row">
                         <label for="tiempo_inm" class="col-5 col-form-label">Años de
                             contruido</label>
@@ -351,8 +351,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 border-end">
-                    <div class="form-group row" id="SecRemodelado">
+                <div class="col-12 col-md-6 " id="SecRemodelado">
+                    <div class="form-group row" >
                         <label for="remodelado" class="col-5 col-form-label">Remodelado hace menos de 5
                             años </label>
                         <div class="col-7">
@@ -367,7 +367,7 @@
                 </div>
             </div>
         </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
+        <div class="card p-3 mt-3 shadow-sm border-0" id="sec_tuberia">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="form-group row" id="sec_tuberia">
@@ -388,9 +388,9 @@
                 </div>
             </div>
         </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
-            <div class="row" id="aptos2">
-                <div class="col-12 col-md-6 border-end">
+        <div class="card p-3 mt-3 shadow-sm border-0" id="aptos2">
+            <div class="row" >
+                <div class="col-12 col-md-6 ">
                     <div class="form-group row">
                         <label for="piso" class="col-5 col-form-label">Piso en el que está el
                             inmueble</label>
@@ -460,7 +460,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 border-end">
+                <div class="col-12 col-md-6 ">
                     <div class="form-group row">
                         <div class="col-5">
                             <label for="direccion" class="col-form-label">Dirección inmueble</label>
@@ -473,10 +473,10 @@
                 </div>
             </div>
         </div>
-        <div class="card p-3 mt-3 shadow-sm border-0">
+        <div class="card p-3 mt-3 shadow-sm border-0" id="detalles">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <div class="form-group row" id="detalles">
+                    <div class="form-group row" >
                         <div class="col-5">
                             <label for="direccion_comp" class="col-form-label">Detalles</label>
                         </div>
@@ -491,7 +491,7 @@
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <div class="form-group row" id="detalles">
+                    <div class="form-group row" >
                         <div class="col-5">
                             <label for="latitud" class="col-form-label">Latitud</label>
                         </div>
@@ -502,7 +502,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="form-group row" id="detalles">
+                    <div class="form-group row" >
                         <div class="col-5">
                             <label for="longitud" class="col-form-label">Longitud</label>
                         </div>
@@ -937,7 +937,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 ">
+                <div class="col-12 col-md-4 " id="cortina">
                     <div class="form-group row">
                         <label for="entrega_cortinas" class="col-5 col-form-label">Entrega con cortinas</label>
                         <div class="col-7">
@@ -1385,7 +1385,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4" id="descuento">
+                <div class="col-12 col-md-4" >
                     <div class="form-group row">
                         <label for="p_infantil" class="col-5 col-form-label">Parque infantil</label>
                         <div class="col-7">
@@ -1437,7 +1437,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4" id="descuento">
+                <div class="col-12 col-md-4" >
                     <div class="form-group row">
                         <label for="sauna" class="col-5 col-form-label">Sauna</label>
                         <div class="col-7">
