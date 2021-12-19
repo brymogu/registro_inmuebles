@@ -29,33 +29,33 @@
                 <div class="row mt-1 interior">
                     <div class="col-4">
                         <input id="conc_precio_edit" name="conc_precio_edit" type="number" class="form-control"
-                            value="{{ $datos->conc_precio }}">
+                            value="{{ $datos->conc_precio }}" required>
                         <small class="fw-light fst-italic">Concepto de precio</small>
                     </div>
                     <div class="col-4">
                         <input id="chip_edit" name="chip_edit" type="text" class="form-control"
-                            value="{{ $datos->chip }}">
+                            value="{{ $datos->chip }}" required>
                         <small class="fw-light fst-italic">Chip</small>
                     </div>
                     <div class="col-4">
                         <input id="matricula_edit" name="matricula_edit" type="text" class="form-control"
-                            value="{{ $datos->matricula }}">
+                            value="{{ $datos->matricula }}" required>
                         <small class="fw-light fst-italic">N° matricula</small>
                     </div>
                 </div>
                 <div class="row mt-1 interior">
                     <div class="col-4">
                         <input id="barrio_catastral_edit" name="barrio_catastral_edit" type="text" class="form-control"
-                            value="{{ $datos->barrio_catastral }}">
+                            value="{{ $datos->barrio_catastral }}" required>
                         <small class="fw-light fst-italic">Barrio catastral</small>
                     </div>
                     <div class="col-4">
-                        <input id="upz_edit" name="upz_edit" type="text" class="form-control" value="{{ $datos->upz }}">
+                        <input id="upz_edit" name="upz_edit" type="text" class="form-control" value="{{ $datos->upz }}" required>
                         <small class="fw-light fst-italic">UPZ</small>
                     </div>
                     <div class="col-4">
                         <input id="localidad_edit" name="localidad_edit" type="text" class="form-control"
-                            value="{{ $datos->localidad }}">
+                            value="{{ $datos->localidad }}" required>
                         <small class="fw-light fst-italic">Localidad</small>
                     </div>
                 </div>

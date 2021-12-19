@@ -6,67 +6,101 @@
 @section('title', 'Descargar')
 
 @section('content')
-    <div class="col-12 pt-5 px-3">
-        <div class="tabla">
-            <div class="table-responsive">
-                <table class="table table-borderless align-middle" id="datos">
-                    <thead class="text-secondary">
-                        <tr>
-                            <th>
-                                Fecha de registro
-                            </th>
-                            <th>
-                                Nombre
-                            </th>
-                            <th>
-                                Documento
-                            </th>
-                            <th>
-                                Plan
-                            </th>
-                            <th>
-                                Certificado
-                            </th>
-                            <th>
-                                Ficha
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($negocios as $negocio)
+    <div class="row my-3 excel">
+        <div class="col-7">
+        </div>
+        <div class="col-5">
+            {{ Form::open(['route' => 'administrador.excel']) }}
+            <div class="card shadow-sm border-0 py-1">
+                <div class="row mx-1">
+                    <div class="col-5">
+                        <div class="form-floating border-end">
+                            <input type="date" name="f_inicio" class="form-control" id="f_inicio"
+                                value="{{ date('Y') }}-01-01">
+                            <label for="f_inicio">Inicio</label>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-floating border-end">
+                            <input type="date" name="f_final" class="form-control" id="f_final"
+                                value="{{ date('Y-m-d') }}" max="{{ date('Y-m-d') }}">
+                            <label for="f_final">Final</label>
+                        </div>
+                    </div>
+                    <div class="col-2 py-2 d-flex align-self-center">
+                        <button type="submit" class="btn btn-epc rounded-circle ">
+                            <i class="fas fa-file-excel"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {{ Form::close() }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 px-3">
+            <div class="tabla">
+                <div class="table-responsive">
+                    <table class="table table-borderless align-middle" id="datos">
+                        <thead class="text-secondary">
                             <tr>
-                                <td>
-                                    <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                        title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
-                                </td>
-                                <td>
-                                    <b> {{ $negocio->name }}</b><br />
-                                    {{ $negocio->lastname }}
-                                </td>
-                                <td>
-                                    <b> {{ $negocio->doc_number }}</b><br />
-                                    {{ $negocio->desc_nombres_corto }}
-                                </td>
-                                <td>
-                                    {{ $negocio->desc_plan }}
-                                </td>
-                                <td>
-                                    <a class="btn btn-epc rounded-circle" target="_blank"
-                                        href="{{ Storage::url($negocio->certificado) }}" download><i
-                                            class="fas fa-file-pdf"></i></a>
-                                </td>
-                                <td>
-                                    {{ Form::open(['method' => 'post']) }}
-                                    <input type="text" class="d-none" name="codineg" value="{{ $negocio->id_neg}}" >    
-                                    <button type="submit" class="btn btn-epc rounded-circle"><i
-                                                class="fas fa-file-invoice"></i></button>
-                                                                                        
-                                    {{ Form::close() }}
-                                </td>
+                                <th>
+                                    Fecha de registro
+                                </th>
+                                <th>
+                                    Nombre
+                                </th>
+                                <th>
+                                    Documento
+                                </th>
+                                <th>
+                                    Plan
+                                </th>
+                                <th class="text-center">
+                                    Cert.
+                                </th>
+                                <th class="text-center">
+                                    Ficha
+                                </th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($negocios as $negocio)
+                                <tr>
+                                    <td>
+                                        <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                            title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
+                                    </td>
+                                    <td>
+                                        <b> {{ $negocio->name }}</b><br />
+                                        {{ $negocio->lastname }}
+                                    </td>
+                                    <td>
+                                        <b> {{ $negocio->doc_number }}</b><br />
+                                        {{ $negocio->desc_nombres_corto }}
+                                    </td>
+                                    <td>
+                                        {{ $negocio->desc_plan }}
+                                    </td>
+                                    <td class="text-center">
+                                        <a class="btn btn-epc rounded-circle" target="_blank"
+                                            href="{{ Storage::url($negocio->certificado) }}" download><i
+                                                class="fas fa-file-pdf"></i></a>
+                                    </td>
+                                    <td class="text-center">
+                                        {{ Form::open(['method' => 'post']) }}
+                                        <input type="text" class="d-none" name="codineg"
+                                            value="{{ $negocio->id_neg }}">
+                                        <button type="submit" class="btn btn-epc rounded-circle"><i
+                                                class="fas fa-file-invoice"></i></button>
+
+                                        {{ Form::close() }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

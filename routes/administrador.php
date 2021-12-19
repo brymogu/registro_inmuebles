@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\EditController;
 use App\Http\Controllers\Admin\InicioController;
 use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Admin\DownloadController;
+use App\Http\Controllers\Admin\ExcelController;
 use App\Http\Controllers\admin\FormatosContraller;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,7 @@ Route::post('administrador/descargas', [DownloadController::class, 'convertir'])
 
 Route::get('administrador/descargas/formatos/{codineg}', [FormatosContraller::class, 'show'])->name('administrador.formatos');
 Route::post('administrador/descargas/formatos/{codineg}', [FormatosContraller::class, 'update'])->name('administrador.irformatos');
+
+Route::post('administrador/descargas/excel', [ExcelController::class, 'descargar'])->name('administrador.excel');
 
 Route::get('administrador/acuerdos', [AcuerdosController::class, 'showtable'])->name('administrador.acuerdos');
