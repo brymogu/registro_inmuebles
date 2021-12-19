@@ -125,7 +125,7 @@ $(document).ready(function() {
     } else if ($('#detalles').length) {
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
-        $('#area_terraza_secc').hide();
+
 
         if ($('#garaje').val() == 'Si') {
             $('#sec_garajes').show();
