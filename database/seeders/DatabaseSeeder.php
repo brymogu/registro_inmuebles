@@ -41,5 +41,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsuarioSeeder::class);
         $this->call(CuidadesyDepartamentos::class);
         $this->call(ConcJuridicosSeeder::class);
+        $this->call(AcuerdosSeeder::class);
     }
 }

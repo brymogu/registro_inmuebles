@@ -60,9 +60,24 @@
             </div>
         </div>
         <div class="row fixed-bottom mb-3 d-print-none">
-            <div class="col-10">
+            <div class="col-3">
+                <div class="row interior px-3">
+                    <div class="col-6 rayita">
+                        <select class="form-select form-select-sm" id="modelos">
+                            <option value="1" selected>Completo</option>
+                            <option value="2">CPVJ</option>
+                            <option value="3">Contrato</option>
+                        </select>
+                        <small class="fw-light fst-italic">Módelos</small>
+                    </div>
+                    <div class="col-6 rayita" id="sec_contratos">
+                        {!! Form::select('plan', $todos_planes, null, ['class' => 'form-select vacio']) !!}
+                        <small class="fw-light fst-italic">Planes</small>
+                    </div>
+                </div>
             </div>
-            <div class="col-2 text-center ">
+            <div class="col-6"></div>
+            <div class="col-3 text-center ">
                 <div class="rounded-circle imprimir shadow d-flex border justify-content-center align-items-center animate__animated animate__fadeInUp"
                     onclick="window.print();return false;">
                     <i class="fas fa-print"></i>

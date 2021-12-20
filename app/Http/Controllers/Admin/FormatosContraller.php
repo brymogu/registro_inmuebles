@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Acuerdos;
 use App\Models\Conc_juridicos;
 use App\Models\Negocios;
+use App\Models\Planes;
 use App\Models\Propiedades;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -104,7 +106,10 @@ class FormatosContraller extends Controller
             ->get();
 
         $conc_juridico = Conc_juridicos::pluck('des_conc_juridicos', 'id');
-        return view('admin.descargas.cpvj', compact('datos', 'conc_juridico'));
+        $todos_planes = Planes::Pluck('desc_plan', 'id');
+        $acuerdos = Acuerdos::find(1);
+
+        return view('admin.descargas.cpvj', compact('datos', 'conc_juridico', 'todos_planes','acuerdos'));
     }
     public function update(Request $request, Negocios $codineg)
     {
