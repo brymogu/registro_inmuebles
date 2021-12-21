@@ -32,6 +32,7 @@ use App\Models\Tipos_vigilancia;
 use App\Models\Vista;
 use App\Models\Zonas_sociales;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Scalar\MagicConst\Function_;
 
 class EditController extends Controller
@@ -40,10 +41,26 @@ class EditController extends Controller
     public function showtable()
     {
         
-        $propietarios = Propietarios::where('paso' , 'Planes')->get();
-        $todos_documentos = Tipos_documento::all();
-        //return view('admin.edit')->with('propietarios',$propietarios)->with('tipo_doc',Tipos_documento::all());
-        return view('admin.editar.edit', compact('propietarios','todos_documentos'));
+        $negocios = DB::table("negocios")
+                ->leftJoin("propiedades", function ($join) {
+                    $join->on("negocios.propiedad", "=", "propiedades.id");
+                })
+                ->leftJoin("propietarios", function ($join) {
+                    $join->on("negocios.propietario", "=", "propietarios.id");
+                })
+                ->leftJoin("tipos_documentos", function ($join) {
+                    $join->on("propietarios.tipo_doc", "=", "tipos_documentos.id");
+                })
+                ->leftJoin("planes", function ($join) {
+                    $join->on("negocios.plan", "=", "planes.id");
+                })
+                ->leftJoin("tipos_negocios", function ($join) {
+                    $join->on("negocios.tipo_negocio", "=", "tipos_negocios.id");
+                })
+                ->select("negocios.id as id_neg", "negocios.created_at", "propiedades.id as id_ppdad", "propietarios.id as id_pptario", "tipos_documentos.desc_nombres_corto", "propietarios.doc_number", "propietarios.name", "propietarios.lastname", "planes.id as id_plan", "tipos_negocios.id as id_tipo_neg", "propiedades.certificado", "planes.desc_plan", "tipos_negocios.desc_tipo_negocio", "tipos_documentos.id as id_tipos_doc", "negocios.asesor")
+                ->get();
+
+        return view('admin.editar.edit', compact('negocios'));
     }
 
     public function convertir(Request $request) {
@@ -119,25 +136,16 @@ class EditController extends Controller
         $propiedad->barrio_catastral = $request->barrio_catastral;
         $propiedad->upz = $request->upz;
         $propiedad->localidad = $request->localidad;
-        $propiedad->pqsolicita = $request->pqsolicita;
         $propiedad->tipo_inmueble = $request->tipo_inm;
         $propiedad->estrato = $request->estrato_inm;
         $propiedad->ciudad = $request->ciudad;
         $propiedad->direccion = $request->direccion;
-        $propiedad->direccion_comp = $request->direccion_comp;
         $propiedad->latitud = $request->latitud;
         $propiedad->longitud = $request->longitud;
-        $propiedad->tiempo_inm = $request->tiempo_inm;
         $propiedad->estado = $request->estado_inb;
-        $propiedad->remodelado = $request->remodelado;
         $propiedad->piso = $request->piso;
         $propiedad->espropietario = $request->espropietario;
-        $propiedad->habitado = $request->habitado;
         $propiedad->arrendado = $request->arrendado;
-        $propiedad->horizontal = $request->horizontal;
-        $propiedad->tuberia = $request->tuberia;
-        $propiedad->ascensor = $request->ascensor;
-        $propiedad->n_ascensores = $request->n_ascensores;        
         //mas detalles del inmueble
         $propiedad->a_construida = $request->a_construida;
         $propiedad->a_privada = $request->a_privada;
@@ -208,10 +216,60 @@ class EditController extends Controller
         $propiedad->planta_e = $request->planta_e;
         $propiedad->piscina = $request->piscina;
         $propiedad->jardin_interior = $request->jardin_interior;
+
+        //condicionados
+        if ($request->tipo_inm == 2) {$propiedad->piso = $request->piso;
+            if ($request->ascensor) {
+                $propiedad->ascensor = "Si";
+                $propiedad->n_ascensores = $request->n_ascensores;
+            } else {
+                $propiedad->ascensor = "No";
+            }
+        }
+
+        if ($request->estado_inb == 4) {
+            $propiedad->tiempo_inm = $request->tiempo_inm;
+            $propiedad->remodelado = $request->remodelado;
+            if ($request->remodelado == 1) {
+                if ($request->tuberia) {
+                    $propiedad->tuberia = "Si";
+                } else {
+                    $propiedad->tuberia = "No";
+                }
+            }
+        }
+        // checks
+        if ($request->espropietario) {
+            $propiedad->espropietario = "Si";
+            $propiedad->pqsolicita = $request->pqsolicita;
+        } else {
+            $propiedad->espropietario = "No";
+        }
+
+        if ($request->conjunto  == "Si") {
+            $propiedad->horizontal = "Si";
+            $propiedad->direccion_comp = $request->direccion_comp;
+        } else {
+            $propiedad->horizontal = "No";
+        }
+
+        if ($request->habitado) {
+            $propiedad->habitado = "Si";
+            if ($request->arr_check) {
+                $propiedad->arrendado = "Si";
+            } else {
+                $propiedad->arrendado = "No";
+            }
+        } else {
+            $propiedad->habitado = "No";
+        }
+
         $codiprop->save();
         $negocio_unico->save();
         $propiedad->save();
         
+
+
         return redirect()->route('administrador.edit',$request->codiprop);
         
     }

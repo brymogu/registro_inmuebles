@@ -3,13 +3,7 @@ $(document).ready(function() {
     $('#descuento').hide();
     var year = (new Date).getFullYear();
 
-    if ($('#propietario').length) {
-        $(".usuario i").css("color", "#01303c");
-        $(".usuario .progress-bar").css("background-color", "#01303c");
-        $('.toast').toast("show");
-
-    } else if ($('#negocio_tarjeta').length) {
-        $(".usuario i, .negocio i").css("color", "#01303c");
+    if ($('#negocio_tarjeta').length) {
         $(".usuario .progress-bar, .negocio .progress-bar").css("background-color", "#01303c");
 
         $('#sec_tuberia').hide();

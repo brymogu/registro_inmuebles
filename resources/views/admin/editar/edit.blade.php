@@ -32,34 +32,27 @@
                         </thead>
                         <tbody>
 
-                            @foreach ($propietarios as $propietario)
+                            @foreach ($negocios as $negocio)
                                 <tr>
                                     <td>
                                         <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                            title="{{ date('d M Y', strtotime($propietario->created_at)) }}">{{ $propietario->created_at->diffForHumans() }}</button>
+                                        title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
                                     </td>
                                     <td>
-                                        <b> {{ $propietario->name }}</b><br />
-                                        {{ $propietario->lastname }}
+                                        <b> {{ $negocio->name }}</b><br />
+                                        {{ $negocio->lastname }}
                                     </td>
                                     <td>
-
-                                        @foreach ($todos_documentos as $documento)
-                                            @if ($documento->id == $propietario->tipo_doc)
-                                                {{ $documento->desc_nombres_corto }}
-                                            @endif
-                                        @endforeach
-                                        <br />
-                                        <b> {{ $propietario->doc_number }}</b>
-
+                                        <b> {{ $negocio->doc_number }}</b><br />
+                                        {{ $negocio->desc_nombres_corto }}
                                     </td>
                                     <td>
-                                        {{ $propietario->asesor }}
+                                        {{ $negocio->asesor }}
                                     </td>
                                     <td>
                                         {{ Form::open(['method' => 'post']) }}
                                         <input type="text" class="d-none" name="codiprop"
-                                            value="{{ $propietario->id }}">
+                                            value="{{ $negocio->id_neg }}">
                                         <button type="submit" class="btn btn-epc rounded-circle"><i
                                                 class="fas fa-pencil-alt"></i></button>
 
