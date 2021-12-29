@@ -71,8 +71,15 @@
                         <small class="fw-light fst-italic">Módelos</small>
                     </div>
                     <div class="col-6 rayita" id="sec_contratos">
-                        {!! Form::select('plan', $todos_planes, null, ['class' => 'form-select vacio']) !!}
+                        {!! Form::select('plan', $todos_planes, null, ['class' => 'form-select vacio', 'id' => 'plan']) !!}
                         <small class="fw-light fst-italic">Planes</small>
+                    </div>
+                    <div class="col-6 rayita">
+                        <select class="form-select form-select-sm" name="tipo_neg" id="tipo_neg">
+                            <option value="0" selected>Venta</option>
+                            <option value="1">Arriendo</option>
+                        </select>
+                        <small class="fw-light fst-italic">Tipo Neg</small>
                     </div>
                 </div>
             </div>
