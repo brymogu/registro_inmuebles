@@ -316,9 +316,9 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group row">
                             <label for="estado_inb" class="col-5 form-label">Estado del inmueble</label>
-                            <div class="col-7">
+                            <div class="col-7" id="estado_apto">
                                 {!! Form::select('estado_inb', $estado, null, ['class' => 'form-select', 'required' => 'required', 'id' => 'estado_inb']) !!}
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>

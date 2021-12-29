@@ -17,15 +17,15 @@ class EstadoInmuebleSeeder extends Seeder
 
 
         $estado = new Estados_inmueble();
-        $estado->desc_estado= "Sobre planos";
+        $estado->desc_estado= "Sobre Planos";
         $estado->save();
 
         $estado2 = new Estados_inmueble();
-        $estado2->desc_estado = "En construcción";
+        $estado2->desc_estado = "En Construcción";
         $estado2->save();
 
         $estado3 = new Estados_inmueble();
-        $estado3->desc_estado = "Para estrenar";
+        $estado3->desc_estado = "Para Estrenar";
         $estado3->save();
 
         $estado4 = new Estados_inmueble();
@@ -33,7 +33,7 @@ class EstadoInmuebleSeeder extends Seeder
         $estado4->save();
 
         $estado5 = new Estados_inmueble();
-        $estado5->desc_estado = "Usado sin remodelar";
+        $estado5->desc_estado = "Usado sin Remodelar";
         $estado5->save();
     }
 }

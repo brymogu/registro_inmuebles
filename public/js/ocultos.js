@@ -10,6 +10,8 @@ $(document).ready(function() {
         $('#arrendado').hide();
         $('#horizontal').hide();
         $('#sec_n_ascensores').hide();
+        $('#aptos2').hide();
+
 
     } else if ($('#detalles').length) {
         $('#sec_garajes').hide();

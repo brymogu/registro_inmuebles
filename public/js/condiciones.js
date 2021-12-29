@@ -10,20 +10,6 @@ $(document).ready(function() {
         $(".usuario .progress-bar, .negocio .progress-bar").css("background-color", "#01303c");
 
 
-        if ($('#tipo_inm').val() == 2) {
-            $('#aptos2').show();
-            $('#piso').attr("required", "true");
-        } else {
-            $('#aptos2').hide();
-            $('#piso').removeAttr('required');
-        }
-
-        if ($('#conjunto').val() == "Si") {
-            $('#detalles').show();
-        } else {
-            $('#detalles').hide();
-        }
-
         $('#espropietario').change(function() {
             if ($('#espropietario').prop('checked')) {
                 $('#pqsolicita').removeAttr('required');
@@ -110,8 +96,12 @@ $(document).ready(function() {
             if ($('#tipo_inm').val() == 2) {
                 $('#aptos2').show();
                 $('#piso').attr("required", "true");
+                $("#estado_inb option[value='1']").removeAttr("disabled", "disabled");
+                $("#estado_inb option[value='2']").removeAttr("disabled", "disabled");
             }
             if ($('#tipo_inm').val() == 1) {
+                $("#estado_inb option[value='1']").attr("disabled", "disabled");
+                $("#estado_inb option[value='2']").attr("disabled", "disabled");
                 $('#piso').removeAttr('required');
                 $('#aptos2').hide();
                 $('#n_ascensores').removeAttr('required');

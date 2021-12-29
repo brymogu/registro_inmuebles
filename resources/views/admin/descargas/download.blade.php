@@ -62,6 +62,9 @@
                                 <th class="text-center">
                                     Ficha
                                 </th>
+                                <th class="text-center">
+                                    Finco
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -91,9 +94,17 @@
                                         {{ Form::open(['method' => 'post']) }}
                                         <input type="text" class="d-none" name="codineg"
                                             value="{{ $negocio->id_neg }}">
-                                        <button type="submit" class="btn btn-epc rounded-circle"><i
-                                                class="fas fa-file-invoice"></i></button>
-
+                                        <button type="submit" class="btn btn-epc rounded-circle">
+                                            <i class="fas fa-file-invoice"></i></button>
+                                        {{ Form::close() }}
+                                    </td>
+                                    <td class="text-center">
+                                        {{ Form::open(['route' => 'administrador.finco']) }}
+                                        <input type="text" class="d-none" name="codineg"
+                                            value="{{ $negocio->id_neg }}">
+                                        <button type="submit" class="btn btn-epc rounded-circle">
+                                            <i class="fas fa-crow"></i>
+                                        </button>
                                         {{ Form::close() }}
                                     </td>
                                 </tr>
