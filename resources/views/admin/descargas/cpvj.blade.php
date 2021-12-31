@@ -90,7 +90,7 @@
                 <!-- Titulo-->
                 <div class="row">
                     <div class="col-1"></div>
-                    <div class="col-10 mb-3 text-center rayita_down rounded-bottom">
+                    <div class="col-10 mb-3 text-center rayita_down rounded-bottom" id="titarr">
                         <h6>ACUERDO SOBRE SERVICIOS EN ARRENDAMIENTO DE INMUEBLE</h6>
                     </div>
                     <div class="col-1"></div>
@@ -100,8 +100,8 @@
                     <p style="text-align: justify">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:12px;">Entre ______________________________________________________
-                            identificaci&oacute;n No. _______________________ documento de identidad tipo _______, con
+                        <span style="font-size:12px;">Entre <strong>{{$datos->name}} {{$datos->lastname}} </strong>
+                            identificaci&oacute;n No. <strong>{{$datos->doc_number}} </strong> documento de identidad tipo <strong>{{$datos->desc_tipos_documento}} </strong>, con
                             facultades suficientes para tomar decisiones sobre el arrendamiento del inmueble identificado en
                             este documento, quien en adelante se denominar&aacute; <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong>, y de otra parte <strong>&Eacute;PICA CONSTRUCCIONES S.A.
@@ -116,9 +116,8 @@
                         <strong><span style="font-size:12px;">PRIMERA.</span></strong><span
                             style="font-size:12px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
-                            p&uacute;blico el bien inmueble identificado as&iacute;: DIRECCI&Oacute;N
-                            ____________________________________________ CIUDAD O MUNICIPIO ___________________ FOLIO DE
-                            MATR&Iacute;CULA ______________________, CHIP _______________________, con las
+                            p&uacute;blico el bien inmueble identificado as&iacute;: DIRECCI&Oacute;N <strong>{{$datos->direccion}} {{$datos->direccion_comp}} </strong> CIUDAD O MUNICIPIO <strong>{{$datos->ciudad}}  </strong> FOLIO DE
+                            MATR&Iacute;CULA <strong>{{$datos->matricula}}  </strong>, CHIP  <strong>{{$datos->chip}}  </strong>, con las
                             caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento. PRECIO
                             DE PUBLICACI&Oacute;N: $____________________________________ incluida la cuota de
                             administraci&oacute;n si aplicara.</span>
@@ -247,9 +246,9 @@
                             En dicho caso, estar&aacute; a cargo de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong>
                             recoger la(s) llave(s) en la direcci&oacute;n de <strong>LA INMOBILIARIA</strong> si esta la(s)
                             tuviere. El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> es _______________________________________ y el n&uacute;mero de
+                                REPRESENTANTE</strong> es <strong>{{$datos->email}} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            _________________________.</span>
+                            <strong>{{$datos->phone}} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -275,8 +274,8 @@
                     <p style="text-align: justify">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:12px;">Entre ______________________________________________________
-                            identificaci&oacute;n No. _______________________ documento de identidad tipo _______, con
+                        <span style="font-size:12px;">Entre <strong>{{$datos->name}} {{$datos->lastname}} </strong>
+                            identificaci&oacute;n No. <strong>{{$datos->doc_number}} </strong> documento de identidad tipo <strong>{{$datos->desc_tipos_documento}} </strong>, con
                             facultades suficientes para tomar decisiones sobre el arrendamiento del inmueble identificado en
                             este documento, quien en adelante se denominar&aacute; <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong>, y de otra parte <strong>&Eacute;PICA CONSTRUCCIONES S.A.
@@ -291,9 +290,9 @@
                         <strong><span style="font-size:12px;">PRIMERA.</span></strong><span
                             style="font-size:12px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
-                            p&uacute;blico el bien inmueble identificado as&iacute;: DIRECCI&Oacute;N
-                            ____________________________________________ CIUDAD O MUNICIPIO ___________________ FOLIO DE
-                            MATR&Iacute;CULA ______________________, CHIP _______________________, con las
+                            p&uacute;blico el bien inmueble identificado as&iacute;: 
+                            DIRECCI&Oacute;N <strong>{{$datos->direccion}} {{$datos->direccion_comp}} </strong> CIUDAD O MUNICIPIO <strong>{{$datos->ciudad}}  </strong> FOLIO DE
+                            MATR&Iacute;CULA <strong>{{$datos->matricula}}  </strong>, CHIP  <strong>{{$datos->chip}}  </strong>, con las
                             caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento. PRECIO
                             DE PUBLICACI&Oacute;N: $____________________________________ incluida la cuota de
                             administraci&oacute;n si aplicara.</span>
@@ -426,9 +425,9 @@
                             En dicho caso, estar&aacute; a cargo de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong>
                             recoger la(s) llave(s) en la direcci&oacute;n de <strong>LA INMOBILIARIA</strong> si esta la(s)
                             tuviere. &nbsp;El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O
-                                SU REPRESENTANTE</strong> es _______________________________________ y el n&uacute;mero de
+                                SU REPRESENTANTE</strong> es <strong>{{$datos->email}} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            _________________________.</span>
+                            <strong>{{$datos->phone}} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -454,8 +453,8 @@
                     <p style="text-align: justify">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:12px;">Entre ______________________________________________________
-                            identificaci&oacute;n No. _______________________ documento de identidad tipo _______, con
+                        <span style="font-size:12px;">Entre <strong>{{$datos->name}} {{$datos->lastname}} </strong>
+                            identificaci&oacute;n No. <strong>{{$datos->doc_number}} </strong> documento de identidad tipo <strong>{{$datos->desc_tipos_documento}} </strong>, con
                             facultades suficientes para tomar decisiones sobre el arrendamiento del inmueble identificado en
                             este documento, quien en adelante se denominar&aacute; <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong>, y de otra parte <strong>&Eacute;PICA CONSTRUCCIONES S.A.
@@ -469,9 +468,9 @@
                         <strong><span style="font-size:12px;">PRIMERA.</span></strong><span
                             style="font-size:12px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
-                            p&uacute;blico el bien inmueble identificado as&iacute;: DIRECCI&Oacute;N
-                            ____________________________________________ CIUDAD O MUNICIPIO ___________________ FOLIO DE
-                            MATR&Iacute;CULA ______________________, CHIP _______________________, con las
+                            p&uacute;blico el bien inmueble identificado as&iacute;:
+                            DIRECCI&Oacute;N <strong>{{$datos->direccion}} {{$datos->direccion_comp}} </strong> CIUDAD O MUNICIPIO <strong>{{$datos->ciudad}}  </strong> FOLIO DE
+                            MATR&Iacute;CULA <strong>{{$datos->matricula}}  </strong>, CHIP  <strong>{{$datos->chip}}  </strong>, con las
                             caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento. PRECIO
                             DE PUBLICACI&Oacute;N: $____________________________________ incluida la cuota de
                             administraci&oacute;n si aplicara.</span></p>
@@ -596,9 +595,9 @@
                             En dicho caso, estar&aacute; a cargo de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong>
                             recoger la(s) llave(s) en la direcci&oacute;n de <strong>LA INMOBILIARIA</strong> si esta la(s)
                             tuviere. El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> es _______________________________________ y el n&uacute;mero de
+                                REPRESENTANTE</strong> es <strong>{{$datos->email}} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            _________________________.</span></p>
+                            <strong>{{$datos->phone}} </strong>.</span></p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
                         <strong><span style="font-size:12px;">D&Eacute;CIMA. Cl&aacute;usula
@@ -620,8 +619,8 @@
                     <p style="text-align: justify">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:12px;">Entre ______________________________________________________
-                            identificaci&oacute;n No. _______________________ documento de identidad tipo _______, con
+                        <span style="font-size:12px;">Entre <strong>{{$datos->name}} {{$datos->lastname}} </strong>
+                            identificaci&oacute;n No. <strong>{{$datos->doc_number}} </strong> documento de identidad tipo <strong>{{$datos->desc_tipos_documento}} </strong>, con
                             facultades suficientes para tomar decisiones sobre el arrendamiento del inmueble identificado en
                             este documento, quien en adelante se denominar&aacute; <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong>, y de otra parte <strong>&Eacute;PICA CONSTRUCCIONES S.A.
@@ -635,9 +634,9 @@
                         <strong><span style="font-size:12px;">PRIMERA.</span></strong><span
                             style="font-size:12px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
-                            p&uacute;blico el bien inmueble identificado as&iacute;: DIRECCI&Oacute;N
-                            ____________________________________________ CIUDAD O MUNICIPIO ___________________ FOLIO DE
-                            MATR&Iacute;CULA ______________________, CHIP _______________________, con las
+                            p&uacute;blico el bien inmueble identificado as&iacute;: 
+                            DIRECCI&Oacute;N <strong>{{$datos->direccion}} {{$datos->direccion_comp}} </strong> CIUDAD O MUNICIPIO <strong>{{$datos->ciudad}}  </strong> FOLIO DE
+                            MATR&Iacute;CULA <strong>{{$datos->matricula}}  </strong>, CHIP  <strong>{{$datos->chip}}  </strong>, con las
                             caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento. PRECIO
                             DE PUBLICACI&Oacute;N: $____________________________________ incluida la cuota de
                             administraci&oacute;n si aplicara.</span></p>
@@ -762,9 +761,9 @@
                             En dicho caso, estar&aacute; a cargo de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong>
                             recoger la(s) llave(s) en la direcci&oacute;n de <strong>LA INMOBILIARIA</strong> si esta la(s)
                             tuviere. El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> es _______________________________________ y el n&uacute;mero de
+                                REPRESENTANTE</strong> es <strong>{{$datos->email}} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            _________________________.</span></p>
+                            <strong>{{$datos->phone}} </strong>.</span></p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
                         <strong><span style="font-size:12px;">D&Eacute;CIMA. Cl&aacute;usula
@@ -804,8 +803,8 @@
                     <p style="text-align: justify">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:13px;">Entre _______________________________________________________________
-                            identificaci&oacute;n No. _______________________ documento de identidad tipo _______, con
+                        <span style="font-size:13px;">Entre <strong>{{$datos->name}} {{$datos->lastname}} </strong>
+                            identificaci&oacute;n No. <strong>{{$datos->doc_number}} </strong> documento de identidad tipo <strong>{{$datos->desc_tipos_documento}} </strong>, con
                             facultades suficientes para tomar decisiones sobre la venta del inmueble identificado en este
                             documento, quien en adelante se denominar&aacute; <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong>, y de otra parte <strong>&Eacute;PICA CONSTRUCCIONES S.A.
@@ -820,9 +819,9 @@
                             style="font-size:13px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N___________________________________________________ CIUDAD O
-                            MUNICIPIO__________________________FOLIO DE MATR&Iacute;CULA___________________________,
-                            CHIP_______________________, con las caracter&iacute;sticas que se registran en ficha
+                            DIRECCI&Oacute;N <strong>{{$datos->direccion}} {{$datos->direccion_comp}} </strong> CIUDAD O
+                            MUNICIPIO <strong>{{$datos->ciudad}}  </strong> FOLIO DE MATR&Iacute;CULA <strong>{{$datos->matricula}}  </strong>,
+                            CHIP  <strong>{{$datos->chip}}  </strong>, con las caracter&iacute;sticas que se registran en ficha
                             t&eacute;cnica anexa a este documento. PRECIO DE PUBLICACI&Oacute;N:
                             $____________________________________.</span></p>
                     <p
@@ -914,9 +913,9 @@
                             t&eacute;rmino inicial de tres (3) meses en la comercializaci&oacute;n del inmueble, este
                             reconocer&aacute; a <strong>LA INMOBILIARIA</strong> la suma de <strong>$50.000 + IVA</strong>.
                             El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> es _______________________________________ y el n&uacute;mero de
+                                REPRESENTANTE</strong> es <strong>{{$datos->email}} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            _________________________.</span></p>
+                            <strong>{{$datos->phone}} </strong>.</span></p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
                         <strong><span style="font-size:13px;">NOVENA. Cl&aacute;usula compromisoria.</span></strong><span
@@ -938,8 +937,8 @@
                     <p style="text-align: justify">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:13px;">Entre _______________________________________________________________
-                            identificaci&oacute;n No. _______________________ documento de identidad tipo _______, con
+                        <span style="font-size:13px;">Entre <strong>{{$datos->name}} {{$datos->lastname}} </strong>
+                            identificaci&oacute;n No. <strong>{{$datos->doc_number}} </strong> documento de identidad tipo <strong>{{$datos->desc_tipos_documento}} </strong>, con
                             facultades suficientes para tomar decisiones sobre la venta del inmueble identificado en este
                             documento, quien en adelante se denominar&aacute; <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong>, y de otra parte <strong>&Eacute;PICA CONSTRUCCIONES S.A.
@@ -954,9 +953,9 @@
                             style="font-size:13px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N___________________________________________________ CIUDAD O
-                            MUNICIPIO__________________________FOLIO DE MATR&Iacute;CULA___________________________,
-                            CHIP_______________________, con las caracter&iacute;sticas que se registran en ficha
+                            DIRECCI&Oacute;N <strong>{{$datos->direccion}} {{$datos->direccion_comp}} </strong> CIUDAD O
+                            MUNICIPIO <strong>{{$datos->ciudad}}  </strong> FOLIO DE MATR&Iacute;CULA <strong>{{$datos->matricula}}  </strong>,
+                            CHIP  <strong>{{$datos->chip}}  </strong>, con las caracter&iacute;sticas que se registran en ficha
                             t&eacute;cnica anexa a este documento. PRECIO DE PUBLICACI&Oacute;N:
                             $____________________________________.</span></p>
                     <p
@@ -1049,9 +1048,9 @@
                             t&eacute;rmino inicial de tres (3) meses en la comercializaci&oacute;n del inmueble, este
                             reconocer&aacute; a <strong>LA INMOBILIARIA</strong> la suma de <strong>$50.000 + IVA</strong>.
                             El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> es _______________________________________ y el n&uacute;mero de
+                                REPRESENTANTE</strong> es <strong>{{$datos->email}} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            _________________________.</span></p>
+                            <strong>{{$datos->phone}} </strong>.</span></p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
                         <strong><span style="font-size:13px;">NOVENA. Cl&aacute;usula compromisoria.</span></strong><span
@@ -1073,8 +1072,8 @@
                     <p style="text-align: justify">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:13px;">Entre _______________________________________________________________
-                            identificaci&oacute;n No. _______________________ documento de identidad tipo _______, con
+                        <span style="font-size:13px;">Entre <strong>{{$datos->name}} {{$datos->lastname}} </strong>
+                            identificaci&oacute;n No. <strong>{{$datos->doc_number}} </strong> documento de identidad tipo <strong>{{$datos->desc_tipos_documento}} </strong>, con
                             facultades suficientes para tomar decisiones sobre la venta del inmueble identificado en este
                             documento, quien en adelante se denominar&aacute; <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong>, y de otra parte <strong>&Eacute;PICA CONSTRUCCIONES S.A.
@@ -1089,9 +1088,9 @@
                             style="font-size:13px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N___________________________________________________ CIUDAD O
-                            MUNICIPIO__________________________FOLIO DE MATR&Iacute;CULA___________________________,
-                            CHIP_______________________, con las caracter&iacute;sticas que se registran en ficha
+                            DIRECCI&Oacute;N <strong>{{$datos->direccion}} {{$datos->direccion_comp}} </strong> CIUDAD O
+                            MUNICIPIO <strong>{{$datos->ciudad}}  </strong> FOLIO DE MATR&Iacute;CULA <strong>{{$datos->matricula}}  </strong>,
+                            CHIP  <strong>{{$datos->chip}}  </strong>, con las caracter&iacute;sticas que se registran en ficha
                             t&eacute;cnica anexa a este documento. PRECIO DE PUBLICACI&Oacute;N:
                             $____________________________________.</span></p>
                     <p
@@ -1184,9 +1183,9 @@
                             t&eacute;rmino inicial de tres (3) meses en la comercializaci&oacute;n del inmueble, este
                             reconocer&aacute; a <strong>LA INMOBILIARIA</strong> la suma de <strong>$50.000 + IVA</strong>.
                             El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> es _______________________________________ y el n&uacute;mero de
+                                REPRESENTANTE</strong> es <strong>{{$datos->email}} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            _________________________.</span></p>
+                            <strong>{{$datos->phone}} </strong>.</span></p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
                         <strong><span style="font-size:13px;">NOVENA. Cl&aacute;usula compromisoria.</span></strong><span
@@ -1208,8 +1207,8 @@
                     <p style="text-align: justify">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:13px;">Entre _______________________________________________________________
-                            identificaci&oacute;n No. _______________________ documento de identidad tipo _______, con
+                        <span style="font-size:13px;">Entre <strong>{{$datos->name}} {{$datos->lastname}} </strong>
+                            identificaci&oacute;n No. <strong>{{$datos->doc_number}} </strong> documento de identidad tipo <strong>{{$datos->desc_tipos_documento}} </strong>, con
                             facultades suficientes para tomar decisiones sobre la venta del inmueble identificado en este
                             documento, quien en adelante se denominar&aacute; <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong>, y de otra parte <strong>&Eacute;PICA CONSTRUCCIONES S.A.
@@ -1224,8 +1223,8 @@
                             style="font-size:13px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N___________________________________________________ CIUDAD O
-                            MUNICIPIO___________________________FOLIO DE MATR&Iacute;CULA___________________________, con
+                            DIRECCI&Oacute;N <strong>{{$datos->direccion}} {{$datos->direccion_comp}} </strong> CIUDAD O
+                            MUNICIPIO <strong>{{$datos->ciudad}}  </strong> FOLIO DE MATR&Iacute;CULA <strong>{{$datos->matricula}}  </strong>, con
                             las caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento.
                             PRECIO DE PUBLICACI&Oacute;N: $____________________________________</span></p>
                     <p
@@ -1312,9 +1311,9 @@
                             incumplimiento de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> ante cualquier operador de
                             informaci&oacute;n financiera legalmente establecido de conformidad con las leyes de la
                             Rep&uacute;blica de Colombia. Correo electr&oacute;nico de notificaci&oacute;n de <strong>EL
-                                PROPIETARIO O SU REPRESENTANTE</strong> _______________________________________ y
+                                PROPIETARIO O SU REPRESENTANTE</strong> <strong>{{$datos->email}} </strong> y
                             n&uacute;mero de tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong>
-                            _________________________. Sin perjuicio de la ejecuci&oacute;n del presente acuerdo, en caso de
+                            <strong>{{$datos->phone}} </strong>. Sin perjuicio de la ejecuci&oacute;n del presente acuerdo, en caso de
                             desistimiento por parte de <strong>EL PROPIETARIO O SU REPRESENTANTE&nbsp;</strong>dentro del
                             t&eacute;rmino inicial de tres (3) meses en la comercializaci&oacute;n del inmueble, este
                             reconocer&aacute; a <strong>LA INMOBILIARIA</strong> la suma de <strong>$50.000 +
@@ -1944,6 +1943,7 @@
             <div class="d-none">
                 <input type="number" name="latitud" id="latitud" value="{{ $datos->latitud }}">
                 <input type="number" name="longitud" id="longitud" value="{{ $datos->longitud }}">
+                <input type="text" name="tipo_neg" id="tipo_neg" value="{{ $datos->tipo_negocio }}">
             </div>
         </div>
     @endforeach
