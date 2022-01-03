@@ -155,7 +155,7 @@
                         <label for="barrio_catastral" class="col-5 col-form-label">Barrio catastral</label>
                         <div class="col-7">
                             <input id="barrio_catastral" name="barrio_catastral" type="text" class="form-control"
-                                value="{{ $negocio_unico->barrio_catastral }}" required>
+                                value="{{ $propiedad->barrio_catastral }}" required>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                         <label class="col-5 col-form-label" for="upz">UPZ</label>
                         <div class="col-7">
                             <input id="upz" name="upz" type="text" class="form-control"
-                                value="{{ $negocio_unico->upz }}" required>
+                                value="{{ $propiedad->upz }}" required>
                         </div>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                         <label for="localidad" class="col-5 col-form-label">Localidad</label>
                         <div class="col-7">
                             <input id="localidad" name="localidad" type="text" class="form-control"
-                                value="{{ $negocio_unico->localidad }}" required>
+                                value="{{ $propiedad->localidad }}" required>
                         </div>
                     </div>
                 </div>

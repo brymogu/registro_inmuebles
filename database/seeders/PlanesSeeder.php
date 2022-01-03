@@ -28,11 +28,8 @@ class PlanesSeeder extends Seeder
         $plan3->save();
 
         $plan4 = new Planes();
-        $plan4->desc_plan = "Plus";
+        $plan4->desc_plan = "Rural/Forestta";
         $plan4->save();
 
-        $plan5 = new Planes();
-        $plan5->desc_plan = "Rural";
-        $plan5->save();
     }
 }
