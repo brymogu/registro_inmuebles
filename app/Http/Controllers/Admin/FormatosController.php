@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Acuerdos;
 use App\Models\Conc_juridicos;
 use App\Models\Negocios;
 use App\Models\Planes;
 use App\Models\Propiedades;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 
 class FormatosController extends Controller
 {
-    public function cpvj(Request $request )
+    public function cpvj(Request $request)
     {
         $codineg = $request->codineg;
 
@@ -112,6 +113,7 @@ class FormatosController extends Controller
 
         return view('admin.descargas.cpvj', compact('datos', 'conc_juridico', 'todos_planes','acuerdos'));
     }
+
     public function update(Request $request, Negocios $codineg)
     {
         //Negocio
@@ -133,4 +135,5 @@ class FormatosController extends Controller
 
         return redirect()->route('administrador.formatos', $codineg->id);
     }
+
 }
