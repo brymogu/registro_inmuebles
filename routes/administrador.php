@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Admin\DownloadController;
 use App\Http\Controllers\Admin\ExcelController;
 use App\Http\Controllers\Admin\finco;
-use App\Http\Controllers\admin\FormatosContraller;
+use App\Http\Controllers\admin\FormatosController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,8 +23,8 @@ Route::post('administrador/editar/inmueble/{codiprop}', [EditController::class, 
 
 Route::get('administrador/descargas', [DownloadController::class, 'showtable'])->name('administrador.download');
 
-Route::post('administrador/descargas/formatos', [FormatosContraller::class, 'show'])->name('administrador.formatos');
-Route::post('administrador/descargas/formatos/{codineg}', [FormatosContraller::class, 'update'])->name('administrador.irformatos');
+Route::post('administrador/descargas/formatos', [FormatosController::class, 'show'])->name('administrador.formatos');
+Route::post('administrador/descargas/formatos/{codineg}', [FormatosController::class, 'update'])->name('administrador.irformatos');
 
 Route::post('administrador/descargas/excel', [ExcelController::class, 'descargar'])->name('administrador.excel');
 Route::post('administrador/descargas/finco', [finco::class, 'consulta'])->name('administrador.finco');

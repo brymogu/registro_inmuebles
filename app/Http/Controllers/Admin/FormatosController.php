@@ -11,13 +11,13 @@ use App\Models\Propiedades;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class FormatosContraller extends Controller
+class FormatosController extends Controller
 {
     //
     public function show(Request $request )
     {
         $codineg = $request->codineg;
-        
+
         $datos = DB::table("negocios")
             ->where('negocios.id', '=', $codineg)
             ->leftJoin("propietarios", function ($join) {
