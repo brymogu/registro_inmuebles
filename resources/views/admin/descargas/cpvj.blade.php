@@ -71,8 +71,20 @@
                             value="{{ $datos->obs_conc_juridico }}" required>
                         <small class="fw-light fst-italic">Obs. concepto jurídico</small>
                     </div>
-                    <div class="col-4 text-center pt-1">
-
+                    <div class="col-4">
+                        <input id="precio_contrato_edit" name="precio_contrato_edit" type="text" class="form-control"
+                        value="{{ $datos->precio_contrato }}" required>
+                        <small class="fw-light fst-italic">Precio contrato</small>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-4">
+                        
+                    </div>
+                    <div class="col-4">
+                        
+                    </div>
+                    <div class="col-4 text-end pt-1">
                         <button type="submit" class="btn shadow-sm">Guardar</button>
                     </div>
                 </div>

@@ -87,7 +87,7 @@
                                     </td>
                                     <td class="text-center">
                                         <a class="btn btn-epc rounded-circle" target="_blank"
-                                            href="{{ Storage::url($negocio->certificado) }}" download><i
+                                            href="{{ Storage::url($negocio->certificado) }}"><i
                                                 class="fas fa-file-pdf"></i></a>
                                     </td>
                                     <td class="text-center">

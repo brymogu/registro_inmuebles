@@ -117,8 +117,7 @@ class FormatosContraller extends Controller
         $codineg->conc_precio = $request->conc_precio_edit;
         $codineg->conc_juridico = $request->conc_juridico_edit;
         $codineg->obs_conc_juridico = $request->obs_conc_juridico_edit;
-
-
+        $codineg->precio_contrato = $request->precio_contrato_edit;
 
         //Propiedad
         $propiedad = Propiedades::find($codineg->propiedad);
