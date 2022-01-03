@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Admin\DownloadController;
 use App\Http\Controllers\Admin\ExcelController;
 use App\Http\Controllers\Admin\finco;
-use App\Http\Controllers\admin\FormatosController;
+use App\Http\Controllers\Admin\FormatosController;
 use Illuminate\Support\Facades\Route;
 
 
