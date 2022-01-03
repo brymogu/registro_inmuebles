@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class FormatosController extends Controller
 {
-    //
-    public function show(Request $request )
+    public function cpvj(Request $request )
     {
         $codineg = $request->codineg;
 

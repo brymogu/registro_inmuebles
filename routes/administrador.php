@@ -23,7 +23,7 @@ Route::post('administrador/editar/inmueble/{codiprop}', [EditController::class, 
 
 Route::get('administrador/descargas', [DownloadController::class, 'showtable'])->name('administrador.download');
 
-Route::post('administrador/descargas/formatos', [FormatosController::class, 'show'])->name('administrador.formatos');
+Route::post('administrador/descargas/formatos', [FormatosController::class, 'cpvj'])->name('administrador.formatos');
 Route::post('administrador/descargas/formatos/{codineg}', [FormatosController::class, 'update'])->name('administrador.irformatos');
 
 Route::post('administrador/descargas/excel', [ExcelController::class, 'descargar'])->name('administrador.excel');
