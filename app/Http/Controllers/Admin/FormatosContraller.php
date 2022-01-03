@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\DB;
 class FormatosContraller extends Controller
 {
     //
-    public function show($codineg)
+    public function show(Request $request )
     {
+        $codineg = $request->codineg;
+        
         $datos = DB::table("negocios")
             ->where('negocios.id', '=', $codineg)
             ->leftJoin("propietarios", function ($join) {

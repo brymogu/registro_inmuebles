@@ -33,9 +33,4 @@ class DownloadController extends Controller
         return view('admin.descargas.download', compact('negocios'));
     }
 
-    public function convertir( Request $request) {
-        
-        return redirect()->route('administrador.formatos',$request->codineg);
-        
-    }
 }
