@@ -106,7 +106,7 @@ class finco extends Controller
 
 
         // Asignaciones
-
+        $apikey = "9866d0e4faa287b06a732995586f434ad92131a117cddbb82fbbae5b44ed";
         foreach ($datos as $datos) {
 
             if ($datos->id_tipoinm == 1) {
@@ -115,14 +115,18 @@ class finco extends Controller
                 $propertyType = "Apartment";
             }
 
+
             // finco Viabilidad
             $finco_disponible = HTTP::post('https://api.finco.co/query-available', [
-                'APIKey' => '',
-                'latitude' => $datos->latitud,
-                'longitude' => $datos->longitud,
-                'propertyType' => $propertyType,
+                'APIKey' => '9866d0e4faa287b06a732995586f434ad92131a117cddbb82fbbae5b44ed',
+                'latitude' => 4.6790772,
+                'longitude' => -74.1146479,
+                'propertyType' => "Apartment",
             ]);
 
+            return $finco_disponible; 
+
+            /*
             if ($finco_disponible) {
                 //Finco Casa
                 if ($datos->id_tipoinm == 1) {
@@ -186,15 +190,16 @@ class finco extends Controller
                             'hasTerrace' => $hasTerrace,
                             'remodeled' => $remodeled,
                             'longitude' => $datos->longitud,
-                            'latitude' => $datos->latitud,                            
+                            'latitude' => $datos->latitud,
                         ]
                     ]);
                 } elseif ($datos->id_tipoinm == 2) {
                     //Finco Apto 
 
-                    
+
                 }
             }
+            */
         }
         /* 
         $test =  Http::get('https://jsonplaceholder.typicode.com/users/1');
