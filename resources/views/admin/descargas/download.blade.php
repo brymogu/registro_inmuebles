@@ -91,7 +91,7 @@
                                                 class="fas fa-file-pdf"></i></a>
                                     </td>
                                     <td class="text-center">
-                                        {{ Form::open(['method' => 'post']) }}
+                                        {{ Form::open(['route' => 'administrador.formatos']) }}
                                         <input type="text" class="d-none" name="codineg"
                                             value="{{ $negocio->id_neg }}">
                                         <button type="submit" class="btn btn-epc rounded-circle">
