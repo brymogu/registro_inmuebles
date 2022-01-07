@@ -524,6 +524,7 @@
                             <div class="col-7">
                                 <input id="area_balcon" name="area_balcon" type="number" step="1" min="1"
                                     class="form-control">
+                                <span class="form-text text-muted">En m<sup>2</sup></span>
                             </div>
                         </div>
                     </div>
@@ -533,6 +534,7 @@
                             <div class="col-7">
                                 <input id="area_terraza" name="area_terraza" type="number" step="1" min="1"
                                     class="form-control">
+                                <span class="form-text text-muted">En m<sup>2</sup></span>
                             </div>
                         </div>
                     </div>

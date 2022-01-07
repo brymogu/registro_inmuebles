@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
-<script src="{!! asset('js/ocultos.js') !!}"></script>
+    <script src="{!! asset('js/ocultos.js') !!}"></script>
     <script src="{!! asset('js/calcule-vta.js') !!}"></script>
 @endsection
 
@@ -49,7 +49,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="py-5 ">
+                            <tr class="py-5">
                                 <td></td>
                                 <td>
                                     <p id="basano" class="font-weight-bold"></p>
@@ -133,9 +133,9 @@
                             </tr>
                             <tr>
                                 <td class="cara"></td>
-                                <td><button name="plan" class="btn botones" type="submit" value="1">Selecionar</button></td>
-                                <td><button name="plan" class="btn botones" type="submit" value="2">Selecionar</button></td>
-                                <td><button name="plan"class="btn botones"  type="submit" value="3">Selecionar</button></td>
+                                <td><button name="plan" class="btn botones" type="submit" value="1">Elegir</button></td>
+                                <td><button name="plan" class="btn botones" type="submit" value="2">Elegir</button></td>
+                                <td><button name="plan" class="btn botones" type="submit" value="3">Elegir</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -145,23 +145,20 @@
     </div>
     {{ Form::close() }}
     <div class="row mb-3">
-        <div class="col-4"></div>
-        <div class="col-4">
+        <div class="d-none d-md-block col-md-4"></div>
+        <div class="col-12 col-md-4">
             <div class="card shadow px-3">
                 <div class="card-body">
                     <div class="row text-center align-items-center">
-                        ¿Aun tienes dudas?, con gusto te apoyamos
+                        ¿Tienes preguntas?
                         <a href="https://meetings.hubspot.com/reunion-con-andres-montero-de-epica-inmobiliaria/reunion-con-andres-montero-de-epica-inmobiliaria"
-                            target="_blank" class="btn botones mt-3">Agendar mi cita</a>
+                            target="_blank" class="btn botones mt-3">Reunión virtual con el asesor</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-4"></div>
+        <div class="d-none d-md-block col-md-4"></div>
     </div>
-
-
-
 
     <div class="position-fixed bottom-0 start-0 p-3 animate__animated animate__fadeInUp animate__delay-2s	"
         style="z-index: 11">

@@ -10,7 +10,6 @@ class HomeController extends Controller
     //
     public function __invoke()
     {
-
         return view('propietario.create', ['tipo' => 'No']);
     }
 
@@ -43,7 +42,6 @@ class HomeController extends Controller
 
     public function edit(Propietarios $propietario)
     {
-
         return view('propietario.edit', compact('propietario'), ['tipo' => 'No']);
     }
 

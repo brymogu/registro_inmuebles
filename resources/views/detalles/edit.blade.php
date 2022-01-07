@@ -701,7 +701,8 @@
                             <label for="garaje" class="col-6 col-form-label">Tiene garaje(s)</label>
                             <div class="col-6">
                                 <select name="garaje" id="garaje" class="form-select" required>
-                                    @if ($propiedad->tiene_garajes == 'Privado'){
+                                    @if ($propiedad->tiene_garajes == 'Privado')
+                                        {
                                         <option value="Privado" selected>Privado</option>
                                         <option value="Comunal">Comunal</option>
                                         <option value="No">No</option>
@@ -714,9 +715,7 @@
                                         <option value="Comunal">Comunal</option>
                                         <option value="No" selected>No</option>
                                         }
-
                                     @endif
-
                                 </select>
                             </div>
                         </div>

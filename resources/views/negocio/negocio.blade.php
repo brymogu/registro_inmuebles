@@ -500,8 +500,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn botones" onclick="noposibles()"
-                        data-bs-dismiss="modal">Volver</button>
-                    <a href="https://epicainmobiliaria.com" type="button" class="btn btn-secondary">Finalizar</a>
+                        data-bs-dismiss="modal">Regresar</button>
+                    <a href="https://epicainmobiliaria.com" type="button" class="btn btn-secondary">Salir</a>
                 </div>
             </div>
         </div>
@@ -509,9 +509,7 @@
     <div class="offcanvas offcanvas-bottom rounded" tabindex="-1" id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel">
         <div class="offcanvas-header">
-            <p class="offcanvas-title text-center" id="offcanvasBottomLabel"><i class="far fa-smile-wink"></i> Por
-                favor
-                ayudanos a localizar tu inmueble</p>
+            <p class="offcanvas-title text-center" id="offcanvasBottomLabel"><i class="far fa-smile-wink"></i> Por favor ayudanos a localizar tu inmueble</p>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body grupo">

@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
-    <script src="{!! asset('js/condiciones_edit.js') !!}"></script>    
+    <script src="{!! asset('js/condiciones_edit.js') !!}"></script>
     <script src="{!! asset('js/funciones.js') !!}"></script>
     <script src="{!! asset('js/selects_edit.js') !!}"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -459,8 +459,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn botones" onclick="noposibles()"
-                        data-bs-dismiss="modal">Volver</button>
-                    <a href="https://epicainmobiliaria.com" type="button" class="btn btn-secondary">Finalizar</a>
+                        data-bs-dismiss="modal">Regresar</button>
+                    <a href="https://epicainmobiliaria.com" type="button" class="btn btn-secondary">Salir</a>
                 </div>
             </div>
         </div>
