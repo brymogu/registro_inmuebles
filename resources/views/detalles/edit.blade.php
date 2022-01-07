@@ -17,7 +17,7 @@
             <div class="row grupo seccion">
                 <div class="col-12">
                     <p>Área (m<sup>2</sup>)</p>
-                    <small>(Sin incluir balcón(es) y/o terraza(s)</small>
+                    <small>Sin incluir balcón(es) y/o terraza(s)</small>
                 </div>
                 <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
@@ -701,16 +701,16 @@
                             <label for="garaje" class="col-6 col-form-label">Tiene garaje(s)</label>
                             <div class="col-6">
                                 <select name="garaje" id="garaje" class="form-select" required>
-                                    @if ($propiedad->tiene_garajes == 'Si'){
-                                        <option value="Si" selected>Si</option>
+                                    @if ($propiedad->tiene_garajes == 'Privado'){
+                                        <option value="Privado" selected>Privado</option>
                                         <option value="Comunal">Comunal</option>
                                         <option value="No">No</option>
                                     }@elseif($propiedad->tiene_garajes == 'Comunal'){
-                                        <option value="Si">Si</option>
+                                        <option value="Privado">Privado</option>
                                         <option value="Comunal" selected>Comunal</option>
                                         <option value="No">No</option>
                                     }@elseif($propiedad->tiene_garajes == 'No'){
-                                        <option value="Si">Si</option>
+                                        <option value="Privado">Privado</option>
                                         <option value="Comunal">Comunal</option>
                                         <option value="No" selected>No</option>
                                         }

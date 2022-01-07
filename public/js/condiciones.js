@@ -197,7 +197,7 @@ $(document).ready(function() {
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
 
         $('#garaje').change(function() {
-            if ($('#garaje').val() == 'Si') {
+            if ($('#garaje').val() == 'Privado') {
                 $('#sec_garajes').show();
                 $('#no_garajes').attr("required", "true");
                 $('#tipo_garaje').attr("required", "true");

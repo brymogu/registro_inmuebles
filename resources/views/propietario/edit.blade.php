@@ -87,7 +87,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-            Hola, recuerda que este registro no corresponde a un contrato
+            Recuerda que este registro no corresponde a un contrato
         </div>
     </div>
 </div>
@@ -98,19 +98,19 @@
 <script>
      var input = document.querySelector("#phone");
     window.intlTelInput(input, {
-        // allowDropdown: false,
+        allowDropdown: true,
         autoHideDialCode: false,
         autoPlaceholder: "aggressive",
         // dropdownContainer: document.body,
         // excludeCountries: ["us"],
-        formatOnDisplay: true,
+        formatOnDisplay: false,
         // geoIpLookup: function(callback) {
         //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
         //     var countryCode = (resp && resp.country) ? resp.country : "";
         //     callback(countryCode);
         //   });
         // },
-        // hiddenInput: "full_number",
+        hiddenInput: "full_number",
         initialCountry: "co",
         // localizedCountries: { 'de': 'Deutschland' },
         nationalMode: false,
@@ -118,7 +118,7 @@
         placeholderNumberType: "MOBILE",
         preferredCountries: ['co', 'us'],
         separateDialCode: true,
-        utilsScript: "js/tel/utils.js",
+        utilsScript: "../js/tel/utils.js",
     });
 </script>
 @endsection

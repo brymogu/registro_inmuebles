@@ -24,7 +24,7 @@ class HornosSeeder extends Seeder
         $horno2->save();
 
         $horno3 = new Tipos_horno();
-        $horno3->desc_tipos_horno = "Eléctrica";
+        $horno3->desc_tipos_horno = "Eléctrico";
         $horno3->save();
     }
 }

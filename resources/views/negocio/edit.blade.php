@@ -380,7 +380,7 @@
                             </div>
                             <div class="col-7">
                                 <input id="direccion_comp" name="direccion_comp" value="{{ $propiedad->direccion_comp }}"
-                                    type="text" class="form-control" placeholder="Torre 7 Apto. 302">
+                                    type="text" class="form-control" placeholder="Ejemplo: Torre 7 Apto. 302">
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,7 @@
             <div class="row grupo seccion">
                 <div class="col-12">
                     <p>Área (m<sup>2</sup>)</p>
-                    <small>(Sin incluir balcón(es) y/o terraza(s)</small>
+                    <small>Sin incluir balcón(es) y/o terraza(s)</small>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group row border-end">
@@ -548,7 +548,7 @@
                             <label for="garaje" class="col-6 col-form-label">Tiene garaje(s)</label>
                             <div class="col-6">
                                 <select name="garaje" id="garaje" class="form-select" required>
-                                    <option value="Si">Si</option>
+                                    <option value="Privado">Privado</option>
                                     <option value="Comunal">Comunal</option>
                                     <option value="No">No</option>
                                 </select>
