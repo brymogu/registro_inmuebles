@@ -2,11 +2,17 @@ $(document).ready(function() {
 
     if ($('#modelos').val() == 1) {
         $('#contrato').show();
+        $('#salto_contrato').show();
+        $('#sec_contratos').show();
         $('#cpvj').show();
     } else if ($('#modelos').val() == 2) {
+        $('#sec_contratos').hide();
+        $('#salto_contrato').hide();
         $('#contrato').hide();
         $('#cpvj').show();
     } else {
+        $('#salto_contrato').hide();
+        $('#sec_contratos').show();
         $('#contrato').show();
         $('#cpvj').hide();
     }
@@ -14,11 +20,16 @@ $(document).ready(function() {
     $('#modelos').change(function() {
         if ($('#modelos').val() == 1) {
             $('#contrato').show();
+            $('#salto_contrato').show();
             $('#cpvj').show();
         } else if ($('#modelos').val() == 2) {
+            $('#sec_contratos').hide();
             $('#contrato').hide();
+            $('#salto_contrato').hide();
             $('#cpvj').show();
         } else {
+            $('#salto_contrato').hide();
+            $('#sec_contratos').show();
             $('#contrato').show();
             $('#cpvj').hide();
         }

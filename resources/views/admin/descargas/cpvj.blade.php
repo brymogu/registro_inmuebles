@@ -73,16 +73,16 @@
                     </div>
                     <div class="col-4">
                         <input id="precio_contrato_edit" name="precio_contrato_edit" type="text" class="form-control"
-                        value="{{ $datos->precio_contrato }}" required>
+                            value="{{ $datos->precio_contrato }}" required>
                         <small class="fw-light fst-italic">Precio contrato</small>
                     </div>
                 </div>
                 <div class="row my-2">
                     <div class="col-4">
-                        
+
                     </div>
                     <div class="col-4">
-                        
+
                     </div>
                     <div class="col-4 text-end pt-1">
                         <button type="submit" class="btn shadow-sm">Guardar</button>
@@ -132,10 +132,11 @@
                             p&uacute;blico el bien inmueble identificado as&iacute;: DIRECCI&Oacute;N
                             <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong> CIUDAD O MUNICIPIO
                             <strong>{{ $datos->ciudad }} </strong> FOLIO DE
-                            MATR&Iacute;CULA <strong>{{ $datos->matricula }} </strong>, CHIP <strong>{{ $datos->chip }}
+                            MATR&Iacute;CULA <strong>{{ $datos->matricula }} </strong>, CHIP
+                            <strong>{{ $datos->chip }}
                             </strong>, con las
                             caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento. PRECIO
-                            DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato}} </strong> incluida la cuota de
+                            DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato }} </strong> incluida la cuota de
                             administraci&oacute;n si aplicara.</span>
                     </p>
                     <p
@@ -288,7 +289,8 @@
                 <div class="row" id="estandar_arr">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }} </strong>
+                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }}
+                            </strong>
                             identificaci&oacute;n No. <strong>{{ $datos->doc_number }} </strong> documento de identidad
                             tipo <strong>{{ $datos->desc_tipos_documento }} </strong>, con
                             facultades suficientes para tomar decisiones sobre el arrendamiento del inmueble identificado en
@@ -306,12 +308,14 @@
                             style="font-size:10px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong> CIUDAD
+                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong>
+                            CIUDAD
                             O MUNICIPIO <strong>{{ $datos->ciudad }} </strong> FOLIO DE
-                            MATR&Iacute;CULA <strong>{{ $datos->matricula }} </strong>, CHIP <strong>{{ $datos->chip }}
+                            MATR&Iacute;CULA <strong>{{ $datos->matricula }} </strong>, CHIP
+                            <strong>{{ $datos->chip }}
                             </strong>, con las
                             caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento. PRECIO
-                            DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato}} </strong> incluida la cuota de
+                            DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato }} </strong> incluida la cuota de
                             administraci&oacute;n si aplicara.</span>
                     </p>
                     <p
@@ -468,7 +472,8 @@
                 <div class="row" id="premium_arr">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }} </strong>
+                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }}
+                            </strong>
                             identificaci&oacute;n No. <strong>{{ $datos->doc_number }} </strong> documento de identidad
                             tipo <strong>{{ $datos->desc_tipos_documento }} </strong>, con
                             facultades suficientes para tomar decisiones sobre el arrendamiento del inmueble identificado en
@@ -486,12 +491,14 @@
                             style="font-size:10px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong> CIUDAD
+                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong>
+                            CIUDAD
                             O MUNICIPIO <strong>{{ $datos->ciudad }} </strong> FOLIO DE
-                            MATR&Iacute;CULA <strong>{{ $datos->matricula }} </strong>, CHIP <strong>{{ $datos->chip }}
+                            MATR&Iacute;CULA <strong>{{ $datos->matricula }} </strong>, CHIP
+                            <strong>{{ $datos->chip }}
                             </strong>, con las
                             caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento. PRECIO
-                            DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato}} </strong> incluida la cuota de
+                            DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato }} </strong> incluida la cuota de
                             administraci&oacute;n si aplicara.</span>
                     </p>
                     <p
@@ -648,7 +655,8 @@
                 <div class="row" id="forestta_arr">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }} </strong>
+                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }}
+                            </strong>
                             identificaci&oacute;n No. <strong>{{ $datos->doc_number }} </strong> documento de identidad
                             tipo <strong>{{ $datos->desc_tipos_documento }} </strong>, con
                             facultades suficientes para tomar decisiones sobre el arrendamiento del inmueble identificado en
@@ -666,12 +674,14 @@
                             style="font-size:10px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong> CIUDAD
+                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong>
+                            CIUDAD
                             O MUNICIPIO <strong>{{ $datos->ciudad }} </strong> FOLIO DE
-                            MATR&Iacute;CULA <strong>{{ $datos->matricula }} </strong>, CHIP <strong>{{ $datos->chip }}
+                            MATR&Iacute;CULA <strong>{{ $datos->matricula }} </strong>, CHIP
+                            <strong>{{ $datos->chip }}
                             </strong>, con las
                             caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento. PRECIO
-                            DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato}} </strong> incluida la cuota de
+                            DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato }} </strong> incluida la cuota de
                             administraci&oacute;n si aplicara.</span>
                     </p>
                     <p
@@ -850,7 +860,8 @@
                 <div class="row" id="basico_ven">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }} </strong>
+                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }}
+                            </strong>
                             identificaci&oacute;n No. <strong>{{ $datos->doc_number }} </strong> documento de identidad
                             tipo <strong>{{ $datos->desc_tipos_documento }} </strong>, con
                             facultades suficientes para tomar decisiones sobre la venta del inmueble identificado en este
@@ -868,14 +879,15 @@
                             style="font-size:10px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong> CIUDAD
+                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong>
+                            CIUDAD
                             O
                             MUNICIPIO <strong>{{ $datos->ciudad }} </strong> FOLIO DE MATR&Iacute;CULA
                             <strong>{{ $datos->matricula }} </strong>,
                             CHIP <strong>{{ $datos->chip }} </strong>, con las caracter&iacute;sticas que se registran en
                             ficha
                             t&eacute;cnica anexa a este documento. PRECIO DE PUBLICACI&Oacute;N:
-                            $<strong>{{ $datos->precio_contrato}} </strong>.</span>
+                            $<strong>{{ $datos->precio_contrato }} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -998,7 +1010,8 @@
                 <div class="row" id="estandar_ven">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }} </strong>
+                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }}
+                            </strong>
                             identificaci&oacute;n No. <strong>{{ $datos->doc_number }} </strong> documento de identidad
                             tipo <strong>{{ $datos->desc_tipos_documento }} </strong>, con
                             facultades suficientes para tomar decisiones sobre la venta del inmueble identificado en este
@@ -1016,14 +1029,15 @@
                             style="font-size:10px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong> CIUDAD
+                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong>
+                            CIUDAD
                             O
                             MUNICIPIO <strong>{{ $datos->ciudad }} </strong> FOLIO DE MATR&Iacute;CULA
                             <strong>{{ $datos->matricula }} </strong>,
                             CHIP <strong>{{ $datos->chip }} </strong>, con las caracter&iacute;sticas que se registran en
                             ficha
                             t&eacute;cnica anexa a este documento. PRECIO DE PUBLICACI&Oacute;N:
-                            $<strong>{{ $datos->precio_contrato}} </strong>.</span>
+                            $<strong>{{ $datos->precio_contrato }} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -1147,7 +1161,8 @@
                 <div class="row" id="premium_ven">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }} </strong>
+                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }}
+                            </strong>
                             identificaci&oacute;n No. <strong>{{ $datos->doc_number }} </strong> documento de identidad
                             tipo <strong>{{ $datos->desc_tipos_documento }} </strong>, con
                             facultades suficientes para tomar decisiones sobre la venta del inmueble identificado en este
@@ -1165,14 +1180,15 @@
                             style="font-size:10px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong> CIUDAD
+                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong>
+                            CIUDAD
                             O
                             MUNICIPIO <strong>{{ $datos->ciudad }} </strong> FOLIO DE MATR&Iacute;CULA
                             <strong>{{ $datos->matricula }} </strong>,
                             CHIP <strong>{{ $datos->chip }} </strong>, con las caracter&iacute;sticas que se registran en
                             ficha
                             t&eacute;cnica anexa a este documento. PRECIO DE PUBLICACI&Oacute;N:
-                            $<strong>{{ $datos->precio_contrato}} </strong>.</span>
+                            $<strong>{{ $datos->precio_contrato }} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -1296,7 +1312,8 @@
                 <div class="row" id="rural_ven">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }} </strong>
+                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }}
+                            </strong>
                             identificaci&oacute;n No. <strong>{{ $datos->doc_number }} </strong> documento de identidad
                             tipo <strong>{{ $datos->desc_tipos_documento }} </strong>, con
                             facultades suficientes para tomar decisiones sobre la venta del inmueble identificado en este
@@ -1314,12 +1331,13 @@
                             style="font-size:10px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
                             p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong> CIUDAD
+                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong>
+                            CIUDAD
                             O
                             MUNICIPIO <strong>{{ $datos->ciudad }} </strong> FOLIO DE MATR&Iacute;CULA
                             <strong>{{ $datos->matricula }} </strong>, con
                             las caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento.
-                            PRECIO DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato}} </strong></span>
+                            PRECIO DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato }} </strong></span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -1441,8 +1459,10 @@
                 </div>
             </div>
         </div>
-        <div class="pagebreak"></div>
-        <div class="separador d-none d-print-block"></div>
+        <div id="salto_contrato">
+            <div class="pagebreak"></div>
+            <div class="separador d-none d-print-block"></div>
+        </div>
         <div id="cpvj">
             <!-- Titulo-->
             <div class="row">

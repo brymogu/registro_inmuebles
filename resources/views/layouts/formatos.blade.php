@@ -61,8 +61,8 @@
         </div>
         <div class="row fixed-bottom mb-3 d-print-none">
             <div class="col-3">
-                <div class="row interior px-3">
-                    <div class="col-6 rayita">
+                <div class="row  px-3">
+                    <div class="col-6 interior rayita">
                         <select class="form-select form-select-sm" id="modelos">
                             <option value="1" selected>Completo</option>
                             <option value="2">CPVJ</option>
@@ -70,7 +70,7 @@
                         </select>
                         <small class="fw-light fst-italic">Módelos</small>
                     </div>
-                    <div class="col-6 rayita" id="sec_contratos">
+                    <div class="col-6 interior rayita" id="sec_contratos">
                         {!! Form::select('plan', $todos_planes, null, ['class' => 'form-select vacio', 'id' => 'plan']) !!}
                         <small class="fw-light fst-italic">Planes</small>
                     </div>
