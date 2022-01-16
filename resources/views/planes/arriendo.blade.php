@@ -172,7 +172,7 @@
                     <div class="row text-center align-items-center">
                         ¿Tienes preguntas?
                         <a href="https://meetings.hubspot.com/reunion-con-andres-montero-de-epica-inmobiliaria/reunion-con-andres-montero-de-epica-inmobiliaria"
-                            target="_blank" class="btn botones mt-3">Reunión virtual con el asesor</a>
+                            target="_blank" class="btn botones mt-3">Reunión virtual con asesor</a>
                     </div>
                 </div>
             </div>
@@ -180,7 +180,7 @@
         <div class="d-none d-md-block col-md-4"></div>
     </div>
 
-    <div class="position-fixed bottom-0 start-0 p-3 animate__animated animate__fadeInUp animate__delay-2s	"
+    <div class="position-fixed bottom-0 start-0 p-3 animate__animated animate__fadeInUp animate__delay-2s"
         style="z-index: 11">
         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-animation="false"
             data-bs-autohide="false">
@@ -273,8 +273,7 @@
                             <h2 class="accordion-header" id="flush-headingTwo"> <button class="accordion-button collapsed"
                                     type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
                                     aria-expanded="false" aria-controls="flush-collapseTwo"> Estructura de pagos mes a mes
-                                    durante un año
-                                    de arrendamiento </button> </h2>
+                                    durante un año  de arrendamiento </button> </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">

@@ -23,8 +23,7 @@ $(document).ready(function() {
         $('#descuento').hide();
         $('#admonhelper').hide();
     } else if ($('#fotos').length) {
-        $('#finalizar').hide()
-
+        $('#finalizar').hide();
     } else if ($('#planes_tarjeta').length) {
         $('#sec_valor').hide();
     }

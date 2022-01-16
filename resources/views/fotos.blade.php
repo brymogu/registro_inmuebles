@@ -3,6 +3,7 @@
 
 @section('more_head')
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <script src="{!! asset('js/ocultos.js') !!}"></script>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 @endsection
 
@@ -13,8 +14,9 @@
             <div class="row mt-2">
                 <div class="col-6 col-md-2 text-start">
                 </div>
-                <div class="d-none d-md-block col-md-8"></div>
-                <div class="col-6 col-md-2 text-end">
+                <div class="d-none d-md-block col-md-6"></div>
+                <div class="col-6 col-md-4 text-end">
+                    <a href="{{ route('gracias.show', $id) }}" id="nofotos" class="btn botones">No cuento con fotos por ahora</a>
                     <a href="{{ route('gracias.show', $id) }}" id="finalizar" class="btn botones">Finalizar</a>                    
                 </div>
             </div>
@@ -36,6 +38,7 @@
             init: function() {
                 this.on("addedfile", file => {
                     $('#finalizar').show();
+                    $('#nofotos').hide();
                 });
             }
         };

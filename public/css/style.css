@@ -204,6 +204,10 @@ input {
     margin-bottom: 0rem;
 }
 
+.sentimos {
+    background-color: #FFE690;
+}
+
 .offcanvas-bottom {
     height: 40vh !important;
 }

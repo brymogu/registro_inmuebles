@@ -318,7 +318,7 @@
                             <label for="estado_inb" class="col-5 form-label">Estado del inmueble</label>
                             <div class="col-7" id="estado_apto">
                                 {!! Form::select('estado_inb', $estado, null, ['class' => 'form-select', 'required' => 'required', 'id' => 'estado_inb']) !!}
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -493,7 +493,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="sentimos text-center py-3">
+                    <div class="sentimos rounded text-center py-1 my-1">
                         <img src="{!! asset('img/wesorry.png') !!}" class="img-fluid" alt="Lo sentimos">
                     </div>
                     Lo sentimos, no nos es posible comercializar y administrar el inmueble <span id="motivo"><span>
@@ -509,12 +509,13 @@
     <div class="offcanvas offcanvas-bottom rounded" tabindex="-1" id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel">
         <div class="offcanvas-header">
-            <p class="offcanvas-title text-center" id="offcanvasBottomLabel"><i class="far fa-smile-wink"></i> Por favor ayudanos a localizar tu inmueble</p>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title text-center"> Por favor localiza tu inmueble</h5>
+            <a class="btn botones" data-bs-dismiss="offcanvas" aria-label="Close">Confirmar ubicación</a>
+           <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
         </div>
         <div class="offcanvas-body grupo">
             <div id="map"></div>
-        </div>
+                    </div>
     </div>
 @endsection
 

@@ -152,7 +152,7 @@
                     <div class="row text-center align-items-center">
                         ¿Tienes preguntas?
                         <a href="https://meetings.hubspot.com/reunion-con-andres-montero-de-epica-inmobiliaria/reunion-con-andres-montero-de-epica-inmobiliaria"
-                            target="_blank" class="btn botones mt-3">Reunión virtual con el asesor</a>
+                            target="_blank" class="btn botones mt-3">Reunión virtual con asesor</a>
                     </div>
                 </div>
             </div>

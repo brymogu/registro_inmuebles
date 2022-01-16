@@ -28,10 +28,11 @@ function mostrarmapa() {
 
 function pintarmapa(coordenadas, zoom) {
     var marker = new L.marker(coordenadas, {
-        draggable: true,
+        draggable: false,
         autoPan: true,
     }).addTo(mymap);
     mymap.flyTo(coordenadas, zoom);
+
     document.getElementById('latitud').value = marker.getLatLng().lat;
     document.getElementById('longitud').value = marker.getLatLng().lng;
 
@@ -40,6 +41,16 @@ function pintarmapa(coordenadas, zoom) {
         long = marker.getLatLng().lng;
         document.getElementById('latitud').value = lat;
         document.getElementById('longitud').value = long;
+    });
+
+    mymap.on('click', function(e) {
+        mymap.removeLayer(marker);
+        marker = new L.marker(e.latlng, {
+            draggable: true,
+            autoPan: true,
+        }).addTo(mymap);
+        document.getElementById('latitud').value = marker.getLatLng().lat;
+        document.getElementById('longitud').value = marker.getLatLng().lng;
     });
 
     var myOffcanvas = document.getElementById('offcanvasBottom')
