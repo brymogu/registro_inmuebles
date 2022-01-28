@@ -110,21 +110,25 @@ class finco extends Controller
         foreach ($datos as $datos) {
 
             if ($datos->id_tipoinm == 1) {
-                $propertyType = "House";
+                $propertyType = "HOUSE";
             } elseif ($datos->id_tipoinm == 2) {
-                $propertyType = "Apartment";
+                $propertyType = "APARTMENT";
             }
 
 
             // finco Viabilidad
-            $finco_disponible = HTTP::post('https://api.finco.co/query-available', [
-                'APIKey' => '9866d0e4faa287b06a732995586f434ad92131a117cddbb82fbbae5b44ed',
-                'latitude' => 4.6790772,
-                'longitude' => -74.1146479,
-                'propertyType' => "Apartment",
+            $finco_disponible = HTTP::post('https://api.finco.co/v1/query-available', [
+                'APIKey' => $apikey,
+                'test' => true,
+                'testError' => 'QUERY_NOT_ALLOWED',
+                'location' => [
+                    'latitude' => 4.6790772,
+                    'longitude' => -74.1146479
+                ],
+                'propertyType' => "APARTMENT",
             ]);
 
-            return $finco_disponible; 
+            return $finco_disponible['queryAvailable']['message'];
 
             /*
             if ($finco_disponible) {
