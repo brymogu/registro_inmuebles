@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
@@ -104,9 +103,9 @@ class finco extends Controller
             ->select("negocios.id as id_neg", "negocios.propietario as id_pptario", "negocios.propiedad as id_ppdad", "negocios.tipo_negocio as id_tiponeg", "negocios.plan as id_plan", "negocios.conc_juridico as id_concjuridico", "propietarios.tipo_doc as id_tipodoc", "propiedades.tipo_inmueble as id_tipoinm", "propiedades.ciudad as id_ciudad", "propiedades.estrato as id_estrato", "propiedades.estado as id_estado", "propiedades.remodelado as id_remodelado", "propiedades.mat_habitacion as id_mathab", "propiedades.mat_piso_cocina as id_matpcocina", "propiedades.mat_piso_bano as id_matpbano", "propiedades.mat_piso_zsocial as id_matpsocial", "propiedades.nivel as id_nivel", "propiedades.tipo_garajes as id_tipogaraje", "propiedades.mb_cocina as id_mbcocina", "propiedades.tipo_estufa as id_tipoest", "propiedades.tipo_horno as id_tipohor", "propiedades.tipo_cocina as id_tipococ", "propiedades.tipo_calentador as id_calentador", "propiedades.tipo_vista as id_vista", "propiedades.zona_social as id_zonasocial", "propiedades.material_fachada as id_matfachada", "propiedades.tipo_vigilancia as id_tipovigilancia", "propiedades.tipo_seguridad as id_tiposeguridad", "propiedades.tipo_cuota as id_tipocuota", "propietarios.name", "propietarios.lastname", "propietarios.doc_number", "tipos_documentos.desc_tipos_documento", "propietarios.email", "propietarios.phone", "propietarios.paso", "tipos_negocios.desc_tipo_negocio as tipo_negocio", "planes.desc_plan as plan", "negocios.valor", "negocios.conc_precio", "negocios.precio_contrato", "conc_juridicos.des_conc_juridicos as conc_juridico", "negocios.obs_conc_juridico", "negocios.cpvj", "negocios.asesor", "tipos_inmuebles.desc_tipo_inmueble as tipo_inmueble", "propiedades.espropietario", "propiedades.pqsolicita", "propiedades.horizontal", "propiedades.arrendado", "estratos.estrato", "ciudades.desc_ciudades as ciudad", "propiedades.direccion", "propiedades.direccion_comp", "propiedades.tiempo_inm", "propiedades.longitud", "propiedades.latitud", "estados_inmuebles.desc_estado as estado", "remodelados.desc_remodelado as remodelado", "propiedades.tuberia", "propiedades.piso", "propiedades.ascensor", "propiedades.a_construida", "propiedades.a_privada", "propiedades.a_terreno", "mats_piso_habitacions.desc_mats_piso_habitaciones as mat_habitacion", "mats_piso_cocinas.desc_mats_piso_cocina as mat_piso_cocina", "mats_piso_banos.desc_mats_piso_bano as mat_piso_bano", "mats_piso_zsocials.desc_mats_piso_zsocial as mat_piso_zsocial", "niveles.des_nivel as nivel", "propiedades.n_hab", "propiedades.n_banos", "tipo_garajes.tipo_garajes as tipo_garaje", "propiedades.tiene_garajes", "propiedades.gje_cubierto", "propiedades.no_garajes", "mb_cocinas.desc_mbs_cocina as mb_cocina", "tipos_estufas.desc_tipos_estufa as tipo_estufa", "tipos_hornos.desc_tipos_horno as tipo_horno", "tipos_cocinas.desc_tipos_cocina as tipo_cocina", "calentadores.desc_tipos_calentador as tipo_calentador", "vistas.desc_vista as tipo_vista", "zonas_sociales.desc_zona_social as zona_social", "materiales_fachadas.desc_mats_fachada as material_fachada", "propiedades.terraza", "propiedades.area_terraza", "propiedades.chimenea", "propiedades.balcon", "propiedades.area_balcon", "propiedades.b_servicio", "propiedades.b_social", "propiedades.estudio", "propiedades.deposito", "propiedades.hab_servicio", "propiedades.star", "propiedades.zona_lavanderia", "propiedades.patio", "propiedades.entrega_cortinas", "propiedades.piscina_privada", "propiedades.sauna_privada", "propiedades.turco_privado", "propiedades.jacuzzi_privado", "propiedades.tina_privada", "propiedades.aire_privado", "propiedades.calefaccion_privada", "tipos_vigilancias.desc_tipo_vigilancia as tipo_vigilancia", "tipos_seguridads.desc_tipo_seguridad as tipo_seguridad", "tipos_cuotas.desc_tipo_cuota as tipo_cuota", "propiedades.nombre_c_e", "propiedades.adm_cp", "propiedades.adm_cd", "propiedades.pq_visitantes", "propiedades.bicicletero", "propiedades.s_social", "propiedades.bbq", "propiedades.s_juntas", "propiedades.p_infantil", "propiedades.gimnasio", "propiedades.turco", "propiedades.sauna", "propiedades.c_squash", "propiedades.c_tenis", "propiedades.c_multiple", "propiedades.s_juegos", "propiedades.s_estudio", "propiedades.lavanderia_c", "propiedades.planta_e", "propiedades.certificado", "propiedades.habitado", "propiedades.piscina", "propiedades.n_ascensores", "propiedades.jardin_interior", "propiedades.chip", "propiedades.matricula", "propiedades.barrio_catastral", "propiedades.upz", "propiedades.localidad")
             ->get();
 
-
         // Asignaciones
         $apikey = "9866d0e4faa287b06a732995586f434ad92131a117cddbb82fbbae5b44ed";
+
         foreach ($datos as $datos) {
 
             if ($datos->id_tipoinm == 1) {
@@ -115,98 +114,230 @@ class finco extends Controller
                 $propertyType = "APARTMENT";
             }
 
-
             // finco Viabilidad
             $finco_disponible = HTTP::post('https://api.finco.co/v1/query-available', [
                 'APIKey' => $apikey,
                 'test' => true,
-                'testError' => 'QUERY_NOT_ALLOWED',
                 'location' => [
-                    'latitude' => 4.6790772,
-                    'longitude' => -74.1146479
+                    'latitude' => $datos->latitud,
+                    'longitude' => $datos->longitud
                 ],
                 'propertyType' => "APARTMENT",
             ]);
 
-            return $finco_disponible['queryAvailable']['message'];
+            if ($finco_disponible['queryAvailable']['available']) {
 
-            /*
-            if ($finco_disponible) {
-                //Finco Casa
+                switch ($datos->id_estado) {
+                    case (1):
+                        $estado = "PRE_CONSTRUCTION";
+                        break;
+                    case (2):
+                        $estado = "IN_CONSTRUCTION";
+                        break;
+                    case (3):
+                        $estado = "NEW";
+                        break;
+                    case (4):
+                        $estado = "REMODELED";
+                        break;
+                    case (5):
+                        $estado = "USED_WITHOUT_REMODELING";
+                        break;
+                }
+
+                if ($datos->no_garajes) {
+                    $parkingSpaces = $datos->no_garajes;
+                } else {
+                    $parkingSpaces = 0;
+                }
+
+                if ($datos->id_estado == 4) {
+                    $age =  $datos->tiempo_inm;
+                } else {
+                    $age = 0;
+                }
+
+                if ($datos->hab_servicio == "Si") {
+                    $hasServiceRoom =  true;
+                } else {
+                    $hasServiceRoom =  false;
+                }
+
+                if ($datos->balcon == "Si") {
+                    $hasBalcony =  true;
+                } else {
+                    $hasBalcony =  false;
+                }
+
+                if ($datos->estudio == "Si") {
+                    $hasStudy =  true;
+                } else {
+                    $hasStudy =  false;
+                }
+
+                if ($datos->terraza == "Si") {
+                    $hasTerrace =  true;
+                } else {
+                    $hasTerrace =  false;
+                }
+
+                if ($datos->zona_lavanderia == "Si") {
+                    $hasLaundryZone =  true;
+                } else {
+                    $hasLaundryZone =  false;
+                }
+
+                if ($datos->b_servicio == "Si") {
+                    $hasServiceToilet =  true;
+                } else {
+                    $hasServiceToilet =  false;
+                }
+
+                if ($datos->id_vista == 1) {
+                    $isExterior =  true;
+                } else {
+                    $isExterior =  false;
+                }
+
+                if ($datos->deposito == "Si") {
+                    $hasDeposit =  true;
+                } else {
+                    $hasDeposit =  false;
+                }
+
+                if ($datos->id_nivel > 1) {
+                    $isDuplex =  true;
+                } else {
+                    $isDuplex =  false;
+                }
+
+                if ($datos->horizontal = "Si") {
+                    $isResidentialComplex =  true;
+                } else {
+                    $isResidentialComplex =  false;
+                }
+
+                if ($datos->s_social = "Si") {
+                    $hasCommunalHall =  true;
+                } else {
+                    $hasCommunalHall =  false;
+                }
+
+                if ($datos->s_juegos = "Si") {
+                    $hasKidsPlayZone =  true;
+                } else {
+                    $hasKidsPlayZone =  false;
+                }
+
+                if ($datos->piscina = "Si") {
+                    $hasPool =  true;
+                } else {
+                    $hasPool =  false;
+                }
+
+                if ($datos->c_tenis = "Si") {
+                    $hasTennisCourt =  true;
+                } else {
+                    $hasTennisCourt =  false;
+                }
+
+                if ($datos->pq_visitantes = "Si") {
+                    $hasVisitorParking =  true;
+                } else {
+                    $hasVisitorParking =  false;
+                }
+
+                if ($datos->n_ascensores) {
+                    $elevators =  $datos->n_ascensores;
+                } else {
+                    $elevators =  0;
+                }
+
+                if ($datos->area_terraza) {
+                    $terraceArea = $datos->area_terraza;
+                } else {
+                    $terraceArea = 0;
+                }
+
                 if ($datos->id_tipoinm == 1) {
-
-                    if ($datos->no_garajes != null) {
-                        $parkingSpaces = $datos->no_garajes;
-                    } else {
-                        $parkingSpaces = 0;
-                    }
-
-                    if ($datos->id_estado > 3) {
-                        $Age =  "'Age'=> " . $datos->tiempo_inm;
-                    } else {
-                        $Age = "";
-                    }
-
-                    if ($datos->hab_servicio == "Si") {
-                        $hasServiceRoom =  true;
-                    } else {
-                        $hasServiceRoom =  false;
-                    }
-
-                    if ($datos->balcon == "Si") {
-                        $hasBalcony =  true;
-                    } else {
-                        $hasBalcony =  false;
-                    }
-
-                    if ($datos->estudio == "Si") {
-                        $hasStudy =  true;
-                    } else {
-                        $hasStudy =  false;
-                    }
-
-                    if ($datos->terraza == "Si") {
-                        $hasTerrace =  true;
-                    } else {
-                        $hasTerrace =  false;
-                    }
-
-                    if ($datos->id_estado == 4) {
-                        $remodeled =  true;
-                    } else {
-                        $remodeled =  false;
-                    }
-
-                    $finco_disponible = HTTP::post('https://api.finco.co/metrocuadrado/query-house', [
-                        'Test' => true,
-                        'APIKey' => '',
-                        'queries' => [
-                            'builtArea' => round($datos->a_construida),
-                            'lotArea' => round($datos->a_terreno),
+                    //Finco Casa
+                    $finco_query = HTTP::post('https://api.finco.co/v1/new-query', [
+                        'APIKey' => $apikey,
+                        'test' => true,
+                        'makePublic' => true,
+                        'location' => [
+                            'latitude' => $datos->latitud,
+                            'longitude' => $datos->longitud
+                        ],
+                        'propertyType' => $propertyType,
+                        'query' => [
+                            'address' => $datos->direccion,
+                            'builtArea' => $datos->a_construida,
                             'rooms' => $datos->n_hab,
                             'toilets' => $datos->n_banos,
                             'parkingSpaces' => $parkingSpaces,
-                            'status' => $datos->estado,
-                            $Age,
-                            'hasServiceRoom' => $hasServiceRoom,
+                            'status' => $estado,
+                            'age' => $age,
+                            'stratum' => $datos->estrato,
                             'hasBalcony' => $hasBalcony,
+                            'hasDeposit' => $hasDeposit,
+                            'hasLaundryZone' => $hasLaundryZone,
+                            'hasServiceRoom' => $hasServiceRoom,
+                            'hasServiceToilet' => $hasServiceToilet,
                             'hasStudy' => $hasStudy,
                             'hasTerrace' => $hasTerrace,
-                            'remodeled' => $remodeled,
-                            'longitude' => $datos->longitud,
-                            'latitude' => $datos->latitud,
+                            'isExterior' => $isExterior,
                         ]
                     ]);
+                    return $finco_query;
                 } elseif ($datos->id_tipoinm == 2) {
                     //Finco Apto 
+                    $finco_query = HTTP::post('https://api.finco.co/v1/new-query', [
+                        'APIKey' => $apikey,
+                        'test' => true,
+                        'makePublic' => true,
+                        'location' => [
+                            'latitude' => $datos->latitud,
+                            'longitude' => $datos->longitud
+                        ],
+                        'propertyType' => $propertyType,
+                        'query' => [
+                            'address' => $datos->direccion,
+                            'builtArea' =>$datos->a_construida,
+                            'rooms' => $datos->n_hab,
+                            'toilets' => $datos->n_banos,
+                            'parkingSpaces' => $parkingSpaces,
+                            'floor' => $datos->piso,
+                            'elevators' => $elevators,
+                            'status' => $estado,
+                            'age' => $age,
+                            'stratum' => $datos->estrato,
+                            'hasDeposit' => $hasDeposit,
+                            'hasBalcony' => $hasBalcony,
+                            'isDuplex' => $isDuplex,
+                            'isExterior' => $isExterior,
+                            'hasLaundryZone' => $hasLaundryZone,
+                            'hasServiceRoom' => $hasServiceRoom,
+                            'hasServiceToilet' => $hasServiceToilet,
+                            'hasStudy' => $hasStudy,
+                            'hasTerrace' => $hasTerrace,
+                            'terraceArea' => $terraceArea,
+                            'isResidentialComplex' => $isResidentialComplex,
+                            'hasCommunalHall' => $hasCommunalHall,
+                            'hasKidsPlayZone' => $hasKidsPlayZone,
+                            'hasPool' => $hasPool,
+                            'hasTennisCourt' => $hasTennisCourt,
+                            'hasVisitorParking' => $hasVisitorParking,
 
-
+                            'hasGreenZones' => true,
+                            'hasSoccerField' => true,
+                        ]
+                    ]);
+                    return $finco_query['query'];
                 }
+            } else {
+                return "No pasó";
             }
-            */
         }
-        /* 
-        $test =  Http::get('https://jsonplaceholder.typicode.com/users/1');
-        return $test['username'];*/
     }
 }

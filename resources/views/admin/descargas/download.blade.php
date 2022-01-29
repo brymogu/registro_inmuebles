@@ -99,7 +99,7 @@
                                         {{ Form::close() }}
                                     </td>
                                     <td class="text-center">
-                                        {{ Form::open(['route' => 'administrador.finco']) }}
+                                        {{ Form::open(['route' => 'administrador.finco','target'=> '_blank']) }}
                                         <input type="text" class="d-none" name="codineg"
                                             value="{{ $negocio->id_neg }}">
                                         <button type="submit" class="btn btn-epc rounded-circle">
