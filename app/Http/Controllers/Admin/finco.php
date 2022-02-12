@@ -177,6 +177,12 @@ class finco extends Controller
                 $hasSoccerField =  false;
             }
 
+            if ($datos->zonas_verdes = "Si") {
+                $zonas_verdes = true;
+            } else {
+                $zonas_verdes =  false;
+            }
+
             // finco Viabilidad
 
             $finco_disponible = HTTP::post('https://api.finco.co/v1/query-available', [
@@ -264,6 +270,7 @@ class finco extends Controller
                             'hasSoccerField' => $hasSoccerField
                         ]
                     ]);
+
                     return  redirect()->away($finco_query['query']['url']);
                 }
             } else {
