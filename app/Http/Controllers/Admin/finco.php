@@ -129,19 +129,19 @@ class finco extends Controller
 
                 switch ($datos->id_estado) {
                     case (1):
-                        $estado = "PRE_CONSTRUCTION";
+                        $estado = "ON_PLANS";
                         break;
                     case (2):
                         $estado = "IN_CONSTRUCTION";
                         break;
                     case (3):
-                        $estado = "NEW";
+                        $estado = "BRAND_NEW";
                         break;
                     case (4):
-                        $estado = "REMODELED";
+                        $estado = "RENEWED";
                         break;
                     case (5):
-                        $estado = "USED_WITHOUT_REMODELING";
+                        $estado = "USED";
                         break;
                 }
 
@@ -223,7 +223,7 @@ class finco extends Controller
                     $hasCommunalHall =  false;
                 }
 
-                if ($datos->s_juegos = "Si") {
+                if ($datos->p_infantil = "Si") {
                     $hasKidsPlayZone =  true;
                 } else {
                     $hasKidsPlayZone =  false;
@@ -259,6 +259,12 @@ class finco extends Controller
                     $terraceArea = 0;
                 }
 
+                if ($datos->c_multiple= "Si") {
+                    $hasSoccerField = true;
+                } else {
+                    $hasSoccerField =  false;
+                }
+
                 if ($datos->id_tipoinm == 1) {
                     //Finco Casa
                     $finco_query = HTTP::post('https://api.finco.co/v1/new-query', [
@@ -273,11 +279,12 @@ class finco extends Controller
                         'query' => [
                             'address' => $datos->direccion,
                             'builtArea' => $datos->a_construida,
+                            'lotArea' => $datos->a_terreno,
                             'rooms' => $datos->n_hab,
                             'toilets' => $datos->n_banos,
                             'parkingSpaces' => $parkingSpaces,
-                            'status' => $estado,
-                            'age' => $age,
+                            'ageStatus' => $estado,
+                            'ageNumeric' => $age,
                             'stratum' => $datos->estrato,
                             'hasBalcony' => $hasBalcony,
                             'hasDeposit' => $hasDeposit,
@@ -289,7 +296,7 @@ class finco extends Controller
                             'isExterior' => $isExterior,
                         ]
                     ]);
-                    return $finco_query;
+                    return $finco_query['url'];
                 } elseif ($datos->id_tipoinm == 2) {
                     //Finco Apto 
                     $finco_query = HTTP::post('https://api.finco.co/v1/new-query', [
@@ -309,8 +316,8 @@ class finco extends Controller
                             'parkingSpaces' => $parkingSpaces,
                             'floor' => $datos->piso,
                             'elevators' => $elevators,
-                            'status' => $estado,
-                            'age' => $age,
+                            'ageStatus' => $estado,
+                            'ageNumeric' => $age,
                             'stratum' => $datos->estrato,
                             'hasDeposit' => $hasDeposit,
                             'hasBalcony' => $hasBalcony,
@@ -330,13 +337,13 @@ class finco extends Controller
                             'hasVisitorParking' => $hasVisitorParking,
 
                             'hasGreenZones' => true,
-                            'hasSoccerField' => true,
+                            'hasSoccerField' => $hasSoccerField
                         ]
                     ]);
-                    return $finco_query['query'];
+                    return $finco_query['query']['url'];
                 }
             } else {
-                return "No pasó";
+                return "Las coordenadas están fuera de la zona de cobertura";
             }
         }
     }
