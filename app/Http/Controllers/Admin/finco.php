@@ -296,7 +296,7 @@ class finco extends Controller
                             'isExterior' => $isExterior,
                         ]
                     ]);
-                    return $finco_query['url'];
+                    return $finco_query['query']['url'];
                 } elseif ($datos->id_tipoinm == 2) {
                     //Finco Apto 
                     $finco_query = HTTP::post('https://api.finco.co/v1/new-query', [
