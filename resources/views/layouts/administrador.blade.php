@@ -71,9 +71,7 @@
                         <a class="nav-link" href="{{ route('administrador.download') }}"><i 
                             class="fas fa-angle-double-down"></i> Descargas </a>
                     </li>
-                    <li class="nav-item rounded-pill">
-                        <a class="nav-link" href="{{ route('administrador.acuerdos') }}"><i class="far fa-file-pdf"></i> Contratos </a>
-                    </li>
+                    
                 </ul>
             </div>
             <div class="col-10 contenido">

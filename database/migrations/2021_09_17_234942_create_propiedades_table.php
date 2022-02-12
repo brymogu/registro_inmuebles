@@ -200,6 +200,7 @@ class CreatePropiedadesTable extends Migration
             $table->string('piscina')->nullable();
             $table->integer('n_ascensores')->nullable();
             $table->string('jardin_interior')->nullable();
+            $table->string('zonas_verdes')->nullable();
             $table->string('chip')->nullable();
             $table->string('matricula')->nullable();
             $table->timestamps();

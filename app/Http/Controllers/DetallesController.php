@@ -219,6 +219,12 @@ class DetallesController extends Controller
         } else {
             $Propiedad->jardin_interior = "No";
         }
+        
+        if ($request->zonas_verdes) {
+            $Propiedad->zonas_verdes = "Si";
+        } else {
+            $Propiedad->zonas_verdes = "No";
+        }
 
         $Propiedad->save();
 
@@ -434,6 +440,12 @@ class DetallesController extends Controller
             $propiedad->jardin_interior = "Si";
         } else {
             $propiedad->jardin_interior = "No";
+        }
+
+        if ($request->zonas_verdes) {
+            $propiedad->zonas_verdes = "Si";
+        } else {
+            $propiedad->zonas_verdes = "No";
         }
 
         $propiedad->save();

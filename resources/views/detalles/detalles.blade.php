@@ -323,18 +323,18 @@
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="form-group row">
-                            <label for="star" class="col-5 col-form-label">Star de entretenimiento</label>
+                            <label for="tina_p" class="col-5 col-form-label">Tina privada</label>
                             <div class="col-2">
                                 <a>No</a>
                             </div>
                             <div class="col-3 bool">
-                                <input type="checkbox" value="1" id="star" name="star" />
-                                <label class="slider-v1" for="star"></label>
+                                <input type="checkbox" value="1" id="tina_p" name="tina_p" />
+                                <label class="slider-v1" for="tina_p"></label>
                             </div>
                             <div class="col-2">
                                 <a>Si</a>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="row">
@@ -451,13 +451,13 @@
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="form-group row border-end">
-                            <label for="tina_p" class="col-5 col-form-label">Tina privada</label>
+                            <label for="star" class="col-5 col-form-label">Star de entretenimiento</label>
                             <div class="col-2">
                                 <a>No</a>
                             </div>
                             <div class="col-3 bool">
-                                <input type="checkbox" value="1" id="tina_p" name="tina_p" />
-                                <label class="slider-v1" for="tina_p"></label>
+                                <input type="checkbox" value="1" id="star" name="star" />
+                                <label class="slider-v1" for="star"></label>
                             </div>
                             <div class="col-2">
                                 <a>Si</a>
@@ -481,8 +481,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4">
-                        @if ($tipo_inm == 1)
+                    @if ($tipo_inm == 1)
+                        <div class="col-12 col-md-4">
                             <div class="form-group row border-end">
                                 <label for="patio" class="col-5 col-form-label">Patio interior</label>
                                 <div class="col-2">
@@ -496,10 +496,8 @@
                                     <a>Si</a>
                                 </div>
                             </div>
-                        @endif
-                    </div>
-                    <div class="col-12 col-md-4">
-                        @if ($tipo_inm == 1)
+                        </div>
+                        <div class="col-12 col-md-4">
                             <div class="form-group row border-end">
                                 <label for="jardin_interior" class="col-5 col-form-label">
                                     Jardín Interior</label>
@@ -514,8 +512,26 @@
                                     <a>Si</a>
                                 </div>
                             </div>
-                        @endif
-                    </div>
+                        </div>
+                    @endif
+                    @if ($tipo_inm == 2)
+                        <div class="col-12 col-md-4">
+                            <div class="form-group row border-end">
+                                <label for="jardin_interior" class="col-5 col-form-label">
+                                    Zonas verdes</label>
+                                <div class="col-2">
+                                    <a>No</a>
+                                </div>
+                                <div class="col-3 bool">
+                                    <input type="checkbox" value="1" name="zonas_verdes" id="zonas_verdes" />
+                                    <label class="slider-v1" for="zonas_verdes"></label>
+                                </div>
+                                <div class="col-2">
+                                    <a>Si</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-4" id="area_balcon_secc">
