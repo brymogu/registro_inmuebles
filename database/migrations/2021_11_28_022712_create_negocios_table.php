@@ -30,6 +30,7 @@ class CreateNegociosTable extends Migration
                 ->references('id')->on('tipos_negocios')
                 ->onDelete('set null');
 
+            $table->string('paso')->nullable();
             $table->unsignedBigInteger('plan')->nullable();
             $table->foreign('plan')
                 ->references('id')->on('planes')
@@ -46,7 +47,7 @@ class CreateNegociosTable extends Migration
             $table->text('obs_conc_juridico')->nullable();
 
             $table->string('cpvj')->nullable();
-            $table->string('asesor')->nullable();         
+            $table->string('asesor')->nullable();
             $table->timestamps();
         });
     }
@@ -61,4 +62,3 @@ class CreateNegociosTable extends Migration
         Schema::dropIfExists('negocios');
     }
 }
-

@@ -45,11 +45,16 @@
                         <i class="fas fa-user"></i>
                     </button>
                     <ul class="dropdown-menu shadow border-0 dropdown-menu-end" aria-labelledby="logmenu">
-                        <li><a class="dropdown-item disabled">amontero</a></li>
+                        <li><a class="dropdown-item disabled">
+                            {{Auth::user()->name}} 
+                            </a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item salir " href=""><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+                        <li>
+                            <a class="dropdown-item salir " href="{{ Auth::logout() }}"><i
+                                    class="fas fa-sign-out-alt"></i> Salir</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -61,17 +66,18 @@
             <div class="col-2 d-flex py-5 align-items-start vh-75">
                 <ul class="nav w-100 flex-column">
                     <li class="nav-item rounded-pill">
-                        <a class="nav-link active" aria-current="page" href="{{ route('administrador.main') }}"><i class="fas fa-home"></i> Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('administrador.main') }}"><i
+                                class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item rounded-pill">
                         <a class="nav-link" href="{{ route('administrador.edit') }}"> <i
                                 class="fas fa-pencil-alt"></i> Editar</a>
                     </li>
                     <li class="nav-item rounded-pill">
-                        <a class="nav-link" href="{{ route('administrador.download') }}"><i 
-                            class="fas fa-angle-double-down"></i> Descargas </a>
+                        <a class="nav-link" href="{{ route('administrador.download') }}"><i
+                                class="fas fa-angle-double-down"></i> Descargas </a>
                     </li>
-                    
+
                 </ul>
             </div>
             <div class="col-10 contenido">

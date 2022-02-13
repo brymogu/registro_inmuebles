@@ -612,7 +612,7 @@
 
             <div class="row tb-3">
                 <div class="col-6 col-md-2 text-left">
-                    <a href="{{ route('negocio.edit', $propiedad) }}" class="btn botones">Atrás</a>
+                    <a href="{{ route('negocio.edit', $negocio) }}" class="btn botones">Atrás</a>
                 </div>
                 <div class="d-none d-md-block col-md-8">
 

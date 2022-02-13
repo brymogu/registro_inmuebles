@@ -13,13 +13,13 @@ use App\Http\Controllers\PlanesController;
 Route::get('/', HomeController::class);
 Route::post('/', [HomeController::class, 'store'])->name('propietario.store');
 
-Route::get('propietario/{propietario}', [HomeController::class, 'edit'])->name('propietario.edit');
-Route::post('propietario/{propietario}', [HomeController::class, 'update'])->name('propietario.update');
+Route::get('propietario/{negocio}', [HomeController::class, 'edit'])->name('propietario.edit');
+Route::post('propietario/{negocio}', [HomeController::class, 'update'])->name('propietario.update');
 
-Route::get('negocio/{propietario}', [NegocioController::class, 'show'])->name('negocio.show');
-Route::post('negocio/{propietario}', [NegocioController::class, 'store'])->name('negocio.store');
-Route::get('negocio/editar/{propiedad}', [NegocioController::class, 'edit'])->name('negocio.edit');
-Route::post('negocio/editar/{propiedad}', [NegocioController::class, 'update'])->name('negocio.update');
+Route::get('negocio/{negocio}', [NegocioController::class, 'show'])->name('negocio.show');
+Route::post('negocio/{negocio}', [NegocioController::class, 'store'])->name('negocio.store');
+Route::get('negocio/editar/{negocio}', [NegocioController::class, 'edit'])->name('negocio.edit');
+Route::post('negocio/editar/{negocio}', [NegocioController::class, 'update'])->name('negocio.update');
 
 Route::get('detalles/{id}', [DetallesController::class, 'show'])->name('detalles.show');
 Route::post('detalles/{id}', [DetallesController::class, 'store'])->name('detalles.store');

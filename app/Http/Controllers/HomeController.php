@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Negocios;
 use App\Models\Propietarios;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,32 +28,44 @@ class HomeController extends Controller
             $propietario->email = $request->email;
             $propietario->phone = $request->phone;
             $propietario->full_number = $request->full_number;
-            $propietario->paso = "datos";
             $propietario->save();
-            return redirect()->route('negocio.show', $propietario);
+
+            $negocio = new Negocios();
+            $negocio->propietario = $propietario->id;
+            $negocio->paso = "datos";
+            $negocio->save();
+            return redirect()->route('negocio.show', $negocio);
         } else {
             $user->name = $request->name;
             $user->lastname = $request->lastname;
             $user->phone = $request->phone;
             $user->full_number = $request->full_number;
-            $user->paso = "datos";
             $user->save();
-            return redirect()->route('negocio.show', $user);
+
+            $negocio = new Negocios();
+            $negocio->propietario = $user->id;
+            $negocio->paso = "datos";
+            $negocio->save();
+
+            return redirect()->route('negocio.show', $negocio);
         }
     }
 
-    public function edit(Propietarios $propietario)
+    public function edit(Negocios $negocio)
     {
+        $propietario = Propietarios::find($negocio->propietario);
         return view('propietario.edit', compact('propietario'), ['tipo' => 'No']);
     }
 
-    public function update(Request $request, Propietarios $propietario)
+    public function update(Request $request, Negocios $negocio)
     {
+        $propietario = Propietarios::find($negocio->propietario);
         $propietario->name = $request->name;
         $propietario->lastname = $request->lastname;
         $propietario->phone = $request->phone;
         $propietario->full_number = $request->full_number;
         $propietario->save();
+
         return redirect()->route('negocio.show', $propietario);
     }
 }

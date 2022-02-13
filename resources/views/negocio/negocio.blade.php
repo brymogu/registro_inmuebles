@@ -47,7 +47,7 @@
                             <label for="tipo" class="col-5">Escoge el negocio a realizar con este
                                 inmueble</label>
                             <div class="col-7">
-                                {!! Form::select('tipo', $negocio, null, ['class' => 'form-select', 'id' => 'negocio', 'required' => 'required']) !!}
+                                {!! Form::select('tipo', $tipo_negocio, null, ['class' => 'form-select', 'id' => 'negocio', 'required' => 'required']) !!}
                             </div>
                         </div>
                     </div>
@@ -471,7 +471,7 @@
             </div>
             <div class="row mt-2">
                 <div class="col-6 col-md-2 text-start">
-                    <a href="{{ route('propietario.edit', $propietario) }}" class="btn botones">Atrás</a>
+                    <a href="{{ route('propietario.edit', $negocio) }}" class="btn botones">Atrás</a>
                 </div>
                 <div class="d-none d-md-block col-md-8"></div>
                 <div class="col-6 col-md-2 text-end">

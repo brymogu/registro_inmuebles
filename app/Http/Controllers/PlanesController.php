@@ -13,7 +13,6 @@ class PlanesController extends Controller
     public function show($id)
     {
         $Propiedad = Propiedades::find($id);
-
         $negocio = Negocios::where('propiedad', $id)->first();
         $tipo_negocio = $negocio->tipo_negocio;
         $valor = $negocio->valor;

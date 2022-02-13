@@ -24,8 +24,9 @@ use Propiedades;
 
 class DetallesController extends Controller
 {
-    public function show($id)
+    public function show(Inmueble $id)
     {
+        $negocio = Negocios::where('propiedad', $id->id)->first();
 
         $niveles = Niveles::pluck('des_nivel', 'id');
         $mat_habitaciones = Mats_piso_habitacion::pluck('desc_mats_piso_habitaciones', 'id');
@@ -42,8 +43,7 @@ class DetallesController extends Controller
         $mat_fachada = Materiales_fachada::pluck('desc_mats_fachada', 'id');
         $tipo_garaje = tipo_garajes::pluck('tipo_garajes', 'id');
 
-        $Propiedad = Inmueble::find($id);
-
+    
         return view(
             'detalles.detalles',
             compact(
@@ -60,10 +60,11 @@ class DetallesController extends Controller
                 'vista',
                 'zonas',
                 'mat_fachada',
-                'tipo_garaje'
+                'tipo_garaje',
+                'negocio'
             ),
-            ['tipo' => $Propiedad->horizontal, 'tipo_inm' => $Propiedad->tipo_inmueble, 'propiedad' => $id]
-        );
+            ['tipo' => $id->horizontal, 'tipo_inm' => $id->tipo_inmueble, 'propiedad' => $id] 
+        ); 
     }
     public function store(Request $request, $id)
     {
@@ -219,7 +220,7 @@ class DetallesController extends Controller
         } else {
             $Propiedad->jardin_interior = "No";
         }
-        
+
         if ($request->zonas_verdes) {
             $Propiedad->zonas_verdes = "Si";
         } else {

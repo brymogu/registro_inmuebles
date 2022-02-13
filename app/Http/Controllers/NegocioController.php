@@ -20,31 +20,30 @@ use Negocio;
 class NegocioController extends Controller
 {
     //
-    public function show(Propietarios $propietario)
+    public function show(Negocios $negocio)
     {
-
+        $propietario = Propietarios::find($negocio->propietario);
         $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
-        $negocio = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
+        $tipo_negocio = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
         $inmueble = Tipos_inmueble::pluck('desc_tipo_inmueble', 'id');
         $estratos = Estratos::pluck('estrato', 'id');
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
         $remodelado = Remodelados::pluck('desc_remodelado', 'id');
         $ciudad = Ciudades::pluck('desc_ciudades', 'id');
 
-
-        return view('negocio.negocio', compact('tipos_documento', 'ciudad', 'negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => 'No', 'propietario' => $propietario]);
+        return view('negocio.negocio', compact('tipos_documento', 'ciudad', 'negocio','tipo_negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => 'No', 'propietario' => $propietario]);
     }
-    public function store(Request $request, Propietarios $propietario)
+    public function store(Request $request, Negocios $negocio)
     {
+
+        $propietario = Propietarios::find($negocio->propietario);
         //Actualización Propietario        
         $propietario->doc_number = $request->idnumber;
         $propietario->tipo_doc = $request->id;
-        $propietario->paso = "negocio";
         $propietario->save();
 
         //Creación Propiedad
         $propiedad = new Propiedades();
-
         //directos 
         $propiedad->tipo_inmueble = $request->tipo_inm;
         $propiedad->estrato = $request->estrato_inm;
@@ -107,35 +106,33 @@ class NegocioController extends Controller
         $propiedad->certificado = Storage::put('public/certificados', $request->file('certificado'));
         $propiedad->save();
 
-        $negocio = new Negocios();
-        $negocio->propietario = $propietario->id;
         $negocio->propiedad = $propiedad->id;
         $negocio->tipo_negocio = $request->tipo;
         $negocio->asesor = $request->asesor;
         $negocio->valor = $request->valor;
+        $negocio->paso = "negocio";
         $negocio->save();
 
         return redirect()->route('detalles.show', $propiedad);
     }
 
-    public function edit(Propiedades $propiedad)
+    public function edit(Negocios $negocio)
     {
-        $negocio_unico = Negocios::where('propiedad', $propiedad->id)->first();
-        $codigo_pptrio = $negocio_unico->propietario;
-        $propietario = Propietarios::find($codigo_pptrio);
+        $propietario = Propietarios::find($negocio->propietario);
+        $propiedad = Propiedades::find($negocio->propiedad);
         $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
-        $negocio = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
+        $tipo_negocio = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
         $inmueble = Tipos_inmueble::pluck('desc_tipo_inmueble', 'id');
         $estratos = Estratos::pluck('estrato', 'id');
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
         $remodelado = Remodelados::pluck('desc_remodelado', 'id');
 
-        return view('negocio.edit', compact('propietario', 'propiedad', 'negocio_unico', 'tipos_documento', 'negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => $propiedad->horizontal]);
+        return view('negocio.edit', compact('propietario', 'propiedad','tipo_negocio', 'negocio', 'tipos_documento', 'negocio', 'inmueble', 'estratos', 'estado', 'remodelado'), ['tipo' => $propiedad->horizontal]);
     }
 
-    public function update(Request $request, Propiedades $propiedad)
+    public function update(Request $request, Negocios $negocio)
     {
-        $negocio_unico = Negocios::where('propiedad', $propiedad->id)->first();
+        $propiedad = Propiedades::find($negocio->propiedad);
         //directos
         $propiedad->tipo_inmueble = $request->tipo_inm;
         $propiedad->estrato = $request->estrato_inm;
@@ -199,10 +196,10 @@ class NegocioController extends Controller
 
         //Negocio
 
-        $negocio_unico->tipo_negocio = $request->tipo;
-        $negocio_unico->valor = $request->valor;
-        $negocio_unico->asesor = $request->asesor;
-        $negocio_unico->save();
+        $negocio->tipo_negocio = $request->tipo;
+        $negocio->valor = $request->valor;
+        $negocio->asesor = $request->asesor;
+        $negocio->save();
 
         return redirect()->route('detalles.show', $propiedad);
     }

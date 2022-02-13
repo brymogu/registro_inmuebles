@@ -52,11 +52,11 @@
                             <label for="tipo" class="col-5">Escoge el negocio a realizar con este
                                 inmueble</label>
                             <div class="col-7">
-                                @isset($negocio_unico->tipo_negocio)
-                                    {!! Form::select('tipo', $negocio, $negocio_unico->tipo_negocio, ['class' => 'form-select', 'id' => 'negocio', 'required' => 'required']) !!}
+                                @isset($negocio->tipo_negocio)
+                                    {!! Form::select('tipo', $tipo_negocio, $negocio->tipo_negocio, ['class' => 'form-select', 'id' => 'negocio', 'required' => 'required']) !!}
                                 @endisset
-                                @empty($negocio_unico->tipo_negocio)
-                                    {!! Form::select('tipo', $negocio, $negocio_unico->tipo_negocio, ['class' => 'form-select', 'id' => 'negocio', 'required' => 'required']) !!}
+                                @empty($negocio->tipo_negocio)
+                                    {!! Form::select('tipo', $tipo_negocio, $negocio->tipo_negocio, ['class' => 'form-select', 'id' => 'negocio', 'required' => 'required']) !!}
                                 @endempty
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                             <label for="valor" id="valorlabel" class="col-5 col-form-label">¿Valor tentativo que le vas a
                                 asignar al inmueble?</label>
                             <div class="col-7">
-                                <input id="valor" name="valor" type="number" value="{{ $negocio_unico->valor }}"
+                                <input id="valor" name="valor" type="number" value="{{ $negocio->valor }}"
                                     class="form-control" min="99000" required="required">
                                 <span id="admonhelper" class="form-text text-muted">Incluida cuota de administración si
                                     aplicara</span>
@@ -180,7 +180,7 @@
                             <label for="asesor" class="col-5 col-form-label">Nombre del Asesor</label>
                             <div class="col-7">
                                 <input id="asesor" name="asesor" type="text" class="form-control"
-                                    value="{{ $negocio_unico->asesor }}">
+                                    value="{{ $negocio->asesor }}">
                                 <span class="form-text text-muted">No obligatorio</span>
                             </div>
                         </div>
