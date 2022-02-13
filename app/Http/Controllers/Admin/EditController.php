@@ -165,7 +165,7 @@ class EditController extends Controller
         $propiedad->tipo_vista = $request->vista;
         $propiedad->zona_social = $request->zona_social;
         $propiedad->material_fachada = $request->material_fachada;
-        $propiedad->tiene_garajes = $request->garaje;
+        
         $propiedad->chimenea = $request->chimenea;
         $propiedad->balcon = $request->balcon;
         $propiedad->b_servicio = $request->b_servicio;
@@ -187,9 +187,7 @@ class EditController extends Controller
         $propiedad->patio = $request->patio;
         $propiedad->area_terraza = $request->area_terraza;
         $propiedad->area_balcon = $request->area_balcon;
-        $propiedad->no_garajes = $request->no_garajes;
-        $propiedad->tipo_garajes = $request->tipo_garaje;
-        $propiedad->gje_cubierto = $request->gje_cubierto;
+        
         //Caracteristicas conjunto
         $propiedad->tipo_vigilancia = $request->vigilancia;
         $propiedad->tipo_seguridad = $request->seguridad;
@@ -217,6 +215,22 @@ class EditController extends Controller
         $propiedad->jardin_interior = $request->jardin_interior;
 
         //condicionados
+        $propiedad->tiene_garajes = $request->garaje;
+
+        if ($request->garaje == "Si") {
+            $propiedad->no_garajes = $request->no_garajes;
+            $propiedad->tipo_garajes = $request->tipo_garaje;
+            if ($request->gje_cubierto) {
+                $propiedad->gje_cubierto = "Si";
+            } else {
+                $propiedad->gje_cubierto = "No";
+            }
+        } else {
+            $propiedad->no_garajes = null;
+            $propiedad->tipo_garajes = null;
+            $propiedad->gje_cubierto = null;
+        }
+
         if ($request->tipo_inm == 2) {$propiedad->piso = $request->piso;
             if ($request->ascensor) {
                 $propiedad->ascensor = "Si";
