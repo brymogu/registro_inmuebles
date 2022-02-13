@@ -1078,6 +1078,7 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
+            @if ($tipo_inm == 1)
                 <div class="col-12 col-md-4 ">
                     <div class="form-group row">
                         <label for="patio" class="col-5 col-form-label">Patio interior</label>
@@ -1110,7 +1111,25 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
+            @if ($tipo_inm == 2)
+                <div class="col-12 col-md-4">
+                    <div class="form-group row">
+                        <label for="zonas_verdes" class="col-5 col-form-label">Zonas verdes</label>
+                        <div class="col-7">
+                            <select id="zonas_verdes" class="form-select" name="zonas_verdes" required="required">
+                                @if ($propiedad->zonas_verdes == 'Si')
+                                    <option selected value="Si">Si</option>
+                                    <option value="No">No</option>
+                                @else
+                                    <option value="Si">Si</option>
+                                    <option selected value="No">No</option>
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0" id="area_bt">
             <div class="row">

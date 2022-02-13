@@ -214,6 +214,7 @@ class EditController extends Controller
         $propiedad->planta_e = $request->planta_e;
         $propiedad->piscina = $request->piscina;
         $propiedad->jardin_interior = $request->jardin_interior;
+        $propiedad->zonas_verdes = $request->zonas_verdes;
 
         //condicionados
         $propiedad->tiene_garajes = $request->garaje;

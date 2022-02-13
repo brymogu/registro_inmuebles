@@ -517,7 +517,7 @@
                     @if ($tipo_inm == 2)
                         <div class="col-12 col-md-4">
                             <div class="form-group row border-end">
-                                <label for="jardin_interior" class="col-5 col-form-label">
+                                <label for="zonas_verdes" class="col-5 col-form-label">
                                     Zonas verdes</label>
                                 <div class="col-2">
                                     <a>No</a>
