@@ -33,11 +33,11 @@ class PlanesController extends Controller
             $negocio->valor = $request->valor;
         }
         $negocio->plan = $request->plan;
+        $negocio->paso = "Planes";
         $negocio->save();
 
         $codigo_pptrio = $negocio->propietario;
         $propietario = Propietarios::find($codigo_pptrio);
-        $propietario->paso = "Planes";
         $propietario->save();
 
         if($request->plan == '1'){

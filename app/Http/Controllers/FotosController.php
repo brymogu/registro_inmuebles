@@ -25,5 +25,9 @@ class FotosController extends Controller
         $fotos->url = $url;   
         $fotos->propiedad = $id;      
         $fotos->save();
+
+        $negocio = Negocios::where('propiedad', $id)->first();
+        $negocio->paso = "fotos";
+        $negocio->save();
     }
 }
