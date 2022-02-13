@@ -46,7 +46,7 @@
                     </button>
                     <ul class="dropdown-menu shadow border-0 dropdown-menu-end" aria-labelledby="logmenu">
                         <li><a class="dropdown-item disabled">
-                            {{Auth::user()->name}} 
+                             
                             </a></li>
                         <li>
                             <hr class="dropdown-divider">

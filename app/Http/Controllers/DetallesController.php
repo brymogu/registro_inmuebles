@@ -229,10 +229,12 @@ class DetallesController extends Controller
 
         $Propiedad->save();
 
-        $negocio_unico = Negocios::where('propiedad', $Propiedad->id)->first();
-        $codigo_pptrio = $negocio_unico->propietario;
+        $negocio = Negocios::where('propiedad', $Propiedad->id)->first();
+        $negocio->paso = "Detalles";
+        $negocio->save();
+
+        $codigo_pptrio = $negocio->propietario;
         $propietario = Propietarios::find($codigo_pptrio);
-        $propietario->paso = "Detalles";
         $propietario->save();
 
         return redirect()->route('conjunto.show', $Propiedad);
