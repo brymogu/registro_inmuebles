@@ -36,11 +36,14 @@ use Illuminate\Support\Facades\DB;
 
 class EditController extends Controller
 {
-    
+
     public function showtable()
     {
-        
-        $negocios = DB::table("negocios")
+
+        session_start();
+
+        if (isset($_SESSION['nombre'])) {
+            $negocios = DB::table("negocios")
                 ->leftJoin("propiedades", function ($join) {
                     $join->on("negocios.propiedad", "=", "propiedades.id");
                 })
@@ -59,29 +62,33 @@ class EditController extends Controller
                 ->select("negocios.id as id_neg", "negocios.created_at", "propiedades.id as id_ppdad", "propietarios.id as id_pptario", "tipos_documentos.desc_nombres_corto", "propietarios.doc_number", "propietarios.name", "propietarios.lastname", "planes.id as id_plan", "tipos_negocios.id as id_tipo_neg", "propiedades.certificado", "planes.desc_plan", "tipos_negocios.desc_tipo_negocio", "tipos_documentos.id as id_tipos_doc", "negocios.asesor")
                 ->get();
 
-        return view('admin.editar.edit', compact('negocios'));
+            return view('admin.editar.edit', compact('negocios'));
+        }
+
+        return redirect('login');
     }
 
-    public function convertir(Request $request) {
-        
-        return redirect()->route('administrador.editform',$request->codiprop);
-        
+    public function convertir(Request $request)
+    {
+
+        return redirect()->route('administrador.editform', $request->codiprop);
     }
 
-    public function show(Propietarios $codiprop){
-        
-        $negocio_unico = Negocios::where('propietario', $codiprop->id)->first();        
+    public function show(Propietarios $codiprop)
+    {
+
+        $negocio_unico = Negocios::where('propietario', $codiprop->id)->first();
         $codigo_ppdad = $negocio_unico->propiedad;
         $propiedad = Propiedades::find($codigo_ppdad);
-        
-        
+
+
         $negocio_tipo = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
         $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
         $inmueble = Tipos_inmueble::pluck('desc_tipo_inmueble', 'id');
         $estratos = Estratos::pluck('estrato', 'id');
         $estado = Estados_inmueble::pluck('desc_estado', 'id');
         $remodelado = Remodelados::pluck('desc_remodelado', 'id');
-        $ciudad = Ciudades::pluck('desc_ciudades','id');
+        $ciudad = Ciudades::pluck('desc_ciudades', 'id');
         $mat_habitaciones = Mats_piso_habitacion::pluck('desc_mats_piso_habitaciones', 'id');
         $mat_cocina = Mats_piso_cocina::pluck('desc_mats_piso_cocina', 'id');
         $mat_bano = Mats_piso_bano::pluck('desc_mats_piso_bano', 'id');
@@ -100,15 +107,42 @@ class EditController extends Controller
         $seguridad = Tipos_seguridad::pluck('desc_tipo_seguridad', 'id');
         $cuota = Tipos_cuotas::pluck('desc_tipo_cuota', 'id');
         $conc_juridico = Conc_juridicos::pluck('des_conc_juridicos', 'id');
-        
-        return view('admin.editar.edit_form', compact('propiedad', 'codiprop','tipos_documento','negocio_unico','negocio_tipo','inmueble','estratos','estado','remodelado',
-        'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'
-        ,'vigilancia','seguridad','cuota','conc_juridico'));
 
+        return view('admin.editar.edit_form', compact(
+            'propiedad',
+            'codiprop',
+            'tipos_documento',
+            'negocio_unico',
+            'negocio_tipo',
+            'inmueble',
+            'estratos',
+            'estado',
+            'remodelado',
+            'ciudad',
+            'mat_habitaciones',
+            'mat_cocina',
+            'mat_bano',
+            'mat_zsocial',
+            'mb_cocina',
+            'estufa',
+            'horno',
+            'tipo_cocina',
+            'calentador',
+            'vista',
+            'zonas',
+            'mat_fachada',
+            'tipo_garaje',
+            'niveles',
+            'vigilancia',
+            'seguridad',
+            'cuota',
+            'conc_juridico'
+        ));
     }
 
-    public function update(Request $request, Propietarios $codiprop) {
-        
+    public function update(Request $request, Propietarios $codiprop)
+    {
+
         $negocio_unico = Negocios::where('propietario', $codiprop->id)->first();
         $codigo_ppdad = $negocio_unico->propiedad;
         $propiedad = Propiedades::find($codigo_ppdad);
@@ -119,7 +153,7 @@ class EditController extends Controller
         $codiprop->email = $request->email;
         $codiprop->tipo_doc = $request->id;
         $codiprop->doc_number = $request->idnumber;
-        
+
         //Negocio
         $negocio_unico->tipo_negocio = $request->tipo;
         $negocio_unico->valor = $request->valor;
@@ -128,7 +162,7 @@ class EditController extends Controller
         $negocio_unico->precio_contrato = $request->precio_contrato;
         $negocio_unico->conc_juridico = $request->conc_juridico;
         $negocio_unico->obs_conc_juridico = $request->obs_conc_juridico;
-        
+
         //propiedad
         $propiedad->chip = $request->chip;
         $propiedad->matricula = $request->matricula;
@@ -165,7 +199,7 @@ class EditController extends Controller
         $propiedad->tipo_vista = $request->vista;
         $propiedad->zona_social = $request->zona_social;
         $propiedad->material_fachada = $request->material_fachada;
-        
+
         $propiedad->chimenea = $request->chimenea;
         $propiedad->balcon = $request->balcon;
         $propiedad->b_servicio = $request->b_servicio;
@@ -187,7 +221,7 @@ class EditController extends Controller
         $propiedad->patio = $request->patio;
         $propiedad->area_terraza = $request->area_terraza;
         $propiedad->area_balcon = $request->area_balcon;
-        
+
         //Caracteristicas conjunto
         $propiedad->tipo_vigilancia = $request->vigilancia;
         $propiedad->tipo_seguridad = $request->seguridad;
@@ -232,7 +266,8 @@ class EditController extends Controller
             $propiedad->gje_cubierto = null;
         }
 
-        if ($request->tipo_inm == 2) {$propiedad->piso = $request->piso;
+        if ($request->tipo_inm == 2) {
+            $propiedad->piso = $request->piso;
             if ($request->ascensor) {
                 $propiedad->ascensor = "Si";
                 $propiedad->n_ascensores = $request->n_ascensores;
@@ -281,11 +316,9 @@ class EditController extends Controller
         $codiprop->save();
         $negocio_unico->save();
         $propiedad->save();
-        
 
 
-        return redirect()->route('administrador.edit',$request->codiprop);
-        
+
+        return redirect()->route('administrador.edit', $request->codiprop);
     }
-
 }

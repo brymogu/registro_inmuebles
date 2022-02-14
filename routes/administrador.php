@@ -11,9 +11,10 @@ use App\Http\Controllers\Admin\FormatosController;
 use Illuminate\Support\Facades\Route;
 
 
-// Route::get('/administrador', InicioController::class);
-Route::get('login/', [UsuarioController::class, 'show'])->name('login.show');
-Route::post('login/', [UsuarioController::class, 'validar']);
+Route::get('login/', [UsuarioController::class, 'show'])->name('login');
+Route::post('login/', [UsuarioController::class, 'validar'])->name('login.validador');
+Route::get('salir', [UsuarioController::class, 'salir'])->name('salir');
+
 Route::get('administrador/', [InicioController::class, 'show'])->name('administrador.main');
 Route::get('administrador/editar', [EditController::class, 'showtable'])->name('administrador.edit');
 Route::post('administrador/editar', [EditController::class, 'convertir'])->name('administrador.editcampos');

@@ -5,25 +5,35 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Usuarios;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
 {
     //
     public function show()
     {
+
         return view('admin.login');
     }
 
     public function validar(Request $request)
     {
 
-        $credenciales = request()->only('email', 'password');
+        $usuario = Usuarios::where('usuario', $request->usuario)->first();
 
-       if (Auth::attempt($credenciales,true)) {
-           request()->session()->regenerate();
-           return redirect('administrador');
-       }
-       return redirect('login');
+        if ($usuario != null) {
+            session_start();
+            $_SESSION['nombre'] = $request['usuario'];
+            return redirect()->route('administrador.main');
+        }
+        return $request->usuario;
+    }
+
+    public function salir()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+
+        return redirect()->route('login');
     }
 }

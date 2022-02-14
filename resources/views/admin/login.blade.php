@@ -38,19 +38,15 @@
             <div class="col-4">
                 <div class="card shadow border-0 p-5 rounded">
                     <img src="img/epica.svg" class="card-img-top" alt="...">
-                    <div class="card-body">                        
+                    <div class="card-body">
                         {{ Form::open(['method' => 'post']) }}
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-                            <label for="email">Usuario</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="name@example.com" required>
-                            <label for="password">Contraseña</label>
+                            <input type="text" class="form-control" id="usuario" name="usuario"
+                                placeholder="name@example.com" required>
+                            <label for="usuario">Usuario</label>
                         </div>
                         <div class="text-end">
                             <button type="submit" class="btn btn-light shadow-sm">Ingresar</button>
-                            
                         </div>
                         {{ Form::close() }}
                     </div>
