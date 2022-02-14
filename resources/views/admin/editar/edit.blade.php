@@ -50,12 +50,11 @@
                                         {{ $negocio->asesor }}
                                     </td>
                                     <td>
-                                        {{ Form::open(['method' => 'post']) }}
-                                        <input type="text" class="d-none" name="codiprop"
+                                        {{ Form::open(['route' => 'administrador.editform']) }}
+                                        <input type="text" class="d-none" name="codineg"
                                             value="{{ $negocio->id_neg }}">
                                         <button type="submit" class="btn btn-epc rounded-circle"><i
                                                 class="fas fa-pencil-alt"></i></button>
-
                                         {{ Form::close() }}
                                     </td>
                                 </tr>

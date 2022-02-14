@@ -16,6 +16,7 @@ class DownloadController extends Controller
 
         if (isset($_SESSION['nombre'])) {
             $negocios = DB::table("negocios")
+            ->where('negocios.paso', '=', 'Planes')
                 ->leftJoin("propiedades", function ($join) {
                     $join->on("negocios.propiedad", "=", "propiedades.id");
                 })

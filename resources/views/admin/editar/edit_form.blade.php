@@ -17,7 +17,7 @@
                     <div class="form-group row">
                         <label class="col-5 col-form-label" for="name">Nombres</label>
                         <div class="col-7">
-                            <input id="name" name="name" type="text" class="form-control" value="{{ $codiprop->name }}"
+                            <input id="name" name="name" type="text" class="form-control" value="{{ $propietario->name }}"
                                 required>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                         <label for="text" class="col-5 col-form-label">Apellidos</label>
                         <div class="col-7">
                             <input id="text" name="lastname" type="text" class="form-control"
-                                value="{{ $codiprop->lastname }}" required>
+                                value="{{ $propietario->lastname }}" required>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="form-group row">
                         <label for="email" class="col-5 col-form-label">E-mail</label>
                         <div class="col-7">
-                            <input id="email" name="email" type="email" value="{{ $codiprop->email }}"
+                            <input id="email" name="email" type="email" value="{{ $propietario->email }}"
                                 class="form-control" required>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     <div class="form-group row">
                         <label for="phone" class="col-5 col-form-label">Teléfono celular</label>
                         <div class="col-7">
-                            <input id="phone" name="phone" type="tel" value="{{ $codiprop->phone }}"
+                            <input id="phone" name="phone" type="tel" value="{{ $propietario->phone }}"
                                 class="form-control" required>
                         </div>
                     </div>
@@ -61,11 +61,11 @@
                     <div class="form-group row">
                         <label for="id" class="col-5 col-form-label">Tipo DI</label>
                         <div class="col-7">
-                            @isset($codiprop->tipo_doc)
-                                {!! Form::select('id', $tipos_documento, $codiprop->tipo_doc, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @isset($propietario->tipo_doc)
+                                {!! Form::select('id', $tipos_documento, $propietario->tipo_doc, ['class' => 'form-select', 'required' => 'required']) !!}
                             @endisset
-                            @empty($codiprop->tipo_doc)
-                                {!! Form::select('id', $tipos_documento, $codiprop->tipo_doc, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                            @empty($propietario->tipo_doc)
+                                {!! Form::select('id', $tipos_documento, $propietario->tipo_doc, ['class' => 'form-select vacio', 'required' => 'required']) !!}
                             @endempty
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                         <label for="idnumber" class="col-5 col-form-label">Número DI</label>
                         <div class="col-7">
                             <input id="idnumber" name="idnumber" type="number" class="form-control"
-                                value="{{ $codiprop->doc_number }}" required="required" min="800">
+                                value="{{ $propietario->doc_number }}" required="required" min="800">
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                         <label for="conc_precio" class="col-5 col-form-label">Concepto de precio</label>
                         <div class="col-7">
                             <input id="conc_precio" name="conc_precio" type="text" class="form-control"
-                                value="{{ $negocio_unico->conc_precio }}" required>
+                                value="{{ $negocio->conc_precio }}" required>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                         <label for="precio_contrato" class="col-5 col-form-label">Precio contrato</label>
                         <div class="col-7">
                             <input id="precio_contrato" name="precio_contrato" type="text" class="form-control"
-                                value="{{ $negocio_unico->precio_contrato }}">
+                                value="{{ $negocio->precio_contrato }}">
                         </div>
                     </div>
                 </div>
@@ -128,11 +128,11 @@
                     <div class="form-group row">
                         <label class="col-5 col-form-label" for="conc_juridico">Concepto jurídico</label>
                         <div class="col-7">
-                            @isset($negocio_unico->conc_juridico)
-                                {!! Form::select('conc_juridico', $conc_juridico, $negocio_unico->conc_juridico, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @isset($negocio->conc_juridico)
+                                {!! Form::select('conc_juridico', $conc_juridico, $negocio->conc_juridico, ['class' => 'form-select', 'required' => 'required']) !!}
                             @endisset
-                            @empty($negocio_unico->conc_juridico)
-                                {!! Form::select('conc_juridico', $conc_juridico, $negocio_unico->conc_juridico, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                            @empty($negocio->conc_juridico)
+                                {!! Form::select('conc_juridico', $conc_juridico, $negocio->conc_juridico, ['class' => 'form-select vacio', 'required' => 'required']) !!}
                             @endempty
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                         <label for="obs_conc_juridico" class="col-5 col-form-label">Observación concepto jurídico</label>
                         <div class="col-7">
                             <input id="obs_conc_juridico" name="obs_conc_juridico" type="text" class="form-control"
-                                value="{{ $negocio_unico->obs_conc_juridico }}" required>
+                                value="{{ $negocio->obs_conc_juridico }}" required>
                         </div>
                     </div>
                 </div>
@@ -185,11 +185,11 @@
                     <div class="form-group row">
                         <label for="tipo" class="col-5">Tipo de negocio</label>
                         <div class="col-7">
-                            @isset($negocio_unico->tipo_negocio)
-                                {!! Form::select('tipo', $negocio_tipo, $negocio_unico->tipo_negocio, ['class' => 'form-select', 'required' => 'required']) !!}
+                            @isset($negocio->tipo_negocio)
+                                {!! Form::select('tipo', $negocio_tipo, $negocio->tipo_negocio, ['class' => 'form-select', 'required' => 'required']) !!}
                             @endisset
-                            @empty($negocio_unico->tipo_negocio)
-                                {!! Form::select('tipo', $negocio_tipo, $negocio_unico->tipo_negocio, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                            @empty($negocio->tipo_negocio)
+                                {!! Form::select('tipo', $negocio_tipo, $negocio->tipo_negocio, ['class' => 'form-select vacio', 'required' => 'required']) !!}
                             @endempty
                         </div>
                     </div>
@@ -198,7 +198,7 @@
                     <div class="form-group row" id="valorgrupo">
                         <label for="valor" class="col-5 col-form-label">Valor tentativo</label>
                         <div class="col-7">
-                            <input id="valor" readonly name="valor" type="number" value="{{ $negocio_unico->valor }}"
+                            <input id="valor" readonly name="valor" type="number" value="{{ $negocio->valor }}"
                                 class="form-control" min="99000" required="required">
                             <span id="valorpesos" class="form-text text-muted"></span>
                         </div>
@@ -302,7 +302,7 @@
                         <label for="asesor" class="col-5 col-form-label">Nombre del Asesor</label>
                         <div class="col-7">
                             <input id="asesor" name="asesor" type="text" class="form-control "
-                                value="{{ $negocio_unico->asesor }}">
+                                value="{{ $negocio->asesor }}">
                         </div>
                     </div>
                 </div>
@@ -1078,7 +1078,6 @@
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
-            @if ($tipo_inm == 1)
                 <div class="col-12 col-md-4 ">
                     <div class="form-group row">
                         <label for="patio" class="col-5 col-form-label">Patio interior</label>
@@ -1111,8 +1110,6 @@
                         </div>
                     </div>
                 </div>
-            @endif
-            @if ($tipo_inm == 2)
                 <div class="col-12 col-md-4">
                     <div class="form-group row">
                         <label for="zonas_verdes" class="col-5 col-form-label">Zonas verdes</label>
@@ -1129,7 +1126,6 @@
                         </div>
                     </div>
                 </div>
-            @endif
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0" id="area_bt">
             <div class="row">

@@ -19,8 +19,8 @@ Route::get('administrador/', [InicioController::class, 'show'])->name('administr
 Route::get('administrador/editar', [EditController::class, 'showtable'])->name('administrador.edit');
 Route::post('administrador/editar', [EditController::class, 'convertir'])->name('administrador.editcampos');
 
-Route::get('administrador/editar/inmueble/{codiprop}', [EditController::class, 'show'])->name('administrador.editform');
-Route::post('administrador/editar/inmueble/{codiprop}', [EditController::class, 'update'])->name('administrador.editupdate');
+Route::post('administrador/editar/inmueble', [EditController::class, 'show'])->name('administrador.editform');
+Route::post('administrador/editar/inmueble/{codineg}', [EditController::class, 'update'])->name('administrador.editupdate');
 
 Route::get('administrador/descargas', [DownloadController::class, 'showtable'])->name('administrador.download');
 
