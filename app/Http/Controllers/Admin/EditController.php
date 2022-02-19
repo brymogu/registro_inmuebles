@@ -39,11 +39,17 @@ class EditController extends Controller
 
     public function showtable()
     {
+<<<<<<< Updated upstream
 
         session_start();
 
         if (isset($_SESSION['nombre'])) {
             $negocios = DB::table("negocios")
+=======
+        
+        $negocios = DB::table("negocios")
+            ->where('negocios.paso', '=', 'Planes')
+>>>>>>> Stashed changes
                 ->leftJoin("propiedades", function ($join) {
                     $join->on("negocios.propiedad", "=", "propiedades.id");
                 })
@@ -68,6 +74,7 @@ class EditController extends Controller
         return redirect('login');
     }
 
+<<<<<<< Updated upstream
     public function convertir(Request $request)
     {
 
@@ -82,6 +89,19 @@ class EditController extends Controller
         $propiedad = Propiedades::find($codigo_ppdad);
 
 
+=======
+    public function convertir(Request $request) {
+        
+        return redirect()->route('administrador.editform',$request->codineg);
+        
+    }
+
+    public function show(Request $request){
+        
+        $negocio = Negocios::find($request -> codineg);
+        $propiedad = Propiedades::find($negocio->propiedad);
+        $propietario = Propietarios::find($negocio->propietario);
+>>>>>>> Stashed changes
         $negocio_tipo = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
         $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
         $inmueble = Tipos_inmueble::pluck('desc_tipo_inmueble', 'id');
@@ -107,6 +127,13 @@ class EditController extends Controller
         $seguridad = Tipos_seguridad::pluck('desc_tipo_seguridad', 'id');
         $cuota = Tipos_cuotas::pluck('desc_tipo_cuota', 'id');
         $conc_juridico = Conc_juridicos::pluck('des_conc_juridicos', 'id');
+<<<<<<< Updated upstream
+=======
+        
+        return view('admin.editar.edit_form', compact('propiedad', 'propietario', 'negocio','tipos_documento','negocio_tipo','inmueble','estratos','estado','remodelado',
+        'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'
+        ,'vigilancia','seguridad','cuota','conc_juridico'));
+>>>>>>> Stashed changes
 
         return view('admin.editar.edit_form', compact(
             'propiedad',
