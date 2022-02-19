@@ -17,8 +17,8 @@
                     <div class="form-group row">
                         <label class="col-5 col-form-label" for="name">Nombres</label>
                         <div class="col-7">
-                            <input id="name" name="name" type="text" class="form-control" value="{{ $propietario->name }}"
-                                required>
+                            <input id="name" name="name" type="text" class="form-control"
+                                value="{{ $propietario->name }}" required>
                         </div>
                     </div>
                 </div>
@@ -90,6 +90,7 @@
                         <div class="col-7">
                             <input id="conc_precio" name="conc_precio" type="text" class="form-control"
                                 value="{{ $negocio->conc_precio }}" required>
+                            <span id="conceptopesos" class="form-text text-muted"></span>
                         </div>
                     </div>
                 </div>
@@ -121,6 +122,7 @@
                         <div class="col-7">
                             <input id="precio_contrato" name="precio_contrato" type="text" class="form-control"
                                 value="{{ $negocio->precio_contrato }}">
+                            <span id="contratopesos" class="form-text text-muted"></span>
                         </div>
                     </div>
                 </div>
@@ -163,8 +165,8 @@
                     <div class="form-group row">
                         <label class="col-5 col-form-label" for="upz">UPZ</label>
                         <div class="col-7">
-                            <input id="upz" name="upz" type="text" class="form-control"
-                                value="{{ $propiedad->upz }}" required>
+                            <input id="upz" name="upz" type="text" class="form-control" value="{{ $propiedad->upz }}"
+                                required>
                         </div>
                     </div>
                 </div>
@@ -514,7 +516,8 @@
                 </div>
             </div>
         </div>
-        <h5 class="fw-bold my-3">Detalles del inmueble</h5>
+        <h5 class="fw-bold mt-5 mb-3">Detalles del inmueble</h5>
+
         <p class="fw-bold my-3">Área (m<sup>2</sup>)</p>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
@@ -546,6 +549,28 @@
                             </div>
                         </div>
                     @endif
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3 shadow-sm border-0" id="area_bt">
+            <div class="row">
+                <div class="col-12 col-md-4" id="area_balcon_secc">
+                    <div class="form-group row">
+                        <label for="area_balcon" class="col-5 col-form-label">Área del balcón</label>
+                        <div class="col-7">
+                            <input id="area_balcon" name="area_balcon" type="number" step="1" min="1"
+                                class="form-control" value="{{ $propiedad->area_balcon }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4" id="area_terraza_secc">
+                    <div class="form-group row">
+                        <label for="area_terraza" class="col-5 col-form-label">Área de la terraza</label>
+                        <div class="col-7">
+                            <input id="area_terraza" name="area_terraza" type="number" step="1" min="1"
+                                class="form-control" value="{{ $propiedad->area_terraza }}">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1128,28 +1153,6 @@
                 </div>
             </div>
         </div>
-        <div class="card p-3 mt-3 shadow-sm border-0" id="area_bt">
-            <div class="row">
-                <div class="col-12 col-md-4" id="area_balcon_secc">
-                    <div class="form-group row">
-                        <label for="area_balcon" class="col-5 col-form-label">Área del balcón</label>
-                        <div class="col-7">
-                            <input id="area_balcon" name="area_balcon" type="number" step="1" min="1"
-                                class="form-control" value="{{ $propiedad->area_balcon }}">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4" id="area_terraza_secc">
-                    <div class="form-group row">
-                        <label for="area_terraza" class="col-5 col-form-label">Área de la terraza</label>
-                        <div class="col-7">
-                            <input id="area_terraza" name="area_terraza" type="number" step="1" min="1"
-                                class="form-control" value="{{ $propiedad->area_terraza }}">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <p class="fw-bold my-3">Garaje(s):</p>
         <div class="card p-3 mt-3 shadow-sm border-0">
             <div class="row">
@@ -1158,19 +1161,20 @@
                         <label for="garaje" class="col-5 col-form-label">Tiene garaje(s)</label>
                         <div class="col-7">
                             <select name="garaje" id="garaje" class="form-select" required>
-                                @if ($propiedad->tiene_garajes == 'Si'){
-                                    <option value="Si" selected>Si</option>
-                                    <option value="Comunal">Comunal</option>
-                                    <option value="No">No</option>
-                                }@elseif($propiedad->tiene_garajes == 'Comunal'){
-                                    <option value="Si">Si</option>
-                                    <option value="Comunal" selected>Comunal</option>
-                                    <option value="No">No</option>
-                                }@elseif($propiedad->tiene_garajes == 'No'){
-                                    <option value="Si">Si</option>
-                                    <option value="Comunal">Comunal</option>
-                                    <option value="No" selected>No</option>
-                                    }
+                                @if ($propiedad->tiene_garajes == 'Privado')
+                                    {
+                                    <<option value="Privado" selected>Privado</option>
+                                        <option value="Comunal">Comunal</option>
+                                        <option value="No">No</option>
+                                    }@elseif($propiedad->tiene_garajes == 'Comunal'){
+                                        <option value="Privado">Privado</option>
+                                        <option value="Comunal" selected>Comunal</option>
+                                        <option value="No">No</option>
+                                    }@elseif($propiedad->tiene_garajes == 'No'){
+                                        <option value="Privado">Privado</option>
+                                        <option value="Comunal">Comunal</option>
+                                        <option value="No" selected>No</option>
+                                        }
                                 @endif
                             </select>
                         </div>

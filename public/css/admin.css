@@ -147,3 +147,7 @@ table.dataTable.no-footer {
     background-color: #01303c !important;
     text-decoration: none !important;
 }
+
+input:required {
+    border: 1px solid #FFCDD2;
+}
