@@ -39,17 +39,12 @@ class EditController extends Controller
 
     public function showtable()
     {
-<<<<<<< Updated upstream
 
         session_start();
 
         if (isset($_SESSION['nombre'])) {
             $negocios = DB::table("negocios")
-=======
-        
-        $negocios = DB::table("negocios")
-            ->where('negocios.paso', '=', 'Planes')
->>>>>>> Stashed changes
+                ->where('negocios.paso', '=', 'Planes')
                 ->leftJoin("propiedades", function ($join) {
                     $join->on("negocios.propiedad", "=", "propiedades.id");
                 })
@@ -74,97 +69,81 @@ class EditController extends Controller
         return redirect('login');
     }
 
-<<<<<<< Updated upstream
     public function convertir(Request $request)
     {
 
-        return redirect()->route('administrador.editform', $request->codiprop);
+        return redirect()->route('administrador.editform', $request->codineg);
     }
 
-    public function show(Propietarios $codiprop)
+    public function show(Request $request)
     {
 
-        $negocio_unico = Negocios::where('propietario', $codiprop->id)->first();
-        $codigo_ppdad = $negocio_unico->propiedad;
-        $propiedad = Propiedades::find($codigo_ppdad);
+        session_start();
 
+        if (isset($_SESSION['nombre'])) {
+            
+            $negocio = Negocios::find($request->codineg);
+            $propiedad = Propiedades::find($negocio->propiedad);
+            $propietario = Propietarios::find($negocio->propietario);
+            $negocio_tipo = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
+            $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
+            $inmueble = Tipos_inmueble::pluck('desc_tipo_inmueble', 'id');
+            $estratos = Estratos::pluck('estrato', 'id');
+            $estado = Estados_inmueble::pluck('desc_estado', 'id');
+            $remodelado = Remodelados::pluck('desc_remodelado', 'id');
+            $ciudad = Ciudades::pluck('desc_ciudades', 'id');
+            $mat_habitaciones = Mats_piso_habitacion::pluck('desc_mats_piso_habitaciones', 'id');
+            $mat_cocina = Mats_piso_cocina::pluck('desc_mats_piso_cocina', 'id');
+            $mat_bano = Mats_piso_bano::pluck('desc_mats_piso_bano', 'id');
+            $mat_zsocial = Mats_piso_zsocial::pluck('desc_mats_piso_zsocial', 'id');
+            $mb_cocina = Mb_cocina::pluck('desc_mbs_cocina', 'id');
+            $estufa = Tipos_estufa::pluck('desc_tipos_estufa', 'id');
+            $horno = Tipos_horno::pluck('desc_tipos_horno', 'id');
+            $tipo_cocina = Tipos_cocina::pluck('desc_tipos_cocina', 'id');
+            $calentador = Calentadores::pluck('desc_tipos_calentador', 'id');
+            $vista = Vista::pluck('desc_vista', 'id');
+            $zonas = Zonas_sociales::pluck('desc_zona_social', 'id');
+            $mat_fachada = Materiales_fachada::pluck('desc_mats_fachada', 'id');
+            $tipo_garaje = tipo_garajes::pluck('tipo_garajes', 'id');
+            $niveles = Niveles::pluck('des_nivel', 'id');
+            $vigilancia = Tipos_vigilancia::pluck('desc_tipo_vigilancia', 'id');
+            $seguridad = Tipos_seguridad::pluck('desc_tipo_seguridad', 'id');
+            $cuota = Tipos_cuotas::pluck('desc_tipo_cuota', 'id');
+            $conc_juridico = Conc_juridicos::pluck('des_conc_juridicos', 'id');
 
-=======
-    public function convertir(Request $request) {
-        
-        return redirect()->route('administrador.editform',$request->codineg);
-        
-    }
+            return view('admin.editar.edit_form', compact(
+                'propiedad',
+                'propietario',
+                'negocio',
+                'tipos_documento',
+                'negocio_tipo',
+                'inmueble',
+                'estratos',
+                'estado',
+                'remodelado',
+                'ciudad',
+                'mat_habitaciones',
+                'mat_cocina',
+                'mat_bano',
+                'mat_zsocial',
+                'mb_cocina',
+                'estufa',
+                'horno',
+                'tipo_cocina',
+                'calentador',
+                'vista',
+                'zonas',
+                'mat_fachada',
+                'tipo_garaje',
+                'niveles',
+                'vigilancia',
+                'seguridad',
+                'cuota',
+                'conc_juridico'
+            ));
+        }
 
-    public function show(Request $request){
-        
-        $negocio = Negocios::find($request -> codineg);
-        $propiedad = Propiedades::find($negocio->propiedad);
-        $propietario = Propietarios::find($negocio->propietario);
->>>>>>> Stashed changes
-        $negocio_tipo = Tipos_negocios::pluck('desc_tipo_negocio', 'id');
-        $tipos_documento = Tipos_documento::pluck('desc_tipos_documento', 'id');
-        $inmueble = Tipos_inmueble::pluck('desc_tipo_inmueble', 'id');
-        $estratos = Estratos::pluck('estrato', 'id');
-        $estado = Estados_inmueble::pluck('desc_estado', 'id');
-        $remodelado = Remodelados::pluck('desc_remodelado', 'id');
-        $ciudad = Ciudades::pluck('desc_ciudades', 'id');
-        $mat_habitaciones = Mats_piso_habitacion::pluck('desc_mats_piso_habitaciones', 'id');
-        $mat_cocina = Mats_piso_cocina::pluck('desc_mats_piso_cocina', 'id');
-        $mat_bano = Mats_piso_bano::pluck('desc_mats_piso_bano', 'id');
-        $mat_zsocial = Mats_piso_zsocial::pluck('desc_mats_piso_zsocial', 'id');
-        $mb_cocina = Mb_cocina::pluck('desc_mbs_cocina', 'id');
-        $estufa = Tipos_estufa::pluck('desc_tipos_estufa', 'id');
-        $horno = Tipos_horno::pluck('desc_tipos_horno', 'id');
-        $tipo_cocina = Tipos_cocina::pluck('desc_tipos_cocina', 'id');
-        $calentador = Calentadores::pluck('desc_tipos_calentador', 'id');
-        $vista = Vista::pluck('desc_vista', 'id');
-        $zonas = Zonas_sociales::pluck('desc_zona_social', 'id');
-        $mat_fachada = Materiales_fachada::pluck('desc_mats_fachada', 'id');
-        $tipo_garaje = tipo_garajes::pluck('tipo_garajes', 'id');
-        $niveles = Niveles::pluck('des_nivel', 'id');
-        $vigilancia = Tipos_vigilancia::pluck('desc_tipo_vigilancia', 'id');
-        $seguridad = Tipos_seguridad::pluck('desc_tipo_seguridad', 'id');
-        $cuota = Tipos_cuotas::pluck('desc_tipo_cuota', 'id');
-        $conc_juridico = Conc_juridicos::pluck('des_conc_juridicos', 'id');
-<<<<<<< Updated upstream
-=======
-        
-        return view('admin.editar.edit_form', compact('propiedad', 'propietario', 'negocio','tipos_documento','negocio_tipo','inmueble','estratos','estado','remodelado',
-        'ciudad','mat_habitaciones','mat_cocina','mat_bano','mat_zsocial','mb_cocina','estufa','horno','tipo_cocina','calentador','vista','zonas','mat_fachada','tipo_garaje','niveles'
-        ,'vigilancia','seguridad','cuota','conc_juridico'));
->>>>>>> Stashed changes
-
-        return view('admin.editar.edit_form', compact(
-            'propiedad',
-            'codiprop',
-            'tipos_documento',
-            'negocio_unico',
-            'negocio_tipo',
-            'inmueble',
-            'estratos',
-            'estado',
-            'remodelado',
-            'ciudad',
-            'mat_habitaciones',
-            'mat_cocina',
-            'mat_bano',
-            'mat_zsocial',
-            'mb_cocina',
-            'estufa',
-            'horno',
-            'tipo_cocina',
-            'calentador',
-            'vista',
-            'zonas',
-            'mat_fachada',
-            'tipo_garaje',
-            'niveles',
-            'vigilancia',
-            'seguridad',
-            'cuota',
-            'conc_juridico'
-        ));
+        return redirect('login');
     }
 
     public function update(Request $request, Propietarios $codiprop)

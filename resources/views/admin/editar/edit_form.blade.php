@@ -1126,6 +1126,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
         <div class="card p-3 mt-3 shadow-sm border-0" id="area_bt">
             <div class="row">

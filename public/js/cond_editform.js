@@ -4,7 +4,6 @@ $(document).ready(function() {
     var year = (new Date).getFullYear();
 
     if ($('#negocio_tarjeta').length) {
-        $(".usuario .progress-bar, .negocio .progress-bar").css("background-color", "#01303c");
 
         $('#sec_tuberia').hide();
         $('#anoconstruido').hide();
@@ -14,9 +13,11 @@ $(document).ready(function() {
         if ($('#tipo_inm').val() == 2) {
             $('#aptos2').show();
             $('#piso').attr("required", "true");
+            $('#zonas_verdes').hide();
         } else {
             $('#aptos2').hide();
             $('#piso').removeAttr('required');
+            $('#zonas_verdes').show();
         }
 
         if ($('#tipo_inm').val() == 1) {
