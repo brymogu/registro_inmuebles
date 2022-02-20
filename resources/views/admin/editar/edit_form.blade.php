@@ -188,10 +188,10 @@
                         <label for="tipo" class="col-5">Tipo de negocio</label>
                         <div class="col-7">
                             @isset($negocio->tipo_negocio)
-                                {!! Form::select('tipo', $negocio_tipo, $negocio->tipo_negocio, ['class' => 'form-select', 'required' => 'required']) !!}
+                                {!! Form::select('tipo', $negocio_tipo, $negocio->tipo_negocio, ['class' => 'form-select', 'required' => 'required', 'id' => 'tipo']) !!}
                             @endisset
                             @empty($negocio->tipo_negocio)
-                                {!! Form::select('tipo', $negocio_tipo, $negocio->tipo_negocio, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                {!! Form::select('tipo', $negocio_tipo, $negocio->tipo_negocio, ['class' => 'form-select vacio', 'required' => 'required', 'id' => 'tipo']) !!}
                             @endempty
                         </div>
                     </div>
@@ -1234,10 +1234,10 @@
                             <label for="vigilancia" class="col-5 col-form-label">Vigilancia</label>
                             <div class="col-7">
                                 @isset($propiedad->tipo_vigilancia)
-                                    {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select', 'required' => 'required']) !!}
+                                    {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select', 'required' => 'required', 'id' => 'vigilancia']) !!}
                                 @endisset
                                 @empty($propiedad->tipo_vigilancia)
-                                    {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                    {!! Form::select('vigilancia', $vigilancia, $propiedad->tipo_vigilancia, ['class' => 'form-select vacio', 'required' => 'required', 'id' => 'vigilancia']) !!}
                                 @endempty
                             </div>
                         </div>
@@ -1247,10 +1247,10 @@
                             <label for="seguridad" class="col-5 col-form-label">Seguridad</label>
                             <div class="col-7">
                                 @isset($propiedad->tipo_seguridad)
-                                    {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select', 'required' => 'required']) !!}
+                                    {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select', 'required' => 'required', 'id' => 'seguridad']) !!}
                                 @endisset
                                 @empty($propiedad->tipo_seguridad)
-                                    {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select vacio', 'required' => 'required']) !!}
+                                    {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select vacio', 'required' => 'required', 'id' => 'seguridad']) !!}
                                 @endempty
                             </div>
                         </div>

@@ -50,6 +50,11 @@ $(document).ready(function() {
         $('#direccion_comp').removeAttr('required');
         $('#detalles').hide();
         $('#caracteristicas').hide();
+        $('#adm_cp').removeAttr('required');
+        $('#vigilancia').removeAttr('required');
+        $('#seguridad').removeAttr('required');
+        $('#t_cuota').removeAttr('required');
+        $('#nombre_c_e').removeAttr('required');
     }
 
     $('#conjunto').change(function() {
@@ -61,16 +66,21 @@ $(document).ready(function() {
             $('#direccion_comp').removeAttr('required');
             $('#detalles').hide();
             $('#caracteristicas').hide();
+            $('#adm_cp').removeAttr('required');
+            $('#vigilancia').removeAttr('required');
+            $('#seguridad').removeAttr('required');
+            $('#t_cuota').removeAttr('required');
+            $('#nombre_c_e').removeAttr('required');
         }
     });
 
 
     if ($('#espropietario').val() == "Si") {
-        $('#pqgrupo').hide();
-        $('#pqsolicita').attr("required", "true");
-    } else {
-        $('#pqgrupo').show();
         $('#pqsolicita').removeAttr('required');
+        $('#pqgrupo').hide();
+    } else {
+        $('#pqsolicita').attr("required", "true");
+        $('#pqgrupo').show();
     }
 
     $('#espropietario').change(function() {
@@ -257,9 +267,9 @@ $(document).ready(function() {
     });
 
 
-    $('#adm_cp_pesos').html("$ " + Intl.NumberFormat("es-CO").format($('#adm_cp').val()));
-    $('#adm_cd_pesos').html("$ " + Intl.NumberFormat("es-CO").format($('#adm_cd').val()));
-    $('#valorpesos').html("$ " + Intl.NumberFormat("es-CO").format($('#valor').val()));
+
+    //$('#adm_cd_pesos').html("$ " + Intl.NumberFormat("es-CO").format($('#adm_cd').val()));
+    //$('#valorpesos').html("$ " + Intl.NumberFormat("es-CO").format($('#valor').val()));
 
 
     $('#conc_precio').keyup(function() {

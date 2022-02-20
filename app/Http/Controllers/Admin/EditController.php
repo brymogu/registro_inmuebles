@@ -44,7 +44,7 @@ class EditController extends Controller
 
         if (isset($_SESSION['nombre'])) {
             $negocios = DB::table("negocios")
-                ->where('negocios.paso', '=', 'Planes')
+                //->where('negocios.paso', '=', 'Planes')
                 ->leftJoin("propiedades", function ($join) {
                     $join->on("negocios.propiedad", "=", "propiedades.id");
                 })
@@ -258,7 +258,7 @@ class EditController extends Controller
         //condicionados
         $propiedad->tiene_garajes = $request->garaje;
 
-        if ($request->garaje == "Si") {
+        if ($request->garaje == "Privado") {
             $propiedad->no_garajes = $request->no_garajes;
             $propiedad->tipo_garajes = $request->tipo_garaje;
             if ($request->gje_cubierto) {

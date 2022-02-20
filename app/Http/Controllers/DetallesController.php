@@ -89,7 +89,7 @@ class DetallesController extends Controller
         $Propiedad->material_fachada = $request->material_fachada;
         $Propiedad->tiene_garajes = $request->garaje;
 
-        if ($request->garaje == "Si") {
+        if ($request->garaje == "Privado") {
             $Propiedad->no_garajes = $request->no_garajes;
             $Propiedad->tipo_garajes = $request->tipo_garaje;
             if ($request->gje_cubierto) {
@@ -303,7 +303,7 @@ class DetallesController extends Controller
         $propiedad->tiene_garajes = $request->garaje;
         // garajes
 
-        if ($request->garaje == "Si") {
+        if ($request->garaje == "Privado") {
             $propiedad->no_garajes = $request->no_garajes;
             $propiedad->tipo_garajes = $request->tipo_garaje;
             if ($request->gje_cubierto) {
