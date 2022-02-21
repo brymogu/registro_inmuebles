@@ -33,31 +33,34 @@
                         <tbody>
 
                             @foreach ($negocios as $negocio)
-                                <tr>
-                                    <td>
-                                        <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                        title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
-                                    </td>
-                                    <td>
-                                        <b> {{ $negocio->name }}</b><br />
-                                        {{ $negocio->lastname }}
-                                    </td>
-                                    <td>
-                                        <b> {{ $negocio->doc_number }}</b><br />
-                                        {{ $negocio->desc_nombres_corto }}
-                                    </td>
-                                    <td>
-                                        {{ $negocio->asesor }}
-                                    </td>
-                                    <td>
-                                        {{ Form::open(['route' => 'administrador.editform']) }}
-                                        <input type="text" class="d-none" name="codineg"
-                                            value="{{ $negocio->id_neg }}">
-                                        <button type="submit" class="btn btn-epc rounded-circle"><i
-                                                class="fas fa-pencil-alt"></i></button>
-                                        {{ Form::close() }}
-                                    </td>
-                                </tr>
+                                @if ($negocio->paso == 'Planes' || $negocio->paso == 'Conjunto' || $negocio->paso == 'fotos' || ($negocio->horizontal == 'No' && $negocio->paso == 'Detalles'))
+                                    <tr>
+                                        <td>
+                                            <button class="btn" data-bs-toggle="tooltip"
+                                                data-bs-placement="bottom"
+                                                title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
+                                        </td>
+                                        <td>
+                                            <b> {{ $negocio->name }}</b><br />
+                                            {{ $negocio->lastname }}
+                                        </td>
+                                        <td>
+                                            <b> {{ $negocio->doc_number }}</b><br />
+                                            {{ $negocio->desc_nombres_corto }}
+                                        </td>
+                                        <td>
+                                            {{ $negocio->asesor }}
+                                        </td>
+                                        <td>
+                                            {{ Form::open(['method' => 'post', 'route' => 'administrador.editform']) }}
+                                            <input type="text" class="d-none" name="codineg"
+                                                value="{{ $negocio->id_neg }}">
+                                            <button type="submit" class="btn btn-epc rounded-circle"><i
+                                                    class="fas fa-pencil-alt"></i></button>
+                                            {{ Form::close() }}
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                         </tbody>
                     </table>

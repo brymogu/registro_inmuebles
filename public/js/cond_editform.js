@@ -173,6 +173,16 @@ $(document).ready(function() {
         }
     });
 
+    if ($('#garaje').val() == 'Privado') {
+        $('#sec_garajes').show();
+        $('#no_garajes').attr("required", "true");
+        $('#tipo_garaje').attr("required", "true");
+    } else {
+        $('#sec_garajes').hide();
+        $('#no_garajes').val('');
+        $('#no_garajes').removeAttr('required');
+        $('#tipo_garaje').removeAttr('required');
+    }
 
     $('#garaje').change(function() {
         if ($('#garaje').val() == 'Privado') {

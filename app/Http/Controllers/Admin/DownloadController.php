@@ -16,7 +16,6 @@ class DownloadController extends Controller
 
         if (isset($_SESSION['nombre'])) {
             $negocios = DB::table("negocios")
-            ->where('negocios.paso', '=', 'Planes')
                 ->leftJoin("propiedades", function ($join) {
                     $join->on("negocios.propiedad", "=", "propiedades.id");
                 })
@@ -32,7 +31,7 @@ class DownloadController extends Controller
                 ->leftJoin("tipos_negocios", function ($join) {
                     $join->on("negocios.tipo_negocio", "=", "tipos_negocios.id");
                 })
-                ->select("negocios.id as id_neg", "negocios.created_at", "propiedades.id as id_ppdad", "propietarios.id as id_pptario", "tipos_documentos.desc_nombres_corto", "propietarios.doc_number", "propietarios.name", "propietarios.lastname", "planes.id as id_plan", "tipos_negocios.id as id_tipo_neg", "propiedades.certificado", "planes.desc_plan", "tipos_negocios.desc_tipo_negocio", "tipos_documentos.id as id_tipos_doc")
+                ->select("negocios.id as id_neg", "negocios.created_at", "propiedades.id as id_ppdad", "propietarios.id as id_pptario", "tipos_documentos.desc_nombres_corto", "propietarios.doc_number", "propietarios.name", "propietarios.lastname", "planes.id as id_plan", "tipos_negocios.id as id_tipo_neg", "propiedades.certificado", "planes.desc_plan", "tipos_negocios.desc_tipo_negocio", "tipos_documentos.id as id_tipos_doc", "negocios.paso")
                 ->get();
 
             return view('admin.descargas.download', compact('negocios'));

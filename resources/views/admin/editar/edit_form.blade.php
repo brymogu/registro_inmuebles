@@ -10,7 +10,7 @@
 @section('content')
     <div class="col-12 pt-5 px-3 formulario_edit" id="negocio_tarjeta">
         <p class="fw-bold ">Datos Personales</p>
-        {{ Form::open(['route' => 'administrador.editupdate']) }}
+        {{ Form::open(['route' => 'administrador.editupdate', 'method' => 'post']) }}
         <div class="card p-3 shadow-sm border-0 ">
             <div class="row">
                 <div class="col-12 col-md-6">
