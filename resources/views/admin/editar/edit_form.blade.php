@@ -10,7 +10,7 @@
 @section('content')
     <div class="col-12 pt-5 px-3 formulario_edit" id="negocio_tarjeta">
         <p class="fw-bold ">Datos Personales</p>
-        {{ Form::open(['method' => 'post']) }}
+        {{ Form::open(['route' => 'administrador.editupdate']) }}
         <div class="card p-3 shadow-sm border-0 ">
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -88,7 +88,7 @@
                     <div class="form-group row">
                         <label for="conc_precio" class="col-5 col-form-label">Concepto de precio</label>
                         <div class="col-7">
-                            <input id="conc_precio" name="conc_precio" type="text" class="form-control"
+                            <input id="conc_precio" name="conc_precio" type="number" class="form-control"
                                 value="{{ $negocio->conc_precio }}" required>
                             <span id="conceptopesos" class="form-text text-muted"></span>
                         </div>
@@ -120,8 +120,8 @@
                     <div class="form-group row">
                         <label for="precio_contrato" class="col-5 col-form-label">Precio contrato</label>
                         <div class="col-7">
-                            <input id="precio_contrato" name="precio_contrato" type="text" class="form-control"
-                                value="{{ $negocio->precio_contrato }}">
+                            <input id="precio_contrato" name="precio_contrato" type="number" class="form-control"
+                                value="{{ $negocio->precio_contrato }}" required>
                             <span id="contratopesos" class="form-text text-muted"></span>
                         </div>
                     </div>
@@ -1614,6 +1614,7 @@
                 <a href="{{ route('administrador.edit') }}" class="btn botones">Atrás</a>
             </div>
             <div class="d-none d-md-block col-md-8">
+                <input type="text" class="d-none" name="codineg" value="{{ $negocio->id }}">
             </div>
             <div class="col-6 col-md-2 text-end">
                 <button type="submit" class="btn botones">Enviar</button>

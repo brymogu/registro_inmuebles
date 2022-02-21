@@ -44,7 +44,7 @@ class EditController extends Controller
 
         if (isset($_SESSION['nombre'])) {
             $negocios = DB::table("negocios")
-                //->where('negocios.paso', '=', 'Planes')
+                ->where('negocios.paso', '=', 'Planes')
                 ->leftJoin("propiedades", function ($join) {
                     $join->on("negocios.propiedad", "=", "propiedades.id");
                 })
@@ -67,12 +67,6 @@ class EditController extends Controller
         }
 
         return redirect('login');
-    }
-
-    public function convertir(Request $request)
-    {
-
-        return redirect()->route('administrador.editform', $request->codineg);
     }
 
     public function show(Request $request)
@@ -146,28 +140,28 @@ class EditController extends Controller
         return redirect('login');
     }
 
-    public function update(Request $request, Propietarios $codiprop)
+    public function update(Request $request)
     {
 
-        $negocio_unico = Negocios::where('propietario', $codiprop->id)->first();
-        $codigo_ppdad = $negocio_unico->propiedad;
-        $propiedad = Propiedades::find($codigo_ppdad);
+        $negocio = Negocios::find($request->codineg);
+        $propiedad = Propiedades::find($negocio->propiedad);
+        $propietario = Propietarios::find($negocio->propietario);
         //propietario
-        $codiprop->name = $request->name;
-        $codiprop->lastname = $request->lastname;
-        $codiprop->phone = $request->phone;
-        $codiprop->email = $request->email;
-        $codiprop->tipo_doc = $request->id;
-        $codiprop->doc_number = $request->idnumber;
+        $propietario->name = $request->name;
+        $propietario->lastname = $request->lastname;
+        $propietario->phone = $request->phone;
+        $propietario->email = $request->email;
+        $propietario->tipo_doc = $request->id;
+        $propietario->doc_number = $request->idnumber;
 
         //Negocio
-        $negocio_unico->tipo_negocio = $request->tipo;
-        $negocio_unico->valor = $request->valor;
-        $negocio_unico->asesor = $request->asesor;
-        $negocio_unico->conc_precio = $request->conc_precio;
-        $negocio_unico->precio_contrato = $request->precio_contrato;
-        $negocio_unico->conc_juridico = $request->conc_juridico;
-        $negocio_unico->obs_conc_juridico = $request->obs_conc_juridico;
+        $negocio->tipo_negocio = $request->tipo;
+        $negocio->valor = $request->valor;
+        $negocio->asesor = $request->asesor;
+        $negocio->conc_precio = $request->conc_precio;
+        $negocio->precio_contrato = $request->precio_contrato;
+        $negocio->conc_juridico = $request->conc_juridico;
+        $negocio->obs_conc_juridico = $request->obs_conc_juridico;
 
         //propiedad
         $propiedad->chip = $request->chip;
@@ -319,8 +313,8 @@ class EditController extends Controller
             $propiedad->habitado = "No";
         }
 
-        $codiprop->save();
-        $negocio_unico->save();
+        $propietario->save();
+        $negocio->save();
         $propiedad->save();
 
 
