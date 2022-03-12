@@ -51,7 +51,7 @@
                                 <div class="row">
                                     <div class="d-none d-md-block col-md-1"></div>
                                     <div class="col-12 col-md-10 text-center">
-                                        <h4>Portal de consignación de inmuebles</h4>
+                                        <h4>Portal de registro de inmuebles</h4>
                                     </div>
                                     <div class="d-none d-md-block col-md-1"></div>
                                 </div>

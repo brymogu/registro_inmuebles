@@ -92,6 +92,7 @@ $(document).ready(function() {
 
 
 
+
         $('#tipo_inm').change(function() {
             if ($('#tipo_inm').val() == 2) {
                 $('#aptos2').show();
@@ -205,6 +206,15 @@ $(document).ready(function() {
                 $('#no_garajes').val('');
                 $('#no_garajes').removeAttr('required');
                 $('#tipo_garaje').removeAttr('required');
+            }
+        });
+
+        $('#no_garajes').keyup(function() {
+            console.log("buenasssss2");
+            if ($('#no_garajes').val() > 1) {
+                $("#tipo_garaje option[value='3']").attr("disabled", "disabled");
+            } else {
+                $("#tipo_garaje option[value='3']").removeAttr("disabled", "disabled");
             }
         });
 

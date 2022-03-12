@@ -484,7 +484,7 @@
                         </div>
                         <div class="col-7">
                             <input id="direccion_comp" name="direccion_comp" type="text" class="form-control"
-                                value="{{ $propiedad->direccion_comp }}" placeholder="Torre 7 Apto. 302">
+                                value="{{ $propiedad->direccion_comp }}" placeholder="Apto. 302 Torre 7">
                         </div>
                     </div>
                 </div>

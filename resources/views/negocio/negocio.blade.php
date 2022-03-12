@@ -36,7 +36,7 @@
                             <label for="idnumber" class="col-5 form-label">Número DI</label>
                             <div class="col-7">
                                 <input id="idnumber" name="idnumber" type="number" class="form-control"
-                                    required="required" min="800">
+                                    required="required" min="800" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
                             </div>
                         </div>
                     </div>
@@ -443,7 +443,7 @@
                             <label for="direccion_comp" class="col-5 form-label">Detalles</label>
                             <div class="col-7">
                                 <input id="direccion_comp" name="direccion_comp" type="text" class="form-control"
-                                    placeholder="Ejemplo: Torre 7 Apto. 302">
+                                    placeholder="Ejemplo: Apto. 302 Torre 7">
                             </div>
                         </div>
                     </div>
