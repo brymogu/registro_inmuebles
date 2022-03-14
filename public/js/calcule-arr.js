@@ -4,15 +4,15 @@ $(document).ready(function() {
 
     //Básico 2
     var basico = valor * 0.08;
-    $('#estsem').html("$" + Intl.NumberFormat("es-CO").format(basico) + " + IVA<br/><br/> Equivale al 8% mensual incluida poliza<br/><strong>(una vez sea arrendado)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='basico()' >Ver detalles</a>");
+    $('#estsem').html("$" + Intl.NumberFormat("es-CO").format(basico) + " + IVA<br/><br/> Equivale al 8% mensual incluida poliza");
 
     //PLUS
     var plus = valor * 0.1;
-    $('#plus').html("$" + Intl.NumberFormat("es-CO").format(plus) + " + IVA<br/><br/> Equivale al 10% mensual incluida poliza <br/><strong>(una vez sea arrendado)</strong><br/><br/><a href='#' class='btn btn-warning btn-sm' data-bs-toggle='modal' data-bs-target='#staticBackdrop' onclick='plus()' >Ver detalles</a>");
+    $('#plus').html("$" + Intl.NumberFormat("es-CO").format(plus) + " + IVA<br/><br/> Equivale al 10% mensual incluida poliza ");
 
     //PREMIUM
     var premes = new Intl.NumberFormat("es-CO").format(valor * 0.12);
-    $('#premes').html("$" + premes + " + IVA<br/><br/> Equivale al 12% mensual incluida poliza<strong><br/>(una vez sea arrendado)</strong><br/><br/><a href='#' data-bs-toggle='modal' class='btn btn-warning btn-sm' data-bs-target='#staticBackdrop' onclick='premium()' >Ver detalles</a>");
+    $('#premes').html("$" + premes + " + IVA<br/><br/> Equivale al 12% mensual incluida poliza");
 
     $('#valor').keyup(function() {
         var valor = $('#valor').val();

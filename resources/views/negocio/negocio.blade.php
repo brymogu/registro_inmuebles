@@ -36,7 +36,8 @@
                             <label for="idnumber" class="col-5 form-label">Número DI</label>
                             <div class="col-7">
                                 <input id="idnumber" name="idnumber" type="number" class="form-control"
-                                    required="required" min="800" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+                                    required="required" min="800" onkeydown="if(event.key==='.'){event.preventDefault();}"
+                                    oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
                             </div>
                         </div>
                     </div>
@@ -475,12 +476,6 @@
                 </div>
                 <div class="d-none d-md-block col-md-8"></div>
                 <div class="col-6 col-md-2 text-end">
-                    <div id="botonmapa">
-                        <a type="button" class="btn botones" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i
-                                class="fas fa-map-marker-alt"></i>
-                            Ubicar</a>
-                    </div>
                     <button type="submit" class="btn botones" id="enviarnegocio">Siguiente</button>
                 </div>
             </div>
@@ -505,17 +500,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="offcanvas offcanvas-bottom rounded" tabindex="-1" id="offcanvasBottom"
-        aria-labelledby="offcanvasBottomLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title text-center"> Por favor localiza tu inmueble</h5>
-            <a class="btn botones" data-bs-dismiss="offcanvas" aria-label="Close">Confirmar ubicación</a>
-           <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
-        </div>
-        <div class="offcanvas-body grupo">
-            <div id="map"></div>
-                    </div>
     </div>
 @endsection
 

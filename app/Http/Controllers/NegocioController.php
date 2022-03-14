@@ -50,8 +50,6 @@ class NegocioController extends Controller
         $propiedad->ciudad = 1;
         $propiedad->direccion = $request->direccion;
         $propiedad->estado = $request->estado_inb;
-        $propiedad->longitud = $request->longitud;
-        $propiedad->latitud = $request->latitud;
 
         //condicionados
         if ($request->tipo_inm == 2) {

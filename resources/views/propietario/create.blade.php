@@ -96,7 +96,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body">
-                    Recuerda que este registro no corresponde a un contrato
+                    Recuerda que el fin de este registro es únicamente realizar un concepto de precio y no estás obligado a
+                    consignar tu inmueble
                 </div>
             </div>
         </div>

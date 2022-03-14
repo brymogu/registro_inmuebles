@@ -5,8 +5,6 @@ $(document).ready(function() {
         $('#detalles').hide();
         $('#sec_tuberia').hide();
         $('#anoconstruido').hide();
-        $('#botonmapa').hide();
-        $('#enviarnegocio').hide();
         $('#arrendado').hide();
         $('#horizontal').hide();
         $('#sec_n_ascensores').hide();
@@ -21,6 +19,7 @@ $(document).ready(function() {
 
     } else if ($('#conjunto_tarjeta').length) {
         $('#descuento').hide();
+        $('#plena').hide();
         $('#admonhelper').hide();
     } else if ($('#fotos').length) {
         $('#finalizar').hide();

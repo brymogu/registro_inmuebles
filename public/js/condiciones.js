@@ -245,12 +245,13 @@ $(document).ready(function() {
         $('#t_cuota').change(function() {
             if ($('#t_cuota').val() == 2) {
                 $('#descuento').show();
-                console.log("ya");
+                $('#plena').show();
                 $('#adm_cd').attr("required", "true");
 
             } else {
                 $('#descuento').hide();
                 $('#adm_cd').val("");
+                $('#plena').hide();
                 $('#adm_cd').removeAttr('required');
             }
         });
