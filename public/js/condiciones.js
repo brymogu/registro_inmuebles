@@ -209,21 +209,16 @@ $(document).ready(function() {
             }
         });
 
-        $('#no_garajes').keyup(function() {
+        $('#no_garajes').change(function() {
             if ($('#no_garajes').val() < 2) {
+                console.log("Entró");
                 $("#tipo_garaje option[value='3']").attr("disabled", "disabled");
             } else {
+                console.log("no Entró");
                 $("#tipo_garaje option[value='3']").removeAttr("disabled", "disabled");
             }
         });
 
-        $('#no_garajes').change(function() {
-            if ($('#no_garajes').val() < 2) {
-                $("#tipo_garaje option[value='3']").attr("disabled", "disabled");
-            } else {
-                $("#tipo_garaje option[value='3']").removeAttr("disabled", "disabled");
-            }
-        });
 
         $('#balcon').change(function() {
             if ($('#balcon').prop('checked')) {
@@ -245,26 +240,29 @@ $(document).ready(function() {
             }
         });
     } else if ($('#conjunto_tarjeta').length) {
-
         $(".usuario i, .negocio i, .detalles i, .conjunto i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar").css("background-color", "#01303c");
 
         $('#t_cuota').change(function() {
-            if ($('#t_cuota').val() == 2) {
-                $('#descuento').show();
-                $('#plena').show();
-                $('#adm_cd').attr("required", "true");
-            } else if ($('#t_cuota').val() == 1) {
-                $('#descuento').hide();
-                $('#adm_cd').val("");
-                $('#plena').hide();
-                $('#adm_cd').removeAttr('required');
-            } else if ($('#t_cuota').val() == 3) {
-                $('#descuento').hide();
-                $('#adm_cd').hide();
-                $('#adm_cp').hide();
-                $('#plena').hide();
-                $('#adm_cd').removeAttr('required');
+            switch ($('#t_cuota').val()) {
+                case '1':
+                    $('#secc_admon').show();
+                    $('#adm_cd').removeAttr('required');
+                    $('#descuento').hide();
+                    $('#plena').attr("required", "true");
+                    break;
+                case '2':
+                    $('#secc_admon').show();
+                    $('#descuento').show();
+                    $('#plena').attr("required", "true");
+                    $('#adm_cd').attr("required", "true");
+                    break;
+                case '3':
+                    $('#plena').removeAttr('required');
+                    $('#adm_cd').removeAttr('required');
+                    $('#descuento').hide();
+                    $('#secc_admon').hide();
+                    break;
             }
 
         });

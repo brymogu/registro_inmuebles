@@ -32,18 +32,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="t_cuota" class="col-6 col-form-label">Tipo de cuota
-                            <span class="sub">Administración P.H.<span>
-                        </label>
-                        <div class="col-6">
-                            {!! Form::select('t_cuota', $cuota, null, ['class' => 'form-select', 'id' => 't_cuota', 'required' => 'required']) !!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4 border-end">
+
                     <div class="form-group row">
                         <label for="nombre_c_e" class="col-6 col-form-label">Nombre del conjunto o
                             edificio</label>
@@ -52,14 +41,26 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-12 col-md-4 border-end">
+                    <div class="form-group row">
+                        <label for="t_cuota" class="col-6 col-form-label">Tipo de cuota
+                        </label>
+                        <div class="col-6">
+                            {!! Form::select('t_cuota', $cuota, null, ['class' => 'form-select', 'id' => 't_cuota', 'required' => 'required']) !!}
+                            <span class="sub">Administración P.H.<span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 border-end" id="secc_admon">
                     <div class="form-group row">
                         <label for="adm_cp" class="col-6 col-form-label">Valor Administración
                             <span class="sub" id="plena">Cuota plena<span>
                         </label>
                         <div class="col-6">
                             <div class="input-group">
-                                <input id="adm_cp" name="adm_cp" type="number" min="0" class="form-control" required>
+                                <input id="adm_cp" name="adm_cp" type="number" min="0" class="form-control">                                
                             </div>
                             <span id="adm_cp_pesos" class="form-text text-muted"></span>
                         </div>

@@ -10,12 +10,12 @@
 @section('content')
     <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInDown" id="planes_tarjeta">
         <div class="card-body">
-            {{ Form::open(['method' => 'post']) }}
             <div class="row my-3 text-center">
                 <div class="col-12">
                     <h4>Planes arrendamiento</h4>
                     <p>En Épica Inmobiliaria® contamos con tres planes para el arrendamiento de tu inmueble que pagas
-                        mensualmente <strong>solo a partir del momento en que sea arrendado</strong>. Elige el de tu interés, luego podrás cambiarlo 🤗</p>
+                        mensualmente <strong>solo a partir del momento en que sea arrendado</strong>. Elige el de tu
+                        interés, luego podrás cambiarlo 🤗</p>
                     <hr class="encabezado">
                 </div>
             </div>
@@ -136,59 +136,57 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>            
+            </div>
         </div>
     </div>
     <div class="card bg-default tarjeta shadow-lg">
+        {{ Form::open(['method' => 'post']) }}
         <div class="card-body">
-            <div class="row my-3 align-items-center">
-                <div class="col-12 col-md-6">
-                    <div class="form-group row border-end">
-                        <label for="modificar" class="col-5">¿Deseas modificar el valor de tu inmueble?</label>
-                        <div class="col-2">
-                            <a>No</a>
-                        </div>
-                        <div class="col-3 bool text-center">
-                            <input type="checkbox" name="modificar" value="1" id="modificar" />
-                            <label class="slider-v1" for="modificar"></label>
-                        </div>
-                        <div class="col-2">
-                            <a>Si</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6" id="sec_valor">
-                    <div class="form-floating  shadow-lg my-3">
-                        <input type="number" name="valor" class="form-control border-0 rounded" id="valor"
-                            value="{!! $valor !!}" placeholder="10000000">
-                        <label for="valor">valor de arriendo</label>
-                    </div>
-                </div>
-            </div>
             <div class="row align-items-center">
-                <div class="col-6 border-end">
-                    <label for="tipo_inm" class="form-label">Seleccione el plan de su preferencia</label>
-                    {!! Form::select('plan', $planes, null, ['class' => 'form-select', 'id' => 'plan', 'required' => 'required']) !!}
+                <div class="col-12 col-md-6 my-3 my-md-0 border-end">
+                    <label for="tipo_inm" class="form-label ">Seleccione el plan de su preferencia: </label>
+                    {!! Form::select('plan', $planes, null, ['class' => 'form-select', 'id' => 'planes', 'required' => 'required', 'onchange' => 'selector()']) !!}
+                    <hr class="encabezado">
+                    <div class="grupo">
+                        <div class="form-group row mt-5">
+                            <label for="modificar" class="col-5">¿Deseas modificar el valor de tu inmueble?</label>
+                            <div class="col-2">
+                                <a>No</a>
+                            </div>
+                            <div class="col-3 bool text-center">
+                                <input type="checkbox" name="modificar" value="1" id="modificar" />
+                                <label class="slider-v1" for="modificar"></label>
+                            </div>
+                            <div class="col-2">
+                                <a>Si</a>
+                            </div>
+                        </div>
+                        <div class="col-12 my-3 text-center" id="sec_valor">
+                            <input type="number" name="valor" class="form-control rounded text-center" id="valor"
+                                value="{!! $valor !!}">
+                            <span id="valinval" class="form-text text-muted"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6 my-3 my-md-0 calculadora rounded py-3 text-center">
                     <p>Para tu inmueble con canon de <strong class="bold" id="valormodal">$
                             {!! $valor !!}</strong><br />
                         <small class="text-muted">(incluida cuota de administración si aplicara)</small>
                     </p>
-                    <div class="col-12 text-start">
-                        <p>El costo del <strong id="plan"></strong> está compuesto por: </p>
+                    <div class="text-start">
+                        <p>El costo del <strong id="plan_nombre"></strong> está compuesto por: </p>
                         <ul>
-                            <li>Un valor mensual de <span id="val-mes"></span>, equivale al <strong
+                            <li>Un valor mensual de <span id="val-mes"></span>, equivalente al <strong
                                     id="porcentaje"></strong> sin incluir IVA</li>
                             <li>Póliza incluida </li>
-                            <li>Cobro <span id="efectivo"></span>, <strong>una vez sea
+                            <li>Cobro mensual, <strong>una vez sea
                                     arrendado</strong> </li>
                         </ul>
                     </div>
-                    <div class="col-12 mate">
+                    <div class="mate">
                         <div class="row my-3">
                             <div class="col-2"></div>
-                            <div class="col-8 text-start">
+                            <div class="col-8 text-end">
                                 <div class="row">
                                     <div class="col">Servicios Inmobiliarios</div>
                                     <div class="col"><span id="serv"></span></div>
@@ -219,6 +217,21 @@
                             <div class="col-2"></div>
                         </div>
                     </div>
+                    <div class="col-12 text-start">
+                        <p>
+                            El valor que recibes mensualmente es <strong id="recibido"></strong>, recuerda que si tu
+                            inmueble tiene cuota de
+                            administración de conjunto o edificio, esta no se ha restado a este valor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-6 col-md-2">                    
+                </div>
+                <div class="d-none d-md-block col-md-8"></div>
+                <div class="col-6 col-md-2 text-end">
+                    <button type="submit" class="btn botones">Siguiente</button>
                 </div>
             </div>
         </div>
@@ -239,37 +252,5 @@
             </div>
         </div>
         <div class="d-none d-md-block col-md-4"></div>
-    </div>
-
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-body">
-                    <div class="accordion" id="accordionFlushExample">
-                        <div class="accordion-item">
-
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th class="cara">Mes</th>
-                                                <th>Te cobramos</th>
-                                                <th>Tu recibes</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="basico_tabla"> </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 @endsection

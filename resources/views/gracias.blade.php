@@ -8,11 +8,10 @@
                 <div class="row">
                     <div class="col-12">
                         <p>Gracias {{ $propietario->name }} por el registro de tu inmueble, al hacer clic en el botón
-                            “finalizar” habrás
-                            culminado este proceso. </p>
-                        <p>En el menor tiempo posible una persona de nuestro equipo te contactará para llevar a cabo la
-                            firma electrónica del contrato de consignación y posterior inicio de la gestión comercial de
-                            tu inmueble.
+                            “finalizar” habrás culminado este paso. </p>
+                        <p>Si has cargado correctamente la información solicitada en este registro, en 24 horas de días
+                            hábiles una persona de nuestro equipo te enviará el concepto de precio gratuito al correo
+                            registrado indicando los pasos a seguir
                         </p>
                     </div>
                 </div>

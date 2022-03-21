@@ -9,8 +9,6 @@ $(document).ready(function() {
         $('#horizontal').hide();
         $('#sec_n_ascensores').hide();
         $('#aptos2').hide();
-
-
     } else if ($('#detalles').length) {
         $('#sec_garajes').hide();
         $('#sec_independiente').hide();
@@ -19,11 +17,14 @@ $(document).ready(function() {
 
     } else if ($('#conjunto_tarjeta').length) {
         $('#descuento').hide();
-        $('#plena').hide();
+        $('#secc_admon').hide();
         $('#admonhelper').hide();
+
     } else if ($('#fotos').length) {
         $('#finalizar').hide();
     } else if ($('#planes_tarjeta').length) {
         $('#sec_valor').hide();
+        $('#soloplus').hide();
+        $("#planes option:last").remove();
     }
 });
