@@ -507,5 +507,5 @@
     <script>
         var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {})
     </script>
-    <script src="{!! asset('js/mapa.js') !!}"></script>
+    <!--<script src="{//!! asset('js/mapa.js') !!}"></script>-->
 @endsection

@@ -33,7 +33,7 @@
                         <tbody>
 
                             @foreach ($negocios as $negocio)
-                                @if ($negocio->paso == 'Planes' || $negocio->paso == 'Conjunto' || $negocio->paso == 'fotos' || ($negocio->horizontal == 'No' && $negocio->paso == 'Detalles'))
+                                @if ($negocio->paso == 'Planes' || $negocio->paso == 'Conjunto' || $negocio->paso == 'fotos' /*|| ($negocio->horizontal != null && $negocio->paso == 'Detalles')*/)
                                     <tr>
                                         <td>
                                             <button class="btn" data-bs-toggle="tooltip"

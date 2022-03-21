@@ -175,23 +175,23 @@ $(document).ready(function() {
             }
         });
 
-        $('#ciudad').change(function() {
-            if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
-                $('#botonmapa').show();
-                $('#enviarnegocio').hide();
-            } else {
-                $('#botonmapa').hide();
-            }
-        });
+        //$('#ciudad').change(function() {
+        // if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
+        //  $('#botonmapa').show();
+        //   $('#enviarnegocio').hide();
+        //} else {
+        //     $('#botonmapa').hide();
+        //   }
+        //});
 
-        $('#direccion').change(function() {
-            if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
-                $('#botonmapa').show();
-                $('#enviarnegocio').hide();
-            } else {
-                $('#botonmapa').hide();
-            }
-        });
+        //$('#direccion').change(function() {
+        //  if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
+        //    $('#botonmapa').show();
+        //  $('#enviarnegocio').hide();
+        //} else {
+        //    $('#botonmapa').hide();
+        // }
+        // });
     } else if ($('#detalles').length) {
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
@@ -210,8 +210,15 @@ $(document).ready(function() {
         });
 
         $('#no_garajes').keyup(function() {
-            console.log("buenasssss2");
-            if ($('#no_garajes').val() > 1) {
+            if ($('#no_garajes').val() < 2) {
+                $("#tipo_garaje option[value='3']").attr("disabled", "disabled");
+            } else {
+                $("#tipo_garaje option[value='3']").removeAttr("disabled", "disabled");
+            }
+        });
+
+        $('#no_garajes').change(function() {
+            if ($('#no_garajes').val() < 2) {
                 $("#tipo_garaje option[value='3']").attr("disabled", "disabled");
             } else {
                 $("#tipo_garaje option[value='3']").removeAttr("disabled", "disabled");
@@ -247,13 +254,19 @@ $(document).ready(function() {
                 $('#descuento').show();
                 $('#plena').show();
                 $('#adm_cd').attr("required", "true");
-
-            } else {
+            } else if ($('#t_cuota').val() == 1) {
                 $('#descuento').hide();
                 $('#adm_cd').val("");
                 $('#plena').hide();
                 $('#adm_cd').removeAttr('required');
+            } else if ($('#t_cuota').val() == 3) {
+                $('#descuento').hide();
+                $('#adm_cd').hide();
+                $('#adm_cp').hide();
+                $('#plena').hide();
+                $('#adm_cd').removeAttr('required');
             }
+
         });
 
         $('#adm_cp').keyup(function() {

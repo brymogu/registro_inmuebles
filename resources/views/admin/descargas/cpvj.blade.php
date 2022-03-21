@@ -77,16 +77,18 @@
                         <small class="fw-light fst-italic">Precio contrato</small>
                     </div>
                 </div>
-                <div class="row my-2">
+                <div class="row mt-1 interior">
                     <div class="col-4">
-
+                        <input type="number" name="latitud" id="latitud" value="{{ $datos->latitud }}">
+                        <small class="fw-light fst-italic">Latitud</small>
                     </div>
                     <div class="col-4">
-
+                        <input type="number" name="longitud" id="longitud" value="{{ $datos->longitud }}">
+                        <small class="fw-light fst-italic">Longitud</small>
                     </div>
-                    <div class="col-4 text-end pt-1">
-                        <button type="submit" class="btn shadow-sm">Guardar</button>
-                    </div>
+                        <div class="col-4 text-end pt-1">
+                            <button type="submit" class="btn shadow-sm">Guardar</button>
+                        </div>
                 </div>
                 <div class="row">
                     <div class="col-1"></div>
@@ -2081,4 +2083,5 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
         var marker = new L.marker(coordenadas, {}).addTo(mymap);
     </script>
+    <script src="{!! asset('js/mapa.js') !!}"></script>
 @endsection

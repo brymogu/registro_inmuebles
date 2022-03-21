@@ -23,5 +23,8 @@ class TiposCuotaSeeder extends Seeder
         $cuota2->desc_tipo_cuota = "Plena / Pronto pago";
         $cuota2->save();
         
+        $cuota3 = new Tipos_cuotas();
+        $cuota3->desc_tipo_cuota = "No tiene";
+        $cuota3->save();
     }
 }

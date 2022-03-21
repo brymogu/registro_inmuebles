@@ -257,21 +257,42 @@ $(document).ready(function() {
 
     if ($('#t_cuota').val() == 2) {
         $('#descuento').show();
+        $('#adm_cd').show();
+        $('#plena').show();
         $('#adm_cd').attr("required", "true");
-    } else {
+    } else if ($('#t_cuota').val() == 1) {
         $('#descuento').hide();
+        $('#adm_cd').show();
         $('#adm_cd').val("");
+        $('#plena').hide();
+        $('#adm_cd').removeAttr('required');
+    } else if ($('#t_cuota').val() == 3) {
+        $('#descuento').hide();
+        $('#adm_cd').hide();
+        $('#adm_cp').hide();
+        $('#plena').hide();
         $('#adm_cd').removeAttr('required');
     }
 
     $('#t_cuota').change(function() {
         if ($('#t_cuota').val() == 2) {
             $('#descuento').show();
-            console.log("ya");
+            $('#adm_cd').show();
+            $('#adm_cp').show();
+            $('#plena').show();
             $('#adm_cd').attr("required", "true");
-        } else {
+        } else if ($('#t_cuota').val() == 1) {
             $('#descuento').hide();
+            $('#adm_cd').show();
+            $('#adm_cp').show();
             $('#adm_cd').val("");
+            $('#plena').hide();
+            $('#adm_cd').removeAttr('required');
+        } else if ($('#t_cuota').val() == 3) {
+            $('#descuento').hide();
+            $('#adm_cd').hide();
+            $('#adm_cp').hide();
+            $('#plena').hide();
             $('#adm_cd').removeAttr('required');
         }
     });
