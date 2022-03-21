@@ -69,46 +69,44 @@
                         </thead>
                         <tbody>
                             @foreach ($negocios as $negocio)
-                            @if ($negocio->paso == 'Planes' || $negocio->paso == 'Conjunto' || $negocio->paso == 'fotos' /*|| ($negocio->horizontal == 'No' && $negocio->paso == 'Detalles')*/)
-                                <tr>
-                                    <td>
-                                        <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                            title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
-                                    </td>
-                                    <td>
-                                        <b> {{ $negocio->name }}</b><br />
-                                        {{ $negocio->lastname }}
-                                    </td>
-                                    <td>
-                                        <b> {{ $negocio->doc_number }}</b><br />
-                                        {{ $negocio->desc_nombres_corto }}
-                                    </td>
-                                    <td>
-                                        {{ $negocio->desc_plan }}
-                                    </td>
-                                    <td class="text-center">
-                                        <a class="btn btn-epc rounded-circle" target="_blank"
-                                            href="{{ Storage::url($negocio->certificado) }}"><i
-                                                class="fas fa-file-pdf"></i></a>
-                                    </td>
-                                    <td class="text-center">
-                                        {{ Form::open(['route' => 'administrador.formatos']) }}
-                                        <input type="text" class="d-none" name="codineg"
-                                            value="{{ $negocio->id_neg }}">
-                                        <button type="submit" class="btn btn-epc rounded-circle">
-                                            <i class="fas fa-file-invoice"></i></button>
-                                        {{ Form::close() }}
-                                    </td>
-                                    <td class="text-center">
-                                        {{ Form::open(['route' => 'administrador.finco','target'=> '_blank']) }}
-                                        <input type="text" class="d-none" name="codineg"
-                                            value="{{ $negocio->id_neg }}">
-                                        <button type="submit" class="btn btn-epc rounded-circle">
-                                            <i class="fas fa-crow"></i>
-                                        </button>
-                                        {{ Form::close() }}
-                                    </td>
-                                </tr>
+                                @if ($negocio->paso == 'Planes' || $negocio->paso == 'Conjunto' || $negocio->paso == 'fotos')
+                                    <tr>
+                                        <td>
+                                            <button class="btn" data-bs-toggle="tooltip"
+                                                data-bs-placement="bottom"
+                                                title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
+                                        </td>
+                                        <td>
+                                            <b> {{ $negocio->name }}</b><br />
+                                            {{ $negocio->lastname }}
+                                        </td>
+                                        <td>
+                                            <b> {{ $negocio->doc_number }}</b><br />
+                                            {{ $negocio->desc_nombres_corto }}
+                                        </td>
+                                        <td>
+                                            {{ $negocio->desc_plan }}
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-epc rounded-circle" target="_blank"
+                                                href="{{ Storage::url($negocio->certificado) }}"><i
+                                                    class="fas fa-file-pdf"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="{{ route('administrador.formatos', $negocio->id_neg) }}"
+                                                class="btn btn-epc rounded-circle">
+                                                <i class="fas fa-file-invoice"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            {{ Form::open(['route' => 'administrador.finco', 'target' => '_blank']) }}
+                                            <input type="text" class="d-none" name="codineg"
+                                                value="{{ $negocio->id_neg }}">
+                                            <button type="submit" class="btn btn-epc rounded-circle">
+                                                <i class="fas fa-crow"></i>
+                                            </button>
+                                            {{ Form::close() }}
+                                        </td>
+                                    </tr>
                                 @endif
                             @endforeach
                         </tbody>

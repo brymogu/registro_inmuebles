@@ -1,5 +1,23 @@
-var mymap = L.map('map').setView([4.6791626, -74.1148519], 10);
+var mymap = L.map('map').setView([4.610932545057497, -74.07031589840588], 12);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
+
+function mapa_escoger() {
+    latitud = $('#latitud').val();
+    longitud = $('#longitud').val();
+    direccion = $('#direccion').val();
+
+    if (longitud != "" && latitud != "") {
+        coordenadas = [latitud, longitud];
+        var marker = new L.marker(coordenadas, {
+            draggable: false,
+            autoPan: true,
+        }).addTo(mymap);
+        mymap.flyTo(coordenadas, 15);
+    } else {
+        mostrarmapa();
+    }
+}
+
 
 
 function mostrarmapa() {
@@ -52,12 +70,4 @@ function pintarmapa(coordenadas, zoom) {
         document.getElementById('latitud').value = marker.getLatLng().lat;
         document.getElementById('longitud').value = marker.getLatLng().lng;
     });
-
-    var myOffcanvas = document.getElementById('offcanvasBottom')
-    myOffcanvas.addEventListener('hidden.bs.offcanvas', function() {
-        $('#botonmapa').hide();
-        $('#enviarnegocio').show();
-        mymap.removeLayer(marker);
-    })
-
 }

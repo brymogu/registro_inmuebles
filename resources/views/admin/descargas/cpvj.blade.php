@@ -14,7 +14,7 @@
     @foreach ($datos as $datos)
         @section('title', 'Epica Inmobiliaria - ' . $datos->doc_number)
         <!-- Editables-->
-        {{ Form::open(['method' => 'post']) }}
+        {{ Form::open(['method' => 'post','route' => 'administrador.irformatos']) }}
         <div class="row mb-5 d-print-none">
             <div class="col-12 seccion">
                 <div class="row">
@@ -79,26 +79,27 @@
                 </div>
                 <div class="row mt-1 interior">
                     <div class="col-4">
-                        <input type="number" name="latitud" id="latitud" value="{{ $datos->latitud }}">
+                        <input type="number" name="latitud" id="latitud" value="{{ $datos->latitud }}" step=".000000000000001" required>
                         <small class="fw-light fst-italic">Latitud</small>
                     </div>
                     <div class="col-4">
-                        <input type="number" name="longitud" id="longitud" value="{{ $datos->longitud }}">
+                        <input type="number" name="longitud" id="longitud" value="{{ $datos->longitud }}" step=".0000000000000001" required>
                         <small class="fw-light fst-italic">Longitud</small>
                     </div>
-                        <div class="col-4 text-end pt-1">
-                            <button type="submit" class="btn shadow-sm">Guardar</button>
-                        </div>
+                    <div class="col-4 text-end pt-1">
+                        <button type="submit" class="btn shadow-sm">Guardar</button>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10 pie">
-                        <p></p>
+                        <input type="text" name="codineg" id="codineg" value="{{$codineg}}" >
                     </div>
                     <div class="col-1"></div>
                 </div>
             </div>
         </div>
+        {{ Form::close() }}
         <!-- Contratos-->
         <div id="contrato">
             <div id="arriendo">
@@ -114,7 +115,8 @@
                 <div class="row" id="basico_arr">
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }} </strong>
+                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }}
+                            </strong>
                             identificaci&oacute;n No. <strong>{{ $datos->doc_number }} </strong> documento de identidad
                             tipo <strong>{{ $datos->desc_tipos_documento }} </strong>, con
                             facultades suficientes para tomar decisiones sobre el arrendamiento del inmueble identificado en
@@ -2067,21 +2069,13 @@
                 </div>
             </div>
             <div class="d-none">
-                <input type="number" name="latitud" id="latitud" value="{{ $datos->latitud }}">
-                <input type="number" name="longitud" id="longitud" value="{{ $datos->longitud }}">
                 <input type="text" name="tipo_neg" id="tipo_neg" value="{{ $datos->tipo_negocio }}">
+                <input type="text" name="direccion" id="direccion" value="{{ $datos->direccion }}">
+                <input type="text" name="ciudad" id="ciudad" value="{{ $datos->ciudad }}">
             </div>
         </div>
     @endforeach
 @endsection
 @section('final')
-    <script>
-        latitud = $('#latitud').val();
-        longitud = $('#longitud').val();
-        coordenadas = [latitud, longitud];
-        var mymap = L.map('map').setView(coordenadas, 16);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
-        var marker = new L.marker(coordenadas, {}).addTo(mymap);
-    </script>
     <script src="{!! asset('js/mapa.js') !!}"></script>
 @endsection
