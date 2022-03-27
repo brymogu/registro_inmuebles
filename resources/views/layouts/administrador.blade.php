@@ -36,10 +36,10 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 menu">
-                <div class="card tarjeta shadow-sm border-0 d-flex py-3 align-items-start vh-100">
+            <div class="col-2 menu d-flex">
+                <div class="card tarjeta shadow-sm border-0  align-self-center py-3 align-items-start vh-95 rounded">
                     <div class="card-body">
-                        <ul class="nav w-100 flex-column">
+                        <ul class="nav flex-column">
                             <div class="btn-group dropend mb-5">
                                 <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-10 contenido">
+            <div class="col-10 contenido vh-100">
                 @yield('content')
             </div>
         </div>
