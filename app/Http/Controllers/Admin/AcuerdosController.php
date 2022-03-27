@@ -10,6 +10,7 @@ class AcuerdosController extends Controller
 {
     public function showtable()
     {
+        
         $negocios = DB::table("negocios")
         ->leftJoin("propiedades", function($join){
             $join->on("negocios.propiedad", "=", "propiedades.id");

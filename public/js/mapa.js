@@ -1,21 +1,16 @@
 var mymap = L.map('map').setView([4.610932545057497, -74.07031589840588], 12);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
 
-function mapa_escoger() {
-    latitud = $('#latitud').val();
-    longitud = $('#longitud').val();
-    direccion = $('#direccion').val();
+latitud = $('#latitud').val();
+longitud = $('#longitud').val();
 
-    if (longitud != "" && latitud != "") {
-        coordenadas = [latitud, longitud];
-        var marker = new L.marker(coordenadas, {
-            draggable: false,
-            autoPan: true,
-        }).addTo(mymap);
-        mymap.flyTo(coordenadas, 15);
-    } else {
-        mostrarmapa();
-    }
+if (longitud != "" && latitud != "") {
+    coordenadas = [latitud, longitud];
+    var marker = new L.marker(coordenadas, {
+        draggable: false,
+        autoPan: true,
+    }).addTo(mymap);
+    mymap.flyTo(coordenadas, 15);
 }
 
 
@@ -37,12 +32,12 @@ function mostrarmapa() {
             var coordenadas = data.results[0].geometry.location;
             var zoom = 15;
         } else {
-            var coordenadas = [4.61095135, -74.070241299422];
-            var zoom = 12;
+            alert("Coordenadas no localizadas");
         }
         pintarmapa(coordenadas, zoom);
     });
 }
+
 
 function pintarmapa(coordenadas, zoom) {
     var marker = new L.marker(coordenadas, {

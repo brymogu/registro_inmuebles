@@ -14,7 +14,7 @@
     @foreach ($datos as $datos)
         @section('title', 'Epica Inmobiliaria - ' . $datos->doc_number)
         <!-- Editables-->
-        {{ Form::open(['method' => 'post','route' => 'administrador.irformatos']) }}
+        {{ Form::open(['method' => 'post', 'route' => 'administrador.irformatos']) }}
         <div class="row mb-5 d-print-none">
             <div class="col-12 seccion">
                 <div class="row">
@@ -79,21 +79,33 @@
                 </div>
                 <div class="row mt-1 interior">
                     <div class="col-4">
-                        <input type="number" name="latitud" id="latitud" value="{{ $datos->latitud }}" step=".000000000000001" required>
+                        <input type="number" name="latitud" id="latitud" value="{{ $datos->latitud }}"
+                            step=".000000000000001" required>
                         <small class="fw-light fst-italic">Latitud</small>
                     </div>
                     <div class="col-4">
-                        <input type="number" name="longitud" id="longitud" value="{{ $datos->longitud }}" step=".0000000000000001" required>
+                        <input type="number" name="longitud" id="longitud" value="{{ $datos->longitud }}"
+                            step=".0000000000000001" required>
                         <small class="fw-light fst-italic">Longitud</small>
                     </div>
                     <div class="col-4 text-end pt-1">
+
+                    </div>
+                </div>
+                <div class="row mt-1 interior">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4 text-center">
+                        <a class="btn shadow-sm" onclick="mostrarmapa()">Localizar</a>
+                    </div>
+                    <div class="col-4 text-center pt-1">
                         <button type="submit" class="btn shadow-sm">Guardar</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10 pie">
-                        <input type="text" name="codineg" id="codineg" value="{{$codineg}}" >
+                        <input type="text" class="d-none" name="codineg" id="codineg" value="{{ $codineg }}">
                     </div>
                     <div class="col-1"></div>
                 </div>
