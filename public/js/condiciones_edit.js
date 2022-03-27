@@ -162,25 +162,30 @@ $(document).ready(function() {
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar").css("background-color", "#01303c");
 
 
-
-        if ($('#t_cuota').val() == 2) {
-            $('#descuento').show();
-            $('#plena').show();
-            $('#adm_cd').attr("required", "true");
-        } else if ($('#t_cuota').val() == 1) {
-            $('#descuento').hide();
-            $('#adm_cd').val("");
-            $('#plena').hide();
-            $('#adm_cd').removeAttr('required');
-        } else if ($('#t_cuota').val() == 3) {
-            $('#descuento').hide();
-            $('#adm_cd').hide();
-            $('#adm_cp').hide();
-            $('#plena').hide();
-            $('#adm_cd').removeAttr('required');
+        switch ($('#t_cuota').val()) {
+            case '1':
+                $('#secc_admon').show();
+                $('#adm_cd').removeAttr('required');
+                $('#descuento').hide();
+                $('#plena').hide();
+                $('#c_unica').show();
+                $('#plena').attr("required", "true");
+                break;
+            case '2':
+                $('#secc_admon').show();
+                $('#descuento').show();
+                $('#c_unica').hide();
+                $('#plena').show();
+                $('#plena').attr("required", "true");
+                $('#adm_cd').attr("required", "true");
+                break;
+            case '3':
+                $('#plena').removeAttr('required');
+                $('#adm_cd').removeAttr('required');
+                $('#descuento').hide();
+                $('#secc_admon').hide();
+                break;
         }
-
-
 
         var valor = $('#adm_cp').val();
         $('#adm_cp_pesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));

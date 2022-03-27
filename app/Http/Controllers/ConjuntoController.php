@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 
 class ConjuntoController extends Controller
 {
-    //
     public function show($id)
     {
 
@@ -178,8 +177,6 @@ class ConjuntoController extends Controller
         $propiedad->tipo_seguridad = $request->seguridad;
         $propiedad->tipo_cuota = $request->t_cuota;
         $propiedad->nombre_c_e = $request->nombre_c_e;
-        $propiedad->adm_cp = $request->adm_cp;
-        $propiedad->adm_cd = $request->adm_cd;
 
         // checks
         if ($request->pq_visitantes) {
@@ -290,6 +287,26 @@ class ConjuntoController extends Controller
             $propiedad->jardin_interior = "No";
         }
 
+        if ($request->jardin_interior) {
+            $propiedad->jardin_interior = "Si";
+        } else {
+            $propiedad->jardin_interior = "No";
+        }
+
+        switch ($request->t_cuota) {
+            case '1':
+                $propiedad->adm_cp = $request->adm_cp;
+                $propiedad->adm_cd = null;
+            break;
+            case '2':
+                $propiedad->adm_cp = $request->adm_cp;
+                $propiedad->adm_cd = $request->adm_cd;
+            break;
+            case '3':
+                $propiedad->adm_cp = null;
+                $propiedad->adm_cd = null;
+            break;
+        }
 
         $propiedad->save();
 

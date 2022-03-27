@@ -56,7 +56,8 @@
                 <div class="col-12 col-md-4 border-end" id="secc_admon">
                     <div class="form-group row">
                         <label for="adm_cp" class="col-6 col-form-label">Valor Administración
-                            <span class="sub" id="plena">Cuota plena<span>
+                            <span class="sub" id="plena">Cuota plena</span>
+                            <span class="sub" id="c_unica">Cuota única</span>
                         </label>
                         <div class="col-6">
                             <div class="input-group">

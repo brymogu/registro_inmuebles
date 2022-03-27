@@ -249,11 +249,15 @@ $(document).ready(function() {
                     $('#secc_admon').show();
                     $('#adm_cd').removeAttr('required');
                     $('#descuento').hide();
+                    $('#plena').hide();
+                    $('#c_unica').show();
                     $('#plena').attr("required", "true");
                     break;
                 case '2':
                     $('#secc_admon').show();
                     $('#descuento').show();
+                    $('#c_unica').hide();
+                    $('#plena').show();
                     $('#plena').attr("required", "true");
                     $('#adm_cd').attr("required", "true");
                     break;
