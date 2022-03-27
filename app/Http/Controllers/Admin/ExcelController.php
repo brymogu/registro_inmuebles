@@ -13,6 +13,6 @@ class ExcelController extends Controller
     //
     public function descargar(Request $request)
     {
-        return Excel::download(new NegociosExport,'consignaciones.xlsx');
-    }    
+        return Excel::download(new NegociosExport($request), 'consignaciones.xlsx');
+    }
 }

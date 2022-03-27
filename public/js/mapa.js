@@ -13,8 +13,6 @@ if (longitud != "" && latitud != "") {
     mymap.flyTo(coordenadas, 15);
 }
 
-
-
 function mostrarmapa() {
     direccion = $('#direccion').val();
     ciudad = $('#ciudad').val();

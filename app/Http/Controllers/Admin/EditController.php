@@ -43,8 +43,7 @@ class EditController extends Controller
         session_start();
 
         if (isset($_SESSION['nombre'])) {
-            $negocios = DB::table("negocios")
-                
+            $negocios = DB::table("negocios")                
                 ->leftJoin("propiedades", function ($join) {
                     $join->on("negocios.propiedad", "=", "propiedades.id");
                 })
