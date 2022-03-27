@@ -126,8 +126,9 @@
                     <label for="tipo_inm" class="form-label ">Seleccione el plan de su preferencia: </label>
                     {!! Form::select('plan', $planes, null, ['class' => 'form-select', 'id' => 'planes', 'required' => 'required', 'onchange' => 'selector()']) !!}
                     <hr class="encabezado">
-                    <div class="grupo">
-                        <div class="form-group row mt-5">
+                    <div class="grupo pt-3">
+                        <span class="fw-normal">Los precios aquí mostrados se calcularon sobre el valor que indicaste inicialmente</span>
+                        <div class="form-group row">                            
                             <label for="modificar" class="col-5">¿Deseas modificar el valor de tu inmueble?</label>
                             <div class="col-2">
                                 <a>No</a>
