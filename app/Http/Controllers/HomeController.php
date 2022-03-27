@@ -32,7 +32,7 @@ class HomeController extends Controller
 
             $negocio = new Negocios();
             $negocio->propietario = $propietario->id;
-            $negocio->paso = "datos";
+            $negocio->paso = "Datos";
             $negocio->save();
             return redirect()->route('negocio.show', $negocio);
         } else {
@@ -44,7 +44,7 @@ class HomeController extends Controller
 
             $negocio = new Negocios();
             $negocio->propietario = $user->id;
-            $negocio->paso = "datos";
+            $negocio->paso = "Datos";
             $negocio->save();
 
             return redirect()->route('negocio.show', $negocio);

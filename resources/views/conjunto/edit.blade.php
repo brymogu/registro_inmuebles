@@ -2,7 +2,7 @@
 @section('title', 'Consigna tu inmueble')
 @section('more_head')
     <script src="{!! asset('js/selects_edit.js') !!}"></script>
-    <script src="{{ 'js/condiciones_edit.js' }}"></script>
+    <script src="{!! asset('js/condiciones_edit.js') !!}"></script>
 @endsection
 
 @section('content')
@@ -33,32 +33,15 @@
                         <label for="seguridad" class="col-6 col-form-label">Seguridad</label>
                         <div class="col-6">
                             @isset($propiedad->tipo_seguridad)
-                            {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select', 'id' => 'seguridad', 'required' => 'required']) !!}
+                                {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select', 'id' => 'seguridad', 'required' => 'required']) !!}
                             @endisset
                             @empty($propiedad->tipo_seguridad)
-                            {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select vacio', 'id' => 'seguridad', 'required' => 'required']) !!}
-                            @endempty                           
+                                {!! Form::select('seguridad', $seguridad, $propiedad->tipo_seguridad, ['class' => 'form-select vacio', 'id' => 'seguridad', 'required' => 'required']) !!}
+                            @endempty
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-                    <div class="form-group row">
-                        <label for="t_cuota" class="col-6 col-form-label">Tipo de cuota
-                            <span class="sub">Administración P.H.<span>
-                        </label>
-                        <div class="col-6">
-                            @isset($propiedad->tipo_cuota)
-                            {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select', 'id' => 't_cuota', 'required' => 'required']) !!}
-                            @endisset
-                            @empty($propiedad->tipo_cuota)
-                            {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select vacio', 'id' => 't_cuota', 'required' => 'required']) !!}
-                            @endempty                              
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
                         <label for="nombre_c_e" class="col-6 col-form-label">Nombre del conjunto o
                             edificio</label>
@@ -67,17 +50,37 @@
                                 value="{{ $propiedad->nombre_c_e }}" required>
                         </div>
                     </div>
+
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
-                        <label for="adm_cp" class="col-6 col-form-label">Valor Administración
-                            <span class="sub">Cuota plena<span>
+                        <label for="t_cuota" class="col-6 col-form-label">Tipo de cuota
+                            <span class="sub">Administración P.H.<span>
+                        </label>
+                        <div class="col-6">
+                            @isset($propiedad->tipo_cuota)
+                                {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select', 'id' => 't_cuota', 'required' => 'required']) !!}
+                            @endisset
+                            @empty($propiedad->tipo_cuota)
+                                {!! Form::select('t_cuota', $cuota, $propiedad->tipo_cuota, ['class' => 'form-select vacio', 'id' => 't_cuota', 'required' => 'required']) !!}
+                            @endempty
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 border-end" id="secc_admon">
+                    <div class="form-group row">
+                        <label for="adm_cp" class="col-6 col-form-label">Valor Administración                            
                         </label>
                         <div class="col-6">
                             <div class="input-group">
                                 <input id="adm_cp" name="adm_cp" type="number" min="0" class="form-control"
                                     value="{{ $propiedad->adm_cp }}" required>
                             </div>
+                            <span class="sub" id="plena">Cuota plena</span>
+                            <span class="sub" id="c_unica">Cuota única</span>
+                            <br>
                             <span id="adm_cp_pesos" class="form-text text-muted"></span>
                         </div>
                     </div>
@@ -85,13 +88,15 @@
                 <div class="col-12 col-md-4" id="descuento">
                     <div class="form-group row">
                         <label for="adm_cd" class="col-6 col-form-label">Valor Administración
-                            <span class="sub">Cuota con descuento<span>
+                            
                         </label>
                         <div class="col-6">
                             <div class="input-group">
                                 <input id="adm_cd" name="adm_cd" type="number" min="0" class="form-control"
                                     value="{{ $propiedad->adm_cd }}">
                             </div>
+                            <span class="sub">Cuota con descuento<span>
+                                <br>
                             <span id="adm_cd_pesos" class="form-text text-muted"></span>
                         </div>
                     </div>

@@ -4,6 +4,7 @@
 body {
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 200;
+    background-color: #f4f6fa;
 }
 
 
@@ -12,15 +13,6 @@ body {
 .logo {
     max-width: 100%;
     height: 50px;
-}
-
-.contenido {
-    border-radius: 10px 0px 0px 10px;
-    background-color: #f4f6fa;
-}
-
-.menu {
-    background-color: #f4f6fa;
 }
 
 .login {
@@ -46,6 +38,10 @@ body {
 
 .vh-95 {
     height: 95vh;
+}
+
+.usuario {
+    border-bottom: 1px solid #ffeece;
 }
 
 .salir {

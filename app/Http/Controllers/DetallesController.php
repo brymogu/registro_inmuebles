@@ -43,7 +43,7 @@ class DetallesController extends Controller
         $mat_fachada = Materiales_fachada::pluck('desc_mats_fachada', 'id');
         $tipo_garaje = tipo_garajes::pluck('tipo_garajes', 'id');
 
-    
+
         return view(
             'detalles.detalles',
             compact(
@@ -63,8 +63,8 @@ class DetallesController extends Controller
                 'tipo_garaje',
                 'negocio'
             ),
-            ['tipo' => $id->horizontal, 'tipo_inm' => $id->tipo_inmueble, 'propiedad' => $id] 
-        ); 
+            ['tipo' => $id->horizontal, 'tipo_inm' => $id->tipo_inmueble, 'propiedad' => $id]
+        );
     }
     public function store(Request $request, $id)
     {
@@ -229,8 +229,14 @@ class DetallesController extends Controller
 
         $Propiedad->save();
 
+
         $negocio = Negocios::where('propiedad', $Propiedad->id)->first();
-        $negocio->paso = "Detalles";
+
+        if ($Propiedad->horizontal == "Si") {
+            $negocio->paso = "Detalles";
+        } else {
+            $negocio->paso = "Final";
+        }
         $negocio->save();
 
         $codigo_pptrio = $negocio->propietario;

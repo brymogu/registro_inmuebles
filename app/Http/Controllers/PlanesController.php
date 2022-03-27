@@ -34,7 +34,7 @@ class PlanesController extends Controller
             $negocio->valor = $request->valor;
         }
         $negocio->plan = $request->plan;
-        $negocio->paso = "Planes";
+        $negocio->paso = "Final";
         $negocio->save();
 
         $codigo_pptrio = $negocio->propietario;

@@ -27,7 +27,7 @@ class FotosController extends Controller
         $fotos->save();
 
         $negocio = Negocios::where('propiedad', $id)->first();
-        $negocio->paso = "fotos";
+        $negocio->paso = "Final";
         $negocio->save();
     }
 }

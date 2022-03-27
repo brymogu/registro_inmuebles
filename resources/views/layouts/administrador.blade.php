@@ -46,12 +46,9 @@
                                     <img src="{!! asset('img/epica.svg') !!}" alt="" class="logo">
                                 </a>
                                 <ul class="dropdown-menu shadow border-0 dropdown-menu-end" aria-labelledby="logmenu">
-                                    <li><a class="dropdown-item disabled">
+                                    <li class="usuario"><a class="dropdown-item disabled ">
                                             {{ $_SESSION['nombre'] }}
-                                        </a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
+                                        </a></li>                                    
                                     <li>
                                         <a class="dropdown-item salir " href="{{ route('salir') }}"><i
                                                 class="fas fa-sign-out-alt"></i> Salir</a>

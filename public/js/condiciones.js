@@ -9,7 +9,6 @@ $(document).ready(function() {
         $(".usuario i, .negocio i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar").css("background-color", "#01303c");
 
-
         $('#espropietario').change(function() {
             if ($('#espropietario').prop('checked')) {
                 $('#pqsolicita').removeAttr('required');
@@ -89,10 +88,6 @@ $(document).ready(function() {
                 myModal.show()
             }
         });
-
-
-
-
         $('#tipo_inm').change(function() {
             if ($('#tipo_inm').val() == 2) {
                 $('#aptos2').show();
@@ -175,23 +170,6 @@ $(document).ready(function() {
             }
         });
 
-        //$('#ciudad').change(function() {
-        // if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
-        //  $('#botonmapa').show();
-        //   $('#enviarnegocio').hide();
-        //} else {
-        //     $('#botonmapa').hide();
-        //   }
-        //});
-
-        //$('#direccion').change(function() {
-        //  if ($('#ciudad').val() != "" && $('#direccion').val() != "") {
-        //    $('#botonmapa').show();
-        //  $('#enviarnegocio').hide();
-        //} else {
-        //    $('#botonmapa').hide();
-        // }
-        // });
     } else if ($('#detalles').length) {
         $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");

@@ -421,10 +421,7 @@
 
                 <div class="col-4 col-md-2 text-end">
                     <div>
-                        <a type="button" class="btn botones" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" onclick="mostrarmapa()"><i
-                                class="fas fa-map-marker-alt"></i>
-                            Ubicar</a>
+                        
                     </div>
                 </div>
                 <div class="d-none d-md-block col-md-3"></div>

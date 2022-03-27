@@ -56,13 +56,15 @@
                 <div class="col-12 col-md-4 border-end" id="secc_admon">
                     <div class="form-group row">
                         <label for="adm_cp" class="col-6 col-form-label">Valor Administración
-                            <span class="sub" id="plena">Cuota plena</span>
-                            <span class="sub" id="c_unica">Cuota única</span>
+
                         </label>
                         <div class="col-6">
                             <div class="input-group">
-                                <input id="adm_cp" name="adm_cp" type="number" min="0" class="form-control">                                
+                                <input id="adm_cp" name="adm_cp" type="number" min="0" class="form-control">
                             </div>
+                            <span class="sub" id="plena">Cuota plena</span>
+                            <span class="sub" id="c_unica">Cuota única</span>
+                            <br>
                             <span id="adm_cp_pesos" class="form-text text-muted"></span>
                         </div>
                     </div>
@@ -70,12 +72,13 @@
                 <div class="col-12 col-md-4" id="descuento">
                     <div class="form-group row">
                         <label for="adm_cd" class="col-6 col-form-label">Valor Administración
-                            <span class="sub">Cuota con descuento<span>
+
                         </label>
                         <div class="col-6">
                             <div class="input-group">
                                 <input id="adm_cd" name="adm_cd" type="number" min="0" class="form-control">
                             </div>
+                            <span class="sub">Cuota con descuento<span><br>
                             <span id="adm_cd_pesos" class="form-text text-muted"></span>
                         </div>
                     </div>

@@ -706,11 +706,15 @@
                                         <option value="Privado" selected>Privado</option>
                                         <option value="Comunal">Comunal</option>
                                         <option value="No">No</option>
-                                    }@elseif($propiedad->tiene_garajes == 'Comunal'){
+                                        }
+                                    @elseif($propiedad->tiene_garajes == 'Comunal')
+                                        {
                                         <option value="Privado">Privado</option>
                                         <option value="Comunal" selected>Comunal</option>
                                         <option value="No">No</option>
-                                    }@elseif($propiedad->tiene_garajes == 'No'){
+                                        }
+                                    @elseif($propiedad->tiene_garajes == 'No')
+                                        {
                                         <option value="Privado">Privado</option>
                                         <option value="Comunal">Comunal</option>
                                         <option value="No" selected>No</option>

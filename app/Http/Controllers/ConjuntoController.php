@@ -147,7 +147,7 @@ class ConjuntoController extends Controller
         $Propiedad->save();
 
         $negocio = Negocios::where('propiedad', $Propiedad->id)->first();
-        $negocio->paso = "Conjunto";
+        $negocio->paso = "Final";
         $negocio->save();
 
         $codigo_pptrio = $negocio->propietario;

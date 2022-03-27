@@ -10,10 +10,8 @@ $(document).ready(function() {
         $(".usuario .progress-bar").css("background-color", "#01303c");
 
     } else if ($('#negocio_tarjeta').length) {
-
         $(".usuario i, .negocio i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar").css("background-color", "#01303c");
-
 
         if ($('#espropietario').prop('checked')) {
             $('#pqsolicita').removeAttr('required');
@@ -26,10 +24,8 @@ $(document).ready(function() {
         if ($('#conjunto').prop('checked')) {
             $('#detalles').show();
             $('#direccion_comp').attr("required", "true");
-
             if ($('#habitado').prop('checked')) {
                 $('#arrendado').show();
-
             } else {
                 $('#arrendado').hide();
             }
@@ -42,9 +38,12 @@ $(document).ready(function() {
         if ($('#tipo_inm').val() == 2) {
             $('#aptos2').show();
             $('#piso').attr("required", "true");
-
+            $("#estado_inb option[value='1']").removeAttr("disabled", "disabled");
+            $("#estado_inb option[value='2']").removeAttr("disabled", "disabled");
         }
         if ($('#tipo_inm').val() == 1) {
+            $("#estado_inb option[value='1']").attr("disabled", "disabled");
+            $("#estado_inb option[value='2']").attr("disabled", "disabled");
             $('#piso').removeAttr('required');
             $('#aptos2').hide();
             $('#sec_n_ascensores').hide();
@@ -70,10 +69,7 @@ $(document).ready(function() {
             $('#valorlabel').html("¿Valor tentativo que le vas a  asignar al inmueble en venta?");
             $('#admonhelper').hide();
         }
-        if ($('#negocio').val() == 3) {
-            $('#cortina').hide();
-            $('#admonhelper').hide();
-        }
+
 
         var valor = $('#valor').val();
         $('#valorpesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));
@@ -127,7 +123,7 @@ $(document).ready(function() {
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
 
 
-        if ($('#garaje').val() == 'Si') {
+        if ($('#garaje').val() == 'Privado') {
             $('#sec_garajes').show();
             $('#no_garajes').attr("required", "true");
             $('#tipo_garaje').attr("required", "true");
@@ -151,7 +147,7 @@ $(document).ready(function() {
             $('#area_terraza_secc').show();
             $('#area_terraza').attr("required", "true");
         } else {
-            $('#area_terraza_secca').hide();
+            $('#area_terraza_secc').hide();
             $('#area_terraza').removeAttr('required');
         }
 
@@ -160,7 +156,6 @@ $(document).ready(function() {
 
         $(".usuario i, .negocio i, .detalles i, .conjunto i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar").css("background-color", "#01303c");
-
 
         switch ($('#t_cuota').val()) {
             case '1':
