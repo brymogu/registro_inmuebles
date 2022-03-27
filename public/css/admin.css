@@ -15,7 +15,11 @@ body {
 }
 
 .contenido {
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #f4f6fa;
+}
+
+.menu {
     background-color: #f4f6fa;
 }
 
@@ -33,12 +37,11 @@ body {
 
 .nav-item:hover {
     font-weight: 400;
-    background: rgb(246, 192, 21);
-    background: linear-gradient(90deg, rgba(246, 192, 21, 0.4770950616574755) 30%, rgba(255, 255, 255, 0) 100%);
+    background: #f6c015;
 }
 
 .nav-link:hover {
-    color: #01303c !important;
+    color: #ffffff;
 }
 
 .vh-75 {

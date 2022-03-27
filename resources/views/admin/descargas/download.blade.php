@@ -6,7 +6,7 @@
 @section('title', 'Descargar')
 
 @section('content')
-    <div class="row my-3 excel">
+    <div class="row my-3 excel" id="descargas">
         <div class="col-7">
         </div>
         <div class="col-5">

@@ -6,7 +6,7 @@
 @section('title', 'Editar')
 
 @section('content')
-    <div class="row">
+    <div class="row" id="editar">
         <div class="col-12 pt-5 px-3">
             <div class="tabla">
                 <div class="table-responsive">

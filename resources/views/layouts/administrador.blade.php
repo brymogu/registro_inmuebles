@@ -28,55 +28,52 @@
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{!! asset('css/admin.css') !!}">
+    <script src="{!! asset('js/admin.js') !!}"></script>
     @yield('more_head')
     <title>@yield('title')</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-light shadow">
-        <div class="container-fluid ">
-            <a class="navbar-brand" href="#">
-                <img src="{!! asset('img/epica.svg') !!}" alt="" class="logo">
-            </a>
-            <div class="d-flex">
-                <div class="dropdown ">
-                    <button class="btn dropdown-toggle" type="button" id="logmenu" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="fas fa-user"></i>
-                    </button>
-                    <ul class="dropdown-menu shadow border-0 dropdown-menu-end" aria-labelledby="logmenu">
-                        <li><a class="dropdown-item disabled">
-                                {{ $_SESSION['nombre'] }}
-                            </a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <a class="dropdown-item salir " href="{{ route('salir') }}"><i class="fas fa-sign-out-alt"></i> Salir</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 d-flex py-5 align-items-start vh-75">
-                <ul class="nav w-100 flex-column">
-                    <li class="nav-item rounded-pill">
-                        <a class="nav-link active" aria-current="page" href="{{ route('administrador.main') }}"><i
-                                class="fas fa-home"></i> Home</a>
-                    </li>
-                    <li class="nav-item rounded-pill">
-                        <a class="nav-link" href="{{ route('administrador.edit') }}"> <i
-                                class="fas fa-pencil-alt"></i> Editar</a>
-                    </li>
-                    <li class="nav-item rounded-pill">
-                        <a class="nav-link" href="{{ route('administrador.download') }}"><i
-                                class="fas fa-angle-double-down"></i> Descargas </a>
-                    </li>
+            <div class="col-2 menu">
+                <div class="card tarjeta shadow-sm border-0 d-flex py-3 align-items-start vh-100">
+                    <div class="card-body">
+                        <ul class="nav w-100 flex-column">
+                            <div class="btn-group dropend mb-5">
+                                <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="{!! asset('img/epica.svg') !!}" alt="" class="logo">
+                                </a>
+                                <ul class="dropdown-menu shadow border-0 dropdown-menu-end" aria-labelledby="logmenu">
+                                    <li><a class="dropdown-item disabled">
+                                            {{ $_SESSION['nombre'] }}
+                                        </a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item salir " href="{{ route('salir') }}"><i
+                                                class="fas fa-sign-out-alt"></i> Salir</a>
+                                    </li>
+                                </ul>
+                            </div>
 
-                </ul>
+                            <li class="nav-item rounded-pill home">
+                                <a class="nav-link active" aria-current="page"
+                                    href="{{ route('administrador.main') }}"><i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="nav-item rounded-pill editar">
+                                <a class="nav-link" href="{{ route('administrador.edit') }}"> <i
+                                        class="fas fa-pencil-alt"></i> Editar</a>
+                            </li>
+                            <li class="nav-item rounded-pill descargas">
+                                <a class="nav-link" href="{{ route('administrador.download') }}"><i
+                                        class="fas fa-angle-double-down"></i> Descargas </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="col-10 contenido">
                 @yield('content')
