@@ -3,19 +3,15 @@ $(document).ready(function() {
     $('#valinval').html("En valores: $ " + Intl.NumberFormat("es-CO").format(valor));
     //Básico
     var basmes = new Intl.NumberFormat("es-CO").format(valor * 0.005);
-
-    $('#basano').html("$" + basmes + " + IVA<br/><br/>Equivale al 0.5% <br/><strong>(una vez sea vendido)</strong> ");
+    $('#basano').html("$" + basmes + " + IVA<br/><br/>Equivale al 2% <br/><strong>(una vez sea vendido)</strong> ");
 
     //ESTÁNDAR
     var estmes = new Intl.NumberFormat("es-CO").format(valor * 0.01);
-    $('#estsem').html("$" + estmes + " + IVA<br/><br/>Equivale al 1% <br/><strong>(una vez sea vendido)</strong>");
-    //PLUS
-    var plus = new Intl.NumberFormat("es-CO").format((valor * 0.02));
-    $('#plusmes').html("$" + plus + " + IVA<br/><br/>Equivale al 2% <br/><strong>(una vez sea vendido)</strong>");
+    $('#estsem').html("$" + estmes + " + IVA<br/><br/>Equivale al 3% <br/><strong>(una vez sea vendido)</strong>");
 
     //PREMIUM
     var premes = new Intl.NumberFormat("es-CO").format(valor * 0.03);
-    $('#premes').html("$" + premes + " + IVA<br/><br/>Equivale al 3% <br/><strong>(una vez sea vendido)</strong>");
+    $('#premes').html("$" + premes + " + IVA<br/><br/>Equivale al 4% <br/><strong>(una vez sea vendido)</strong>");
 
     $('#valor').keyup(function() {
         var valor = $('#valor').val();
@@ -23,18 +19,15 @@ $(document).ready(function() {
         //Básico
         var basmes = new Intl.NumberFormat("es-CO").format(valor * 0.005);
 
-        $('#basano').html("$" + basmes + " + IVA<br/><br/>Equivale al 0.5% <br/><strong>(una vez sea vendido)</strong>");
+        $('#basano').html("$" + basmes + " + IVA<br/><br/>Equivale al 2% <br/><strong>(una vez sea vendido)</strong>");
 
         //ESTÁNDAR
         var estmes = new Intl.NumberFormat("es-CO").format(valor * 0.01);
-        $('#estsem').html("$" + estmes + " + IVA<br/><br/>Equivale al 1% <br/><strong>(una vez sea vendido)</strong>");
-        //PLUS
-        var plus = new Intl.NumberFormat("es-CO").format((valor * 0.02));
-        $('#plusmes').html("$" + plus + " + IVA<br/><br/>Equivale al 2% <br/><strong>(una vez sea vendido)</strong>");
+        $('#estsem').html("$" + estmes + " + IVA<br/><br/>Equivale al 3% <br/><strong>(una vez sea vendido)</strong>");
 
         //PREMIUM
         var premes = new Intl.NumberFormat("es-CO").format(valor * 0.03);
-        $('#premes').html("$" + premes + " + IVA<br/><br/>Equivale al 3% <br/><strong>(una vez sea vendido)</strong>");
+        $('#premes').html("$" + premes + " + IVA<br/><br/>Equivale al 4% <br/><strong>(una vez sea vendido)</strong>");
 
         selector();
     });
@@ -58,48 +51,38 @@ function selector() {
 
 function basico() {
     var valor = $('#valor').val();
-    var mensual = valor * 0.005;
+    var mensual = valor * 0.02;
     var iva = mensual * 0.19;
     var total = mensual + iva;
     var plan = "Plan Básico";
     var efectivo = "Previo elaboración de promesa compraventa";
-    var porcentaje = "0.5%";
+    var porcentaje = "2%";
 
     llenar_datos(plan, efectivo, valor, mensual, iva, total, porcentaje);
 }
 
 function estandar() {
     var valor = $('#valor').val();
-    var mensual = valor * 0.01;
+    var mensual = valor * 0.03;
     var iva = mensual * 0.19;
     var total = mensual + iva;
     var plan = "Plan Estandar";
     var efectivo = "En la firma promesa compraventa";
-    var porcentaje = "1%";
+    var porcentaje = "3%";
 
     llenar_datos(plan, efectivo, valor, mensual, iva, total, porcentaje);
 }
 
-function premium() {
-    var valor = $('#valor').val();
-    var mensual = valor * 0.02;
-    var iva = mensual * 0.19;
-    var total = mensual + iva;
-    var plan = "Plan Plus";
-    var efectivo = "En la firma promesa compraventa";
-    var porcentaje = "2%";
-    llenar_datos(plan, efectivo, valor, mensual, iva, total, porcentaje);
-}
 
 function premium() {
     var valor = $('#valor').val();
-    var mensual = (valor * 0.03);
+    var mensual = (valor * 0.04);
     var premium_mitad = mensual / 2;
     var iva = mensual * 0.19;
     var total = mensual + iva;
     var plan = "Plan Premium";
     var efectivo = "En firma en promesa compraventa";
-    var porcentaje = "3%";
+    var porcentaje = "4%";
 
     llenar_datos(plan, efectivo, valor, mensual, iva, total, porcentaje, premium_mitad);
 }

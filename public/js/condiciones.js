@@ -137,7 +137,7 @@ $(document).ready(function() {
         });
 
         $('#estado_inb').change(function() {
-            if ($('#estado_inb').val() == 4) {
+            if ($('#estado_inb').val() >= 4) {
                 $('#anoconstruido').show();
                 $('#tiempo_inm').attr("required", "true");
             } else {
