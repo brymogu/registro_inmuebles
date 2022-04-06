@@ -98,13 +98,15 @@
                                                 <i class="fas fa-file-invoice"></i></a>
                                         </td>
                                         <td class="text-center">
-                                            {{ Form::open(['route' => 'administrador.finco', 'target' => '_blank']) }}
-                                            <input type="text" class="d-none" name="codineg"
-                                                value="{{ $negocio->id_neg }}">
-                                            <button type="submit" class="btn btn-epc rounded-circle">
-                                                <i class="fas fa-crow"></i>
-                                            </button>
-                                            {{ Form::close() }}
+                                            @if($negocio->longitud != "" && $negocio->latitud != "")
+                                                {{ Form::open(['route' => 'administrador.finco', 'target' => '_blank']) }}
+                                                <input type="text" class="d-none" name="codineg"
+                                                    value="{{ $negocio->id_neg }}">
+                                                <button type="submit" class="btn btn-epc rounded-circle">
+                                                    <i class="fas fa-crow"></i>
+                                                </button>
+                                                {{ Form::close() }}
+                                            @endif
                                         </td>
                                     </tr>
                                 @endif
