@@ -2,31 +2,31 @@ $(document).ready(function() {
     var valor = $('#valor').val();
     $('#valinval').html("En valores: $ " + Intl.NumberFormat("es-CO").format(valor));
     //Básico
-    var basmes = new Intl.NumberFormat("es-CO").format(valor * 0.005);
+    var basmes = new Intl.NumberFormat("es-CO").format(valor * 0.02);
     $('#basano').html("$" + basmes + " + IVA<br/><br/>Equivale al 2% <br/><strong>(una vez sea vendido)</strong> ");
 
     //ESTÁNDAR
-    var estmes = new Intl.NumberFormat("es-CO").format(valor * 0.01);
+    var estmes = new Intl.NumberFormat("es-CO").format(valor * 0.03);
     $('#estsem').html("$" + estmes + " + IVA<br/><br/>Equivale al 3% <br/><strong>(una vez sea vendido)</strong>");
 
     //PREMIUM
-    var premes = new Intl.NumberFormat("es-CO").format(valor * 0.03);
+    var premes = new Intl.NumberFormat("es-CO").format(valor * 0.04);
     $('#premes').html("$" + premes + " + IVA<br/><br/>Equivale al 4% <br/><strong>(una vez sea vendido)</strong>");
 
     $('#valor').keyup(function() {
         var valor = $('#valor').val();
         $('#valinval').html("En valores: $ " + Intl.NumberFormat("es-CO").format(valor));
         //Básico
-        var basmes = new Intl.NumberFormat("es-CO").format(valor * 0.005);
+        var basmes = new Intl.NumberFormat("es-CO").format(valor * 0.02);
 
         $('#basano').html("$" + basmes + " + IVA<br/><br/>Equivale al 2% <br/><strong>(una vez sea vendido)</strong>");
 
         //ESTÁNDAR
-        var estmes = new Intl.NumberFormat("es-CO").format(valor * 0.01);
+        var estmes = new Intl.NumberFormat("es-CO").format(valor * 0.03);
         $('#estsem').html("$" + estmes + " + IVA<br/><br/>Equivale al 3% <br/><strong>(una vez sea vendido)</strong>");
 
         //PREMIUM
-        var premes = new Intl.NumberFormat("es-CO").format(valor * 0.03);
+        var premes = new Intl.NumberFormat("es-CO").format(valor * 0.04);
         $('#premes').html("$" + premes + " + IVA<br/><br/>Equivale al 4% <br/><strong>(una vez sea vendido)</strong>");
 
         selector();

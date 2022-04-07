@@ -11,7 +11,7 @@
         <div class="card-body">
             <div class="row my-3 text-center">
                 <div class="col-12">
-                    <h4>Planes Venta</h4>
+                    <h4>Planes venta</h4>
                     <p>En Épica Inmobiliaria® contamos con tres planes para la venta de tu inmueble que pagas
                         <strong> solo
                             cuando se concrete el negocio</strong>, elije el de tu interés, luego podrás cambiarlo
