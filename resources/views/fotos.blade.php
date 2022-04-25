@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <div class="card bg-default tarjeta mt-3 shadow-lg animate__animated animate__fadeInDown" id="fotos">
+    <div class="card bg-default tarjeta mt-3 shadow-lg animate__animated animate__fadeInRight" id="fotos">
         <div class="card-body">
             <form action="{{ route('fotos.store', $id) }}" class="dropzone" id="my-awesome-dropzone"></form>
             <div class="row mt-2">

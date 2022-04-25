@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeIn" id="negocio_tarjeta">
+    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInRight" id="negocio_tarjeta">
         <div class="card-body">
             {{ Form::open(['method' => 'post', 'files' => true]) }}
             <div class="grupo">
@@ -67,7 +67,7 @@
                                 asignar al inmueble?</label>
                             <div class="col-7">
                                 <input id="valor" name="valor" type="number" value="{{ $negocio->valor }}"
-                                    class="form-control" min="99000" required="required">
+                                    class="form-control" min="100000" required="required">
                                 <span id="admonhelper" class="form-text text-muted">Incluida cuota de administración si
                                     aplicara</span>
                                 <span id="valorpesos" class="form-text text-muted"></span>

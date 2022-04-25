@@ -2,7 +2,7 @@
 @section('title', 'Gracias')
 
 @section('content')
-    <div class="card bg-default tarjeta animate__animated animate__fadeIn" id="agradecimiento">
+    <div class="card bg-default tarjeta animate__animated animate__fadeInRight id="agradecimiento">
         <div class="card-body">
             <div id="agradecpvj" class="col-12">
                 <div class="row">

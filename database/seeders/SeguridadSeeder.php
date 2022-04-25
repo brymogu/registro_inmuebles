@@ -16,11 +16,15 @@ class SeguridadSeeder extends Seeder
     {
         //
         $seguridad = new Tipos_seguridad();
-        $seguridad->desc_tipo_seguridad = "No";
-        $seguridad->save();        
-
+        $seguridad->desc_tipo_seguridad = "Vigilante";
+        $seguridad->save();  
+             
+        $seguridad2 = new Tipos_seguridad();
+        $seguridad2->desc_tipo_seguridad = "Biométrico";
+        $seguridad2->save();   
+        
         $seguridad3 = new Tipos_seguridad();
-        $seguridad3->desc_tipo_seguridad = "Biométrico";
-        $seguridad3->save();    
+        $seguridad3->desc_tipo_seguridad = "No";
+        $seguridad3->save();  
     }
 }

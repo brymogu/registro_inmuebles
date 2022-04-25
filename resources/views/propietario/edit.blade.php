@@ -7,7 +7,7 @@
 
 
 @section('content')
-<div class="card bg-default tarjeta animate__animated animate__fadeIn" id="propietario">
+<div class="card bg-default tarjeta animate__animated animate__fadeInLeft" id="propietario">
     <div class="card-body">
         {{ Form::open(['method' => 'post']) }}
         <div class="row seccion">

@@ -134,6 +134,16 @@ $(document).ready(function() {
             $('#tipo_garaje').removeAttr('required');
         }
 
+        if ($('#no_garajes').val() < 2) {
+            if ($('#tipo_garaje').val() == 3) {
+                $("#tipo_garaje option[value='1']").attr('selected', 'selected');
+            }
+            $("#tipo_garaje option[value='3']").hide();
+
+        } else {
+
+            $("#tipo_garaje option[value='3']").show();
+        }
 
         if ($('#balcon').prop('checked')) {
             $('#area_balcon_secc').show();

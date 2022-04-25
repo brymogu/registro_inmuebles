@@ -134,6 +134,13 @@ $(document).ready(function() {
         $('#valor').keyup(function() {
             var valor = $('#valor').val();
             $('#valorpesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));
+            if (valor <= 100000) {
+                popover.enable();
+                popover.show()
+            } else {
+                popover.disable();
+                popover.hide()
+            }
         });
 
         $('#estado_inb').change(function() {
@@ -189,11 +196,14 @@ $(document).ready(function() {
 
         $('#no_garajes').change(function() {
             if ($('#no_garajes').val() < 2) {
-                console.log("Entró");
-                $("#tipo_garaje option[value='3']").attr("disabled", "disabled");
+                if ($('#tipo_garaje').val() == 3) {
+                    $("#tipo_garaje option[value='1']").attr('selected', 'selected');
+                }
+                $("#tipo_garaje option[value='3']").hide();
+
             } else {
-                console.log("no Entró");
-                $("#tipo_garaje option[value='3']").removeAttr("disabled", "disabled");
+
+                $("#tipo_garaje option[value='3']").show();
             }
         });
 
@@ -220,6 +230,16 @@ $(document).ready(function() {
     } else if ($('#conjunto_tarjeta').length) {
         $(".usuario i, .negocio i, .detalles i, .conjunto i").css("color", "#01303c");
         $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar").css("background-color", "#01303c");
+
+        $('#seguridad').change(function() {
+            if ($('#seguridad').val() == 1) {
+                $('#sec_vigilancia').show();
+                $('#vigilancia').attr("required", "true");
+            } else {
+                $('#vigilancia').removeAttr('required');
+                $('#sec_vigilancia').hide();
+            }
+        });
 
         $('#t_cuota').change(function() {
             switch ($('#t_cuota').val()) {
@@ -275,6 +295,10 @@ $(document).ready(function() {
             } else {
                 $('#sec_valor').hide();
             }
+        });
+
+        $('#planes').change(function() {
+            $('#calculadora').show();
         });
 
     }

@@ -33,7 +33,7 @@ body {
 }
 
 .cabecera {
-    margin: 1rem;
+    margin: 1rem 1rem 1rem 1rem;
     padding: 0rem 1.25rem 0rem 1.25rem !important;
     flex: 1 1 auto;
     min-height: 1px;
@@ -44,23 +44,36 @@ body {
     .img-fluid {
         max-width: 80%;
     }
-    .barra {
-        display: none;
-    }
 }
 
-.progreso .fas,
-.progreso .far {
-    font-size: 20px;
-    color: #9d9d9c;
+.progreso .col {
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 15px;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    background-color: #efefef;
 }
 
 .progress {
-    height: 3px;
+    height: 0.2rem !important;
 }
 
 .progress-bar {
-    background-color: #9d9d9c;
+    background-color: #012f3a !important;
+}
+
+.activo {
+    background-color: #012f3a !important;
+}
+
+.activo i {
+    color: white !important;
+}
+
+.progreso .far,
+.progreso .fas {
+    font-size: 15px;
+    color: #9d9d9c;
 }
 
 .tarjeta {

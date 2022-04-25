@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInDown" id="conjunto_tarjeta">
+    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInRight" id="conjunto_tarjeta">
         <div class="card-body">
             <div class="row seccion">
                 <div class="col-12">
@@ -17,9 +17,10 @@
             <div class="row seccion">
                 <div class="col-12 col-md-4 border-end">
                     <div class="form-group row">
-                        <label for="vigilancia" class="col-6 col-form-label">Vigilancia</label>
-                        <div class="col-6">
-                            {!! Form::select('vigilancia', $vigilancia, null, ['class' => 'form-select', 'id' => 'vigilancia', 'required' => 'required']) !!}
+                        <label for="nombre_c_e" class="col-6 col-form-label">Nombre del conjunto o
+                            edificio</label>
+                        <div class="col-6 ">
+                            <input id="nombre_c_e" name="nombre_c_e" type="text" class="form-control" required>
                         </div>
                     </div>
                 </div>
@@ -32,14 +33,13 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-
-                    <div class="form-group row">
-                        <label for="nombre_c_e" class="col-6 col-form-label">Nombre del conjunto o
-                            edificio</label>
-                        <div class="col-6 ">
-                            <input id="nombre_c_e" name="nombre_c_e" type="text" class="form-control" required>
+                    <div class="form-group row" id="sec_vigilancia">
+                        <label for="vigilancia" class="col-6 col-form-label">Vigilancia</label>
+                        <div class="col-6">
+                            {!! Form::select('vigilancia', $vigilancia, null, ['class' => 'form-select', 'id' => 'vigilancia']) !!}
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="row">
@@ -79,7 +79,7 @@
                                 <input id="adm_cd" name="adm_cd" type="number" min="0" class="form-control">
                             </div>
                             <span class="sub">Cuota con descuento<span><br>
-                            <span id="adm_cd_pesos" class="form-text text-muted"></span>
+                                    <span id="adm_cd_pesos" class="form-text text-muted"></span>
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInDown" id="planes_tarjeta">
+    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInRight" id="planes_tarjeta">
         <div class="card-body">
             <div class="row my-3 text-center">
                 <div class="col-12">
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 my-3 my-md-0 calculadora rounded py-3 text-center">
+                <div class="col-12 col-md-6 my-3 my-md-0 calculadora rounded py-3" id="calculadora">
                     <p>Para tu inmueble con canon de <strong class="bold" id="valormodal">$
                             {!! $valor !!}</strong><br />
                         <small class="text-muted">(incluida cuota de administración si aplicara)</small>

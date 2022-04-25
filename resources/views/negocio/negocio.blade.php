@@ -10,10 +10,11 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 @endsection
 
 @section('content')
-    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeIn" id="negocio_tarjeta">
+    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInRight" id="negocio_tarjeta">
         <div class="card-body">
             {{ Form::open(['method' => 'post', 'files' => true]) }}
             <div class="grupo">
@@ -55,11 +56,11 @@
                     <div class="col-12 col-md-6">
                         <div class="form-group row" id="valorgrupo">
                             <label for="valor" id="valorlabel" class="col-5 form-label">¿Valor tentativo que le vas a
-                                asignar
-                                al inmueble?</label>
+                                asignar al inmueble?</label>
                             <div class="col-7">
-                                <input id="valor" name="valor" type="number" class="form-control" min="99000"
-                                    required="required">
+                                <input id="valor" name="valor" type="number" class="form-control" min="100000"
+                                    required="required" data-bs-container="body" data-bs-toggle="popover"
+                                    data-bs-placement="top" data-bs-content="Digite un valor válido">
                                 <span id="admonhelper" class="form-text text-muted">Incluida cuota de administración si
                                     aplicara</span>
                                 <span id="valorpesos" class="form-text text-muted"></span>
@@ -330,7 +331,7 @@
                                 contruido</label>
                             <div class="col-7">
                                 <input id="tiempo_inm" name="tiempo_inm" type="number" min="1" class="form-control"
-                                    max="100" required="required">
+                                    max="100">
                             </div>
                         </div>
                     </div>
@@ -506,5 +507,11 @@
 @section('scripts_footer')
     <script>
         var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {})
-    </script>    
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+        var exampleTriggerEl = document.getElementById('valor');
+        var popover = bootstrap.Popover.getInstance(exampleTriggerEl);
+    </script>
 @endsection

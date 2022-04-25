@@ -76,7 +76,7 @@
             </div>
             <div class="col-6"></div>
             <div class="col-3 text-center ">
-                <div class="rounded-circle imprimir shadow d-flex border justify-content-center align-items-center animate__animated animate__fadeInUp"
+                <div class="rounded-circle imprimir shadow d-flex border justify-content-center align-items-center animate__animated animate__fadeInRight"
                     onclick="window.print();return false;">
                     <i class="fas fa-print"></i>
                 </div>

@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInDown" id="detalles">
+    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInUp" id="detalles">
         <div class="card-body">
             <div class="row seccion">
                 <div class="col-12">

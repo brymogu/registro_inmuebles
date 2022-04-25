@@ -16,6 +16,7 @@ $(document).ready(function() {
         $('#area_balcon_secc').hide();
 
     } else if ($('#conjunto_tarjeta').length) {
+        $('#sec_vigilancia').hide();
         $('#descuento').hide();
         $('#secc_admon').hide();
         $('#admonhelper').hide();
@@ -25,6 +26,8 @@ $(document).ready(function() {
     } else if ($('#planes_tarjeta').length) {
         $('#sec_valor').hide();
         $('#soloplus').hide();
+        $('#calculadora').hide();
         $("#planes option:last").remove();
+
     }
 });

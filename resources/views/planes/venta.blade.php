@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInDown" id="planes_tarjeta">
+    <div class="card bg-default tarjeta shadow-lg animate__animated animate__fadeInUp" id="planes_tarjeta">
         <div class="card-body">
             <div class="row my-3 text-center">
                 <div class="col-12">
@@ -148,7 +148,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 my-3 my-md-0 calculadora rounded py-3 text-cente">
+                <div class="col-12 col-md-6 my-3 my-md-0 calculadora rounded py-3" id="calculadora">
                     <div class="col-12 text-start">
                         <p>Para tu inmueble con valor de <strong id="valormodal">$ {!! $valor !!}</strong>, el costo del <strong
                                 id="plan"></strong> está conformado por: </p>
