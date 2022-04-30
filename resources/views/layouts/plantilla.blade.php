@@ -63,30 +63,29 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="row progreso text-center">                                            
-                                            <div class="col usuario activo">
+                                        <div class="row progreso text-center">
+                                            <div class="col usuario" id="m_usuario">
                                                 <i class="fas fa-user"></i>
                                             </div>
-                                            <div class="col negocio activo">
+                                            <div class="col negocio" id="m_negocio">
                                                 <i class="fas fa-handshake"></i>
                                             </div>
 
-                                            <div class="col detalles activo">
+                                            <div class="col detalles" id="m_detalles">
                                                 <i class="fas fa-list-ul"></i>
                                             </div>
                                             @if ($tipo == 'Si')
-                                                <div class="col conjunto activo" id="iconjunto">
+                                                <div class="col conjunto" id="m_conjunto">
                                                     <i class="fas fa-building"></i>
-
                                                 </div>
                                             @endif
-                                            <div class="col planes">
+                                            <div class="col planes" id="m_planes">
                                                 <i class="fas fa-chart-bar"></i>
                                             </div>
-                                            <div class="col camara">
+                                            <div class="col camara" id="m_camara">
                                                 <i class="fas fa-camera-retro"></i>
                                             </div>
-                                            <div class="col final">
+                                            <div class="col final" id="m_final">
                                                 <i class="fas fa-check"></i>
                                             </div>
                                         </div>
@@ -97,9 +96,10 @@
                         </div>
                     </div>
                     <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 56%"></div>
-                  </div>
-                </div>                
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 16%" id="m_barra"></div>
+                    </div>
+                </div>
             </div>
             <div class="d-none d-md-block col-md-1"></div>
         </div>

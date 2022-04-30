@@ -1,13 +1,13 @@
 $(document).ready(function() {
 
     if ($('#propietario').length) {
-        $(".usuario i").css("color", "#01303c");
-        $(".usuario .progress-bar").css("background-color", "#01303c");
         $('.toast').toast("show");
+        $('#m_usuario').addClass("activo");
+
 
     } else if ($('#negocio_tarjeta').length) {
-        $(".usuario i, .negocio i").css("color", "#01303c");
-        $(".usuario .progress-bar, .negocio .progress-bar").css("background-color", "#01303c");
+        $('#m_negocio').addClass("activo");
+        $('#m_barra').css("width", "32%");
 
         $('#espropietario').change(function() {
             if ($('#espropietario').prop('checked')) {
@@ -178,8 +178,8 @@ $(document).ready(function() {
         });
 
     } else if ($('#detalles').length) {
-        $(".usuario i, .negocio i, .detalles i").css("color", "#01303c");
-        $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar").css("background-color", "#01303c");
+        $('#m_detalles').addClass("activo");
+        $('#m_barra').css("width", "48%");
 
         $('#garaje').change(function() {
             if ($('#garaje').val() == 'Privado') {
@@ -228,8 +228,8 @@ $(document).ready(function() {
             }
         });
     } else if ($('#conjunto_tarjeta').length) {
-        $(".usuario i, .negocio i, .detalles i, .conjunto i").css("color", "#01303c");
-        $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar").css("background-color", "#01303c");
+        $('#m_conjunto').addClass("activo");
+        $('#m_barra').css("width", "50%");
 
         $('#seguridad').change(function() {
             if ($('#seguridad').val() == 1) {
@@ -280,13 +280,9 @@ $(document).ready(function() {
         });
 
 
-    } else if ($('#fotos').length) {
-        $(".usuario i, .negocio i, .detalles i, .conjunto i,.planes i,.camara i").css("color", "#01303c");
-        $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
-
     } else if ($('#planes_tarjeta').length) {
-        $(".usuario i, .negocio i, .detalles i, .conjunto i, .planes i").css("color", "#01303c");
-        $(".usuario .progress-bar, .negocio .progress-bar, .detalles .progress-bar, .conjunto .progress-bar, .camara .progress-bar").css("background-color", "#01303c");
+        $('#m_planes').addClass("activo");
+        $('#m_barra').css("width", "65%");
         $('.toast').toast("show");
 
         $('#modificar').change(function() {
@@ -301,5 +297,11 @@ $(document).ready(function() {
             $('#calculadora').show();
         });
 
+    } else if ($('#fotos').length) {
+        $('#m_camara').addClass("activo");
+        $('#m_barra').css("width", "80%");
+    } else if ($('#agradecimiento').length) {
+        $('#m_final').addClass("activo");
+        $('#m_barra').css("width", "100%");
     }
 });
