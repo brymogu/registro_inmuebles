@@ -34,7 +34,7 @@ use App\Models\Tipos_vigilancia;
 use App\Models\Vista;
 use App\Models\Zonas_sociales;
 
-class DownloadController extends Controller
+class RegistroController extends Controller
 {
 
     public function showtable()
