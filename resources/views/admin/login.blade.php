@@ -45,6 +45,11 @@
                                 placeholder="name@example.com" required>
                             <label for="usuario">Usuario</label>
                         </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="contrasenia" name="contrasenia"
+                                placeholder="name@example.com" required>
+                            <label for="contrasenia">Contraseña</label>
+                        </div>
                         <div class="text-end">
                             <button type="submit" class="btn btn-light shadow-sm">Ingresar</button>
                         </div>

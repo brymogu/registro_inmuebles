@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Usuarios;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -20,12 +21,14 @@ class UsuarioController extends Controller
 
         $usuario = Usuarios::where('usuario', $request->usuario)->first();
 
-        if ($usuario != null) {
+        if ($usuario != null && Hash::check($request->contrasenia, $usuario->contrasenia) ) {
             session_start();
             $_SESSION['nombre'] = $request['usuario'];
             return redirect()->route('administrador.main');
         }
-        return $request->usuario;
+        return 'Datos Icorrectos, por favor validar';
+        
+        
     }
 
     public function salir()

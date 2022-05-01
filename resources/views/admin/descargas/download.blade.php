@@ -51,13 +51,22 @@
                                     Nombre
                                 </th>
                                 <th>
-                                    Documento
+                                    Teléfono
                                 </th>
                                 <th>
-                                    Plan
+                                    Email
+                                </th>
+                                <th>
+                                    Asesor
+                                </th>
+                                <th>
+                                    Ciudad
                                 </th>
                                 <th class="text-center">
                                     Cert.
+                                </th>
+                                <th>
+                                    Editar
                                 </th>
                                 <th class="text-center">
                                     Ficha
@@ -81,16 +90,29 @@
                                             {{ $negocio->lastname }}
                                         </td>
                                         <td>
-                                            <b> {{ $negocio->doc_number }}</b><br />
-                                            {{ $negocio->desc_nombres_corto }}
+                                            <b> {{ $negocio->full_number }}</b>
                                         </td>
                                         <td>
-                                            {{ $negocio->desc_plan }}
+                                            <b> {{ $negocio->email }}</b>
+                                        </td>
+                                        <td>
+                                            <b> {{ $negocio->asesor }}</b>
+                                        </td>
+                                        <td>
+                                            <b> {{ $negocio->desc_ciudades }}</b>
                                         </td>
                                         <td class="text-center">
                                             <a class="btn btn-epc rounded-circle" target="_blank"
                                                 href="{{ Storage::url($negocio->certificado) }}"><i
                                                     class="fas fa-file-pdf"></i></a>
+                                        </td>
+                                        <td>
+                                            {{ Form::open(['method' => 'post', 'route' => 'administrador.editform']) }}
+                                            <input type="text" class="d-none" name="codineg"
+                                                value="{{ $negocio->id_neg }}">
+                                            <button type="submit" class="btn btn-epc rounded-circle"><i
+                                                    class="fas fa-pencil-alt"></i></button>
+                                            {{ Form::close() }}
                                         </td>
                                         <td class="text-center">
                                             <a href="{{ route('administrador.formatos', $negocio->id_neg) }}"

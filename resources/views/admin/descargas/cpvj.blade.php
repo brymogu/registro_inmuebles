@@ -89,11 +89,12 @@
                         <small class="fw-light fst-italic">Longitud</small>
                     </div>
                     <div class="col-4 text-end pt-1">
-
                     </div>
                 </div>
                 <div class="row mt-1 interior">
-                    <div class="col-4">
+                    <div class="col-4 text-center">
+                        <a href="{{ route('administrador.edit') }}" class="btn shadow-sm" data-bs-toggle="tooltip"
+                            data-bs-placement="left" title="Tooltip on bottom">Salir</a>
                     </div>
                     <div class="col-4 text-center">
                         <a class="btn shadow-sm" onclick="mostrarmapa()">Localizar</a>
@@ -281,7 +282,7 @@
                             tuviere. El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> es <strong>{{ $datos->email }} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            <strong>{{ $datos->phone }} </strong>.</span>
+                            <strong>{{ $datos->full_number }} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -464,7 +465,7 @@
                             tuviere. &nbsp;El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O
                                 SU REPRESENTANTE</strong> es <strong>{{ $datos->email }} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            <strong>{{ $datos->phone }} </strong>.</span>
+                            <strong>{{ $datos->full_number }} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -647,190 +648,7 @@
                             tuviere. El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> es <strong>{{ $datos->email }} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            <strong>{{ $datos->phone }} </strong>.</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">D&Eacute;CIMA. Cl&aacute;usula
-                                compromisoria.</span></strong><span style="font-size:10px;">&nbsp;En caso de conflicto entre
-                            las partes, relativo a este acuerdo, su ejecuci&oacute;n y liquidaci&oacute;n, deber&aacute;
-                            agotarse en una diligencia de conciliaci&oacute;n ante cualquier entidad autorizada para
-                            efectuarla, la cual ser&aacute; pagada por partes iguales.</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">&nbsp;</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">En se&ntilde;al de aprobaci&oacute;n y plena validez del presente
-                            documento firmo electr&oacute;nicamente de acuerdo con la Ley 527 de 1999 y el Decreto 2364 de
-                            2012 en calidad de <strong>PROPIETARIO O SU REPRESENTANTE</strong>.</span>
-                    </p>
-                </div>
-                <div class="row" id="forestta_arr">
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <span style="font-size:10px;">Entre <strong>{{ $datos->name }} {{ $datos->lastname }}
-                            </strong>
-                            identificaci&oacute;n No. <strong>{{ $datos->doc_number }} </strong> documento de identidad
-                            tipo <strong>{{ $datos->desc_tipos_documento }} </strong>, con
-                            facultades suficientes para tomar decisiones sobre el arrendamiento del inmueble identificado en
-                            este documento, quien en adelante se denominar&aacute; <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong>, y de otra parte <strong>&Eacute;PICA CONSTRUCCIONES S.A.
-                                (&Eacute;PICA INMOBILIARIA&reg;)</strong> sociedad debidamente constituida con domicilio
-                            principal en la ciudad de Bogot&aacute;, NIT. 900.203.640-0 quien en adelante se
-                            denominar&aacute; <strong>LA INMOBILIARIA</strong>, celebran por medio de este documento un
-                            acuerdo de<strong>&nbsp;SERVICIOS EN ARRENDAMIENTO</strong> sobre el inmueble en las condiciones
-                            que a continuaci&oacute;n se describen:&nbsp;</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">PRIMERA.</span></strong><span
-                            style="font-size:10px;">&nbsp;<strong>Objeto del acuerdo</strong>: <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> contrata a <strong>LA INMOBILIARIA</strong> para que oferte al
-                            p&uacute;blico el bien inmueble identificado as&iacute;:
-                            DIRECCI&Oacute;N <strong>{{ $datos->direccion }} {{ $datos->direccion_comp }} </strong>
-                            CIUDAD
-                            O MUNICIPIO <strong>{{ $datos->ciudad }} </strong> FOLIO DE
-                            MATR&Iacute;CULA <strong>{{ $datos->matricula }} </strong>, CHIP
-                            <strong>{{ $datos->chip }}
-                            </strong>, con las
-                            caracter&iacute;sticas que se registran en ficha t&eacute;cnica anexa a este documento. PRECIO
-                            DE PUBLICACI&Oacute;N: $<strong>{{ $datos->precio_contrato }} </strong> incluida la cuota de
-                            administraci&oacute;n si aplicara.</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">SEGUNDA.</span></strong><span
-                            style="font-size:10px;">&nbsp;<strong>Facultades de LA INMOBILIARIA</strong>: En desarrollo del
-                            presente acuerdo <strong>LA INMOBILIARIA</strong> desplegar&aacute; las actividades que
-                            considere convenientes para lograr el <strong>arrendamiento</strong> del inmueble descrito, de
-                            manera independiente, sin subordinaci&oacute;n o dependencia, utilizando sus propios medios,
-                            elementos de trabajo y personal a su cargo.</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">TERCERA. Obligaciones de</span></strong><span
-                            style="font-size:10px;">&nbsp;<strong>LA INMOBILIARIA</strong>: &nbsp;<strong>LA
-                                INMOBILIARIA</strong> se obliga a: 1. Ofrecer el bien inmueble en el valor autorizado por
-                            <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> e informar sobre propuestas de interesados en
-                            el inmueble. 2. Enviar informe peri&oacute;dico de la gesti&oacute;n comercial realizada. 3.
-                            Promover comercialmente el inmueble y/o realizar la administraci&oacute;n del arrendamiento. 4.
-                            Una vez arrendado el inmueble, pagar a <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE&nbsp;</strong>el d&iacute;a 05 del mes siguiente a la causaci&oacute;n del
-                            arrendamiento los c&aacute;nones.</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">CUARTA. Obligaciones de EL PROPIETARIO O SU
-                                REPRESENTANTE</span></strong><span style="font-size:10px;">: <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE&nbsp;</strong>se obliga a: 1. Una vez arrendado el inmueble por la
-                            gesti&oacute;n de <strong>LA INMOBILIARIA,</strong> pagar a esta los valores correspondientes en
-                            relaci&oacute;n con el arrendamiento del inmueble de que trata este acuerdo. 2. Facilitar a
-                            <strong>LA INMOBILIARIA</strong> el acceso al inmueble para que pueda exhibirlo en tiempos de
-                            respuesta &aacute;giles ante posibles interesados. 3. Facilitar la documentaci&oacute;n e
-                            informaci&oacute;n necesaria y real sobre el inmueble propuesto para el arrendamiento. 4. No
-                            desconocer los servicios o transacciones inmobiliarias a las que acceda <strong>EL PROPIETARIO O
-                                SU REPRESENTANTE&nbsp;</strong>por gesti&oacute;n de <strong>LA INMOBILIARIA</strong>. 5.
-                            <strong>EL PROPIETARIO O SU REPRESENTANTE&nbsp;</strong>autoriza desde ya a <strong>LA
-                                INMOBILIARIA</strong> a realizar aseo al inmueble cuando encuentre un arrendatario con cargo
-                            a <strong>EL PROPIETARIO O SU REPRESENTANTE&nbsp;</strong>por valor de <strong>$40.000 +
-                                IVA&nbsp;</strong>cuando se trate de un inmueble para vivienda hasta de 100 m<span
-                                style="color:#202124;background:white;">&sup2; y&nbsp;</span><strong>$60.000 +
-                                IVA&nbsp;</strong>cuando se trate de un inmueble para vivienda superior a 100 m<span
-                                style="color:#202124;background:white;">&sup2;. Cuando se trate de un inmueble diferente a
-                                uso de vivienda se enviar&aacute; previamente cotizaci&oacute;n de acuerdo con lo necesario
-                                para realizar dicho aseo.</span></span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">QUINTA. Publicidad</span></strong><span
-                            style="font-size:10px;">: <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> autoriza a
-                            <strong>LA INMOBILIARIA</strong> a realizar publicidad en internet que considere conveniente
-                            <strong>LA INMOBILIARIA</strong>, y se encuentra incluida en los servicios pactados,
-                            durar&aacute; mientras el inmueble sea comercializado por <strong>LA INMOBILIARIA</strong>. La
-                            publicidad en medios diferentes a los antes mencionados y en caso de requerirse se
-                            acordar&aacute; con <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> y este asumir&aacute;
-                            dicho valor. <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> no utilizar&aacute;, bajo
-                            ning&uacute;n prop&oacute;sito, las fotograf&iacute;as de <strong>LA
-                                INMOBILIARIA&nbsp;</strong>o cualquier otro elemento y/o herramienta publicitaria de la
-                            misma y reconoce que estas son propiedad de <strong>LA INMOBILIARIA,&nbsp;</strong>a&uacute;n
-                            cuando estas hayan sido suministradas por<strong>&nbsp;EL PROPIETARIO O SU
-                                REPRESENTANTE</strong>. En beneficio de la gesti&oacute;n adecuada de publicidad, <strong>EL
-                                PROPIETARIO O SU REPRESENTANTE</strong> acepta que &uacute;nicamente se fijar&aacute;n
-                            avisos en ventana de <strong>LA INMOBILIARIA</strong>, en caso que <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> directamente o a trav&eacute;s de terceros fije avisos en ventana,
-                            <strong>LA INMOBILIARIA</strong> se abstendr&aacute; de utilizar los suyos. <strong>EL
-                                PROPIETARIO O SU REPRESENTANTE</strong> se compromete a que en caso de comercializar el
-                            inmueble directamente o a trav&eacute;s de la gesti&oacute;n realizada por terceros diferentes a
-                            <strong>LA INMOBILIARIA</strong>, todos realizar&aacute;n la comercializaci&oacute;n en los
-                            mismos t&eacute;rminos de precio y caracter&iacute;sticas.</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">SEXTA. Vigencia del acuerdo</span></strong><span
-                            style="font-size:10px;">: Este acuerdo tiene una vigencia de tres (3) meses, contados a partir
-                            de su firma, prorrogables por treinta (30) d&iacute;as sucesivos autom&aacute;ticamente a menos
-                            que cualquiera de las partes desee darlo por terminado, para lo cual bastar&aacute; una
-                            comunicaci&oacute;n escrita dirigida a la otra parte.</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">S&Eacute;PTIMA.</span></strong><span
-                            style="font-size:10px;">&nbsp;Durante la vigencia del contrato de arrendamiento, <strong>EL
-                                PROPIETARIO O SU REPRESENTANTE&nbsp;</strong>reconocer&aacute; a <strong>LA
-                                INMOBILIARIA</strong> el <strong>12,16% + IVA</strong> del <strong><em>canon de
-                                    arrendamiento + cuota de administraci&oacute;n de P.H. si aplica</em></strong> pagado
-                            mensualmente. <strong>Normas de interpretaci&oacute;n.</strong> Para todos los efectos no
-                            previstos en este acuerdo se aplicar&aacute;n las normas del C&oacute;digo de Comercio en
-                            especial al art&iacute;culo 1340 y siguientes.</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">OCTAVA. EL PROPIETARIO O SU
-                                REPRESENTANTE&nbsp;</span></strong><span style="font-size:10px;">autoriza desde ya la
-                            recolecci&oacute;n documental por parte de <strong>LA INMOBILIARIA</strong> al arrendatario que
-                            aplique a trav&eacute;s de esta y a firmar contrato de arrendamiento cuando el estudio de
-                            arrendamiento de quien aplique sea aprobado. Por tratarse de un contrato consensual y sin
-                            perjuicio de la ejecuci&oacute;n del presente acuerdo, en caso que <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> se retracte por cualquier motivo y no haya dado aviso a <strong>LA
-                                INMOBILIARIA</strong> a trav&eacute;s del correo electr&oacute;nico
-                            acomercial@epicainmobiliaria.com.co antes de que <strong>LA INMOBILIARIA</strong> haya recibido
-                            documentos por parte del prospecto arrendatario, <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> se obliga a pagar la suma equivalente a un (1) canon de arrendamiento
-                            a <strong>LA INMOBILIARIA</strong>. Sin perjuicio de lo anterior, <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> adem&aacute;s asumir&aacute; la devoluci&oacute;n del dinero pagado
-                            por el arrendatario por concepto de estudio de arrendamiento y se har&aacute; responsable de
-                            dicho retracto y las sumas de dinero en caso que una o varias entidades competentes condenen el
-                            retracto conforme a la legislaci&oacute;n colombiana. <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE&nbsp;</strong>no podr&aacute; responsabilizar a <strong>LA
-                                INMOBILIARIA&nbsp;</strong>en caso que el retracto sea decisi&oacute;n del
-                            arrendatario.</span>
-                    </p>
-                    <p
-                        style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
-                        <strong><span style="font-size:10px;">NOVENA. M&eacute;rito ejecutivo.</span></strong><span
-                            style="font-size:10px;">&nbsp;Este acuerdo presta m&eacute;rito ejecutivo para el cobro por los
-                            servicios inmobiliarios prestados por <strong>LA INMOBILIARIA</strong> y a los que tiene derecho
-                            esta en caso que haya logrado efectivamente el arrendamiento del bien inmueble (incluso si se
-                            tratara de la simple presentaci&oacute;n del cliente y/o este llegase a <strong>EL PROPIETARIO O
-                                SU REPRESENTANTE&nbsp;</strong>a trav&eacute;s de cualquier mecanismo o herramienta empleada
-                            por <strong>LA INMOBILIARIA</strong>) y <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> se
-                            niegue a pagarlos. Sin perjuicio de la ejecuci&oacute;n del presente acuerdo, <strong>LA
-                                INMOBILIARIA</strong> se encontrar&aacute; facultada para reportar un eventual
-                            incumplimiento de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> ante cualquier operador de
-                            informaci&oacute;n financiera legalmente establecido de conformidad con las leyes de la
-                            Rep&uacute;blica de Colombia. Sin perjuicio de la ejecuci&oacute;n del presente acuerdo, en caso
-                            de desistimiento por parte de <strong>EL PROPIETARIO O SU REPRESENTANTE&nbsp;</strong>dentro del
-                            t&eacute;rmino inicial de tres (3) meses en la comercializaci&oacute;n del inmueble, este
-                            reconocer&aacute; a <strong>LA INMOBILIARIA</strong> la suma de <strong>$50.000 + IVA</strong>.
-                            En dicho caso, estar&aacute; a cargo de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong>
-                            recoger la(s) llave(s) en la direcci&oacute;n de <strong>LA INMOBILIARIA</strong> si esta la(s)
-                            tuviere. El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
-                                REPRESENTANTE</strong> es <strong>{{ $datos->email }} </strong> y el n&uacute;mero de
-                            tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            <strong>{{ $datos->phone }} </strong>.</span>
+                            <strong>{{ $datos->full_number }} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -1002,7 +820,7 @@
                             El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> es <strong>{{ $datos->email }} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            <strong>{{ $datos->phone }} </strong>.</span>
+                            <strong>{{ $datos->full_number }} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -1153,7 +971,7 @@
                             El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> es <strong>{{ $datos->email }} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            <strong>{{ $datos->phone }} </strong>.</span>
+                            <strong>{{ $datos->full_number }} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -1304,7 +1122,7 @@
                             El correo electr&oacute;nico de notificaci&oacute;n de <strong>EL PROPIETARIO O SU
                                 REPRESENTANTE</strong> es <strong>{{ $datos->email }} </strong> y el n&uacute;mero de
                             tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong> es
-                            <strong>{{ $datos->phone }} </strong>.</span>
+                            <strong>{{ $datos->full_number }} </strong>.</span>
                     </p>
                     <p
                         style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:10px;font-family:"Calibri",sans-serif;text-align:justify;'>
@@ -1447,7 +1265,7 @@
                             Rep&uacute;blica de Colombia. Correo electr&oacute;nico de notificaci&oacute;n de <strong>EL
                                 PROPIETARIO O SU REPRESENTANTE</strong> <strong>{{ $datos->email }} </strong> y
                             n&uacute;mero de tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong>
-                            <strong>{{ $datos->phone }} </strong>. Sin perjuicio de la ejecuci&oacute;n del presente
+                            <strong>{{ $datos->full_number }} </strong>. Sin perjuicio de la ejecuci&oacute;n del presente
                             acuerdo, en caso de
                             desistimiento por parte de <strong>EL PROPIETARIO O SU REPRESENTANTE&nbsp;</strong>dentro del
                             t&eacute;rmino inicial de tres (3) meses en la comercializaci&oacute;n del inmueble, este

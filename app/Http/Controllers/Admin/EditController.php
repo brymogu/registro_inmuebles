@@ -68,7 +68,7 @@ class EditController extends Controller
         return redirect('login');
     }
 
-    public function show(Request $request)
+    /* public function show(Request $request)
     {
 
         session_start();
@@ -137,9 +137,9 @@ class EditController extends Controller
         }
 
         return redirect('login');
-    }
+    }*/ 
 
-    public function update(Request $request)
+    /* public function update(Request $request)
     {
 
         $negocio = Negocios::find($request->codineg);
@@ -319,5 +319,5 @@ class EditController extends Controller
 
 
         return redirect()->route('administrador.edit', $request->codiprop);
-    }
+    }*/ 
 }

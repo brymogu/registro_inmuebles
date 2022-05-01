@@ -14,7 +14,7 @@ class PlanesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
         $plan = new Planes();
         $plan->desc_plan = "Básico";
         $plan->save();
@@ -28,7 +28,7 @@ class PlanesSeeder extends Seeder
         $plan3->save();
 
         $plan4 = new Planes();
-        $plan4->desc_plan = "Rural/Forestta";
+        $plan4->desc_plan = "Rural";
         $plan4->save();
 
     }
