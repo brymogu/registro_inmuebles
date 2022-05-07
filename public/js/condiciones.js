@@ -92,12 +92,12 @@ $(document).ready(function() {
             if ($('#tipo_inm').val() == 2) {
                 $('#aptos2').show();
                 $('#piso').attr("required", "true");
-                $("#estado_inb option[value='1']").removeAttr("disabled", "disabled");
-                $("#estado_inb option[value='2']").removeAttr("disabled", "disabled");
+                $("#estado_inb option[value='3']").show();
+                $("#estado_inb option[value='2']").show();
             }
             if ($('#tipo_inm').val() == 1) {
-                $("#estado_inb option[value='1']").attr("disabled", "disabled");
-                $("#estado_inb option[value='2']").attr("disabled", "disabled");
+                $("#estado_inb option[value='3']").hide();
+                $("#estado_inb option[value='2']").hide();                
                 $('#piso').removeAttr('required');
                 $('#aptos2').hide();
                 $('#n_ascensores').removeAttr('required');

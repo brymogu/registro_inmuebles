@@ -59,14 +59,14 @@
                                 <a class="nav-link active" aria-current="page"
                                     href="{{ route('administrador.main') }}"><i class="fas fa-home"></i> Home</a>
                             </li>
-                            <li class="nav-item rounded-pill editar">
-                                <a class="nav-link" href="{{ route('administrador.edit') }}"> <i
-                                        class="fas fa-user-alt"></i> Usuarios</a>
-                            </li>
                             <li class="nav-item rounded-pill descargas">
                                 <a class="nav-link" href="{{ route('administrador.download') }}"><i
                                         class="fas fa-list-ul"></i> Registros</a>
                             </li>
+                            <li class="nav-item rounded-pill editar">
+                                <a class="nav-link" href="{{ route('administrador.edit') }}"> <i
+                                        class="fas fa-user-alt"></i> Usuarios</a>
+                            </li>                            
                         </ul>
                     </div>
                 </div>

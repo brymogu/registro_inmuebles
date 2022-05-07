@@ -120,7 +120,7 @@
                                                 <i class="fas fa-file-invoice"></i></a>
                                         </td>
                                         <td class="text-center">
-                                            @if($negocio->longitud != "" && $negocio->latitud != "")
+                                            @if ($negocio->longitud != '' && $negocio->latitud != '')
                                                 {{ Form::open(['route' => 'administrador.finco', 'target' => '_blank']) }}
                                                 <input type="text" class="d-none" name="codineg"
                                                     value="{{ $negocio->id_neg }}">
@@ -158,7 +158,6 @@
                 },
             });
         });
-
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl)
