@@ -84,13 +84,13 @@ body {
 /*tabla  */
 
 .dataTables_filter {
-    padding: 0.5rem!important;
+    padding: 0.5rem !important;
     background-color: white;
     box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
     border-radius: 5px;
 }
 
-.dataTables_filter input{
+.dataTables_filter input {
     border: 1px solid #f4f6fa !important;
 }
 

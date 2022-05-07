@@ -1,7 +1,7 @@
 @extends('layouts.administrador')
 @section('more_head')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 @endsection
 @section('title', 'Inmuebles consignados')
 
@@ -41,7 +41,7 @@
         <div class="col-12 px-3">
             <div class="tabla">
                 <div class="table-responsive">
-                    <table class="table table-borderless align-middle" id="datos">
+                    <table class="table table-borderless align-middle" id="datos" data-page-length='5'>
                         <thead class="text-secondary">
                             <tr>
                                 <th>
