@@ -9,7 +9,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NegocioController;
 use App\Http\Controllers\PlanesController;
 
-
 Route::get('/', HomeController::class);
 Route::post('/', [HomeController::class, 'store'])->name('propietario.store');
 

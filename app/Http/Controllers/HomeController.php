@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Negocios;
 use App\Models\Propietarios;
-
 use Illuminate\Http\Request;
+use App\Mail\RegistrosMailable;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -20,6 +21,9 @@ class HomeController extends Controller
 
         $correo = $request->email;
         $user = Propietarios::where('email', '=', $correo)->first();
+
+        $correo = new RegistrosMailable($request->all());
+        Mail::to('paulm@binarycs.com')->send($correo); 
 
         if ($user === null) {
             $propietario = new Propietarios();
@@ -49,6 +53,9 @@ class HomeController extends Controller
 
             return redirect()->route('negocio.show', $negocio);
         }
+
+           
+        
     }
 
     public function edit(Negocios $negocio)
@@ -66,6 +73,6 @@ class HomeController extends Controller
         $propietario->full_number = $request->full_number;
         $propietario->save();
 
-        return redirect()->route('negocio.show', $propietario);
+        return redirect()->route('negocio.show', $negocio);
     }
 }
