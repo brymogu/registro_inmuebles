@@ -36,9 +36,9 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 menu d-flex">
-                <div class="card tarjeta shadow-sm border-0  align-self-center py-3 align-items-start vh-95 rounded">
-                    <div class="card-body">
+            <div class="col-1 menu d-flex">
+                <div class="card tarjeta shadow-sm border-0 align-self-center py-3 align-items-start vh-95 rounded">
+                    <div class="card-body text-center">
                         <ul class="nav flex-column">
                             <div class="btn-group dropend mb-5">
                                 <a class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -48,30 +48,36 @@
                                 <ul class="dropdown-menu shadow border-0 dropdown-menu-end" aria-labelledby="logmenu">
                                     <li class="usuario"><a class="dropdown-item disabled ">
                                             {{ $_SESSION['nombre'] }}
-                                        </a></li>                                    
+                                        </a></li>
                                     <li>
                                         <a class="dropdown-item salir " href="{{ route('salir') }}"><i
                                                 class="fas fa-sign-out-alt"></i> Salir</a>
                                     </li>
                                 </ul>
                             </div>
-                            <li class="nav-item rounded-pill home">
-                                <a class="nav-link active" aria-current="page"
-                                    href="{{ route('administrador.main') }}"><i class="fas fa-home"></i> Home</a>
+                            <li class="nav-item home">
+                                <a class="nav-link" aria-current="page"
+                                    href="{{ route('administrador.main') }}"><i class="fas fa-home"></i>
+                                    <p>Home</p>
+                                </a>
                             </li>
-                            <li class="nav-item rounded-pill descargas">
+                            <li class="nav-item descargas">
                                 <a class="nav-link" href="{{ route('administrador.download') }}"><i
-                                        class="fas fa-list-ul"></i> Registros</a>
+                                        class="fas fa-list-ul"></i>
+                                    <p>Lista</p>
+                                </a>
                             </li>
-                            <li class="nav-item rounded-pill editar">
+                            <li class="nav-item editar">
                                 <a class="nav-link" href="{{ route('administrador.edit') }}"> <i
-                                        class="fas fa-user-alt"></i> Usuarios</a>
-                            </li>                            
+                                        class="fas fa-user-alt"></i>
+                                    <p>Usuarios</p>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-10 contenido vh-100">
+            <div class="col-11 contenido vh-100">
                 @yield('content')
             </div>
         </div>

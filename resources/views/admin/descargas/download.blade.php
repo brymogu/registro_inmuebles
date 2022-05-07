@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 @endsection
-@section('title', 'Descargar')
+@section('title', 'Inmuebles consignados')
 
 @section('content')
     <div class="row my-3 excel" id="descargas">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-2 py-2 d-flex align-self-center">
                         <button type="submit" class="btn btn-epc rounded-circle ">
-                            <i class="fas fa-file-excel"></i>
+                            <i class="fas fa-download"></i>
                         </button>
                     </div>
                 </div>
@@ -45,34 +45,17 @@
                         <thead class="text-secondary">
                             <tr>
                                 <th>
-                                    Fecha de registro
+                                    Fecha
                                 </th>
                                 <th>
-                                    Nombre
+                                    Datos Personales
                                 </th>
-                                <th>
-                                    Teléfono
-                                </th>
-                                <th>
-                                    Email
-                                </th>
-                                <th>
+                                <th class="text-center">
                                     Asesor
                                 </th>
-                                <th>
-                                    Ciudad
-                                </th>
+
                                 <th class="text-center">
-                                    Cert.
-                                </th>
-                                <th>
-                                    Editar
-                                </th>
-                                <th class="text-center">
-                                    Ficha
-                                </th>
-                                <th class="text-center">
-                                    Finco
+                                    Acciones
                                 </th>
                             </tr>
                         </thead>
@@ -86,49 +69,61 @@
                                                 title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
                                         </td>
                                         <td>
-                                            <b> {{ $negocio->name }}</b><br />
-                                            {{ $negocio->lastname }}
-                                        </td>
-                                        <td>
-                                            <b> {{ $negocio->full_number }}</b>
-                                        </td>
-                                        <td>
-                                            <b> {{ $negocio->email }}</b>
+                                            <p class="fw-bold">{{ $negocio->name }} {{ $negocio->lastname }}</p>
+                                            <p class="fw-lighter"> <span
+                                                    class="user-select-all">{{ $negocio->full_number }}</span> -
+                                                <span class="user-select-all">{{ $negocio->email }}</span>
+                                            </p>
+                                            <p class="fw-lighter"> {{ $negocio->desc_ciudades }}
+                                            </p>
                                         </td>
                                         <td>
                                             <b> {{ $negocio->asesor }}</b>
                                         </td>
-                                        <td>
-                                            <b> {{ $negocio->desc_ciudades }}</b>
-                                        </td>
-                                        <td class="text-center">
-                                            <a class="btn btn-epc rounded-circle" target="_blank"
-                                                href="{{ Storage::url($negocio->certificado) }}"><i
-                                                    class="fas fa-file-pdf"></i></a>
-                                        </td>
-                                        <td>
-                                            {{ Form::open(['method' => 'post', 'route' => 'administrador.editform']) }}
-                                            <input type="text" class="d-none" name="codineg"
-                                                value="{{ $negocio->id_neg }}">
-                                            <button type="submit" class="btn btn-epc rounded-circle"><i
-                                                    class="fas fa-pencil-alt"></i></button>
-                                            {{ Form::close() }}
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="{{ route('administrador.formatos', $negocio->id_neg) }}"
-                                                class="btn btn-epc rounded-circle">
-                                                <i class="fas fa-file-invoice"></i></a>
-                                        </td>
-                                        <td class="text-center">
-                                            @if ($negocio->longitud != '' && $negocio->latitud != '')
-                                                {{ Form::open(['route' => 'administrador.finco', 'target' => '_blank']) }}
-                                                <input type="text" class="d-none" name="codineg"
-                                                    value="{{ $negocio->id_neg }}">
-                                                <button type="submit" class="btn btn-epc rounded-circle">
-                                                    <i class="fas fa-crow"></i>
-                                                </button>
-                                                {{ Form::close() }}
-                                            @endif
+
+                                        <td class="text-end">
+                                            <div class="row mx-0 mb-3">
+                                                <div class="col-4"></div>
+                                                <div class="col-2">
+                                                    <a class="btn btn-epc rounded-circle" target="_blank"
+                                                        href="{{ Storage::url($negocio->certificado) }}"
+                                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                        title="Certificado"><i class="fas fa-file-pdf"></i></a>
+                                                </div>
+                                                <div class="col-2">
+                                                    {{ Form::open(['method' => 'post', 'route' => 'administrador.editform']) }}
+                                                    <input type="text" class="d-none" name="codineg"
+                                                        value="{{ $negocio->id_neg }}">
+                                                    <button type="submit" class="btn btn-epc rounded-circle"
+                                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                        title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                                                    {{ Form::close() }}
+                                                </div>
+                                                <div class="col-4"></div>
+                                            </div>
+                                            <div class="row mx-0">
+                                                <div class="col-4"></div>
+                                                <div class="col-2">
+                                                    <a href="{{ route('administrador.formatos', $negocio->id_neg) }}"
+                                                        class="btn btn-epc rounded-circle" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom" title="Ficha técnica">
+                                                        <i class="fas fa-file-invoice"></i></a>
+                                                </div>
+                                                <div class="col-2">
+                                                    @if ($negocio->longitud != '' && $negocio->latitud != '')
+                                                        {{ Form::open(['route' => 'administrador.finco', 'target' => '_blank']) }}
+                                                        <input type="text" class="d-none" name="codineg"
+                                                            value="{{ $negocio->id_neg }}">
+                                                        <button type="submit" class="btn btn-epc rounded-circle"
+                                                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                            title="Finco">
+                                                            <i class="fas fa-crow"></i>
+                                                        </button>
+                                                        {{ Form::close() }}
+                                                    @endif
+                                                </div>
+                                                <div class="col-4"></div>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endif
@@ -153,7 +148,7 @@
                         next: '<i class="fas fa-angle-right"></i>',
                         last: "Ultimo"
                     },
-                    lengthMenu: '<p class="fw-bold ">Descarga de Documentos</p>',
+                    lengthMenu: '<p class="fw-bold ">Inmuebles consignados</p>',
                     info: "Mostrando _START_ a _END_ de _TOTAL_ entradas",
                 },
             });

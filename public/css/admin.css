@@ -1,12 +1,25 @@
 /* Gral*/
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
 body {
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 200;
     background-color: #f4f6fa;
 }
 
+::-moz-selection {
+    /* Code for Firefox */
+    color: rgb(1, 48, 60);
+    ;
+    background: rgb(255, 238, 206);
+}
+
+::selection {
+    color: rgb(1, 48, 60);
+    ;
+    background: rgb(255, 238, 206);
+}
 
 /* Interfaz */
 
@@ -25,6 +38,7 @@ body {
 
 .nav-item {
     margin-bottom: 20px;
+    border-radius: 5px;
 }
 
 .nav-item:hover {
@@ -69,6 +83,17 @@ body {
 
 /*tabla  */
 
+.dataTables_filter {
+    padding: 0.5rem!important;
+    background-color: white;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    border-radius: 5px;
+}
+
+.dataTables_filter input{
+    border: 1px solid #f4f6fa !important;
+}
+
 table {
     border-collapse: separate !important;
     border-spacing: 0 10px !important;
@@ -108,7 +133,7 @@ table.dataTable.no-footer {
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-    border-radius: 50%!important;
+    border-radius: 50% !important;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
@@ -122,6 +147,10 @@ table.dataTable.no-footer {
     background-color: #f6c015 !important;
 }
 
+table p {
+    margin-bottom: 0.3rem !important;
+}
+
 
 /* opciones */
 
@@ -133,7 +162,6 @@ table.dataTable.no-footer {
 .btn-epc:hover {
     background-color: #f6c015 !important;
     color: white;
-    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
 }
 
 .botones {
