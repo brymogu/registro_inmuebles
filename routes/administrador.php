@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Admin\AcuerdosController;
-use App\Http\Controllers\Admin\EditController;
 use App\Http\Controllers\Admin\InicioController;
 use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Admin\RegistroController;
@@ -16,7 +15,6 @@ Route::post('login/', [UsuarioController::class, 'validar'])->name('login.valida
 Route::get('salir', [UsuarioController::class, 'salir'])->name('salir');
 
 Route::get('administrador/', [InicioController::class, 'show'])->name('administrador.main');
-Route::get('administrador/editar', [EditController::class, 'showtable'])->name('administrador.edit');
 
 Route::post('administrador/editar/inmueble', [RegistroController::class, 'show'])->name('administrador.editform');
 Route::post('administrador/editar/inmueble/inm', [RegistroController::class, 'update'])->name('administrador.editupdate');

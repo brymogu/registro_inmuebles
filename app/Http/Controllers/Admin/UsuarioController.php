@@ -13,7 +13,7 @@ class UsuarioController extends Controller
     //
     public function show()
     {
-        return view('admin.login');
+        return view('admin.login',['errormsg' => 'no']);
     }
 
     public function validar(Request $request)
@@ -26,7 +26,7 @@ class UsuarioController extends Controller
             $_SESSION['nombre'] = $request['usuario'];
             return redirect()->route('administrador.main');
         }
-        return 'Datos Icorrectos, por favor validar';
+        return view('admin.login',['errormsg' => 'si']);
     }
 
     public function salir()

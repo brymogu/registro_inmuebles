@@ -40,6 +40,11 @@
                     <img src="img/epica.svg" class="card-img-top" alt="...">
                     <div class="card-body">
                         {{ Form::open(['method' => 'post']) }}
+                        @if ($errormsg == 'si')
+                            <div class="text-warning my-3" >
+                                <b>Usuario o contraseña incorrectos</b>
+                            </div>
+                        @endif
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="usuario" name="usuario"
                                 placeholder="name@example.com" required>
