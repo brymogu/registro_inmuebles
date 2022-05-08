@@ -43,9 +43,20 @@ class UsuarioController extends Controller
         session_start();
 
         if (isset($_SESSION['nombre'])) {
-
             $usuarios = DB::table("usuarios")->get();
-            return view('admin.usuarios', compact('usuarios'));
+            return view('admin.usuarios.usuarios', compact('usuarios'));
+        }
+        return redirect('login');
+    }
+
+
+    public function editar(Request $request)
+    {
+        session_start();
+        if (isset($_SESSION['nombre'])) {
+
+            $usuario = Usuarios::find($request->cod_user);
+            return view('admin.usuarios.editusuarios', compact('usuario'));
         }
         return redirect('login');
     }

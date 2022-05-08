@@ -29,5 +29,6 @@ Route::post('administrador/descargas/excel', [ExcelController::class, 'descargar
 Route::post('administrador/descargas/finco', [finco::class, 'consulta'])->name('administrador.finco');
 
 Route::get('administrador/usuarios', [UsuarioController::class, 'lista'])->name('administrador.usuarios');
+Route::post('administrador/usuarios/editar', [UsuarioController::class, 'editar'])->name('administrador.editusuarios');
 
 Route::get('administrador/acuerdos', [AcuerdosController::class, 'showtable'])->name('administrador.acuerdos');

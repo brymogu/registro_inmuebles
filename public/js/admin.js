@@ -15,4 +15,19 @@ $(document).ready(function () {
         $(".usuarios a").css("color", "#01303c");
         $(".usuarios").css("background", "#ffeece");
     }
+    else if ($('#contrasena').length) {
+        $(".usuarios a").css("color", "#01303c");
+        $(".usuarios").css("background", "#ffeece");
+        $("#validacion").hide();
+        $("#confirmar").on('keyup', function () {
+            var password = $("#password").val();
+            var confirmPassword = $("#confirmar").val();
+
+            if (password != confirmPassword)
+                $("#validacion").show();
+            else
+                $("#validacion").hide();
+        });
+    }
+
 });

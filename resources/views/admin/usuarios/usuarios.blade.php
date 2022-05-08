@@ -16,7 +16,6 @@
                                 <th>
                                     Nombre
                                 </th>
-
                                 <th class="text-center">
                                     Acciones
                                 </th>
@@ -29,9 +28,12 @@
                                         <p class="fw-bold my-3">{{ $users->usuario }}</p>
                                     </td>
                                     <td class="text-end">
-                                        <a href="" class="btn btn-epc rounded-circle" data-bs-toggle="tooltip"
+                                        {{ Form::open(['method' => 'post', 'route' => 'administrador.editusuarios']) }}
+                                        <input type="text" class="d-none" name="cod_user" value="{{ $users->id }}">
+                                        <button type="submit" class="btn btn-epc rounded-circle" data-bs-toggle="tooltip"
                                             data-bs-placement="bottom" title="Editar">
-                                            <i class="fas fa-user-edit"></i></a>
+                                            <i class="fas fa-user-edit"></i></button>
+                                        {{ Form::close() }}
                                     </td>
                                 </tr>
                             @endforeach

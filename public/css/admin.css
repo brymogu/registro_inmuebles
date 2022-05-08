@@ -154,27 +154,23 @@ table p {
 
 /* opciones */
 
-.btn-epc {
+.btn-epc,
+.botones {
     background-color: #ffeece !important;
     color: #01303c;
 }
 
-.btn-epc:hover {
+.btn-epc:hover,
+.botones:hover {
     background-color: #f6c015 !important;
     color: white;
 }
 
-.botones {
-    background-color: #288c83 !important;
-    border-color: #288c83;
-    color: white !important;
-}
-
-.botones:hover {
-    background-color: #01303c !important;
-    text-decoration: none !important;
-}
 
 input:required {
     border: 1px solid #FFCDD2;
+}
+
+.iconogrande {
+    font-size: 80px;
 }
