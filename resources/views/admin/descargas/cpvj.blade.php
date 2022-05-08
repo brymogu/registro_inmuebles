@@ -93,8 +93,7 @@
                 </div>
                 <div class="row mt-1 interior">
                     <div class="col-4 text-center">
-                        <a href="{{ route('administrador.edit') }}" class="btn shadow-sm" data-bs-toggle="tooltip"
-                            data-bs-placement="left" title="Tooltip on bottom">Salir</a>
+                        
                     </div>
                     <div class="col-4 text-center">
                         <a class="btn shadow-sm" onclick="mostrarmapa()">Localizar</a>
@@ -1908,4 +1907,10 @@
 @endsection
 @section('final')
     <script src="{!! asset('js/mapa.js') !!}"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 @endsection
