@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     if ($('#editar').length) {
         $(".editar a").css("color", "#01303c");
@@ -10,5 +10,9 @@ $(document).ready(function() {
     } else if ($('#descargas').length) {
         $(".descargas a").css("color", "#01303c");
         $(".descargas").css("background", "#ffeece");
+    }
+    else if ($('#usuarios').length) {
+        $(".usuarios a").css("color", "#01303c");
+        $(".usuarios").css("background", "#ffeece");
     }
 });

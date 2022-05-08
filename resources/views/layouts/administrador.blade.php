@@ -67,8 +67,8 @@
                                     <p>Lista</p>
                                 </a>
                             </li>
-                            <li class="nav-item editar">
-                                <a class="nav-link" href="{{ route('administrador.edit') }}"> <i
+                            <li class="nav-item usuarios">
+                                <a class="nav-link" href="{{ route('administrador.usuarios') }}"> <i
                                         class="fas fa-user-alt"></i>
                                     <p>Usuarios</p>
                                 </a>
