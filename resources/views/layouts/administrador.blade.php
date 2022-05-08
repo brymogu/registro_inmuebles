@@ -36,7 +36,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1 menu d-flex">
+            <div class="col-2 menu d-flex">
                 <div class="card tarjeta shadow-sm border-0 align-self-center py-3 align-items-start vh-95 rounded">
                     <div class="card-body text-center">
                         <ul class="nav flex-column">
@@ -77,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-11 contenido vh-100">
+            <div class="col-10 contenido vh-100">
                 @yield('content')
             </div>
         </div>

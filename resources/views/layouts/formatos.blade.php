@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
@@ -75,10 +76,21 @@
                 </div>
             </div>
             <div class="col-6"></div>
-            <div class="col-3 text-center ">
-                <div class="rounded-circle imprimir shadow d-flex border justify-content-center align-items-center animate__animated animate__fadeInRight"
-                    onclick="window.print();return false;">
-                    <i class="fas fa-print"></i>
+            <div class="col-3">
+                <div class="row  px-3">
+                    <div class="col-2">
+                        <a href="{{ route('administrador.download') }}"
+                            class="rounded-circle imprimir shadow d-flex border justify-content-center align-items-center animate__animated animate__fadeInRight"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="Los cambios realizados no serán guardados">
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <div class="rounded-circle imprimir shadow d-flex border justify-content-center align-items-center animate__animated animate__fadeInRight"
+                            onclick="window.print();return false;">
+                            <i class="fas fa-print"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

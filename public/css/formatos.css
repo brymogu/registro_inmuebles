@@ -115,6 +115,8 @@ select {
 .imprimir {
     height: 50px;
     width: 50px;
+    color: #01303c;
+    text-decoration: none;
 }
 
 .imprimir i {
