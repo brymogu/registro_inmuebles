@@ -14,6 +14,15 @@ class InicioController extends Controller
         session_start();
 
         if (isset($_SESSION['nombre'])) {
+            $solodatos = DB::table("negocios")
+                ->leftJoin("propietarios", function ($join) {
+                    $join->on("negocios.propietario", "=", "propietarios.id");
+                })
+                ->select("negocios.id as id_neg", "negocios.created_at", "propietarios.id as id_pptario", "propietarios.email", "propietarios.full_number", "propietarios.name", "propietarios.lastname", "negocios.paso")
+                ->where("negocios.paso", "datos")
+                ->get();
+
+
             $venta = DB::table("negocios")
                 ->where("tipo_negocio", 1)
                 ->where("paso", "final")
@@ -32,7 +41,7 @@ class InicioController extends Controller
                 ->count();
 
 
-            return view('admin.main', compact('venta', 'arriendo','apartamentos','casas'));
+            return view('admin.main', compact('venta', 'arriendo', 'apartamentos', 'casas', 'solodatos'));
         }
 
         return redirect('login');

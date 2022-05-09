@@ -1,5 +1,9 @@
 @extends('layouts.administrador')
-
+@section('more_head')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+@endsection
+@section('title', 'Bienvenido')
 
 @section('content')
     <div class="row " id="home">
@@ -17,7 +21,41 @@
     </div>
     <div class="row">
         <div class="col-12">
-            
+            <div class="tabla">
+                <div class="table-responsive">
+                    <table class="table table-borderless align-middle" id="datos" data-page-length='5'>
+                        <thead class="text-secondary">
+                            <tr>
+                                <th>
+                                    Fecha
+                                </th>
+                                <th>
+                                    Datos Personales
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($solodatos as $dato)
+                                <tr>
+                                    <td>
+                                        <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                            title="{{ date('d M Y', strtotime($dato->created_at)) }}">{{ \Carbon\Carbon::parse($dato->created_at)->diffForHumans() }}</button>
+                                    </td>
+                                    <td>
+                                        <p class="fw-bold">{{ $dato->name }} {{ $dato->lastname }}</p>
+                                        <p class="fw-lighter"> <span
+                                                class="user-select-all">{{ $dato->full_number }}</span> -
+                                            <span class="user-select-all">{{ $dato->email }}</span>
+                                        </p>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
@@ -97,5 +135,26 @@
             document.getElementById('tipo_inmb'),
             inmb
         );
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#datos').DataTable({
+                language: {
+                    search: "Buscar:",
+                    paginate: {
+                        first: "Primero",
+                        previous: '<i class="fas fa-angle-left"></i>',
+                        next: '<i class="fas fa-angle-right"></i>',
+                        last: "Ultimo"
+                    },
+                    lengthMenu: '<p class="fw-bold ">Inmuebles consignados</p>',
+                    info: "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+                },
+            });
+        });
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
     </script>
 @endsection
