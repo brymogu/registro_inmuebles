@@ -23,7 +23,7 @@ class HomeController extends Controller
         $user = Propietarios::where('email', '=', $correo)->first();
 
         $correo = new RegistrosMailable($request->all());
-        Mail::to('paulm@binarycs.com')->send($correo); 
+        Mail::to('amontero@epicainmobiliaria.com.co')->send($correo); 
 
         if ($user === null) {
             $propietario = new Propietarios();

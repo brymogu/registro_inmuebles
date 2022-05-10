@@ -1615,7 +1615,7 @@
         </div>
         <div class="row  my-3">
             <div class="col-6 col-md-2 text-left">
-                <a href="{{ route('administrador.edit') }}" class="btn botones">Atrás</a>
+                <a href="{{ route('administrador.download') }}" class="btn botones">Atrás</a>
             </div>
             <div class="d-none d-md-block col-md-8">
                 <input type="text" class="d-none" name="codineg" value="{{ $negocio->id }}">
