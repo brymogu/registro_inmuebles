@@ -27,7 +27,7 @@
         <div class="col-6">
             <div class="tabla">
                 <div class="table-responsive">
-                    <table class="table table-borderless align-middle" id="datos" data-page-length='7'>
+                    <table class="table table-borderless align-middle" id="datos" data-page-length='6'>
                         <thead class="text-secondary">
                             <tr>
                                 <th>
