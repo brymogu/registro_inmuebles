@@ -39,7 +39,6 @@ class RegistroController extends Controller
 
     public function showtable()
     {
-
         session_start();
 
         if (isset($_SESSION['nombre'])) {
@@ -319,7 +318,7 @@ class RegistroController extends Controller
 
 
 
-        return redirect()->route('administrador.edit', $request->codiprop);
+        return redirect()->route('administrador.editform', $request->codiprop);
     }
 
 }

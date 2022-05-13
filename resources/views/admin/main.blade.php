@@ -6,24 +6,28 @@
 @section('title', 'Bienvenido')
 
 @section('content')
-    <div class="row " id="home">
-        <div class="col-4 m-3">
-            <div class="card border-0 shadow-sm">
-                <canvas id="tipo_negocio" style="height: 40vh;"></canvas>
+    <div class="row py-3" id="home">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12">
+                    <p class="fw-bold ">Inmuebles consignados</p>
+                    <div class="card border-0 shadow-sm">
+                        <canvas id="tipo_negocio" style="height: 41vh;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm">
+                        <canvas id="tipo_inmb" style="height: 41vh;"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-4 m-3">
-            <div class="card border-0 shadow-sm">
-                <canvas id="tipo_inmb" style="height: 40vh;"></canvas>
-            </div>
-        </div>
-        <div class="col-4"></div>
-    </div>
-    <div class="row">
-        <div class="col-12">
+        <div class="col-6">
             <div class="tabla">
                 <div class="table-responsive">
-                    <table class="table table-borderless align-middle" id="datos" data-page-length='5'>
+                    <table class="table table-borderless align-middle" id="datos" data-page-length='7'>
                         <thead class="text-secondary">
                             <tr>
                                 <th>
@@ -47,8 +51,6 @@
                                                 class="user-select-all">{{ $dato->full_number }}</span> -
                                             <span class="user-select-all">{{ $dato->email }}</span>
                                         </p>
-                                    </td>
-                                    <td>
                                     </td>
                                 </tr>
                             @endforeach
@@ -147,7 +149,7 @@
                         next: '<i class="fas fa-angle-right"></i>',
                         last: "Ultimo"
                     },
-                    lengthMenu: '<p class="fw-bold ">Inmuebles consignados</p>',
+                    lengthMenu: '<p class="fw-bold ">Registros incompletos</p>',
                     info: "Mostrando _START_ a _END_ de _TOTAL_ entradas",
                 },
             });

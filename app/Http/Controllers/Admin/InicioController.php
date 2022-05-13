@@ -19,7 +19,7 @@ class InicioController extends Controller
                     $join->on("negocios.propietario", "=", "propietarios.id");
                 })
                 ->select("negocios.id as id_neg", "negocios.created_at", "propietarios.id as id_pptario", "propietarios.email", "propietarios.full_number", "propietarios.name", "propietarios.lastname", "negocios.paso")
-                ->where("negocios.paso", "datos")
+                ->where("negocios.paso", '!=', "final")
                 ->get();
 
 
