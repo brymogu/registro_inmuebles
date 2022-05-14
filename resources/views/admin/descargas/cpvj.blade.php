@@ -93,7 +93,7 @@
                 </div>
                 <div class="row mt-1 interior">
                     <div class="col-4 text-center">
-                        
+
                     </div>
                     <div class="col-4 text-center">
                         <a class="btn shadow-sm" onclick="mostrarmapa()">Localizar</a>
@@ -1264,7 +1264,8 @@
                             Rep&uacute;blica de Colombia. Correo electr&oacute;nico de notificaci&oacute;n de <strong>EL
                                 PROPIETARIO O SU REPRESENTANTE</strong> <strong>{{ $datos->email }} </strong> y
                             n&uacute;mero de tel&eacute;fono celular de <strong>EL PROPIETARIO O SU REPRESENTANTE</strong>
-                            <strong>{{ $datos->full_number }} </strong>. Sin perjuicio de la ejecuci&oacute;n del presente
+                            <strong>{{ $datos->full_number }} </strong>. Sin perjuicio de la ejecuci&oacute;n del
+                            presente
                             acuerdo, en caso de
                             desistimiento por parte de <strong>EL PROPIETARIO O SU REPRESENTANTE&nbsp;</strong>dentro del
                             t&eacute;rmino inicial de tres (3) meses en la comercializaci&oacute;n del inmueble, este
@@ -1444,22 +1445,7 @@
                                 </div>
                             </div>
 
-                            @if ($datos->tiene_garajes == 'Si')
-                                <div class="row my-1 interior">
-                                    <div class="col-4">
-                                        <small class="fw-bold">{{ $datos->no_garajes }}</small><br>
-                                        <small class="fw-light fst-italic">N° de garajes</small>
-                                    </div>
-                                    <div class="col-4">
-                                        <small class="fw-bold">{{ $datos->tipo_garaje }}</small><br>
-                                        <small class="fw-light fst-italic">Tipo de garaje(s)</small>
-                                    </div>
-                                    <div class="col-4">
-                                        <small class="fw-bold">{{ $datos->gje_cubierto }}</small><br>
-                                        <small class="fw-light fst-italic">garaje(s) cubierto(s)</small>
-                                    </div>
-                                </div>
-                            @endif
+
                             <div class="row my-1 interior">
                                 <div class="col-4">
                                     <small class="fw-bold">{{ $datos->a_construida }}</small><br>
@@ -1497,6 +1483,56 @@
                                 <b>Importante: </b>Este concepto se ha basado en la revisión del certificado aportado, no es
                                 un estudio de títulos.
                             </small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 seccion">
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-10 cabeza">
+                                    <p class="fw-bold">
+                                        <i class="fas fa-warehouse"></i>
+                                        Descripción garaje(s)
+                                    </p>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-1 interior">
+                                <div class="col-4">
+                                    <small class="fw-bold">{{ $datos->tiene_garajes }}</small><br>
+                                    <small class="fw-light fst-italic">Tiene Garaje(s)</small>
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                            </div>
+                            @if ($datos->tiene_garajes == 'Privado')
+                                <div class="row my-1 interior">
+                                    <div class="col-4">
+                                        <small class="fw-bold">{{ $datos->no_garajes }}</small><br>
+                                        <small class="fw-light fst-italic">N° de garajes</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <small class="fw-bold">{{ $datos->tipo_garaje }}</small><br>
+                                        <small class="fw-light fst-italic">Tipo de garaje(s)</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <small class="fw-bold">{{ $datos->gje_cubierto }}</small><br>
+                                        <small class="fw-light fst-italic">garaje(s) cubierto(s)</small>
+                                    </div>
+                                </div>
+                            @endif
+
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-10 pie">
+                                    <p></p>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="pagebreak"> </div>
