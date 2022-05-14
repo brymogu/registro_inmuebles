@@ -21,7 +21,7 @@ class finco extends Controller
         foreach ($datos as $datos) {
 
             //Directos
-            $apikey = "9866d0e4faa287b06a732995586f434ad92131a117cddbb82fbbae5b44ed";
+            $apikey = "8f780331b5257f4aef4868aa921ffee5be0bb1f20dfd2a59090196634d61";
             $direccion = $datos->direccion;
             $latitud = $datos->latitud;
             $longitud = $datos->longitud;
@@ -187,7 +187,7 @@ class finco extends Controller
 
             $finco_disponible = HTTP::post('https://api.finco.co/v1/query-available', [
                 'APIKey' => $apikey,
-                'test' => true,
+                'test' => false,
                 'location' => [
                     'latitude' => $latitud,
                     'longitude' => $longitud
@@ -200,7 +200,7 @@ class finco extends Controller
                     //Finco Casa
                     $finco_query = HTTP::post('https://api.finco.co/v1/new-query', [
                         'APIKey' => $apikey,
-                        'test' => true,
+                        'test' => false,
                         'makePublic' => true,
                         'location' => [
                             'latitude' => $latitud,
@@ -232,7 +232,7 @@ class finco extends Controller
                     //Finco Apto 
                     $finco_query = HTTP::post('https://api.finco.co/v1/new-query', [
                         'APIKey' => $apikey,
-                        'test' => true,
+                        'test' => false,
                         'makePublic' => true,
                         'location' => [
                             'latitude' => $latitud,
