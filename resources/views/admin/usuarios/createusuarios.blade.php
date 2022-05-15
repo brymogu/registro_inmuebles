@@ -1,21 +1,19 @@
 @extends('layouts.administrador')
-
 @section('title', 'Editar Usurio')
 @section('content')
     <div class="row" id="contrasena">
         <div class="col-4"></div>
         <div class="col-4 pt-5 px-3 formulario_edit">
             <div class="card p-5 border-0 shadow">
-                <h5 class="text-center">Cambiar contraseña</h5>
-                <p class="fw-bold iconogrande text-center"><i class="fas fa-lock"></i></p>
-                {{ Form::open(['route' => 'administrador.updateuser', 'method' => 'post']) }}
+                <h5 class="text-center">Crear usuario</h5>
+                <p class="fw-bold iconogrande text-center"><i class="fas fa-user-plus"></i></p>
+                {{ Form::open(['route' => 'administrador.guardarusuarios', 'method' => 'post']) }}
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group row">
                             <label class="col-5 col-form-label" for="name">Usuario</label>
                             <div class="col-7">
-                                <input id="usuario" name="usuario" type="text" class="form-control"
-                                    value="{{ $usuario->usuario }}" disabled>
+                                <input id="usuario" name="usuario" type="text" class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -55,11 +53,10 @@
                 </div>
                 <div class="row" id="boton">
                     <div class="col-6">
-                        <input type="number" name="cod_user" id="cod_user" value="{{ $usuario->id }}"
-                            class="d-none" required>
+
                     </div>
                     <div class="col-6 text-end">
-                        <button type="submit" class="btn botones">Cambiar contraseña</button>
+                        <button type="submit" class="btn botones">Crear</button>
                     </div>
                 </div>
                 {{ Form::close() }}

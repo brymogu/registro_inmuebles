@@ -19,14 +19,21 @@ $(document).ready(function () {
         $(".usuarios a").css("color", "#01303c");
         $(".usuarios").css("background", "#ffeece");
         $("#validacion").hide();
+        $("#boton").hide();
+
         $("#confirmar").on('keyup', function () {
             var password = $("#password").val();
             var confirmPassword = $("#confirmar").val();
 
-            if (password != confirmPassword)
+            if (password != confirmPassword) {
                 $("#validacion").show();
-            else
+                $("#boton").hide();
+            }
+            else {
                 $("#validacion").hide();
+                $("#boton").show();
+            }
+
         });
     }
 

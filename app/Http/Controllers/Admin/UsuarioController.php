@@ -13,7 +13,7 @@ class UsuarioController extends Controller
     //
     public function show()
     {
-        return view('admin.login',['errormsg' => 'no']);
+        return view('admin.login', ['errormsg' => 'no']);
     }
 
     public function validar(Request $request)
@@ -26,7 +26,7 @@ class UsuarioController extends Controller
             $_SESSION['nombre'] = $request['usuario'];
             return redirect()->route('administrador.main');
         }
-        return view('admin.login',['errormsg' => 'si']);
+        return view('admin.login', ['errormsg' => 'si']);
     }
 
     public function salir()
@@ -49,6 +49,24 @@ class UsuarioController extends Controller
         return redirect('login');
     }
 
+    public function crear()
+    {
+        session_start();
+
+        if (isset($_SESSION['nombre'])) {
+            return view('admin.usuarios.createusuarios');
+        }
+        return redirect('login');
+    }
+
+    public function guardar(Request $request)
+    {
+        $usuario = new Usuarios();
+        $usuario->usuario = $request->usuario;
+        $usuario->contrasenia = Hash::make($request->password);
+        $usuario->save();
+        return redirect()->route('administrador.usuarios');
+    }
 
     public function editar(Request $request)
     {
@@ -59,5 +77,15 @@ class UsuarioController extends Controller
             return view('admin.usuarios.editusuarios', compact('usuario'));
         }
         return redirect('login');
+    }
+
+    public function actualizar(Request $request)
+    {
+        $usuario = Usuarios::find($request->cod_user);
+
+        $usuario->contrasenia = Hash::make($request->password);
+        $usuario->save();
+
+        return redirect()->route('administrador.usuarios');
     }
 }

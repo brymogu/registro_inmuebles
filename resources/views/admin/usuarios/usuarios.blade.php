@@ -6,7 +6,15 @@
 @section('title', 'Usuarios')
 
 @section('content')
-    <div class="row my-5" id="usuarios">
+    <div class="row my-3">
+        <div class="col-10"></div>
+        <div class="col-2 text-center">
+            <a href="{{ route('administrador.crearusuario') }}" class="btn btn-epc rounded-circle shadow-sm">
+                <i class="fas fa-user-plus"></i>
+            </a>
+        </div>
+    </div>
+    <div class="row" id="usuarios">
         <div class="col-12 px-3">
             <div class="tabla">
                 <div class="table-responsive">
@@ -29,7 +37,8 @@
                                     </td>
                                     <td class="text-end">
                                         {{ Form::open(['method' => 'post', 'route' => 'administrador.editusuarios']) }}
-                                        <input type="text" class="d-none" name="cod_user" value="{{ $users->id }}">
+                                        <input type="text" class="d-none" name="cod_user"
+                                            value="{{ $users->id }}">
                                         <button type="submit" class="btn btn-epc rounded-circle" data-bs-toggle="tooltip"
                                             data-bs-placement="bottom" title="Editar">
                                             <i class="fas fa-user-edit"></i></button>
@@ -48,6 +57,7 @@
     <script>
         $(document).ready(function() {
             $('#datos').DataTable({
+                searching: false,
                 language: {
                     search: "Buscar:",
                     paginate: {
