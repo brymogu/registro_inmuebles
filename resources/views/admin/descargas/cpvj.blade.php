@@ -1491,7 +1491,7 @@
                                 <div class="col-1"></div>
                                 <div class="col-10 cabeza">
                                     <p class="fw-bold">
-                                        <i class="fas fa-warehouse"></i>
+                                        <i class="fas fa-car"></i>
                                         Descripción garaje(s)
                                     </p>
                                 </div>
