@@ -1476,15 +1476,6 @@
                             </div>
                         </div>
                     </div>
-                   <!-- <div class="row my-1">
-                        <div class="col-12 interior rayita">
-                            <small><sup>*</sup>{{ $datos->obs_conc_juridico }}</small><br />
-                            <small>
-                                <b>Importante: </b>Este concepto se ha basado en la revisión del certificado aportado, no es
-                                un estudio de títulos.
-                            </small>
-                        </div>
-                    </div> -->
                     <div class="row">
                         <div class="col-12 seccion">
                             <div class="row">
