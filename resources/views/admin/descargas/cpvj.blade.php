@@ -1371,7 +1371,7 @@
                         <div class="col-9">
                         </div>
                     </div>
-                    <div class="row my-1">
+                    <div class="row my-2">
                         <div class="col-12 seccion">
                             <div class="row">
                                 <div class="col-1"></div>
@@ -1476,7 +1476,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row my-3">
+                   <!-- <div class="row my-1">
                         <div class="col-12 interior rayita">
                             <small><sup>*</sup>{{ $datos->obs_conc_juridico }}</small><br />
                             <small>
@@ -1484,7 +1484,7 @@
                                 un estudio de títulos.
                             </small>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-12 seccion">
                             <div class="row">
@@ -1930,6 +1930,27 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row my-1">
+                            <div class="col-12 interior rayita">
+                                <small><sup>*</sup>{{ $datos->obs_conc_juridico }}</small><br />
+                                <small>
+                                    <b>Importante: </b>Este concepto se ha basado en la revisión del certificado aportado, no es
+                                    un estudio de títulos.
+                                </small>
+                            </div>
+                        </div>
+                    @else
+                    <div class="pagebreak"> </div>
+                    <div class="separador d-none d-print-block"></div>
+                    <div class="row my-1">
+                        <div class="col-12 interior rayita">
+                            <small><sup>*</sup>{{ $datos->obs_conc_juridico }}</small><br />
+                            <small>
+                                <b>Importante: </b>Este concepto se ha basado en la revisión del certificado aportado, no es
+                                un estudio de títulos.
+                            </small>
+                        </div>
+                    </div>
                     @endif
                 </div>
             </div>
