@@ -63,8 +63,8 @@
                         <tr>
                             <td class="cara">Cobertura de servicios públicos </td>
                             <td><i class="fa fa-minus"></i></td>
-                            <td>Hasta $300.000</td>
-                            <td>Hasta $500.000</td>
+                            <td>Hasta del 30%</td>
+                            <td>Hasta del 50%</td>
                         </tr>
                         <tr>
                             <td class="cara">Cobertura de daños y faltantes</td>
@@ -148,8 +148,9 @@
                     {!! Form::select('plan', $planes, null, ['class' => 'form-select', 'id' => 'planes', 'required' => 'required', 'onchange' => 'selector()']) !!}
                     <hr class="encabezado">
                     <div class="grupo pt-3">
-                        <span class="fw-normal">Los precios aquí mostrados se calcularon sobre el valor que indicaste inicialmente</span>
-                        <div class="form-group row">                            
+                        <span class="fw-normal">Los precios aquí mostrados se calcularon sobre el valor que indicaste
+                            inicialmente</span>
+                        <div class="form-group row">
                             <label for="modificar" class="col-5">¿Deseas modificar el valor de tu inmueble?</label>
                             <div class="col-2">
                                 <a>No</a>
@@ -228,7 +229,7 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-6 col-md-2">                    
+                <div class="col-6 col-md-2">
                 </div>
                 <div class="d-none d-md-block col-md-8"></div>
                 <div class="col-6 col-md-2 text-end">
