@@ -63,8 +63,8 @@
                         <tr>
                             <td class="cara">Cobertura de servicios públicos </td>
                             <td><i class="fa fa-minus"></i></td>
-                            <td>Hasta del 30%</td>
-                            <td>Hasta del 50%</td>
+                            <td>Hasta 30% del canon</td>
+                            <td>Hasta 50% del canon</td>
                         </tr>
                         <tr>
                             <td class="cara">Cobertura de daños y faltantes</td>
