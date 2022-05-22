@@ -122,3 +122,28 @@ select {
 .imprimir i {
     font-size: 2rem;
 }
+
+.contrato .texto p {
+    margin: 0cm !important;
+    padding: 0cm !important;
+    line-height: normal;
+    font-size: 10px;
+    text-align: justify;
+    font-weight: normal;
+}
+
+.contrato .texto b {
+    font-weight: bold;
+}
+
+.contrato .titulo {
+    font-size: 16px;
+    font-weight: 200;
+    font-weight: bolder;
+}
+
+.variable {
+    text-decoration: underline;
+    font-weight: bold;
+    text-transform: uppercase;
+}

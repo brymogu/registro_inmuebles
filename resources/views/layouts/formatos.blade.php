@@ -70,7 +70,12 @@
                         <small class="fw-light fst-italic">Módelos</small>
                     </div>
                     <div class="col-6 interior rayita" id="sec_contratos">
-                        {!! Form::select('plan', $todos_planes, null, ['class' => 'form-select vacio', 'id' => 'plan']) !!}
+                        @if ($datos->id_plan != null)
+                        {!! Form::select('plan', $todos_planes, $datos->id_plan, ['class' => 'form-select', 'id' => 'plan']) !!}    
+                        @else
+                        {!! Form::select('plan', $todos_planes, null, ['class' => 'form-select vacio', 'id' => 'plan']) !!}    
+                        @endif
+                        
                         <small class="fw-light fst-italic">Planes</small>
                     </div>
                 </div>
