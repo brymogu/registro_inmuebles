@@ -64,7 +64,7 @@ class RegistroController extends Controller
                 ->leftJoin("ciudades", function ($join) {
                     $join->on("propiedades.ciudad", "=", "ciudades.id");
                 })
-                ->select("negocios.id as id_neg", "ciudades.id as id_ciudad", "negocios.created_at", "propiedades.id as id_ppdad", "propietarios.id as id_pptario", "tipos_documentos.desc_nombres_corto", "propietarios.doc_number", "propietarios.email", "propietarios.full_number", "propietarios.name", "propietarios.lastname", "planes.id as id_plan", "tipos_negocios.id as id_tipo_neg", "propiedades.certificado", "planes.desc_plan", "tipos_negocios.desc_tipo_negocio", "tipos_documentos.id as id_tipos_doc", "negocios.paso", "propiedades.latitud", "propiedades.longitud", "negocios.asesor", "ciudades.desc_ciudades", "tipos_inmuebles.desc_tipo_inmueble")
+                ->select("negocios.id as id_neg", "ciudades.id as id_ciudad", "negocios.created_at", "propiedades.id as id_ppdad", "propietarios.id as id_pptario", "tipos_documentos.desc_nombres_corto", "propietarios.doc_number", "propietarios.email", "propietarios.full_number", "propietarios.phone","propietarios.name", "propietarios.lastname", "planes.id as id_plan", "tipos_negocios.id as id_tipo_neg", "propiedades.certificado", "planes.desc_plan", "tipos_negocios.desc_tipo_negocio", "tipos_documentos.id as id_tipos_doc", "negocios.paso", "propiedades.latitud", "propiedades.longitud", "negocios.asesor", "ciudades.desc_ciudades", "tipos_inmuebles.desc_tipo_inmueble")
                 ->get();
 
             return view('admin.descargas.download', compact('negocios'));

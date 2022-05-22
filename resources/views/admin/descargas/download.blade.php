@@ -2,8 +2,6 @@
 @section('more_head')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-
-    <link rel="stylesheet" href="{!! asset('css/intlTelInput.css') !!}">
 @endsection
 @section('title', 'Inmuebles consignados')
 
@@ -47,10 +45,13 @@
                         <thead class="text-secondary">
                             <tr>
                                 <th>
+                                    Cod.
+                                </th>
+                                <th>
                                     Fecha
                                 </th>
                                 <th>
-                                    Datos Personales
+                                    Datos del cliente
                                 </th>
                                 <th>
                                     Datos del Inmueble
@@ -66,25 +67,29 @@
                                 @if ($negocio->paso == 'Final')
                                     <tr>
                                         <td>
+                                            {{ $negocio->id_neg }}
+                                        </td>
+                                        <td>
                                             <button class="btn" data-bs-toggle="tooltip"
                                                 data-bs-placement="bottom"
-                                                title="{{ date('d M Y', strtotime($negocio->created_at)) }}"><span
-                                                    class="invisible">{{ $negocio->id_neg }}</span>{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
+                                                title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
                                         </td>
                                         <td>
                                             <p class="fw-bold">{{ $negocio->name }} {{ $negocio->lastname }}</p>
                                             <p class="fw-lighter">
-                                                <input id="phone" type="tel" value="{{ $negocio->full_number }}"
-                                                    disabled>
-                                                <span class="user-select-all">{{ $negocio->full_number }}</span> -
+                                                <span class="user-select-all">(
+                                                    {{ str_replace($negocio->phone, ')', $negocio->full_number) }}{{ $negocio->phone }}</span>
+                                                -
                                                 <span class="user-select-all">{{ $negocio->email }}</span>
                                             </p>
                                             <p class="fw-lighter"> {{ $negocio->desc_ciudades }}
                                             </p>
                                         </td>
                                         <td>
-                                            <p class="fw-bold"> {{ $negocio->desc_tipo_negocio }} -
-                                                {{ $negocio->desc_tipo_inmueble }}</p>
+                                            <p class="fw-lighter""> {{ $negocio->desc_tipo_negocio }}</p>
+                                                            <p class="   fw-lighter">
+                                                {{ $negocio->desc_tipo_inmueble }}
+                                            </p>
                                             <p class="fw-lighter">
                                                 <span class="user-select-all">{{ $negocio->asesor }}</span>
                                             </p>
@@ -118,7 +123,7 @@
                                                         data-bs-placement="bottom" title="Ficha técnica">
                                                         <i class="fas fa-file-invoice"></i></a>
                                                 </div>
-                                                <div class="col-2">
+                                                <div class="col-2 finco">
                                                     @if ($negocio->longitud != '' && $negocio->latitud != '')
                                                         {{ Form::open(['route' => 'administrador.finco', 'target' => '_blank']) }}
                                                         <input type="text" class="d-none" name="codineg"
@@ -149,6 +154,13 @@
     <script>
         $(document).ready(function() {
             $('#datos').DataTable({
+                columnDefs: [{
+                    "type": "num",
+                    "targets": 0,
+                }],
+                order: [
+                    [0, 'desc']
+                ],
                 language: {
                     search: "Buscar:",
                     paginate: {
@@ -166,14 +178,6 @@
         var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl)
         })
-    </script>
-    <script src="{!! asset('js/tel/intlTelInput.js') !!}"></script>
-    <script>
-        var input = document.querySelector("#phone");
-        window.intlTelInput(input, {
-            allowDropdown: false,
-            utilsScript: "{!! asset('js/tel/utils.js') !!}" // just for formatting/placeholders etc
-        });
     </script>
 
 @endsection

@@ -132,21 +132,6 @@ table.dataTable.no-footer {
     margin-bottom: 1.5rem;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-    border-radius: 50% !important;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current {
-    background: unset !important;
-    border: unset !important;
-    background-color: #ffeece !important;
-    color: #01303c !important;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    background-color: #f6c015 !important;
-}
-
 table p {
     margin-bottom: 0.3rem !important;
 }
@@ -162,17 +147,27 @@ table p {
     background-color: transparent;
 }
 
-.iti--allow-dropdown input {
-    padding-left: 32px !important;
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius: 50% !important;
 }
 
-.iti--allow-dropdown .iti__flag-container:hover {
-    background-color: white !important;
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: unset !important;
+    border: unset !important;
+    background-color: #ffeece !important;
+    color: #01303c !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background-color: #f6c015 !important;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    color: white !important;
+    background: unset !important;
     background-color: #f6c015 !important;
+    color: #01303c !important;
+    border: unset !important;
 }
 
 /* opciones */
@@ -184,11 +179,11 @@ table p {
 }
 
 .btn-epc:hover,
-.botones:hover {
+.botones:hover,
+.finco .btn-epc:visited {
     background-color: #f6c015 !important;
     color: white;
 }
-
 
 input:required {
     border: 1px solid #FFCDD2;
