@@ -58,10 +58,13 @@ class RegistroController extends Controller
                 ->leftJoin("tipos_negocios", function ($join) {
                     $join->on("negocios.tipo_negocio", "=", "tipos_negocios.id");
                 })
+                ->leftJoin("tipos_inmuebles", function ($join) {
+                    $join->on("propiedades.tipo_inmueble", "=", "tipos_inmuebles.id");
+                })
                 ->leftJoin("ciudades", function ($join) {
                     $join->on("propiedades.ciudad", "=", "ciudades.id");
                 })
-                ->select("negocios.id as id_neg","ciudades.id as id_ciudad", "negocios.created_at", "propiedades.id as id_ppdad", "propietarios.id as id_pptario", "tipos_documentos.desc_nombres_corto", "propietarios.doc_number","propietarios.email", "propietarios.full_number", "propietarios.name", "propietarios.lastname", "planes.id as id_plan", "tipos_negocios.id as id_tipo_neg", "propiedades.certificado", "planes.desc_plan", "tipos_negocios.desc_tipo_negocio", "tipos_documentos.id as id_tipos_doc", "negocios.paso","propiedades.latitud","propiedades.longitud","negocios.asesor","ciudades.desc_ciudades")
+                ->select("negocios.id as id_neg", "ciudades.id as id_ciudad", "negocios.created_at", "propiedades.id as id_ppdad", "propietarios.id as id_pptario", "tipos_documentos.desc_nombres_corto", "propietarios.doc_number", "propietarios.email", "propietarios.full_number", "propietarios.name", "propietarios.lastname", "planes.id as id_plan", "tipos_negocios.id as id_tipo_neg", "propiedades.certificado", "planes.desc_plan", "tipos_negocios.desc_tipo_negocio", "tipos_documentos.id as id_tipos_doc", "negocios.paso", "propiedades.latitud", "propiedades.longitud", "negocios.asesor", "ciudades.desc_ciudades", "tipos_inmuebles.desc_tipo_inmueble")
                 ->get();
 
             return view('admin.descargas.download', compact('negocios'));
@@ -74,7 +77,7 @@ class RegistroController extends Controller
         session_start();
 
         if (isset($_SESSION['nombre'])) {
-            
+
             $negocio = Negocios::find($request->codineg);
             $propiedad = Propiedades::find($negocio->propiedad);
             $propietario = Propietarios::find($negocio->propietario);
@@ -320,5 +323,4 @@ class RegistroController extends Controller
 
         return redirect()->route('administrador.editform', $request->codiprop);
     }
-
 }

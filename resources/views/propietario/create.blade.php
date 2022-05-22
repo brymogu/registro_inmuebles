@@ -123,21 +123,10 @@
         window.intlTelInput(input, {
             allowDropdown: true,
             autoHideDialCode: false,
-            //autoPlaceholder: "aggressive",
-            // dropdownContainer: document.body,
-            // excludeCountries: ["us"],
             formatOnDisplay: true,
-            // geoIpLookup: function(callback) {
-            //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-            //     var countryCode = (resp && resp.country) ? resp.country : "";
-            //     callback(countryCode);
-            //   });
-            // },
             hiddenInput: "full_number",
             initialCountry: "co",
-            // localizedCountries: { 'de': 'Deutschland' },
             nationalMode: false,
-            // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
             placeholderNumberType: "MOBILE",
             preferredCountries: ['co', 'us'],
             separateDialCode: true,

@@ -2,6 +2,8 @@
 @section('more_head')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" href="{!! asset('css/intlTelInput.css') !!}">
 @endsection
 @section('title', 'Inmuebles consignados')
 
@@ -38,7 +40,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 px-3">
+        <div class="col-12">
             <div class="tabla">
                 <div class="table-responsive">
                     <table class="table table-borderless align-middle" id="datos" data-page-length='4'>
@@ -50,7 +52,7 @@
                                 <th>
                                     Datos Personales
                                 </th>
-                                <th class="text-center">
+                                <th>
                                     Datos del Inmueble
                                 </th>
 
@@ -66,22 +68,25 @@
                                         <td>
                                             <button class="btn" data-bs-toggle="tooltip"
                                                 data-bs-placement="bottom"
-                                                title="{{ date('d M Y', strtotime($negocio->created_at)) }}">{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
+                                                title="{{ date('d M Y', strtotime($negocio->created_at)) }}"><span
+                                                    class="invisible">{{ $negocio->id_neg }}</span>{{ \Carbon\Carbon::parse($negocio->created_at)->diffForHumans() }}</button>
                                         </td>
                                         <td>
                                             <p class="fw-bold">{{ $negocio->name }} {{ $negocio->lastname }}</p>
-                                            <p class="fw-lighter"> <span
-                                                    class="user-select-all">{{ $negocio->full_number }}</span> -
+                                            <p class="fw-lighter">
+                                                <input id="phone" type="tel" value="{{ $negocio->full_number }}"
+                                                    disabled>
+                                                <span class="user-select-all">{{ $negocio->full_number }}</span> -
                                                 <span class="user-select-all">{{ $negocio->email }}</span>
                                             </p>
                                             <p class="fw-lighter"> {{ $negocio->desc_ciudades }}
                                             </p>
                                         </td>
                                         <td>
-                                            <p class="fw-bold"> {{ $negocio->email }}</p>
-                                            <p class="fw-lighter"> <span
-                                                    class="user-select-all">{{ $negocio->full_number }}</span> -
-                                                <span class="user-select-all">{{ $negocio->email }}</span>
+                                            <p class="fw-bold"> {{ $negocio->desc_tipo_negocio }} -
+                                                {{ $negocio->desc_tipo_inmueble }}</p>
+                                            <p class="fw-lighter">
+                                                <span class="user-select-all">{{ $negocio->asesor }}</span>
                                             </p>
                                         </td>
 
@@ -162,4 +167,13 @@
             return new bootstrap.Tooltip(tooltipTriggerEl)
         })
     </script>
+    <script src="{!! asset('js/tel/intlTelInput.js') !!}"></script>
+    <script>
+        var input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+            allowDropdown: false,
+            utilsScript: "{!! asset('js/tel/utils.js') !!}" // just for formatting/placeholders etc
+        });
+    </script>
+
 @endsection

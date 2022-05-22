@@ -151,6 +151,29 @@ table p {
     margin-bottom: 0.3rem !important;
 }
 
+.invisible {
+    color: transparent;
+}
+
+#phone {
+    display: block;
+    width: 2px;
+    border: unset;
+    background-color: transparent;
+}
+
+.iti--allow-dropdown input {
+    padding-left: 32px !important;
+}
+
+.iti--allow-dropdown .iti__flag-container:hover {
+    background-color: white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    background-color: #f6c015 !important;
+}
 
 /* opciones */
 
