@@ -5,6 +5,17 @@
     <link rel="stylesheet" href="{!! asset('css/intlTelInput.css') !!}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"
         integrity="sha256-eiohPQlDytO6qQO+k+xX6LyVgfXcTzlPCy9t/VjceYo=" crossorigin="anonymous"></script>
+
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Le5xAggAAAAAPmJRp9onjRJL6SAuIkjs-lBggOs"></script>
+    <script>
+        grecaptcha.enterprise.ready(function() {
+            grecaptcha.enterprise.execute('6Le5xAggAAAAAPmJRp9onjRJL6SAuIkjs-lBggOs', {
+                action: 'login'
+            }).then(function(token) {
+                ...
+            });
+        });
+    </script>
 @endsection
 
 @section('content')
@@ -77,7 +88,8 @@
                         <div class="col-2 col-md-10"></div>
                         <input type="text" id="countrycode" class="d-none">
                         <div class="col-6 col-md-2 text-end">
-                            <button type="submit" class="btn botones">Siguiente</button>
+                            <button type="submit" class="btn botones g-recaptcha" data-sitekey="reCAPTCHA_site_key"
+                                data-callback='onSubmit' data-action='submit'>Siguiente</button>
                         </div>
                     </div>
                 </div>
