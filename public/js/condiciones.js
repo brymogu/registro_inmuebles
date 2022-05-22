@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     if ($('#propietario').length) {
         $('.toast').toast("show");
@@ -6,10 +6,11 @@ $(document).ready(function() {
 
 
     } else if ($('#negocio_tarjeta').length) {
+        $('#m_usuario').addClass("activo");
         $('#m_negocio').addClass("activo");
         $('#m_barra').css("width", "32%");
 
-        $('#espropietario').change(function() {
+        $('#espropietario').change(function () {
             if ($('#espropietario').prop('checked')) {
                 $('#pqsolicita').removeAttr('required');
                 $('#pqgrupo').hide();
@@ -19,7 +20,7 @@ $(document).ready(function() {
             }
         });
 
-        $('#conjunto').change(function() {
+        $('#conjunto').change(function () {
             if ($('#conjunto').val() == "Si") {
                 $('#detalles').show();
                 $('#direccion_comp').attr("required", "true");
@@ -37,7 +38,7 @@ $(document).ready(function() {
         });
 
 
-        $('#habitado').change(function() {
+        $('#habitado').change(function () {
             if ($('#habitado').prop('checked')) {
                 $('#arrendado').show();
 
@@ -46,49 +47,49 @@ $(document).ready(function() {
             }
         });
 
-        $('#reglamento').change(function() {
+        $('#reglamento').change(function () {
             $('#motivo').html("si no cuenta con el reglamento de propiedad horizontal");
             myModal.show()
         });
 
-        $('#serv_independ').change(function() {
+        $('#serv_independ').change(function () {
             $('#motivo').html("si no cuenta con servicios públicos independientes");
             myModal.show()
         });
 
-        $('#vacacional').change(function() {
+        $('#vacacional').change(function () {
             $('#motivo').html("con fines vacacionales");
             myModal.show()
         });
 
-        $('#amoblado').change(function() {
+        $('#amoblado').change(function () {
             $('#motivo').html("si está amoblado");
             myModal.show()
         });
 
-        $('#menosano').change(function() {
+        $('#menosano').change(function () {
             $('#motivo').html("por periodos inferiores a un año");
             myModal.show()
         });
 
-        $('#urbano').change(function() {
+        $('#urbano').change(function () {
             $('#motivo').html("si pertenece a una zona rural");
             myModal.show()
         });
 
-        $('#embargo').change(function() {
+        $('#embargo').change(function () {
             $('#motivo').html("si se encuentra embargado");
             myModal.show()
         });
 
 
-        $('#arr_check').change(function() {
+        $('#arr_check').change(function () {
             if ($('#negocio').val() == 1) {
                 $('#motivo').html("si se encuentra arrendado");
                 myModal.show()
             }
         });
-        $('#tipo_inm').change(function() {
+        $('#tipo_inm').change(function () {
             if ($('#tipo_inm').val() == 2) {
                 $('#aptos2').show();
                 $('#piso').attr("required", "true");
@@ -97,7 +98,7 @@ $(document).ready(function() {
             }
             if ($('#tipo_inm').val() == 1) {
                 $("#estado_inb option[value='3']").hide();
-                $("#estado_inb option[value='2']").hide();                
+                $("#estado_inb option[value='2']").hide();
                 $('#piso').removeAttr('required');
                 $('#aptos2').hide();
                 $('#n_ascensores').removeAttr('required');
@@ -106,7 +107,7 @@ $(document).ready(function() {
             }
         });
 
-        $('#ascensor').change(function() {
+        $('#ascensor').change(function () {
             if ($('#ascensor').prop('checked')) {
                 $('#sec_n_ascensores').show();
                 $('#n_ascensores').attr("required", "true");
@@ -116,7 +117,7 @@ $(document).ready(function() {
             }
         });
 
-        $('#negocio').change(function() {
+        $('#negocio').change(function () {
             if ($('#negocio').val() == 2) {
                 $('#cortina').show();
                 $('#admonhelper').show();
@@ -131,7 +132,7 @@ $(document).ready(function() {
             }
         });
 
-        $('#valor').keyup(function() {
+        $('#valor').keyup(function () {
             var valor = $('#valor').val();
             $('#valorpesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));
             if (valor <= 100000) {
@@ -143,7 +144,7 @@ $(document).ready(function() {
             }
         });
 
-        $('#estado_inb').change(function() {
+        $('#estado_inb').change(function () {
             if ($('#estado_inb').val() >= 4) {
                 $('#anoconstruido').show();
                 $('#tiempo_inm').attr("required", "true");
@@ -153,7 +154,7 @@ $(document).ready(function() {
             }
         });
 
-        $('#tiempo_inm').change(function() {
+        $('#tiempo_inm').change(function () {
             if ($('#tiempo_inm').val() >= 5 && $('#tiempo_inm').val() > 0 && $('#tiempo_inm').val() != "") {
                 console.log("si");
                 $('#SecRemodelado').show();
@@ -168,7 +169,7 @@ $(document).ready(function() {
             $('#SecRemodelado').hide();
         }
 
-        $('#remodelado').change(function() {
+        $('#remodelado').change(function () {
             if ($('#remodelado').val() == 1) {
                 $('#sec_tuberia').show();
             } else {
@@ -178,10 +179,12 @@ $(document).ready(function() {
         });
 
     } else if ($('#detalles').length) {
+        $('#m_usuario').addClass("activo");
+        $('#m_negocio').addClass("activo");
         $('#m_detalles').addClass("activo");
         $('#m_barra').css("width", "48%");
 
-        $('#garaje').change(function() {
+        $('#garaje').change(function () {
             if ($('#garaje').val() == 'Privado') {
                 $('#sec_garajes').show();
                 $('#no_garajes').attr("required", "true");
@@ -194,7 +197,7 @@ $(document).ready(function() {
             }
         });
 
-        $('#no_garajes').change(function() {
+        $('#no_garajes').change(function () {
             if ($('#no_garajes').val() < 2) {
                 if ($('#tipo_garaje').val() == 3) {
                     $("#tipo_garaje option[value='1']").attr('selected', 'selected');
@@ -208,7 +211,7 @@ $(document).ready(function() {
         });
 
 
-        $('#balcon').change(function() {
+        $('#balcon').change(function () {
             if ($('#balcon').prop('checked')) {
                 $('#area_balcon_secc').show();
                 $('#area_balcon').attr("required", "true");
@@ -218,7 +221,7 @@ $(document).ready(function() {
             }
         });
 
-        $('#terraza').change(function() {
+        $('#terraza').change(function () {
             if ($('#terraza').prop('checked')) {
                 $('#area_terraza_secc').show();
                 $('#area_terraza').attr("required", "true");
@@ -228,10 +231,13 @@ $(document).ready(function() {
             }
         });
     } else if ($('#conjunto_tarjeta').length) {
+        $('#m_usuario').addClass("activo");
+        $('#m_negocio').addClass("activo");
+        $('#m_detalles').addClass("activo");
         $('#m_conjunto').addClass("activo");
         $('#m_barra').css("width", "50%");
 
-        $('#seguridad').change(function() {
+        $('#seguridad').change(function () {
             if ($('#seguridad').val() == 1) {
                 $('#sec_vigilancia').show();
                 $('#vigilancia').attr("required", "true");
@@ -241,7 +247,7 @@ $(document).ready(function() {
             }
         });
 
-        $('#t_cuota').change(function() {
+        $('#t_cuota').change(function () {
             switch ($('#t_cuota').val()) {
                 case '1':
                     $('#secc_admon').show();
@@ -269,23 +275,27 @@ $(document).ready(function() {
 
         });
 
-        $('#adm_cp').keyup(function() {
+        $('#adm_cp').keyup(function () {
             var valor = $('#adm_cp').val();
             $('#adm_cp_pesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));
         });
 
-        $('#adm_cd').keyup(function() {
+        $('#adm_cd').keyup(function () {
             var valor = $('#adm_cd').val();
             $('#adm_cd_pesos').html("$ " + Intl.NumberFormat("es-CO").format(valor));
         });
 
 
     } else if ($('#planes_tarjeta').length) {
+        $('#m_usuario').addClass("activo");
+        $('#m_negocio').addClass("activo");
+        $('#m_detalles').addClass("activo");
+        $('#m_conjunto').addClass("activo");
         $('#m_planes').addClass("activo");
         $('#m_barra').css("width", "65%");
         $('.toast').toast("show");
 
-        $('#modificar').change(function() {
+        $('#modificar').change(function () {
             if ($('#modificar').prop('checked')) {
                 $('#sec_valor').show();
             } else {
@@ -293,14 +303,25 @@ $(document).ready(function() {
             }
         });
 
-        $('#planes').change(function() {
+        $('#planes').change(function () {
             $('#calculadora').show();
         });
 
     } else if ($('#fotos').length) {
+        $('#m_usuario').addClass("activo");
+        $('#m_negocio').addClass("activo");
+        $('#m_detalles').addClass("activo");
+        $('#m_conjunto').addClass("activo");
+        $('#m_planes').addClass("activo");
         $('#m_camara').addClass("activo");
         $('#m_barra').css("width", "80%");
     } else if ($('#agradecimiento').length) {
+        $('#m_usuario').addClass("activo");
+        $('#m_negocio').addClass("activo");
+        $('#m_detalles').addClass("activo");
+        $('#m_conjunto').addClass("activo");
+        $('#m_planes').addClass("activo");
+        $('#m_camara').addClass("activo");
         $('#m_final').addClass("activo");
         $('#m_barra').css("width", "100%");
     }

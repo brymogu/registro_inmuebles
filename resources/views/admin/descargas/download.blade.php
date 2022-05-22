@@ -51,7 +51,7 @@
                                     Datos Personales
                                 </th>
                                 <th class="text-center">
-                                    Asesor
+                                    Datos del Inmueble
                                 </th>
 
                                 <th class="text-center">
@@ -78,7 +78,11 @@
                                             </p>
                                         </td>
                                         <td>
-                                            <b> {{ $negocio->asesor }}</b>
+                                            <p class="fw-bold"> {{ $negocio->email }}</p>
+                                            <p class="fw-lighter"> <span
+                                                    class="user-select-all">{{ $negocio->full_number }}</span> -
+                                                <span class="user-select-all">{{ $negocio->email }}</span>
+                                            </p>
                                         </td>
 
                                         <td class="text-end">
