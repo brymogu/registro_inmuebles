@@ -31,6 +31,9 @@
                         <thead class="text-secondary">
                             <tr>
                                 <th>
+                                    Cod.
+                                </th>
+                                <th>
                                     Fecha
                                 </th>
                                 <th>
@@ -41,6 +44,9 @@
                         <tbody>
                             @foreach ($solodatos as $dato)
                                 <tr>
+                                    <td>
+                                        {{ $dato->id_neg }}
+                                    </td>
                                     <td>
                                         <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                             title="{{ date('d M Y', strtotime($dato->created_at)) }}">{{ \Carbon\Carbon::parse($dato->created_at)->diffForHumans() }}</button>
@@ -141,6 +147,9 @@
     <script>
         $(document).ready(function() {
             $('#datos').DataTable({
+                order: [
+                    [0, 'desc']
+                ],
                 language: {
                     search: "Buscar:",
                     paginate: {
