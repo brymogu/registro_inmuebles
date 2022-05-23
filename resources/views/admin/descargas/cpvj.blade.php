@@ -1663,6 +1663,7 @@
     @endforeach
 @endsection
 @section('final')
+<script src="{!! asset('js/mapa.js') !!}"></script>
     <script>
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
