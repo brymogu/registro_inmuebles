@@ -88,16 +88,6 @@
                             step=".0000000000000001" required>
                         <small class="fw-light fst-italic">Longitud</small>
                     </div>
-                    <div class="col-4 text-end pt-1">
-                    </div>
-                </div>
-                <div class="row mt-1 interior">
-                    <div class="col-4 text-center">
-
-                    </div>
-                    <div class="col-4 text-center">
-                        <a class="btn shadow-sm" onclick="mostrarmapa()">Localizar</a>
-                    </div>
                     <div class="col-4 text-center pt-1">
                         <button type="submit" class="btn shadow-sm">Guardar</button>
                     </div>
@@ -247,7 +237,8 @@
                     <p><b>DÉCIMA. Cláusula compromisoria.</b> En caso de conflicto entre las partes, relativo a este
                         acuerdo, su ejecución y liquidación, deberá agotarse en una diligencia de conciliación ante
                         cualquier entidad autorizada para efectuarla, la cual será pagada por partes iguales.</p>
-
+                    <br>
+                    <br>
                     <p>En señal de aprobación y plena validez del presente documento firmo electrónicamente de acuerdo con
                         la Ley 527 de 1999 y el Decreto 2364 de 2012 en calidad de <b>PROPIETARIO O SU REPRESENTANTE</b>.
                     </p>
@@ -374,7 +365,8 @@
                     <p><b>DÉCIMA. Cláusula compromisoria.</b> En caso de conflicto entre las partes, relativo a este
                         acuerdo, su ejecución y liquidación, deberá agotarse en una diligencia de conciliación ante
                         cualquier entidad autorizada para efectuarla, la cual será pagada por partes iguales.</p>
-
+                    <br>
+                    <br>
                     <p>En señal de aprobación y plena validez del presente documento firmo electrónicamente de acuerdo con
                         la Ley 527 de 1999 y el Decreto 2364 de 2012 en calidad de <b>PROPIETARIO O SU REPRESENTANTE</b>.
                     </p>
@@ -503,7 +495,8 @@
                     <p><b>DÉCIMA. Cláusula compromisoria.</b> En caso de conflicto entre las partes, relativo a este
                         acuerdo, su ejecución y liquidación, deberá agotarse en una diligencia de conciliación ante
                         cualquier entidad autorizada para efectuarla, la cual será pagada por partes iguales.</p>
-
+                    <br>
+                    <br>
                     <p>En señal de aprobación y plena validez del presente documento firmo electrónicamente de acuerdo con
                         la Ley 527 de 1999 y el Decreto 2364 de 2012 en calidad de <b>PROPIETARIO O SU REPRESENTANTE</b>.
                     </p>
@@ -620,7 +613,8 @@
                     <p><b>NOVENA. Cláusula compromisoria.</b> En caso de conflicto entre las partes, relativo a este
                         acuerdo, su ejecución y liquidación, deberá agotarse en una diligencia de conciliación ante
                         cualquier entidad autorizada para efectuarla, la cual será pagada por partes iguales.</p>
-
+                    <br>
+                    <br>
                     <p>En señal de aprobación y plena validez del presente documento firmo electrónicamente de acuerdo con
                         la Ley 527 de 1999 y el Decreto 2364 de 2012 en calidad de <b>PROPIETARIO O SU REPRESENTANTE</b>.
                     </p>
@@ -727,7 +721,8 @@
                     <p><b>NOVENA. Cláusula compromisoria.</b> En caso de conflicto entre las partes, relativo a este
                         acuerdo, su ejecución y liquidación, deberá agotarse en una diligencia de conciliación ante
                         cualquier entidad autorizada para efectuarla, la cual será pagada por partes iguales.</p>
-
+                    <br>
+                    <br>
                     <p>En señal de aprobación y plena validez del presente documento firmo electrónicamente de acuerdo con
                         la Ley 527 de 1999 y el Decreto 2364 de 2012 en calidad de <b>PROPIETARIO O SU REPRESENTANTE</b>.
                     </p>
@@ -750,7 +745,7 @@
 
                     <p><b>PRIMERA.</b> <b>Objeto del acuerdo</b>: <b>EL PROPIETARIO O SU REPRESENTANTE</b> contrata a <b>LA
                             INMOBILIARIA</b> para que oferte al público el bien inmueble identificado así:
-                        DIRECCIÓN <b class="variable">{{ $datos->desc_tipos_documento }}</b>
+                        DIRECCIÓN <b class="variable">{{ $datos->direccion }} {{ $datos->direccion_comp }}</b>
                         CIUDAD O
                         MUNICIPIO <b class="variable">{{ $datos->ciudad }}</b>
                         FOLIO DE MATRÍCULA <b class="variable">{{ $datos->matricula }}</b>
@@ -834,6 +829,9 @@
                     <p><b>NOVENA. Cláusula compromisoria.</b> En caso de conflicto entre las partes, relativo a este
                         acuerdo, su ejecución y liquidación, deberá agotarse en una diligencia de conciliación ante
                         cualquier entidad autorizada para efectuarla, la cual será pagada por partes iguales.</p>
+
+                    <br>
+                    <br>
 
                     <p>En señal de aprobación y plena validez del presente documento firmo electrónicamente de acuerdo con
                         la Ley 527 de 1999 y el Decreto 2364 de 2012 en calidad de <b>PROPIETARIO O SU REPRESENTANTE</b>.
@@ -975,7 +973,7 @@
                         <p><b>NOVENA. Cláusula compromisoria.</b> En caso de conflicto entre las partes, relativo a este
                             acuerdo, su ejecución y liquidación, deberá agotarse en una diligencia de conciliación ante
                             cualquier entidad autorizada para efectuarla, la cual será pagada por partes iguales.</p>
-
+                        <br>
                         <p>En señal de aprobación y plena validez del presente documento firmo electrónicamente de acuerdo
                             con
                             la Ley 527 de 1999 y el Decreto 2364 de 2012 en calidad de <b>PROPIETARIO O SU
@@ -1406,20 +1404,7 @@
                                     <small class="fw-light fst-italic">Entrega cortinas</small>
                                 </div>
                             </div>
-                            <div class="row mt-1 interior">
-                                <div class="col-4">
-                                    <small class="fw-bold">{{ $datos->calefaccion_privada }}</small><br>
-                                    <small class="fw-light fst-italic">Calefacción privada</small>
-                                </div>
-                                <div class="col-4">
-                                    <small class="fw-bold">{{ $datos->piscina_privada }}</small><br>
-                                    <small class="fw-light fst-italic">Piscina privada</small>
-                                </div>
-                                <div class="col-4">
-                                    <small class="fw-bold">{{ $datos->sauna_privada }}</small><br>
-                                    <small class="fw-light fst-italic">Sauna privado</small>
-                                </div>
-                            </div>
+
                             <div class="row mt-1 interior">
                                 <div class="col-4">
                                     <small class="fw-bold">{{ $datos->calefaccion_privada }}</small><br>
@@ -1466,6 +1451,18 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="row mt-1 interior">
+                                <div class="col-4">
+                                    <small class="fw-bold">{{ $datos->zonas_verdes }}</small><br>
+                                    <small class="fw-light fst-italic">Zonas Verdes</small>
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-1"></div>
                                 <div class="col-10 pie">
@@ -1496,12 +1493,24 @@
                                         <small class="fw-light fst-italic">Nombre</small>
                                     </div>
                                     <div class="col-4">
+                                        <small class="fw-bold">{{ $datos->direccion_comp }}</small><br>
+                                        <small class="fw-light fst-italic">Complemento de dirección</small>
+                                    </div>
+                                    <div class="col-4">
+
+                                    </div>
+                                </div>
+                                <div class="row mt-1 interior">
+                                    <div class="col-4">
                                         <small class="fw-bold">{{ $datos->tipo_seguridad }}</small><br>
                                         <small class="fw-light fst-italic">Seguridad</small>
                                     </div>
                                     <div class="col-4">
                                         <small class="fw-bold">{{ $datos->tipo_vigilancia }}</small><br>
                                         <small class="fw-light fst-italic">Vigilancia</small>
+                                    </div>
+                                    <div class="col-4">
+
                                     </div>
                                 </div>
                                 <div class="row mt-1 interior">
@@ -1602,6 +1611,8 @@
                                         <small class="fw-light fst-italic">Piscina</small>
                                     </div>
                                     <div class="col-4">
+
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -1615,7 +1626,11 @@
                         </div>
                         <div class="row my-1">
                             <div class="col-12 interior rayita">
-                                <small><sup>*</sup>{{ $datos->obs_conc_juridico }}</small><br />
+                                <small class="my-1"><sup>*</sup>El valor sugerido por el cliente fue de:
+                                    ${{ $datos->valor }}</small>
+                                <br>
+                                <small
+                                    class="my-1"><sup>**</sup>{{ $datos->obs_conc_juridico }}</small><br />
                                 <small>
                                     <b>Importante: </b>Este concepto se ha basado en la revisión del certificado aportado,
                                     no es
@@ -1648,7 +1663,6 @@
     @endforeach
 @endsection
 @section('final')
-    <script src="{!! asset('js/mapa.js') !!}"></script>
     <script>
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
