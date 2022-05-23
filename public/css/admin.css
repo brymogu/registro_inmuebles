@@ -136,18 +136,6 @@ table p {
     margin-bottom: 0.3rem !important;
 }
 
-.invisible {
-    color: transparent;
-}
-
-#phone {
-    display: block;
-    width: 2px;
-    border: unset;
-    background-color: transparent;
-}
-
-
 .dataTables_wrapper .dataTables_paginate .paginate_button {
     border-radius: 50% !important;
 }

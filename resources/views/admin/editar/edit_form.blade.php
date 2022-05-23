@@ -48,7 +48,7 @@
                     <div class="form-group row">
                         <label for="phone" class="col-5 col-form-label">Teléfono celular</label>
                         <div class="col-7">
-                            <input id="phone" name="phone" type="tel" value="{{ $propietario->phone }}"
+                            <input id="phone" name="phone" type="text" value="{{ $propietario->full_number }}"
                                 class="form-control" required>
                         </div>
                     </div>
@@ -499,7 +499,7 @@
                         </div>
                         <div class="col-7">
                             <input id="latitud" name="latitud" type="text" class="form-control"
-                                value="{{ $propiedad->latitud }}">
+                                value="{{ $propiedad->latitud }}" required>
                         </div>
                     </div>
                 </div>
@@ -510,7 +510,7 @@
                         </div>
                         <div class="col-7">
                             <input id="longitud" name="longitud" type="text" class="form-control"
-                                value="{{ $propiedad->longitud }}">
+                                value="{{ $propiedad->longitud }}" required>
                         </div>
                     </div>
                 </div>

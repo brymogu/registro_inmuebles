@@ -87,7 +87,7 @@
                                         </td>
                                         <td>
                                             <p class="fw-lighter""> {{ $negocio->desc_tipo_negocio }}</p>
-                                                            <p class="   fw-lighter">
+                                                                <p class="    fw-lighter">
                                                 {{ $negocio->desc_tipo_inmueble }}
                                             </p>
                                             <p class="fw-lighter">
