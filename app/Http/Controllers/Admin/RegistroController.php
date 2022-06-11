@@ -151,7 +151,7 @@ class RegistroController extends Controller
         //propietario
         $propietario->name = $request->name;
         $propietario->lastname = $request->lastname;
-        $propietario->phone = $request->full_number;
+        $propietario->full_number = $request->phone;
         $propietario->email = $request->email;
         $propietario->tipo_doc = $request->id;
         $propietario->doc_number = $request->idnumber;
