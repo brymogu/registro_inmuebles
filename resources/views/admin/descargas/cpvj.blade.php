@@ -51,8 +51,8 @@
                         <small class="fw-light fst-italic">Barrio catastral</small>
                     </div>
                     <div class="col-4">
-                        <input id="upz_edit" name="upz_edit" type="text" class="form-control" value="{{ $datos->upz }}"
-                            required>
+                        <input id="upz_edit" name="upz_edit" type="text" class="form-control"
+                            value="{{ $datos->upz }}" required>
                         <small class="fw-light fst-italic">UPZ</small>
                     </div>
                     <div class="col-4">
@@ -1092,8 +1092,7 @@
                                 </div>
                             </div>
                             <div class="row my-1 interior">
-                                <div class="col-4"><small
-                                        class="fw-bold">{{ $datos->estado }}</small><br>
+                                <div class="col-4"><small class="fw-bold">{{ $datos->estado }}</small><br>
                                     <small class="fw-light fst-italic">Estado del inmueble</small>
                                 </div>
                                 <div class="col-4">
@@ -1280,8 +1279,7 @@
                                 </div>
                             </div>
                             <div class="row my-1 interior">
-                                <div class="col-4"><small
-                                        class="fw-bold">{{ $datos->tipo_estufa }}</small><br>
+                                <div class="col-4"><small class="fw-bold">{{ $datos->tipo_estufa }}</small><br>
                                     <small class="fw-light fst-italic">Estufa</small>
                                 </div>
                                 <div class="col-4">
@@ -1629,8 +1627,7 @@
                                 <small class="my-1"><sup>*</sup>El valor sugerido por el cliente fue de:
                                     ${{ $datos->valor }}</small>
                                 <br>
-                                <small
-                                    class="my-1"><sup>**</sup>{{ $datos->obs_conc_juridico }}</small><br />
+                                <small class="my-1"><sup>**</sup>{{ $datos->obs_conc_juridico }}</small><br />
                                 <small>
                                     <b>Importante: </b>Este concepto se ha basado en la revisión del certificado aportado,
                                     no es
@@ -1663,10 +1660,11 @@
     @endforeach
 @endsection
 @section('final')
-    <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-    </script>
-@endsection
+    <script src="{!! asset('js/mapa.js') !!}">
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
+    @endsection
