@@ -187,7 +187,7 @@ class finco extends Controller
 
             $finco_disponible = HTTP::post('https://api.finco.co/v1/query-available', [
                 'APIKey' => $apikey,
-                'test' => false,
+                'test' => true,
                 'location' => [
                     'latitude' => $latitud,
                     'longitude' => $longitud
@@ -200,7 +200,7 @@ class finco extends Controller
                     //Finco Casa
                     $finco_query = HTTP::post('https://api.finco.co/v1/new-query', [
                         'APIKey' => $apikey,
-                        'test' => false,
+                        'test' => true,
                         'makePublic' => true,
                         'location' => [
                             'latitude' => $latitud,
@@ -232,7 +232,7 @@ class finco extends Controller
                     //Finco Apto 
                     $finco_query = HTTP::post('https://api.finco.co/v1/new-query', [
                         'APIKey' => $apikey,
-                        'test' => false,
+                        'test' => true,
                         'makePublic' => true,
                         'location' => [
                             'latitude' => $latitud,
