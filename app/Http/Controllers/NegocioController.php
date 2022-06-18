@@ -76,10 +76,10 @@ class NegocioController extends Controller
 
         // checks
         if ($request->espropietario) {
-            $propiedad->espropietario = "Si";
-            $propiedad->pqsolicita = $request->pqsolicita;
+            $propiedad->espropietario = "Si";            
         } else {
             $propiedad->espropietario = "No";
+            $propiedad->pqsolicita = $request->pqsolicita;
         }
 
         if ($request->conjunto  == "Si") {

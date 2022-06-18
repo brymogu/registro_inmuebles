@@ -3,8 +3,6 @@ $(document).ready(function () {
     if ($('#propietario').length) {
         $('.toast').toast("show");
         $('#m_usuario').addClass("activo");
-
-
     } else if ($('#negocio_tarjeta').length) {
         $('#m_usuario').addClass("activo");
         $('#m_negocio').addClass("activo");
@@ -27,7 +25,6 @@ $(document).ready(function () {
                 $('#iconjunto').show();
                 $('#conjunto_bar').show();
                 $('#horizontal').show();
-
             } else {
                 $('#direccion_comp').removeAttr('required');
                 $('#detalles').hide();
@@ -155,7 +152,7 @@ $(document).ready(function () {
         });
 
         $('#tiempo_inm').change(function () {
-            if ($('#tiempo_inm').val() >= 5 && $('#tiempo_inm').val() > 0 && $('#tiempo_inm').val() != "") {
+            if ($('#tiempo_inm').val() >= 5 && $('#tiempo_inm').val() > 0 && $('#tiempo_inm').val() != "" && $('#estado_inb').val() == 4) {
                 console.log("si");
                 $('#SecRemodelado').show();
                 $('#remodelado').attr("required", "true");
