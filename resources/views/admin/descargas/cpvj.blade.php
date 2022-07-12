@@ -1637,9 +1637,12 @@
                         </div>
                     @else
                         <div class="pagebreak"> </div>
-                        <div class="separador d-none d-print-block"></div>
+                        <div class="separador d-none d-print-block"></div>                        
                         <div class="row my-1">
                             <div class="col-12 interior rayita">
+                                <small class="my-1"><sup>*</sup>El valor sugerido por el cliente fue de:
+                                    ${{ $datos->valor }}</small>
+                                <br>
                                 <small><sup>*</sup>{{ $datos->obs_conc_juridico }}</small><br />
                                 <small>
                                     <b>Importante: </b>Este concepto se ha basado en la revisión del certificado aportado,
