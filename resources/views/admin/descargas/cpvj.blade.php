@@ -63,7 +63,11 @@
                 </div>
                 <div class="row mt-1 interior">
                     <div class="col-4">
-                        {!! Form::select('conc_juridico_edit', $conc_juridico, $datos->id_concjuridico, ['class' => 'form-select', 'required' => 'required', 'id' => 'conc_juridico_edit']) !!}
+                        {!! Form::select('conc_juridico_edit', $conc_juridico, $datos->id_concjuridico, [
+                            'class' => 'form-select',
+                            'required' => 'required',
+                            'id' => 'conc_juridico_edit',
+                        ]) !!}
                         <small class="fw-light fst-italic">Concepto jurídico</small>
                     </div>
                     <div class="col-4">
@@ -1625,7 +1629,7 @@
                         <div class="row my-1">
                             <div class="col-12 interior rayita">
                                 <small class="my-1"><sup>*</sup>El valor sugerido por el cliente fue de:
-                                    ${{ $datos->valor }}</small>
+                                    ${{ number_format($datos->valor, 0, ',', '.') }}</small>
                                 <br>
                                 <small class="my-1"><sup>**</sup>{{ $datos->obs_conc_juridico }}</small><br />
                                 <small>
@@ -1637,11 +1641,11 @@
                         </div>
                     @else
                         <div class="pagebreak"> </div>
-                        <div class="separador d-none d-print-block"></div>                        
+                        <div class="separador d-none d-print-block"></div>
                         <div class="row my-1">
                             <div class="col-12 interior rayita">
                                 <small class="my-1"><sup>*</sup>El valor sugerido por el cliente fue de:
-                                    ${{ $datos->valor }}</small>
+                                    ${{ number_format($datos->valor, 0, ',', '.') }}</small>
                                 <br>
                                 <small><sup>*</sup>{{ $datos->obs_conc_juridico }}</small><br />
                                 <small>
@@ -1664,10 +1668,10 @@
 @endsection
 @section('final')
     <script src="{!! asset('js/mapa.js') !!}">
-        <script>
+        < script >
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl)
-            })
-        </script>
-    @endsection
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+@endsection
