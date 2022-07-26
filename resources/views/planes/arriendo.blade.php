@@ -247,7 +247,7 @@
                 <div class="card-body">
                     <div class="row text-center align-items-center">
                         ¿Tienes preguntas?
-                        <a href="https://meetings.hubspot.com/reunion-con-andres-montero-de-epica-inmobiliaria/reunion-con-andres-montero-de-epica-inmobiliaria"
+                        <a href="https://meetings.hubspot.com/afmd/comercial"
                             target="_blank" class="btn botones mt-3">Reunión virtual con asesor</a>
                     </div>
                 </div>
