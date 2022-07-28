@@ -56,12 +56,6 @@
                             <td><i class="fa fa-check"></i></td>
                         </tr>
                         <tr>
-                            <td class="cara">Sin exclusividad</td>
-                            <td><i class="fa fa-check"></i></td>
-                            <td><i class="fa fa-check"></i></td>
-                            <td><i class="fa fa-check"></i></td>
-                        </tr>
-                        <tr>
                             <td class="cara">Acompañamiento firma escritura</td>
                             <td><i class="fa fa-check"></i></td>
                             <td><i class="fa fa-check"></i></td>
@@ -74,24 +68,22 @@
                             <td><i class="fa fa-check"></i></td>
                         </tr>
                         <tr>
-                            <td class="cara">Publicación en internet</td>
-                            <td>1 portal + Web</td>
-                            <td>2 portales + Web</td>
-                            <td>3 portales + RRSS + Web</td>
+                            <td class="cara">Publicación en portales</td>
+                            <td>1 normal </td>
+                            <td>2 normales</td>
+                            <td>1 normal + 1 destacado</td>
                         </tr>
                         <tr>
-                            <td class="cara">Atención de visitas presenciales a interesados</td>
-                            <td>Lunes a Viernes</td>
-                            <td>Lunes a Sábado</td>
-                            <td>Toda la semana </td>
+                            <td class="cara">Publicación en epicainmobiliaria.com
+                            <td><i class="fa fa-minus"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
                         </tr>
-
-
                         <tr>
                             <td class="cara">Informes de gestión comercial</td>
                             <td><i class="fa fa-minus"></i></td>
-                            <td>Limitado</td>
-                            <td>Sin límite</td>
+                            <td>Mensual</td>
+                            <td>Ilimitado</td>
                         </tr>
                         <tr>
                             <td class="cara">Fotografías tomadas por nosotros</td>
@@ -107,12 +99,11 @@
                         </tr>
 
                         <tr>
-                            <td class="cara">Marketing en redes sociales y bases de datos aliados
-                                inmobiliarios</td>
+                            <td class="cara">Marketing en redes sociales y bases de datos</td>
                             <td><i class="fa fa-minus"></i></td>
                             <td><i class="fa fa-minus"></i></td>
                             <td><i class="fa fa-check"></i></td>
-                        </tr>                        
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -124,11 +115,17 @@
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 my-3 my-md-0 border-end">
                     <label for="tipo_inm" class="form-label ">Seleccione el plan de su preferencia: </label>
-                    {!! Form::select('plan', $planes, null, ['class' => 'form-select', 'id' => 'planes', 'required' => 'required', 'onchange' => 'selector()']) !!}
+                    {!! Form::select('plan', $planes, null, [
+                        'class' => 'form-select',
+                        'id' => 'planes',
+                        'required' => 'required',
+                        'onchange' => 'selector()',
+                    ]) !!}
                     <hr class="encabezado">
                     <div class="grupo pt-3">
-                        <span class="fw-normal">Los precios aquí mostrados se calcularon sobre el valor que indicaste inicialmente</span>
-                        <div class="form-group row">                            
+                        <span class="fw-normal">Los precios aquí mostrados se calcularon sobre el valor que indicaste
+                            inicialmente</span>
+                        <div class="form-group row">
                             <label for="modificar" class="col-5">¿Deseas modificar el valor de tu inmueble?</label>
                             <div class="col-2">
                                 <a>No</a>
@@ -150,8 +147,8 @@
                 </div>
                 <div class="col-12 col-md-6 my-3 my-md-0 calculadora rounded py-3" id="calculadora">
                     <div class="col-12 text-start">
-                        <p>Para tu inmueble con valor de <strong id="valormodal">$ {!! $valor !!}</strong>, el costo del <strong
-                                id="plan"></strong> está conformado por: </p>
+                        <p>Para tu inmueble con valor de <strong id="valormodal">$ {!! $valor !!}</strong>, el
+                            costo del <strong id="plan"></strong> está conformado por: </p>
                         <ul>
                             <li>Un valor de <span id="valor_plan"></span>, equivale al <strong id="porcentaje"></strong> sin
                                 incluir IVA</li>
@@ -233,7 +230,7 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-6 col-md-2">                    
+                <div class="col-6 col-md-2">
                 </div>
                 <div class="d-none d-md-block col-md-8"></div>
                 <div class="col-6 col-md-2 text-end">
@@ -250,8 +247,8 @@
                 <div class="card-body">
                     <div class="row text-center align-items-center">
                         ¿Tienes preguntas?
-                        <a href="https://meetings.hubspot.com/afmd/comercial"
-                            target="_blank" class="btn botones mt-3">Reunión virtual con asesor</a>
+                        <a href="https://meetings.hubspot.com/afmd/comercial" target="_blank"
+                            class="btn botones mt-3">Reunión virtual con asesor</a>
                     </div>
                 </div>
             </div>

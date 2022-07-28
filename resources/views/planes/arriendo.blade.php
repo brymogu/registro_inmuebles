@@ -49,46 +49,40 @@
                             <td><i class="fa fa-check"></i></td>
                         </tr>
                         <tr>
-                            <td class="cara">Sin exclusividad</td>
+                            <td class="cara">Garantía arrendamientos</td>
                             <td><i class="fa fa-check"></i></td>
                             <td><i class="fa fa-check"></i></td>
                             <td><i class="fa fa-check"></i></td>
                         </tr>
                         <tr>
-                            <td class="cara">Cobertura arrendamientos</td>
-                            <td><i class="fa fa-check"></i></td>
-                            <td><i class="fa fa-check"></i></td>
-                            <td><i class="fa fa-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="cara">Cobertura de servicios públicos </td>
+                            <td class="cara">Garantía de servicios públicos </td>
                             <td><i class="fa fa-minus"></i></td>
                             <td>Hasta 30% del canon</td>
                             <td>Hasta 50% del canon</td>
                         </tr>
                         <tr>
-                            <td class="cara">Cobertura de daños y faltantes</td>
+                            <td class="cara">Garantía de daños y faltantes</td>
                             <td><i class="fa fa-minus"></i></td>
                             <td><i class="fa fa-minus"></i></td>
                             <td>Hasta 30% del canon</td>
                         </tr>
                         <tr>
-                            <td class="cara">Publicación en internet</td>
-                            <td>1 Portal + Web</td>
-                            <td>2 Portales + Web</td>
-                            <td>3 Portales + RRSS + Web</td>
+                            <td class="cara">Publicación en portales</td>
+                            <td>1 normal</td>
+                            <td>2 normales</td>
+                            <td>1 normal + 1 destacado</td>
                         </tr>
                         <tr>
-                            <td class="cara">Atención de visitas presenciales a interesados</td>
-                            <td>Lunes a Viernes</td>
-                            <td>Lunes a Sábado</td>
-                            <td>Toda la semana</td>
+                            <td class="cara">Publicación en epicainmobiliaria.com
+                            <td><i class="fa fa-minus"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
                         </tr>
                         <tr>
                             <td class="cara">Informes de gestión comercial</td>
                             <td><i class="fa fa-minus"></i></td>
-                            <td>Limitado</td>
-                            <td>Sin límite</td>
+                            <td>Mensual</td>
+                            <td>Ilimitado</td>
                         </tr>
                         <tr>
                             <td class="cara">Firma electrónica</td>
@@ -103,7 +97,14 @@
                             <td><i class="fa fa-check"></i></td>
                         </tr>
                         <tr>
-                            <td class="cara">Inspección y recibimiento con inventario al terminar el arrendamiento
+                            <td class="cara">Inspección y recibimiento con inventario al arrendatario
+                            </td>
+                            <td><i class="fa fa-minus"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="cara">Gestión administrativa de reparaciones
                             </td>
                             <td><i class="fa fa-minus"></i></td>
                             <td><i class="fa fa-check"></i></td>
@@ -118,18 +119,12 @@
                         <tr>
                             <td class="cara">Video</td>
                             <td><i class="fa fa-minus"></i></td>
-                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-minus"></i></td>
                             <td><i class="fa fa-check"></i></td>
                         </tr>
                         <tr>
-                            <td class="cara">Marketing en redes sociales y bases de datos aliados inmobiliarios
+                            <td class="cara">Marketing en redes sociales y bases de datos
                             </td>
-                            <td><i class="fa fa-minus"></i></td>
-                            <td><i class="fa fa-minus"></i></td>
-                            <td><i class="fa fa-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="cara">Reporte de fecha de asambleas de copropiedad</td>
                             <td><i class="fa fa-minus"></i></td>
                             <td><i class="fa fa-minus"></i></td>
                             <td><i class="fa fa-check"></i></td>
@@ -145,7 +140,12 @@
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 my-3 my-md-0 border-end">
                     <label for="tipo_inm" class="form-label ">Seleccione el plan de su preferencia: </label>
-                    {!! Form::select('plan', $planes, null, ['class' => 'form-select', 'id' => 'planes', 'required' => 'required', 'onchange' => 'selector()']) !!}
+                    {!! Form::select('plan', $planes, null, [
+                        'class' => 'form-select',
+                        'id' => 'planes',
+                        'required' => 'required',
+                        'onchange' => 'selector()',
+                    ]) !!}
                     <hr class="encabezado">
                     <div class="grupo pt-3">
                         <span class="fw-normal">Los precios aquí mostrados se calcularon sobre el valor que indicaste
@@ -247,8 +247,8 @@
                 <div class="card-body">
                     <div class="row text-center align-items-center">
                         ¿Tienes preguntas?
-                        <a href="https://meetings.hubspot.com/afmd/comercial"
-                            target="_blank" class="btn botones mt-3">Reunión virtual con asesor</a>
+                        <a href="https://meetings.hubspot.com/afmd/comercial" target="_blank"
+                            class="btn botones mt-3">Reunión virtual con asesor</a>
                     </div>
                 </div>
             </div>
